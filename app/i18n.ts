@@ -15,11 +15,15 @@ const resources = {
   },
 };
 
+const defaultLanguage = localStorage.getItem('i18nextLng') || 'zh-CN';
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
+    lng: defaultLanguage,
+    initImmediate: false,
     debug: false,
     fallbackLng: 'en',
     interpolation: {

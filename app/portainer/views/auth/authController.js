@@ -4,6 +4,7 @@ import { getEnvironments } from '@/react/portainer/environments/environment.serv
 import { dispatchCacheRefreshEvent } from '@/portainer/services/http-request.helper';
 import { isSameDocumentUrl, isValidReturnUrl } from '@/portainer/helpers/url-utils';
 import { storeReturnUrl, getReturnUrl, cleanReturnUrl } from '@/react/portainer/helpers/returnUrl';
+import i18n from '@/i18n';
 
 class AuthenticationController {
   /* @ngInject */
@@ -63,6 +64,11 @@ class AuthenticationController {
     this.manageOauthCodeReturn = this.manageOauthCodeReturn.bind(this);
     this.authEnabledFlowAsync = this.authEnabledFlowAsync.bind(this);
     this.onInit = this.onInit.bind(this);
+    this.t = this.t.bind(this);
+  }
+
+  t(key) {
+    return i18n.t(key);
   }
 
   /**
@@ -92,7 +98,7 @@ class AuthenticationController {
     if (!err) {
       err = {};
     }
-    this.Notifications.error('Failure', err, message);
+    this.Notifications.error(this.t('auth.failure'), err, message);
     this.state.loginInProgress = false;
   }
 
@@ -216,7 +222,7 @@ class AuthenticationController {
       this.state.loginInProgress = true;
       await this.internalLoginAsync(username, password);
     } catch (err) {
-      this.error(err, 'Unable to login');
+      this.error(err, this.t('auth.unable_to_login'));
     }
   }
 
@@ -301,7 +307,7 @@ class AuthenticationController {
 
       await this.authEnabledFlowAsync();
     } catch (err) {
-      this.Notifications.error('Failure', err, 'Unable to retrieve public settings');
+      this.Notifications.error(this.t('auth.failure'), err, 'Unable to retrieve public settings');
     }
   }
 
