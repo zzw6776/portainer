@@ -47,7 +47,9 @@ jobs:
       - name: Read Portainer version
         id: version
         shell: bash
-        run: echo "version=$(node -p \"require('./package.json').version\")" >> "${GITHUB_OUTPUT}"
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v3
