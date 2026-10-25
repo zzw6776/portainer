@@ -83,7 +83,7 @@ export function ContainerStats({
         {safeRunning} / {actualTotal}
       </span>
       <span className="sr-only">
-        {safeRunning} 个容器中有 {actualTotal} 个运行中
+        {actualTotal} 个容器，{safeRunning} 个运行中
       </span>
     </StatsItem>
   );

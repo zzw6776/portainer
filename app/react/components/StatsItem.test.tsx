@@ -13,7 +13,7 @@ describe('StatsItem', () => {
     it('renders node count with NODES label', () => {
       render(<NodeStats value={3} />);
       expect(screen.getByText('3')).toBeVisible();
-      expect(screen.getByText('NODES')).toBeVisible();
+      expect(screen.getByText('节点')).toBeVisible();
     });
   });
 
@@ -21,7 +21,7 @@ describe('StatsItem', () => {
     it('renders CPU count with CORES label', () => {
       render(<CPUStats value={8} />);
       expect(screen.getByText('8')).toBeVisible();
-      expect(screen.getByText('CORES')).toBeVisible();
+      expect(screen.getByText('核心')).toBeVisible();
     });
   });
 
@@ -29,7 +29,7 @@ describe('StatsItem', () => {
     it('renders memory value with MEMORY label', () => {
       render(<MemoryStats value="8 GB" />);
       expect(screen.getByText('8 GB')).toBeVisible();
-      expect(screen.getByText('MEMORY')).toBeVisible();
+      expect(screen.getByText('内存')).toBeVisible();
     });
   });
 
@@ -37,7 +37,7 @@ describe('StatsItem', () => {
     it('renders GPU count with GPUS label', () => {
       render(<GpuStats value={4} />);
       expect(screen.getByText('4')).toBeVisible();
-      expect(screen.getByText('GPUS')).toBeVisible();
+      expect(screen.getByText('GPU')).toBeVisible();
     });
   });
 
@@ -45,12 +45,12 @@ describe('StatsItem', () => {
     it('renders running/total containers with a CONTAINERS label', () => {
       render(<ContainerStats total={5} running={3} stopped={2} />);
       expect(screen.getByText('3 / 5')).toBeVisible();
-      expect(screen.getByText('CONTAINERS')).toBeVisible();
+      expect(screen.getByText('容器')).toBeVisible();
     });
 
     it('exposes running and total counts to assistive technology', () => {
       render(<ContainerStats total={5} running={3} stopped={2} />);
-      expect(screen.getByText('3 of 5 containers running')).toBeInTheDocument();
+      expect(screen.getByText('5 个容器，3 个运行中')).toBeInTheDocument();
     });
 
     it('falls back to running+stopped when total is zero', () => {
