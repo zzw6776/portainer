@@ -40,7 +40,7 @@ export function PortainerTunnelAddrField({
 
 export function validation() {
   return string()
-    .required('Tunnel server address is required')
+    .required('隧道服务器地址为必填项')
     .test(
       'valid tunnel server URL',
       'The tunnel server address must be a valid address (localhost cannot be used)',

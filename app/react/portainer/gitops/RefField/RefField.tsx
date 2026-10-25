@@ -91,7 +91,7 @@ export function refFieldValidation(): SchemaOf<string> {
   return string()
     .when({
       is: isBE,
-      then: string().required('Repository reference name is required'),
+      then: string().required('仓库引用名称为必填项'),
     })
     .default('');
 }

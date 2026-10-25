@@ -56,7 +56,7 @@ export function CreateIngressView() {
 
   useEffect(() => {
     if (!isAuthorizedToAddEdit) {
-      const message = `Not authorized to ${isEdit ? 'edit' : 'add'} ingresses`;
+      const message = isEdit ? '无权编辑 Ingress' : '无权添加 Ingress';
       notifyError('错误', new Error(message));
       router.stateService.go('kubernetes.ingresses');
     }
@@ -615,7 +615,7 @@ export function CreateIngressView() {
               data-cy="ingresses-create-button"
               disabled={Object.keys(errors).length > 0}
             >
-              {isEdit ? 'Update' : 'Create'}
+              {isEdit ? '更新' : '创建'}
             </Button>
           </div>
         )}

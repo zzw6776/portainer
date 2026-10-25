@@ -182,7 +182,7 @@ export function IngressForm({
                           ? '选择命名空间'
                           : '没有可用的命名空间'
                       }
-                      noOptionsMessage={() => 'No namespaces available'}
+                      noOptionsMessage={() => '没有可用的命名空间'}
                       data-cy="k8sAppCreate-namespaceSelect"
                       id="k8sAppCreate-namespaceSelect"
                     />
@@ -265,7 +265,7 @@ export function IngressForm({
                             ingressClassOption?.value || ''
                           )
                         }
-                        noOptionsMessage={() => 'No ingress classes available'}
+                        noOptionsMessage={() => '没有可用的 Ingress 类'}
                         data-cy="k8sAppCreate-ingressClassSelect"
                         id="k8sAppCreate-ingressClassSelect"
                       />
@@ -564,7 +564,7 @@ export function IngressForm({
                                 ? '选择服务'
                                 : '没有可用的服务'
                             }
-                            noOptionsMessage={() => 'No services available'}
+                            noOptionsMessage={() => '没有可用的服务'}
                             size="sm"
                             data-cy={`k8sAppCreate-serviceSelect_${hostIndex}_${pathIndex}`}
                           />
@@ -626,7 +626,7 @@ export function IngressForm({
                                     ? '选择端口'
                                     : '没有可用的端口'
                                 }
-                                noOptionsMessage={() => 'No ports available'}
+                                noOptionsMessage={() => '没有可用的端口'}
                                 size="sm"
                                 data-cy={`k8sAppCreate-servicePortSelect_${hostIndex}_${pathIndex}`}
                               />
@@ -685,7 +685,7 @@ export function IngressForm({
                                 ? '选择路径类型'
                                 : '没有可用的路径类型'
                             }
-                            noOptionsMessage={() => 'No path types available'}
+                            noOptionsMessage={() => '没有可用的路径类型'}
                             size="sm"
                             data-cy={`k8sAppCreate-pathTypeSelect_${hostIndex}_${pathIndex}`}
                           />

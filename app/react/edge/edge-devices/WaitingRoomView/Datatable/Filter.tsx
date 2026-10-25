@@ -34,7 +34,7 @@ export function Filter() {
     <div className="flex w-full gap-5 [&>*]:w-1/5">
       <HomepageFilter
         onChange={(f) => filterStore.setEdgeGroups(f)}
-        placeHolder="Edge groups"
+        placeHolder="边缘组"
         value={filterStore.edgeGroups}
         filterOptions={edgeGroupsQuery.data.map((g) => ({
           label: g.Name,

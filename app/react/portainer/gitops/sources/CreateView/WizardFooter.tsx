@@ -29,9 +29,9 @@ export function WizardFooter() {
         data-cy="gitops-source-wizard-continue-button"
         size="medium"
         isLoading={isSubmitting}
-        loadingText={isLastStep ? 'Creating...' : ''}
+        loadingText={isLastStep ? '正在创建…' : ''}
       >
-        {isLastStep ? 'Create' : 'Continue'}
+        {isLastStep ? '创建' : '继续'}
       </LoadingButton>
     </StickyFooter>
   );

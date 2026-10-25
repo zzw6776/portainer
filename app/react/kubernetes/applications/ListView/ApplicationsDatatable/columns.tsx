@@ -100,7 +100,7 @@ export const appType = helper.accessor('ApplicationType', {
 export const published = helper.accessor('Services', {
   header: '已公开',
   cell: ({ row: { original: item } }) =>
-    item.Services?.length === 0 ? 'No' : 'Yes',
+    item.Services?.length === 0 ? '否' : '是',
   enableSorting: false,
 });
 

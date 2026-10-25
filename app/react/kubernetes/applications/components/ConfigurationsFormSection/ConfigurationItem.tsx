@@ -51,7 +51,7 @@ export function ConfigurationItem({
               options={configurations}
               isMulti={false}
               getOptionLabel={(option) => option.metadata?.name || ''}
-              noOptionsMessage={() => 'No ConfigMaps found.'}
+              noOptionsMessage={() => '未找到 ConfigMap。'}
               value={configurations.find(
                 (configuration) =>
                   configuration.metadata?.name ===

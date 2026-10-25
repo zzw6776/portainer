@@ -16,11 +16,11 @@ const BADGE_TYPE = {
 } as const;
 
 const STATUS_LABELS: Record<WorkflowStatus, string> = {
-  healthy: 'Healthy',
-  error: 'Error',
-  syncing: 'Syncing',
-  paused: 'Paused',
-  unknown: 'Unknown',
+  healthy: '健康',
+  error: '错误',
+  syncing: '同步中',
+  paused: '已暂停',
+  unknown: '未知',
 };
 
 export function StatusBadge({ status }: { status: WorkflowStatus }) {
@@ -32,15 +32,15 @@ export function StatusBadge({ status }: { status: WorkflowStatus }) {
 }
 
 const TYPE_LABELS: Record<WorkflowType, string> = {
-  stack: 'Stack',
-  edgeStack: 'Edge Stack',
+  stack: '堆栈',
+  edgeStack: '边缘堆栈',
 };
 export function TypeBadge({ type }: { type: WorkflowType }) {
   return <Badge type="muted">{TYPE_LABELS[type]}</Badge>;
 }
 
 const PLATFORM_LABELS: Record<DeploymentPlatform, string> = {
-  dockerStandalone: 'Docker Standalone',
+  dockerStandalone: 'Docker 独立模式',
   dockerSwarm: 'Docker Swarm',
   kubernetes: 'Kubernetes',
 };
@@ -51,7 +51,7 @@ export function PlatformBadge({
 }) {
   return (
     <Badge type="muted">
-      {platform ? PLATFORM_LABELS[platform] : 'Unknown'}
+      {platform ? PLATFORM_LABELS[platform] : '未知'}
     </Badge>
   );
 }

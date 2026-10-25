@@ -204,7 +204,7 @@ export function staggerConfigValidation(): SchemaOf<StaggerConfig> {
   return object({
     StaggerOption: number()
       .oneOf([StaggerOption.AllAtOnce, StaggerOption.Parallel])
-      .required('Stagger option is required'),
+      .required('错峰选项为必填项'),
     StaggerParallelOption: number()
       .when('StaggerOption', {
         is: StaggerOption.Parallel,
@@ -224,7 +224,7 @@ export function staggerConfigValidation(): SchemaOf<StaggerConfig> {
             is: StaggerParallelOption.Fixed,
             then: (schema) =>
               schema
-                .required('Devices number is at least 1')
+                .required('设备数量至少为 1')
                 .min(1, 'Devices number is at least 1'),
           }),
       })
@@ -238,7 +238,7 @@ export function staggerConfigValidation(): SchemaOf<StaggerConfig> {
             then: (schema) =>
               schema
                 .min(1, 'Devices number start from at least 1')
-                .required('Devices number is required'),
+                .required('设备数量为必填项'),
           }),
       })
       .optional(),
@@ -253,7 +253,7 @@ export function staggerConfigValidation(): SchemaOf<StaggerConfig> {
               schema
                 .min(2)
                 .max(10)
-                .required('Devices number increment by is required'),
+                .required('设备数量增量为必填项'),
           }),
       })
       .optional(),

@@ -87,6 +87,6 @@ export function ResizeClaimEditForm({ claim, onDismiss }: Props) {
 
 function validationSchema(): SchemaOf<ResizeClaimEditFormValues> {
   return object().shape({
-    newSize: string().required('New size is required'),
+    newSize: string().required('新大小为必填项'),
   });
 }

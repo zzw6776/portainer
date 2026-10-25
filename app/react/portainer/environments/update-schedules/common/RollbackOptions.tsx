@@ -63,7 +63,7 @@ function useSelectVersionOnMount() {
     switch (previousVersions.length) {
       case 0:
         setFieldValue('version', '');
-        setFieldError('version', 'No rollback options available');
+        setFieldError('version', '没有可用的回退选项');
         break;
       case 1:
         setFieldValue('version', previousVersions[0]);
@@ -71,7 +71,7 @@ function useSelectVersionOnMount() {
       default:
         setFieldError(
           'version',
-          'Rollback is not available for these edge group as there are multiple version types to rollback to'
+          '这些边缘组存在多种可回退版本类型，无法执行回退'
         );
     }
   }, [previousVersions, setFieldError, setFieldValue]);

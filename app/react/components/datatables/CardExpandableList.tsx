@@ -82,7 +82,7 @@ export function CardExpandableList<D extends DefaultType>({
   getRowId = defaultGetRowId,
   isRowSelectable = () => true,
   disableSelect,
-  emptyContentLabel = 'No items.',
+  emptyContentLabel = '暂无项目。',
   isLoading,
   description,
   title,

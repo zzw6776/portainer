@@ -46,7 +46,7 @@ export function PortainerUrlField({
 
 export function validation() {
   return string()
-    .required('API server URL is required')
+    .required('API 服务器 URL 为必填项')
     .test(
       'valid API server URL',
       'The API server URL must be a valid URL (localhost cannot be used)',

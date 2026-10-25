@@ -13,7 +13,7 @@ test('should show a message when no tags and allowCreate is false', async () => 
   const { getByText } = await renderComponent({ allowCreate: false }, []);
 
   expect(
-    getByText('No tags available. Head over to the', {
+    getByText('没有可用标签。请前往', {
       exact: false,
     })
   ).toBeInTheDocument();
@@ -62,7 +62,7 @@ async function renderComponent(
     <Wrapped value={value} allowCreate={allowCreate} onChange={onChange} />
   );
 
-  const tagElement = await queries.findAllByText('tags', { exact: false });
+  const tagElement = await queries.findAllByText('标签', { exact: false });
 
   expect(tagElement.length).toBeGreaterThanOrEqual(1);
 

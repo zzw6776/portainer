@@ -140,7 +140,7 @@ class KubernetesConfigurationDataController {
     // exit if the file is too big
     const maximumFileSizeBytes = 1024 * 1024; // 1MB
     if (event.target.result.byteLength > maximumFileSizeBytes) {
-      this.Notifications.error('File size is too big', 'File size is too big', 'Select a file that is 1MB or smaller.');
+      this.Notifications.error('文件过大', '文件过大', '请选择不超过 1 MB 的文件。');
       return;
     }
 

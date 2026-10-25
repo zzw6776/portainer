@@ -1632,5 +1632,9 @@
   "Docker Standalone": "Docker 独立环境",
   "Edge Agent Async": "异步边缘 Agent",
   "Edge Agent Standard": "标准边缘 Agent",
-  "GPUs": "GPU"
+  "GPUs": "GPU",
+  "Unauthorized": "未授权",
+  "Invalid username": "用户名无效",
+  "Invalid password": "密码无效",
+  "Authentication failed": "身份验证失败"
 }

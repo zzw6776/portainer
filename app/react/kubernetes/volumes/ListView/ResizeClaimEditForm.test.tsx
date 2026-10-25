@@ -70,9 +70,9 @@ describe('ResizeClaimEditForm', () => {
     renderComponent();
 
     expect(
-      await screen.findByText('Resize Persistent Volume Claim')
+      await screen.findByText('调整持久卷声明容量')
     ).toBeVisible();
-    expect(screen.getByRole('textbox', { name: /new size/i })).toHaveValue(
+    expect(screen.getByRole('textbox', { name: '新容量' })).toHaveValue(
       '10Gi'
     );
   });
@@ -81,13 +81,13 @@ describe('ResizeClaimEditForm', () => {
     renderComponent();
 
     const sizeInput = await screen.findByRole('textbox', {
-      name: /new size/i,
+      name: '新容量',
     });
 
     await userEvent.clear(sizeInput);
-    await userEvent.click(screen.getByRole('button', { name: /resize/i }));
+    await userEvent.click(screen.getByRole('button', { name: '调整容量' }));
 
-    expect(await screen.findByText('New size is required')).toBeVisible();
+    expect(await screen.findByText('新大小为必填项')).toBeVisible();
   });
 
   it('submits the correct payload when the form is filled and submitted', async () => {
@@ -95,12 +95,12 @@ describe('ResizeClaimEditForm', () => {
     renderComponent(mockClaim, onDismiss);
 
     const sizeInput = await screen.findByRole('textbox', {
-      name: /new size/i,
+      name: '新容量',
     });
 
     await userEvent.clear(sizeInput);
     await userEvent.type(sizeInput, '20Gi');
-    await userEvent.click(screen.getByRole('button', { name: /resize/i }));
+    await userEvent.click(screen.getByRole('button', { name: '调整容量' }));
 
     await waitFor(() => {
       expect(mockMutateAsync).toHaveBeenCalledWith({
@@ -115,9 +115,9 @@ describe('ResizeClaimEditForm', () => {
     const onDismiss = vi.fn();
     renderComponent(mockClaim, onDismiss);
 
-    await screen.findByRole('textbox', { name: /new size/i });
+    await screen.findByRole('textbox', { name: '新容量' });
 
-    await userEvent.click(screen.getByRole('button', { name: /resize/i }));
+    await userEvent.click(screen.getByRole('button', { name: '调整容量' }));
 
     await waitFor(() => {
       expect(onDismiss).toHaveBeenCalled();

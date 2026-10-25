@@ -5,6 +5,6 @@ export const suspend = columnHelper.accessor((row) => row.Suspend, {
   id: 'suspend',
   cell: ({ getValue }) => {
     const suspended = getValue();
-    return suspended ? 'Yes' : 'No';
+    return suspended ? '是' : '否';
   },
 });

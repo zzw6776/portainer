@@ -44,7 +44,7 @@ export function SortableList<T>({
   renderColumnHeaders,
   getItemKey,
   showGroupHeaders = true,
-  emptyMessage = 'No items found',
+  emptyMessage = '未找到任何项目',
   searchPlaceholder,
   headerButtons,
   actionButton,

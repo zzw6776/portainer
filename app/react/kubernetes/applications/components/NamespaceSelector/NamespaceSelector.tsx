@@ -49,7 +49,7 @@ export function NamespaceSelector({
           options={namespaceNames}
           onChange={onChange}
           disabled={isEdit}
-          noOptionsMessage={() => 'No namespaces found'}
+          noOptionsMessage={() => '未找到命名空间'}
           placeholder="未找到命名空间" // will only show when there are no options
           inputId="namespace-selector"
           data-cy="k8sAppCreate-nsSelect"

@@ -29,7 +29,7 @@ export function BasicTable<D extends DefaultType>({
   dataset,
   columns,
   getRowId = defaultGetRowId,
-  emptyContentLabel = 'No items.',
+  emptyContentLabel = '暂无项目。',
   title,
   titleIcon,
   initialSortBy,

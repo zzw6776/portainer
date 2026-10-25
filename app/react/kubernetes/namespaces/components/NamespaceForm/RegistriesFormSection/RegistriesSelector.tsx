@@ -50,7 +50,7 @@ export function RegistriesSelector({
   if (isEditingDisabled) {
     return (
       <p className="text-muted mb-1 mt-2 text-xs">
-        {value.length === 0 ? 'None' : value.map((v) => v.Name).join(', ')}
+        {value.length === 0 ? '无' : value.map((v) => v.Name).join(', ')}
       </p>
     );
   }

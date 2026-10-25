@@ -99,7 +99,7 @@ export function TagSelector({
           options={tags.filter((tag) => !value.includes(tag.value))}
           closeMenuOnSelect={false}
           onChange={handleAdd}
-          noOptionsMessage={() => 'No tags available'}
+          noOptionsMessage={() => '没有可用标签'}
           formatCreateLabel={(inputValue) => `Create "${inputValue}"`}
           onCreateOption={handleCreateOption}
           aria-label="标签"

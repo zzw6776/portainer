@@ -34,7 +34,7 @@ export function HelmRegistrySelect({
   selectedRegistry,
   onRegistryChange,
   namespace,
-  placeholder = 'Select a repository',
+  placeholder = '选择仓库',
   'data-cy': dataCy = 'helm-registry-select',
   isRepoAvailable,
   isLoading,

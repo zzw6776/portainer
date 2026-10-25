@@ -124,7 +124,7 @@ class CreateConfigController {
     const isAdmin = this.Authentication.isAdmin();
 
     if (this.formValues.ConfigContent === '') {
-      this.state.formValidationError = 'Config content must not be empty';
+      this.state.formValidationError = '配置内容不能为空';
       return;
     }
 

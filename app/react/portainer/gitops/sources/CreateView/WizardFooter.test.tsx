@@ -102,7 +102,7 @@ describe('WizardFooter', () => {
   it('disables Back on first step', () => {
     renderFooter({ wizardContext: buildWizardContext({ isFirstStep: true }) });
 
-    expect(screen.getByRole('button', { name: /back/i })).toBeDisabled();
+    expect(screen.getByRole('button', { name: '上一步' })).toBeDisabled();
   });
 
   it('enables Back when not on first step', () => {
@@ -114,13 +114,13 @@ describe('WizardFooter', () => {
       }),
     });
 
-    expect(screen.getByRole('button', { name: /back/i })).not.toBeDisabled();
+    expect(screen.getByRole('button', { name: '上一步' })).not.toBeDisabled();
   });
 
   it('shows Continue on non-last step', () => {
     renderFooter({ wizardContext: buildWizardContext({ isLastStep: false }) });
 
-    expect(screen.getByRole('button', { name: /continue/i })).toBeVisible();
+    expect(screen.getByRole('button', { name: '继续' })).toBeVisible();
   });
 
   it('shows Create on last step', () => {
@@ -136,7 +136,7 @@ describe('WizardFooter', () => {
       formValues: validFormValues,
     });
 
-    expect(screen.getByRole('button', { name: /create/i })).toBeVisible();
+    expect(screen.getByRole('button', { name: '创建' })).toBeVisible();
   });
 
   it('disables Continue when form is invalid', async () => {
@@ -148,7 +148,7 @@ describe('WizardFooter', () => {
     });
 
     expect(
-      await screen.findByRole('button', { name: /continue/i })
+      await screen.findByRole('button', { name: '继续' })
     ).toBeDisabled();
   });
 
@@ -161,7 +161,7 @@ describe('WizardFooter', () => {
     });
 
     expect(
-      await screen.findByRole('button', { name: /continue/i })
+      await screen.findByRole('button', { name: '继续' })
     ).not.toBeDisabled();
   });
 
@@ -177,7 +177,7 @@ describe('WizardFooter', () => {
       }),
     });
 
-    await user.click(screen.getByRole('button', { name: /back/i }));
+    await user.click(screen.getByRole('button', { name: '上一步' }));
 
     expect(goToPreviousStep).toHaveBeenCalledOnce();
   });

@@ -281,7 +281,7 @@ export function ApplicationSummaryWidget() {
                                   applicationNote ? '正在更新' : '正在保存'
                                 }
                               >
-                                {applicationNote ? 'Update' : 'Save'} 备注
+                                {applicationNote ? '更新备注' : '保存备注'}
                               </LoadingButton>
                             </div>
                           </div>

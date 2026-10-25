@@ -228,7 +228,7 @@ angular.module('portainer.docker').controller('CreateServiceController', [
         .sort((a, b) => {
           if (a.model.Id === b.model.Id) {
             $scope.formValues.Secrets.$invalid = true;
-            $scope.formValues.Secrets.$error = 'Secret ' + a.model.Name + ' cannot be assigned multiple times.';
+            $scope.formValues.Secrets.$error = '密钥 ' + a.model.Name + ' 不能重复分配。';
           }
         });
       if (!$scope.formValues.Secrets.$invalid) {
@@ -243,7 +243,7 @@ angular.module('portainer.docker').controller('CreateServiceController', [
         .sort((a, b) => {
           if (a.model.Id === b.model.Id) {
             $scope.formValues.Configs.$invalid = true;
-            $scope.formValues.Configs.$error = 'Config ' + a.model.Name + ' cannot be assigned multiple times.';
+            $scope.formValues.Configs.$error = '配置 ' + a.model.Name + ' 不能重复分配。';
           }
         });
       if (!$scope.formValues.Configs.$invalid) {

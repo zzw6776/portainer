@@ -32,7 +32,7 @@ export function AddButton({
       color={color}
       disabled={disabled}
     >
-      {children || 'Add'}
+      {children || '添加'}
     </Button>
   );
 }

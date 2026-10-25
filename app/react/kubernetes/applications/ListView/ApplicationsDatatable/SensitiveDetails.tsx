@@ -54,7 +54,7 @@ function ShowHide({
         icon={show ? EyeIcon : EyeOffIcon}
         data-cy="show-hide-button"
       >
-        {show ? 'Hide' : 'Show'}
+        {show ? '隐藏' : '显示'}
       </Button>
     </div>
   );
