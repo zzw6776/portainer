@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { BoxIcon } from 'lucide-react';
 import { groupBy, partition } from 'lodash';
 import { useRouter } from '@uirouter/react';
+import { useTranslation } from 'react-i18next';
 
 import { DefaultDatatableSettings } from '@/react/kubernetes/datatables/DefaultDatatableSettings';
 import { SystemResourceDescription } from '@/react/kubernetes/datatables/SystemResourceDescription';
@@ -45,6 +46,7 @@ export function ApplicationsDatatable({
     search: string;
   };
 }) {
+  const { t } = useTranslation();
   const router = useRouter();
   const environmentId = useEnvironmentId();
   const restrictSecretsQuery = useEnvironment(
@@ -109,7 +111,7 @@ export function ApplicationsDatatable({
               data-cy="k8sApp-removeAppButton"
               disabled={selectedItems.length === 0}
               isLoading={removeApplicationsMutation.isLoading}
-              confirmMessage="Do you want to remove the selected application(s)?"
+              confirmMessage={t('kubernetes.applications.confirm_remove')}
               onConfirmed={() => handleRemoveApplications(selectedItems)}
             />
             <AddButton data-cy="k8sApp-addApplicationButton" color="secondary">

@@ -1,5 +1,6 @@
 import { ReactNode, ComponentProps, PropsWithChildren, useMemo } from 'react';
 import { JSONSchema7 } from 'json-schema';
+import { useTranslation } from 'react-i18next';
 
 import { CodeEditor } from '@@/CodeEditor';
 
@@ -20,7 +21,7 @@ interface Props extends CodeEditorProps {
 
 export function WebEditorForm({
   id,
-  titleContent = 'Web editor',
+  titleContent,
   hideTitle,
   children,
   error,
@@ -28,11 +29,13 @@ export function WebEditorForm({
   textTip,
   ...props
 }: PropsWithChildren<Props>) {
+  const { t } = useTranslation();
+  const resolvedTitleContent = titleContent ?? t('common.webEditor.web_editor');
   return (
     <div>
       <div className="web-editor overflow-x-hidden">
         {!hideTitle && (
-          <DefaultTitle id={id}>{titleContent ?? null}</DefaultTitle>
+          <DefaultTitle id={id}>{resolvedTitleContent}</DefaultTitle>
         )}
         {children && (
           <div className="form-group text-muted small">

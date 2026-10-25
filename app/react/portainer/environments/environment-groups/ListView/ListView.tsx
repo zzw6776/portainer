@@ -1,14 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 import { PageHeader } from '@@/PageHeader';
 import { AddButton } from '@@/buttons';
 
 import { EnvironmentGroupsTable } from './EnvironmentGroupsTable/EnvironmentGroupsTable';
 
 export function ListView() {
+  const { t } = useTranslation();
+
   return (
     <>
       <PageHeader
-        title="Environment Groups"
-        breadcrumbs="Environment group management"
+        title={t('groups.title')}
+        breadcrumbs={t('groups.breadcrumbs')}
         reload
       >
         <AddButton to=".new" data-cy="add-environment-group-button">

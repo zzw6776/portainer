@@ -1,21 +1,16 @@
 import { number, object, SchemaOf } from 'yup';
 
 import {
-  options as asyncOptions,
+  asyncIntervalValues,
   edgeAsyncIntervalsValidation,
 } from '@/react/edge/components/EdgeAsyncIntervalsForm';
-import { checkinIntervalOptions } from '@/react/edge/components/EdgeCheckInIntervalField';
+import { checkinIntervalValues } from '@/react/edge/components/EdgeCheckInIntervalField';
 
 import {
   EdgeIntervalsValues,
   toAsyncIntervalsValues,
   fromAsyncIntervalsValues,
 } from './types';
-
-const checkinIntervalValues = checkinIntervalOptions.map(
-  (option) => option.value
-);
-const asyncIntervalValues = asyncOptions.map((option) => option.value);
 
 /**
  * Validation schema for edge intervals.

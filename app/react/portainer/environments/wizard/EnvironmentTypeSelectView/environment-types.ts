@@ -1,3 +1,4 @@
+import i18n from '@/i18n';
 import { FeatureId } from '@/react/portainer/feature-flags/enums';
 import Docker from '@/assets/ico/vendor/docker.svg?c';
 import Podman from '@/assets/ico/vendor/podman.svg?c';
@@ -21,56 +22,58 @@ export interface EnvironmentOption extends BoxSelectorOption<EnvironmentOptionVa
   id: EnvironmentOptionValue;
   value: EnvironmentOptionValue;
 }
-export const existingEnvironmentTypes: EnvironmentOption[] = [
+export function getExistingEnvironmentTypes(): EnvironmentOption[] {
+  return [
   {
     id: 'dockerStandalone',
     value: 'dockerStandalone',
-    label: 'Docker Standalone',
+    label: i18n.t('wizard_env_types.docker_standalone_label'),
     icon: Docker,
     iconType: 'logo',
-    description: 'Connect to Docker Standalone via URL/IP, API or Socket',
+    description: i18n.t('wizard_env_types.docker_standalone_description'),
   },
   {
     id: 'dockerSwarm',
     value: 'dockerSwarm',
-    label: 'Docker Swarm',
+    label: i18n.t('wizard_env_types.docker_swarm_label'),
     icon: Docker,
     iconType: 'logo',
-    description: 'Connect to Docker Swarm via URL/IP, API or Socket',
+    description: i18n.t('wizard_env_types.docker_swarm_description'),
   },
   {
     id: 'podman',
     value: 'podman',
-    label: 'Podman',
+    label: i18n.t('wizard_env_types.podman_label'),
     icon: Podman,
     iconType: 'logo',
-    description: 'Connect to Podman via URL/IP or Socket',
+    description: i18n.t('wizard_env_types.podman_description'),
   },
   {
     id: 'kubernetes',
     value: 'kubernetes',
-    label: 'Kubernetes',
+    label: i18n.t('wizard_env_types.kubernetes_label'),
     icon: Kubernetes,
     iconType: 'logo',
-    description: 'Connect to a Kubernetes environment via URL/IP',
+    description: i18n.t('wizard_env_types.kubernetes_description'),
   },
   {
     id: 'aci',
     value: 'aci',
-    label: 'ACI',
-    description: 'Connect to ACI environment via API',
+    label: i18n.t('wizard_env_types.aci_label'),
+    description: i18n.t('wizard_env_types.aci_description'),
     iconType: 'logo',
     icon: Azure,
   },
-];
+  ];
+}
 
-export const newEnvironmentTypes: EnvironmentOption[] = [
+export function getNewEnvironmentTypes(): EnvironmentOption[] {
+  return [
   {
     id: 'kubesolo',
     value: 'kubesolo',
-    label: 'KubeSolo (Edge)',
-    description:
-      'Deploy a single-node Kubernetes edge environment with KubeSolo',
+    label: i18n.t('wizard_env_types.kubesolo_label'),
+    description: i18n.t('wizard_env_types.kubesolo_description'),
     icon: Kubesolo,
     iconType: 'logo',
     feature: FeatureId.KUBESOLO,
@@ -79,26 +82,30 @@ export const newEnvironmentTypes: EnvironmentOption[] = [
   {
     id: 'k8sInstall',
     value: 'k8sInstall',
-    label: 'Create Kubernetes cluster',
-    description: 'Create a Kubernetes cluster on existing infrastructure',
+    label: i18n.t('wizard_env_types.k8s_install_label'),
+    description: i18n.t('wizard_env_types.k8s_install_description'),
     icon: InstallK8s,
     iconType: 'logo',
     feature: FeatureId.K8SINSTALL,
     disabledWhenLimited: true,
   },
-];
+  ];
+}
 
-export const environmentTypes: EnvironmentOption[] = [
-  ...existingEnvironmentTypes,
-  ...newEnvironmentTypes,
-];
+export function getEnvironmentTypes(): EnvironmentOption[] {
+  return [...getExistingEnvironmentTypes(), ...getNewEnvironmentTypes()];
+}
 
-export const formTitles: Record<EnvironmentOptionValue, string> = {
-  dockerStandalone: 'Connect to your Docker Standalone environment',
-  dockerSwarm: 'Connect to your Docker Swarm environment',
-  podman: 'Connect to your Podman environment',
-  kubernetes: 'Connect to your Kubernetes environment',
-  aci: 'Connect to your ACI environment',
-  kubesolo: 'Deploy a KubeSolo edge environment',
-  k8sInstall: 'Create a Kubernetes cluster',
-};
+export function getFormTitles(): Record<EnvironmentOptionValue, string> {
+  return {
+    dockerStandalone: i18n.t(
+      'wizard_env_types.form_title_docker_standalone'
+    ),
+    dockerSwarm: i18n.t('wizard_env_types.form_title_docker_swarm'),
+    podman: i18n.t('wizard_env_types.form_title_podman'),
+    kubernetes: i18n.t('wizard_env_types.form_title_kubernetes'),
+    aci: i18n.t('wizard_env_types.form_title_aci'),
+    kubesolo: i18n.t('wizard_env_types.form_title_kubesolo'),
+    k8sInstall: i18n.t('wizard_env_types.form_title_k8s_install'),
+  };
+}

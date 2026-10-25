@@ -1,4 +1,5 @@
 import { Database, HardDrive } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { PageHeader } from '@@/PageHeader';
 import { WidgetTabs, Tab, useCurrentTabIndex } from '@@/Widget/WidgetTabs';
@@ -8,6 +9,8 @@ import { StorageClassesDatatable } from './StorageClassesDatatable';
 import { PersistentVolumeClaimsDatatable } from './PersistentVolumeClaimsDatatable';
 
 export function VolumesView() {
+  const { t } = useTranslation();
+
   const tabs: Tab[] = [
     {
       name: 'Persistent volume claims',
@@ -33,7 +36,7 @@ export function VolumesView() {
 
   return (
     <>
-      <PageHeader title="Volume list" breadcrumbs="Volumes" reload />
+      <PageHeader title={t('kubernetes.volumes.title')} breadcrumbs={t('kubernetes.volumes.breadcrumbs')} reload />
       <>
         <WidgetTabs tabs={tabs} currentTabIndex={currentTabIndex} />
         <div className="content">{tabs[currentTabIndex].widget}</div>
