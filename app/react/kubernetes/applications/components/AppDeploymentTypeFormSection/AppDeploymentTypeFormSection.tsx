@@ -55,7 +55,7 @@ function getOptions(
       disabled: () => !supportGlobalDeployment,
       tooltip: () =>
         !supportGlobalDeployment
-          ? 'The storage or access policy used for persisted folders cannot be used with this option'
+          ? '持久化文件夹使用的存储或访问策略不能用于此选项'
           : '',
       label: '全局',
       description: '应用将以 DaemonSet 部署，在集群的每个节点上运行一个实例',

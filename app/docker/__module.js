@@ -35,7 +35,7 @@ angular.module('portainer.docker', ['portainer.app', reactModule]).config([
             endpoint.Status = status;
 
             if (status === EnvironmentStatus.Down) {
-              throw error || new Error(`The environment named ${endpoint.Name} is unreachable.`);
+              throw error || new Error(`名为 ${endpoint.Name} 的环境无法访问。`);
             }
 
             await StateManager.updateEndpointState(endpoint);

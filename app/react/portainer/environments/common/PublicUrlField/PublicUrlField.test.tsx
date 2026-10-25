@@ -9,7 +9,7 @@ describe('PublicUrlField', () => {
   it('should render the public URL field', () => {
     renderComponent();
 
-    const input = screen.getByLabelText('Public IP');
+    const input = screen.getByLabelText('公网 IP / 域名');
     expect(input).toBeVisible();
   });
 
@@ -17,7 +17,7 @@ describe('PublicUrlField', () => {
     renderComponent();
 
     const input = screen.getByPlaceholderText(
-      'e.g. 10.0.0.10 or mydocker.mydomain.com'
+      '例如 10.0.0.10 或 mydocker.mydomain.com'
     );
     expect(input).toBeVisible();
   });
@@ -25,7 +25,7 @@ describe('PublicUrlField', () => {
   it('should update value on user input', async () => {
     const { publicUrl } = renderComponent();
 
-    const input = screen.getByLabelText('Public IP');
+    const input = screen.getByLabelText('公网 IP / 域名');
     await userEvent.clear(input);
     await userEvent.type(input, '10.0.0.10');
 
@@ -33,9 +33,9 @@ describe('PublicUrlField', () => {
   });
 
   it('should display error message when field has error', () => {
-    renderComponent({ initialErrors: { publicUrl: 'Invalid URL' } });
+    renderComponent({ initialErrors: { publicUrl: 'URL 无效' } });
 
-    expect(screen.getByText('Invalid URL')).toBeVisible();
+    expect(screen.getByText('URL 无效')).toBeVisible();
   });
 });
 

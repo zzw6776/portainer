@@ -173,14 +173,16 @@ function EdgeKeyInfo({
         showMetaFields
       >
         <TextTip color="blue">
-          Portainer 服务器 URL{' '}
-          {!asyncMode ? 'and tunnel server address are' : 'is'} 已设置{' '}
+          {!asyncMode
+            ? 'Portainer 服务器 URL 和隧道服务器地址已在'
+            : 'Portainer 服务器 URL 已在'}{' '}
           <Link
             to="portainer.settings.edgeCompute"
             data-cy="server-url-portainer-edge-settings-link"
           >
             此处
-          </Link>
+          </Link>{' '}
+          设置
         </TextTip>
         <FormControl label="Portainer API 服务器 URL">
           <Input value={url} readOnly data-cy="edge-auto-create-url-input" />

@@ -8,11 +8,7 @@ export function file(): FileSchema {
 }
 
 export function withFileSize(fileValidation: FileSchema, maxSize: number) {
-  return fileValidation.test(
-    'fileSize',
-    'Selected file is too big.',
-    validateFileSize
-  );
+  return fileValidation.test('fileSize', '所选文件过大。', validateFileSize);
 
   function validateFileSize(file?: File) {
     if (!file) {
@@ -29,7 +25,7 @@ export function withFileExtension(
 ) {
   return fileValidation.test(
     'fileExtension',
-    'Selected file has invalid extension.',
+    '所选文件扩展名无效。',
     validateFileExtension
   );
 

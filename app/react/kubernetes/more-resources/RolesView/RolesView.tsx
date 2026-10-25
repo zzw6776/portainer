@@ -18,13 +18,13 @@ export function RolesView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Roles',
+      name: '角色',
       icon: UserCheck,
       widget: <RolesDatatable />,
       selectedTabParam: 'roles',
     },
     {
-      name: 'Role Bindings',
+      name: '角色绑定',
       icon: Link,
       widget: <RoleBindingsDatatable />,
       selectedTabParam: 'roleBindings',

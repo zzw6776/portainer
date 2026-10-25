@@ -15,7 +15,7 @@ function EdgeAutoCreateScriptView() {
         title="自动创建边缘环境"
         breadcrumbs={[
           { label: '环境', link: 'portainer.endpoints' },
-          'Automatic Edge Environment Creation',
+          '自动创建 Edge 环境',
         ]}
         reload
       />

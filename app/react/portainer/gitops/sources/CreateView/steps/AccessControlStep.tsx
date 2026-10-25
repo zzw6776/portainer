@@ -14,11 +14,11 @@ export function AccessControlStep() {
     <>
       <Widget.Title
         title="访问控制"
-        subtitle="Configure who can use this source to create workflows and deployments."
+        subtitle="配置哪些用户可以使用此源创建工作流和部署。"
       />
       <Widget.Body>
         <EditDetails
-          resourceName="source"
+          resourceName="数据源"
           values={values}
           onChange={({ ownership, authorizedTeams, authorizedUsers }) => {
             setValues((values) => ({

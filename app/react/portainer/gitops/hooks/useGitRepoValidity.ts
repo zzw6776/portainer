@@ -57,11 +57,8 @@ export function getGitValidityError(error: unknown, hasCreds: boolean) {
   const details = isDefaultResponse(responseData)
     ? (responseData.details ?? '')
     : '';
-  if (
-    !hasCreds &&
-    details === 'Authentication required: Repository not found.'
-  ) {
-    return 'Git repository could not be found or is private, please ensure that the URL is correct or credentials are provided.';
+  if (!hasCreds && details === '需要身份验证：未找到仓库。') {
+    return '找不到 Git 仓库或该仓库为私有仓库，请确认 URL 正确或已提供凭据。';
   }
   return details || undefined;
 }

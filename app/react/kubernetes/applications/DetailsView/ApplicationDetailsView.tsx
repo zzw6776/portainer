@@ -48,7 +48,7 @@ export function ApplicationDetailsView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Application',
+      name: '应用',
       icon: LaptopCode,
       widget: <ApplicationSummaryWidget />,
       selectedTabParam: 'application',

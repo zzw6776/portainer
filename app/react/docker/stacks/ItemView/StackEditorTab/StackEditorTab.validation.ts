@@ -13,8 +13,8 @@ export function getValidationSchema(
   return object({
     stackFileContent: string()
       .required('堆栈文件内容是必填项')
-      .min(1, 'Stack file content cannot be empty')
-      .test('valid-yaml', 'Invalid YAML', function validateYamlTest(value) {
+      .min(1, '堆栈文件内容不能为空')
+      .test('valid-yaml', 'YAML 无效', function validateYamlTest(value) {
         if (!value) {
           return true; // Let required validation handle empty values
         }

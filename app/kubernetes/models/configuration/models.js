@@ -29,13 +29,13 @@ export const KubernetesConfigurationKinds = Object.freeze({
 });
 
 export const KubernetesSecretTypeOptions = Object.freeze({
-  OPAQUE: { name: 'Opaque', value: 'Opaque' },
-  SERVICEACCOUNTTOKEN: { name: 'Service account token', value: 'kubernetes.io/service-account-token' },
+  OPAQUE: { name: '不透明数据 (Opaque)', value: 'Opaque' },
+  SERVICEACCOUNTTOKEN: { name: '服务账号令牌', value: 'kubernetes.io/service-account-token' },
   DOCKERCFG: { name: 'Dockercfg', value: 'kubernetes.io/dockercfg' },
   DOCKERCONFIGJSON: { name: 'Dockerconfigjson', value: 'kubernetes.io/dockerconfigjson' },
-  BASICAUTH: { name: 'Basic auth', value: 'kubernetes.io/basic-auth' },
-  SSHAUTH: { name: 'SSH auth', value: 'kubernetes.io/ssh-auth' },
+  BASICAUTH: { name: '基本身份验证', value: 'kubernetes.io/basic-auth' },
+  SSHAUTH: { name: 'SSH 身份验证', value: 'kubernetes.io/ssh-auth' },
   TLS: { name: 'TLS', value: 'kubernetes.io/tls' },
-  BOOTSTRAPTOKEN: { name: 'Bootstrap token', value: 'bootstrap.kubernetes.io/token' },
-  CUSTOM: { name: 'Custom', value: 'Custom' },
+  BOOTSTRAPTOKEN: { name: '引导令牌', value: 'bootstrap.kubernetes.io/token' },
+  CUSTOM: { name: '自定义', value: 'Custom' },
 });

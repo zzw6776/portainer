@@ -67,7 +67,7 @@ function ConnectionTestStatusIcon({
     );
   }
 
-  const errorMessage = result.error ?? 'Connection failed';
+  const errorMessage = result.error ?? '连接失败';
 
   if (showError) {
     return (

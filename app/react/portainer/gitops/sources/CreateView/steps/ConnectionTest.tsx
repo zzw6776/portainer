@@ -58,7 +58,7 @@ export function ConnectionTest() {
 
   return (
     <Alert color="error" title="连接失败" className="mt-4">
-      {query.data?.error || 'Unable to reach the repository.'}
+      {query.data?.error || '无法访问仓库。'}
     </Alert>
   );
 }

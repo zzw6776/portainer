@@ -387,7 +387,7 @@ export function IngressForm({
                 <div className="flex flex-col">
                   <div className="row rule-actions">
                     <div className="col-sm-3 p-0">
-                      {!host.NoHost ? 'Rule' : 'Fallback rule'}
+                      {!host.NoHost ? 'Rule' : '回退规则'}
                     </div>
                     <div className="col-sm-9 p-0 text-right">
                       <Button
@@ -452,7 +452,7 @@ export function IngressForm({
                               host.Secret !== undefined
                                 ? {
                                     value: host.Secret,
-                                    label: host.Secret || 'No TLS',
+                                    label: host.Secret || '不使用 TLS',
                                   }
                                 : null
                             }
@@ -464,7 +464,9 @@ export function IngressForm({
                                 ? '选择 TLS Secret'
                                 : '没有可用的 TLS Secret'
                             }
-                            noOptionsMessage={() => 'No TLS secrets available'}
+                            noOptionsMessage={() =>
+                              '不使用 TLS secrets available'
+                            }
                             size="sm"
                             data-cy={`k8sAppCreate-tlsSelect_${hostIndex}`}
                             id={`k8sAppCreate-tlsSelect_${hostIndex}`}

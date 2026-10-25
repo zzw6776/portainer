@@ -34,7 +34,5 @@ const cronRegex =
   /(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\d+(ns|us|µs|ms|s|m|h))+)|((((\d+,)+\d+|(\d+(\/|-)\d+)|\d+|\*) ){4,6}((\d+,)+\d+|(\d+(\/|-)\d+)|\d+|\*))/;
 
 export function cronValidation() {
-  return string()
-    .default('')
-    .matches(cronRegex, 'This field format is invalid.');
+  return string().default('').matches(cronRegex, '字段格式无效。');
 }

@@ -48,9 +48,7 @@ export function SecretsFormSection({
         data-cy="k8sAppCreate-secret"
         disabled={secrets.length === 0}
         addButtonError={
-          secrets.length === 0
-            ? 'There are no Secrets available in this namespace.'
-            : undefined
+          secrets.length === 0 ? '此命名空间中没有可用的 Secret。' : undefined
         }
         renderItem={(item, onChange, index, error) => (
           <ConfigurationItem
@@ -69,7 +67,7 @@ export function SecretsFormSection({
           overridenKeys: [],
           selectedConfiguration: secrets[0],
         })}
-        addLabel="Add Secret"
+        addLabel="添加 Secret"
       />
     </FormSection>
   );

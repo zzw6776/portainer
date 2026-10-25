@@ -47,7 +47,7 @@ export function UpgradeHelmModal({
       version.Version === helmReleaseInitialValues.version;
 
     const label = `${repo}@${version.Version}${
-      isCurrentVersion ? ' (current)' : ''
+      isCurrentVersion ? ' （当前）' : ''
     }`;
 
     return {

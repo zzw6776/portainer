@@ -76,8 +76,7 @@ export function ManifestPreviewFormSection({
       {manifestPreviewQuery.isError ? (
         <Alert color="error" title="Helm Chart 配置错误">
           <ExpandableMessageByLines>
-            {manifestPreviewQuery.error?.message ||
-              'Error generating manifest preview'}
+            {manifestPreviewQuery.error?.message || '生成清单预览失败'}
           </ExpandableMessageByLines>
         </Alert>
       ) : (

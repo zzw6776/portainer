@@ -4,5 +4,6 @@ import { columnHelper } from './helper';
 
 export const role = columnHelper.accessor((row) => getRole(row), {
   header: '角色',
-  cell: ({ row: { original: node } }) => getRole(node),
+  cell: ({ row: { original: node } }) =>
+    getRole(node) === 'Control plane' ? '控制平面' : '工作节点',
 });

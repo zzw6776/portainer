@@ -63,7 +63,7 @@ export function ConfigMapsDatatable() {
       settingsManager={tableState}
       isLoading={configMapsQuery.isLoading || namespacesQuery.isLoading}
       emptyContentLabel="未找到 ConfigMap"
-      title="ConfigMaps"
+      title="ConfigMap"
       titleIcon={FileCode}
       getRowId={(row) => row.UID ?? ''}
       isRowSelectable={({ original: configmap }) =>

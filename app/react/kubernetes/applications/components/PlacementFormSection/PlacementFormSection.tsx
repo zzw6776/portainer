@@ -61,13 +61,13 @@ export function PlacementFormSection({ values, onChange, errors }: Props) {
             needsDeletion: false,
           })}
           errors={errors?.placements}
-          addLabel="Add rule"
+          addLabel="添加规则"
           canUndoDelete
           data-cy="k8sAppCreate-placement"
           disabled={Object.keys(availableNodeLabels).length === 0}
           addButtonError={
             Object.keys(availableNodeLabels).length === 0
-              ? 'There are no node labels available to add.'
+              ? '没有可添加的节点标签。'
               : ''
           }
         />

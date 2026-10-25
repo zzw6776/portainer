@@ -32,7 +32,7 @@ export function ConfigMapsFormSection({
   }
 
   return (
-    <FormSection title="ConfigMaps" titleSize="sm">
+    <FormSection title="ConfigMap" titleSize="sm">
       {!!values.length && (
         <TextTip color="blue">
           Portainer 会自动将 ConfigMap
@@ -49,7 +49,7 @@ export function ConfigMapsFormSection({
         disabled={configMaps.length === 0}
         addButtonError={
           configMaps.length === 0
-            ? 'There are no ConfigMaps available in this namespace.'
+            ? '此命名空间中没有可用的 ConfigMap。'
             : undefined
         }
         renderItem={(item, onChange, index, error) => (
@@ -69,7 +69,7 @@ export function ConfigMapsFormSection({
           overridenKeys: [],
           selectedConfiguration: configMaps[0],
         })}
-        addLabel="Add ConfigMap"
+        addLabel="添加 ConfigMap"
       />
     </FormSection>
   );

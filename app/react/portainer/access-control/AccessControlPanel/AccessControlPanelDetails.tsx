@@ -8,8 +8,10 @@ import { UserId } from '@/portainer/users/types';
 import { TeamId } from '@/react/portainer/users/teams/types';
 import { useTeams } from '@/react/portainer/users/teams/queries';
 import { useUsers } from '@/portainer/users/queries';
-import { pluralize } from '@/portainer/helpers/strings';
-import { ownershipIcon } from '@/react/docker/components/datatable/createOwnershipColumn';
+import {
+  ownershipIcon,
+  ownershipLabel,
+} from '@/react/docker/components/datatable/createOwnershipColumn';
 
 import { Link } from '@@/Link';
 import { Tooltip } from '@@/Tip/Tooltip';
@@ -33,7 +35,7 @@ export function AccessControlPanelDetails({
   resourceControl,
   resourceType,
   isAuthorisedToFetchUsers = false,
-  resourceName = 'resource',
+  resourceName = '资源',
 }: Props) {
   const inheritanceMessage = getInheritanceMessage(
     resourceType,
@@ -57,19 +59,13 @@ export function AccessControlPanelDetails({
 
   let teamsMessage = teams.data && teams.data.join(', ');
   if (unauthoisedTeams > 0 && teams.isFetched) {
-    teamsMessage += teamsLength > 0 ? ' and' : '';
-    teamsMessage += ` ${unauthoisedTeams} ${pluralize(
-      unauthoisedTeams,
-      'team'
-    )} you are not part of`;
+    teamsMessage += teamsLength > 0 ? '，以及' : '';
+    teamsMessage += ` ${unauthoisedTeams} 个您未加入的团队`;
   }
 
   const userMessage = users.data
     ? users.data.join(', ')
-    : `${restrictedToUsers.length} ${pluralize(
-        restrictedToUsers.length,
-        'user'
-      )}`;
+    : `${restrictedToUsers.length} 个用户`;
 
   return (
     <table className="table">
@@ -82,7 +78,7 @@ export function AccessControlPanelDetails({
               aria-hidden="true"
               aria-label="ownership-icon"
             />
-            <span aria-label="ownership">{ownership}</span>
+            <span aria-label="ownership">{ownershipLabel(ownership)}</span>
             <Tooltip message={getOwnershipTooltip(ownership, resourceName)} />
           </td>
         </tr>
@@ -108,16 +104,18 @@ function getOwnershipTooltip(
   ownership: ResourceControlOwnership,
   resourceName: string
 ) {
+  const label = resourceName;
+
   switch (ownership) {
     case ResourceControlOwnership.PRIVATE:
-      return `Management of this ${resourceName} is restricted to a single user.`;
+      return `此${label}仅限单个用户管理。`;
     case ResourceControlOwnership.RESTRICTED:
-      return `This ${resourceName} can be managed by a restricted set of users and/or teams.`;
+      return `此${label}仅限指定的用户和/或团队管理。`;
     case ResourceControlOwnership.PUBLIC:
-      return `This ${resourceName} can be managed by any user with access to this environment.`;
+      return `任何有权访问此环境的用户都可以管理此${label}。`;
     case ResourceControlOwnership.ADMINISTRATORS:
     default:
-      return `This ${resourceName} can only be managed by administrators.`;
+      return `此${label}仅限管理员管理。`;
   }
 }
 

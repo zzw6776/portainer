@@ -61,7 +61,7 @@ export function ComposeForm({
         type="yaml"
         schema={dockerComposeSchema}
         id="compose-editor"
-        textTip="Define or paste the content of your docker compose file here"
+        textTip="在此定义或粘贴 Docker Compose 文件内容"
         onChange={(value) => handleContentChange(DeploymentType.Compose, value)}
         error={errors.content}
         readonly={hasKubeEndpoint}

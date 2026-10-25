@@ -33,7 +33,7 @@ export function computeDockerGPUCommand(
         o.Capabilities[0][0] === 'gpu')
   );
   if (!gpuOptions) {
-    return 'No GPU config found';
+    return '未找到 GPU 配置';
   }
 
   let gpuStr = 'all';

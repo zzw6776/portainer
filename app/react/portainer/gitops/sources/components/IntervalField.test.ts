@@ -6,7 +6,7 @@ describe('intervalValidation', () => {
   it('rejects empty value with invalid duration format message', async () => {
     const schema = intervalValidation();
     await expect(schema.validate('')).rejects.toThrow(
-      'Invalid duration format. Use formats like 5m, 1h30m, 7d, or 300s'
+      '时长格式无效，请使用 5m、1h30m、7d 或 300s 等格式'
     );
   });
 
@@ -32,7 +32,7 @@ describe('intervalValidation', () => {
       'Minimum interval is 1m'
     );
     await expect(schema.validate('abc')).rejects.toThrow(
-      'Invalid duration format. Use formats like 5m, 1h30m, 7d, or 300s'
+      '时长格式无效，请使用 5m、1h30m、7d 或 300s 等格式'
     );
   });
 });

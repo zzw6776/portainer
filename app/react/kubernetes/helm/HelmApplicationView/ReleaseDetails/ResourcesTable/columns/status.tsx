@@ -13,7 +13,7 @@ export const status = columnHelper.accessor((row) => row.status.label, {
   cell: Cell,
   meta: {
     filter: filterHOC(
-      'Filter by status',
+      '按状态筛选',
       // don't include empty values in the filter options
       (rows: Row<ResourceRow>[]) =>
         Array.from(

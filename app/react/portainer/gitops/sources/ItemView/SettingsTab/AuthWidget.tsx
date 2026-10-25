@@ -17,7 +17,7 @@ export function AuthWidget({ auth }: Props) {
       <Card.Header
         icon={LockIcon}
         title="身份验证"
-        subtitle="Credentials used to connect to this source"
+        subtitle="连接此源时使用的凭据"
       />
       <Card.Body>
         <div className="grid grid-cols-2 gap-4">

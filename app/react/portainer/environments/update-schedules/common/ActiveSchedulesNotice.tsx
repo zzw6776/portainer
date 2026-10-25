@@ -70,7 +70,7 @@ export function ActiveSchedulesNotice({
           schedules.map(
             ({ currentVersion, scheduleCount, targetVersion, type }) => (
               <ActiveSchedulesNoticeItem
-                currentVersion={currentVersion || 'unknown version'}
+                currentVersion={currentVersion || '未知版本'}
                 key={`${edgeGroupId}-${currentVersion}-${targetVersion}`}
                 name={edgeGroupName}
                 scheduleCount={scheduleCount}

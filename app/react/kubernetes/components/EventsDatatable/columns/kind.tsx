@@ -11,7 +11,7 @@ export const kind = columnHelper.accessor(
   {
     header: '类型',
     meta: {
-      filter: filterHOC('Filter by kind'),
+      filter: filterHOC('按种类筛选'),
     },
     enableColumnFilter: true,
     filterFn: (row: Row<Event>, _: string, filterValue: string[]) =>

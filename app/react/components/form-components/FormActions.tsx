@@ -16,7 +16,7 @@ interface Props extends AutomationTestingProps {
 }
 
 export function FormActions({
-  submitLabel = 'Save',
+  submitLabel = '保存',
   loadingText = 'Saving',
   isLoading,
   children,

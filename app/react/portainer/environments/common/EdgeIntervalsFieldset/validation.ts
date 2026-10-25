@@ -19,17 +19,17 @@ import {
 export function edgeIntervalsValidation(): SchemaOf<EdgeIntervalsValues> {
   return object({
     checkinInterval: number()
-      .required('Check-in interval is required')
-      .oneOf(checkinIntervalValues, 'Invalid check-in interval'),
+      .required('签入间隔为必填项')
+      .oneOf(checkinIntervalValues, '签入间隔无效'),
     pingInterval: number()
-      .required('Ping interval is required')
-      .oneOf(asyncIntervalValues, 'Invalid ping interval'),
+      .required('Ping 间隔为必填项')
+      .oneOf(asyncIntervalValues, 'Ping 间隔无效'),
     snapshotInterval: number()
-      .required('Snapshot interval is required')
-      .oneOf(asyncIntervalValues, 'Invalid snapshot interval'),
+      .required('快照间隔为必填项')
+      .oneOf(asyncIntervalValues, '快照间隔无效'),
     commandInterval: number()
-      .required('Command interval is required')
-      .oneOf(asyncIntervalValues, 'Invalid command interval'),
+      .required('命令间隔为必填项')
+      .oneOf(asyncIntervalValues, '命令间隔无效'),
   });
 }
 

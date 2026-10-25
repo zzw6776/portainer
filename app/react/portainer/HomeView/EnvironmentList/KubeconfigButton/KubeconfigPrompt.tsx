@@ -147,31 +147,30 @@ export function KubeconfigPrompt({
 
   async function confirmKubeconfigSelection() {
     if (selection.length === 0) {
-      notifications.warning('No environment was selected', '');
+      notifications.warning('未选择环境', '');
       return;
     }
     try {
       await downloadKubeconfigFile(selection);
       onClose();
     } catch (e) {
-      notifications.error('Failed downloading kubeconfig file', e as Error);
+      notifications.error('下载 Kubeconfig 文件失败', e as Error);
     }
   }
 }
 
 export function expiryMessage(expiry: string) {
-  const prefix = 'The kubeconfig file will';
   switch (expiry) {
     case '24h':
-      return `${prefix} expire in 1 day.`;
+      return 'Kubeconfig 文件将在 1 天后过期。';
     case '168h':
-      return `${prefix} expire in 7 days.`;
+      return 'Kubeconfig 文件将在 7 天后过期。';
     case '720h':
-      return `${prefix} expire in 30 days.`;
+      return 'Kubeconfig 文件将在 30 天后过期。';
     case '8640h':
-      return `${prefix} expire in 1 year.`;
+      return 'Kubeconfig 文件将在 1 年后过期。';
     case '0':
     default:
-      return `${prefix} not expire.`;
+      return 'Kubeconfig 文件不会过期。';
   }
 }

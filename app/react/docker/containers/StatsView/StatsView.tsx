@@ -132,9 +132,7 @@ export function StatsView() {
       } catch (err) {
         if (!active) return;
         setFetchError(
-          err instanceof Error
-            ? err.message
-            : 'Unable to retrieve container statistics'
+          err instanceof Error ? err.message : '无法获取容器统计信息'
         );
         if (intervalId) {
           clearInterval(intervalId);
@@ -199,7 +197,7 @@ export function StatsView() {
                     >
                       {REFRESH_RATES.map((r) => (
                         <option key={r} value={r}>
-                          {r}s
+                          {r} 秒
                         </option>
                       ))}
                     </select>

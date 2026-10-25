@@ -67,17 +67,17 @@ function getTooltip(count: number, total: number, type: StatusType) {
 function getLabel(type: StatusType): ReactNode {
   switch (type) {
     case StatusType.Running:
-      return 'deployments running';
+      return '个部署正在运行';
     case StatusType.Completed:
-      return 'deployments completed';
+      return '个部署已完成';
     case StatusType.DeploymentReceived:
-      return 'deployments received';
+      return '个部署已接收';
     case StatusType.Error:
-      return 'deployments failed';
+      return '个部署失败';
     case StatusType.Acknowledged:
-      return 'deployments acknowledged';
+      return '个部署已确认';
     case StatusType.ImagesPulled:
-      return 'images pre-pulled';
+      return '个镜像已预拉取';
     default:
       return '';
   }

@@ -78,7 +78,7 @@ export function LinkedServiceAccountsRow({
 
   return (
     <DetailsRow
-      ariaLabel="Linked service accounts"
+      ariaLabel="已关联的服务账户"
       label={
         <span className="flex items-center">
           已关联的服务账户

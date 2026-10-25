@@ -23,9 +23,9 @@ angular
     return function (value) {
       switch (value) {
         case 'Isolated':
-          return 'All the instances of this application are using their own data.';
+          return '此应用的所有实例都使用各自独立的数据。';
         case 'Shared':
-          return 'All the instances of this application are sharing the same data.';
+          return '此应用的所有实例共享同一份数据。';
       }
     };
   })
@@ -37,9 +37,9 @@ angular
     'use strict';
     return function (text) {
       const values = {
-        'kubernetes.io/os': 'Operating system',
-        'kubernetes.io/arch': 'Architecture',
-        'kubernetes.io/hostname': 'Node',
+        'kubernetes.io/os': '操作系统',
+        'kubernetes.io/arch': '架构',
+        'kubernetes.io/hostname': '节点',
       };
       return values[text] || text;
     };
@@ -48,7 +48,7 @@ angular
     'use strict';
     return function (value) {
       if (value === '') {
-        return '<use IP>';
+        return '<使用 IP>';
       } else {
         return value;
       }

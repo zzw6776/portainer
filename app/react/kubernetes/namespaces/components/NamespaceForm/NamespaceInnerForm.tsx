@@ -146,7 +146,7 @@ export function NamespaceInnerForm({
           isValid={isValid}
         />
         <FormActions
-          submitLabel={isEdit ? 'Update namespace' : 'Create namespace'}
+          submitLabel={isEdit ? '更新命名空间' : '创建命名空间'}
           loadingText={isEdit ? '正在更新命名空间' : '正在创建命名空间'}
           isLoading={isUpdating}
           isValid={isValid && dirty}

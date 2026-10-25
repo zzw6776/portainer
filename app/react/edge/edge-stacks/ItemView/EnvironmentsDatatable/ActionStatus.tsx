@@ -21,9 +21,9 @@ export function ActionStatus({ environmentId }: Props) {
 function getStatusText(status?: 'pending' | 'collected' | 'idle') {
   switch (status) {
     case 'collected':
-      return 'Logs available for download';
+      return '日志可供下载';
     case 'pending':
-      return 'Logs marked for collection, please wait until the logs are available';
+      return '日志已标记为待收集，请等待日志可用';
     default:
       return null;
   }

@@ -32,7 +32,7 @@ export function durationValidation(allowEmpty = true) {
 
   return string().test(
     'duration',
-    'Invalid duration format. Use formats like 5m, 1h30m, 7d, or 300s',
+    '时长格式无效，请使用 5m、1h30m、7d 或 300s 等格式',
     (value) => {
       // Empty string is valid if allowed
       if (allowEmpty && (!value || value.trim() === '')) {

@@ -103,7 +103,7 @@ function SourceCell({
       <Dot status={status} className="mt-1.5" />
       <div className="min-w-0">
         <p className="m-0 font-semibold text-gray-9 th-highcontrast:text-white th-dark:text-white">
-          {source?.name ?? 'Unknown source'}
+          {source?.name ?? '未知源'}
         </p>
         {source?.url && (
           <p className="m-0 mt-0.5 break-all text-gray-7 th-highcontrast:text-gray-3 th-dark:text-gray-3">

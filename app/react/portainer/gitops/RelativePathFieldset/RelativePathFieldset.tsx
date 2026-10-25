@@ -45,9 +45,9 @@ export function RelativePathFieldset({
   );
 
   const pathTipSwarm =
-    'For relative path volumes use with Docker Swarm, you must have a network filesystem which all of your nodes can access.';
+    '在 Docker Swarm 中使用相对路径数据卷时，必须提供所有节点都能访问的网络文件系统。';
   const pathTipGitopsActive =
-    'GitOps Edge configurations is active. When you set the ‘local filesystem path’, it will also be utilized for relative paths.';
+    'GitOps Edge 配置已启用。设置“本地文件系统路径”后，该路径也会用于相对路径。';
 
   return (
     <>

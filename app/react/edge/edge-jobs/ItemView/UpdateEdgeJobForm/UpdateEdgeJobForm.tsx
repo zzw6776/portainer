@@ -82,7 +82,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
         id="edge-job-editor"
         onChange={(value) => setFieldValue('fileContent', value)}
         value={values.fileContent}
-        textTip="Define or paste the content of your script file here"
+        textTip="在此定义或粘贴脚本文件内容"
         type="shell"
         error={errors.fileContent}
       />
@@ -101,7 +101,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
       </FormSection>
 
       <FormActions
-        submitLabel="Update edge job"
+        submitLabel="更新边缘任务"
         isLoading={isLoading}
         isValid={isValid}
         data-cy="updateJobButton"

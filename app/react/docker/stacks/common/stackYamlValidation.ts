@@ -40,9 +40,7 @@ export function validateYAML(
   }
 
   return `${
-    duplicateContainers.length === 1
-      ? 'This container name is'
-      : 'These container names are'
+    duplicateContainers.length === 1 ? '此容器名称' : '这些容器名称'
   } already used by another container running in this environment: ${_.join(
     duplicateContainers,
     ', '

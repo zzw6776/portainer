@@ -143,7 +143,7 @@ export function InitEdgeView() {
                           loadingText="正在保存……"
                         >
                           {values.EnableEdgeComputeFeatures
-                            ? 'Enable and continue'
+                            ? '启用并继续'
                             : 'Continue'}
                         </LoadingButton>
 

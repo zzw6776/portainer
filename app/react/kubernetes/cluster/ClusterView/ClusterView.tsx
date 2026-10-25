@@ -18,7 +18,7 @@ export function ClusterView() {
             link: 'portainer.endpoints.endpoint',
             linkParams: { id: environment?.Id },
           },
-          'Cluster information',
+          '集群信息',
         ]}
         reload
       />

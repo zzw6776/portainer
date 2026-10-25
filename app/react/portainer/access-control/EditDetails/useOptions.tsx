@@ -26,7 +26,7 @@ export function useOptions(
   isAdmin: boolean,
   teams?: Team[],
   isPublicVisible = false,
-  resourceName = 'resource'
+  resourceName = '资源'
 ) {
   const [options, setOptions] = useState<
     Array<BoxSelectorOption<ResourceControlOwnership>>
@@ -65,7 +65,7 @@ function adminOptions(resourceName: string) {
     ),
   ];
 }
-function nonAdminOptions(teams?: Team[], resourceName = 'resource') {
+function nonAdminOptions(teams?: Team[], resourceName = '资源') {
   return _.compact([
     buildOption(
       'access_private',

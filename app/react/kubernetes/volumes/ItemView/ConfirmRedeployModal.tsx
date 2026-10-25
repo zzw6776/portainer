@@ -11,6 +11,6 @@ export function confirmRedeploy() {
       </>
     ),
     confirmButton: buildConfirmButton('重新部署应用'),
-    cancelButtonLabel: "I'll do it later",
+    cancelButtonLabel: '稍后再处理',
   });
 }

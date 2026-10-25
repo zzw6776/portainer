@@ -30,7 +30,7 @@ export function EditDetails({
   isPublicVisible = false,
   errors,
   formNamespace,
-  resourceName = 'resource',
+  resourceName = '资源',
   environmentId,
 }: Props) {
   const { t } = useTranslation();

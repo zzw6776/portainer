@@ -39,7 +39,7 @@ export function ToggleSystemNamespaceButton({
       }
       isLoading={toggleSystemNamespaceMutation.isLoading}
     >
-      {isSystemNamespace ? 'Unmark as system' : 'Mark as system'}
+      {isSystemNamespace ? '取消系统标记' : '标记为系统'}
     </LoadingButton>
   );
 
@@ -57,8 +57,8 @@ export function ToggleSystemNamespaceButton({
 
 async function confirmMarkUnmarkAsSystem(isSystemNamespace: boolean) {
   const message = isSystemNamespace
-    ? 'Unmarking this namespace as system will allow non administrator users to manage it and the resources in contains depending on the access control settings. Are you sure?'
-    : 'Marking this namespace as a system namespace will prevent non administrator users from managing it and the resources it contains. Are you sure?';
+    ? '取消此命名空间的系统标记后，非管理员用户可根据访问控制设置管理它及其中的资源。确定继续吗？'
+    : '将此命名空间标记为系统命名空间后，非管理员用户将无法管理它及其中的资源。确定继续吗？';
 
   return new Promise((resolve) => {
     confirmUpdate(message, resolve);

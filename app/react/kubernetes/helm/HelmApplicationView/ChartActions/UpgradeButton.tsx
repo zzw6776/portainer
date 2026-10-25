@@ -210,10 +210,10 @@ function getStatusMessage(
   isNewVersionAvailable: boolean
 ) {
   if (hasNoAvailableVersions) {
-    return 'No versions available ';
+    return '没有可用版本';
   }
   if (isNewVersionAvailable) {
     return `New version available (${latestVersionAvailable}) `;
   }
-  return 'Latest version installed';
+  return '已安装最新版本';
 }

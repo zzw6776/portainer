@@ -145,8 +145,7 @@ function NoMetricsServerWarning() {
           进行部署。
         </>
       )}
-      {!isAdmin &&
-        'This feature is currently disabled and must be enabled by an administrator user.'}
+      {!isAdmin && '此功能当前已禁用，必须由管理员启用。'}
     </TextTip>
   );
 }

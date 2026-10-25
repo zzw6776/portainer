@@ -46,7 +46,7 @@ function validateGit(): SchemaOf<FormValues['git']> {
       .required('存储库 URL 是必填项。')
       .test(
         'valid repository URL',
-        'The repository URL must be a valid URL (localhost cannot be used)',
+        '仓库 URL 必须是有效地址（不能使用 localhost）',
         (value) =>
           isValidUrl(
             value,
@@ -61,8 +61,6 @@ function validateGit(): SchemaOf<FormValues['git']> {
         then: intervalValidation(),
       }),
     }),
-    connectionOk: bool()
-      .oneOf([true], 'The connection test must succeed before continuing.')
-      .required(),
+    connectionOk: bool().oneOf([true], '连接测试成功后才能继续。').required(),
   });
 }

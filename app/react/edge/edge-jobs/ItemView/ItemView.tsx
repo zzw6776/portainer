@@ -14,13 +14,13 @@ import { ResultsDatatable } from './ResultsDatatable/ResultsDatatable';
 
 const TABS_FOR_INDEX: Tab[] = [
   {
-    name: 'Configuration',
+    name: '配置',
     icon: WrenchIcon,
     widget: null,
     selectedTabParam: 'configuration',
   },
   {
-    name: 'Results',
+    name: '结果',
     icon: ListIcon,
     widget: null,
     selectedTabParam: 'results',

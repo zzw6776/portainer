@@ -21,13 +21,13 @@ export function ApplicationsView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Applications',
+      name: '应用',
       icon: BoxIcon,
       widget: <ApplicationsDatatable tableState={tableState} />,
       selectedTabParam: 'applications',
     },
     {
-      name: 'Stacks',
+      name: '堆栈',
       icon: List,
       widget: <ApplicationsStacksDatatable tableState={tableState} />,
       selectedTabParam: 'stacks',

@@ -12,7 +12,7 @@ import { OverviewTab } from './OverviewTab';
 
 const breadcrumbs = [
   { label: 'GitOps 工作流', link: 'portainer.gitops.workflows' },
-  'Workflow',
+  '工作流',
 ];
 
 export function ItemView() {
@@ -41,7 +41,7 @@ export function ItemView() {
         <div className="mx-4 mb-4 space-y-4">
           <Alert color="error">
             加载工作流失败：{' '}
-            {error instanceof Error ? error.message : 'Unknown error'}
+            {error instanceof Error ? error.message : '未知错误'}
           </Alert>
         </div>
       </>

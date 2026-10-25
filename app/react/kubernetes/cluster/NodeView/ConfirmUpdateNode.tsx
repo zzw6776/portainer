@@ -11,10 +11,10 @@ export function confirmUpdateNode(
   let message;
   if (taintsWarning && !labelsWarning) {
     message =
-      'Changes to taints will immediately deschedule applications running on this node without the corresponding tolerations. Do you wish to continue?';
+      '更改污点会立即取消调度此节点上没有相应容忍规则的应用。是否继续？';
   } else if (!taintsWarning && labelsWarning) {
     message =
-      'Removing or changing a label that is used might prevent applications from being scheduled on this node in the future. Do you wish to continue?';
+      '移除或更改正在使用的标签，可能导致应用以后无法调度到此节点。是否继续？';
   } else if (taintsWarning && labelsWarning) {
     message = (
       <>
@@ -25,10 +25,10 @@ export function confirmUpdateNode(
     );
   } else if (cordonWarning) {
     message =
-      'Marking this node as unschedulable will effectively cordon the node and prevent any new workload from being scheduled on that node. Are you sure?';
+      '将此节点标记为不可调度会封锁该节点，阻止新的工作负载调度到此节点。确定继续吗？';
   } else if (drainWarning) {
     message =
-      'Draining this node will cause all workloads to be evicted from that node. This might lead to some service interruption. Are you sure?';
+      '排空此节点会驱逐其上的所有工作负载，可能造成服务中断。确定继续吗？';
   }
 
   return confirm({

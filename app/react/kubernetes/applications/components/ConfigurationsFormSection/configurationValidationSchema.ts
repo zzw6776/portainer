@@ -17,20 +17,16 @@ export function configurationsValidationSchema(
           path: string().when('type', {
             is: 'FILESYSTEM',
             then: string()
-              .test(
-                'No duplicates globally',
-                'This path is already used.',
-                (path?: string) => {
-                  const allPaths = validationData
-                    ?.flatMap((configmap) => configmap.overridenKeys)
-                    .map((k) => k.path);
-                  if (!allPaths) return true;
-                  return (
-                    allPaths.filter((p) => p === path && p !== '').length <= 1
-                  );
-                }
-              )
-              .required('Path is required.'),
+              .test('全局不允许重复', '此路径已被使用。', (path?: string) => {
+                const allPaths = validationData
+                  ?.flatMap((configmap) => configmap.overridenKeys)
+                  .map((k) => k.path);
+                if (!allPaths) return true;
+                return (
+                  allPaths.filter((p) => p === path && p !== '').length <= 1
+                );
+              })
+              .required('路径为必填项。'),
           }),
           type: mixed().oneOf(['NONE', 'ENVIRONMENT', 'FILESYSTEM']),
         })

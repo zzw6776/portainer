@@ -370,30 +370,30 @@ export function CreateIngressView() {
       // User cannot edit the namespace and the ingress name
       if (!isEdit) {
         if (!rule.Namespace) {
-          errors.namespace = 'Namespace is required';
+          errors.namespace = '命名空间为必填项';
         }
 
         const nameRegex = /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/;
         if (!rule.IngressName) {
-          errors.ingressName = 'Ingress name is required';
+          errors.ingressName = 'Ingress 名称为必填项';
         } else if (!nameRegex.test(rule.IngressName)) {
           errors.ingressName =
-            "This field must consist of lower case alphanumeric characters or '-', contain at most 63 characters, start with an alphabetic character, and end with an alphanumeric character (e.g. 'my-name', or 'abc-123').";
+            "此字段只能包含小写字母、数字或 '-'，最多 63 个字符，必须以字母开头并以字母或数字结尾（例如 'my-name' 或 'abc-123'）。";
         } else if (ingressNames.includes(rule.IngressName)) {
-          errors.ingressName = 'Ingress name already exists';
+          errors.ingressName = 'Ingress 名称已存在';
         }
 
         if (
           (!ingressClassOptions.length || !rule.IngressClassName) &&
           ingressControllersQuery.isSuccess
         ) {
-          errors.className = 'Ingress class is required';
+          errors.className = 'Ingress 类为必填项';
         }
       }
 
       if (isEdit && !ingressRule.IngressClassName && isEditClassNameSet) {
         errors.className =
-          'No ingress class is currently set for this ingress - use of the Portainer UI requires one to be set.';
+          '此 Ingress 当前未设置 Ingress 类，使用 Portainer 界面必须设置一个类。';
       }
 
       if (
@@ -404,10 +404,10 @@ export function CreateIngressView() {
       ) {
         if (!rule.IngressType) {
           errors.className =
-            'Currently set to an ingress class that cannot be found in the cluster - you must select a valid class.';
+            '当前设置的 Ingress 类在集群中不存在，必须选择有效的类。';
         } else {
           errors.className =
-            'Currently set to an ingress class that you do not have access to - you must select a valid class.';
+            '你无权访问当前设置的 Ingress 类，必须选择有效的类。';
         }
       }
 
@@ -415,38 +415,37 @@ export function CreateIngressView() {
       const re = /^([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]$/;
       rule.Annotations?.forEach((a, i) => {
         if (!a.key) {
-          errors[`annotations.key[${i}]`] = 'Key is required.';
+          errors[`annotations.key[${i}]`] = '键为必填项。';
         } else if (duplicatedAnnotations.includes(a.key)) {
-          errors[`annotations.key[${i}]`] =
-            'Key is a duplicate of an existing one.';
+          errors[`annotations.key[${i}]`] = '键与现有键重复。';
         } else {
           const key = a.key.split('/');
           if (key.length > 2) {
             errors[`annotations.key[${i}]`] =
-              'Two segments are allowed, separated by a slash (/): a prefix (optional) and a name.';
+              '允许使用由斜杠（/）分隔的两个部分：可选前缀和名称。';
           } else if (key.length === 2) {
             if (key[0].length > 253) {
               errors[`annotations.key[${i}]`] =
-                "Prefix (before the slash) can't exceed 253 characters.";
+                '前缀（斜杠之前）不能超过 253 个字符。';
             } else if (key[1].length > 63) {
               errors[`annotations.key[${i}]`] =
-                "Name (after the slash) can't exceed 63 characters.";
+                '名称（斜杠之后）不能超过 63 个字符。';
             } else if (!re.test(key[1])) {
               errors[`annotations.key[${i}]`] =
-                'Start and end with alphanumeric characters only, limiting characters in between to dashes, underscores, and alphanumerics.';
+                '必须以字母或数字开头和结尾，中间只能使用连字符、下划线、字母和数字。';
             }
           } else if (key.length === 1) {
             if (key[0].length > 63) {
               errors[`annotations.key[${i}]`] =
-                "Name (the segment after a slash (/), or only segment if no slash) can't exceed 63 characters.";
+                '名称（斜杠后的部分，或没有斜杠时的唯一部分）不能超过 63 个字符。';
             } else if (!re.test(key[0])) {
               errors[`annotations.key[${i}]`] =
-                'Start and end with alphanumeric characters only, limiting characters in between to dashes, underscores, and alphanumerics.';
+                '必须以字母或数字开头和结尾，中间只能使用连字符、下划线、字母和数字。';
             }
           }
         }
         if (!a.value) {
-          errors[`annotations.value[${i}]`] = 'Value is required.';
+          errors[`annotations.value[${i}]`] = '值为必填项。';
         }
         duplicatedAnnotations.push(a.key);
       });
@@ -456,9 +455,9 @@ export function CreateIngressView() {
       rule.Hosts?.forEach((host, hi) => {
         if (!host.NoHost) {
           if (!host.Host) {
-            errors[`hosts[${hi}].host`] = 'Host is required';
+            errors[`hosts[${hi}].host`] = '主机为必填项';
           } else if (duplicatedHosts.includes(host.Host)) {
-            errors[`hosts[${hi}].host`] = 'Host cannot be duplicated';
+            errors[`hosts[${hi}].host`] = '主机不能重复';
           }
           duplicatedHosts.push(host.Host);
         }
@@ -467,7 +466,7 @@ export function CreateIngressView() {
         host.Paths?.forEach((path, pi) => {
           if (!path.ServiceName) {
             errors[`hosts[${hi}].paths[${pi}].servicename`] =
-              'Service name is required';
+              '服务名称为必填项';
           }
 
           const availableServiceNames = groupedServiceOptions.flatMap(
@@ -499,17 +498,16 @@ export function CreateIngressView() {
 
           if (!path.ServicePort) {
             errors[`hosts[${hi}].paths[${pi}].serviceport`] =
-              'Service port is required';
+              '服务端口为必填项';
           }
         });
         // Validate paths
         const paths = host.Paths.map((path) => path.Route);
         paths.forEach((item, idx) => {
           if (!item) {
-            errors[`hosts[${hi}].paths[${idx}].path`] = 'Path cannot be empty';
+            errors[`hosts[${hi}].paths[${idx}].path`] = '路径不能为空';
           } else if (paths.indexOf(item) !== idx) {
-            errors[`hosts[${hi}].paths[${idx}].path`] =
-              'Paths cannot be duplicated';
+            errors[`hosts[${hi}].paths[${idx}].path`] = '路径不能重复';
           } else {
             // Validate host and path combination globally
             const isExists = checkIfPathExistsWithHost(
@@ -520,7 +518,7 @@ export function CreateIngressView() {
             );
             if (isExists) {
               errors[`hosts[${hi}].paths[${idx}].path`] =
-                'Path is already in use with the same host';
+                '同一主机已使用此路径';
             }
           }
         });
@@ -573,7 +571,7 @@ export function CreateIngressView() {
             label: 'Ingress',
           },
           {
-            label: isEdit ? 'Edit ingress' : 'Create ingress',
+            label: isEdit ? '编辑 Ingress' : '创建 Ingress',
           },
         ]}
         reload

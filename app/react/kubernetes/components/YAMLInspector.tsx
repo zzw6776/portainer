@@ -43,11 +43,7 @@ export function YAMLInspector({
       <WebEditorForm
         data-cy={dataCy}
         value={yaml}
-        textTip={
-          hideMessage
-            ? undefined
-            : 'Define or paste the content of your manifest here'
-        }
+        textTip={hideMessage ? undefined : '在此处定义或粘贴清单内容'}
         readonly
         hideTitle
         id={identifier}
@@ -67,7 +63,7 @@ export function YAMLInspector({
         </Button>
         <BETeaserButton
           featureId={FeatureId.K8S_EDIT_YAML}
-          heading="Apply YAML changes"
+          heading="应用 YAML 更改"
           message="调用 Kubernetes API 修补相关资源，以应用您在 YAML 编辑器中所做的更改。YAML 中删除资源或意外新增资源的操作将被忽略。请注意，标记为系统命名空间中的资源无法编辑。"
           buttonText="应用更改"
           data-cy="yaml-inspector-apply-changes-teaser-button"

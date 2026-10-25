@@ -48,7 +48,7 @@ export function AccessTab({ source, isEditing, onEditingChange }: Props) {
       <Widget.Title title="访问控制" icon={Eye} />
       <Widget.Body>
         <AccessControlPanelDetails
-          resourceName="source"
+          resourceName="数据源"
           resourceControl={toResourceControl(source)}
           isAuthorisedToFetchUsers
         />
@@ -111,7 +111,7 @@ function AccessForm({
               <Widget.Title title="访问控制" icon={Eye} />
               <Widget.Body>
                 <EditDetails
-                  resourceName="source"
+                  resourceName="数据源"
                   values={values}
                   errors={errors}
                   onChange={setValues}

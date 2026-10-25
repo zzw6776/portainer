@@ -121,8 +121,8 @@ export function StackDuplicationForm({
       title: '您确定吗？',
       modalType: ModalType.Warn,
       message: isRename
-        ? 'This action will deploy a new instance of this stack with the new name that will replace the current stack. Please note that this does NOT migrate the content of any persistent volumes that may be attached to this stack.'
-        : 'This action will deploy a new instance of this stack on the target environment, please note that this does NOT relocate the content of any persistent volumes that may be attached to this stack.',
+        ? '此操作将使用新名称部署一个新的堆栈实例并替换当前堆栈。请注意，此操作不会迁移当前堆栈所挂载持久卷中的内容。'
+        : '此操作将在目标环境中部署此堆栈的新实例。请注意，此操作不会迁移该堆栈所挂载持久卷中的内容。',
       confirmButton: buildConfirmButton(
         isRename ? 'Rename' : 'Migrate',
         'danger'

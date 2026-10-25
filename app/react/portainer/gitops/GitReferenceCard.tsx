@@ -311,7 +311,7 @@ function getExplainedError(...errors: Array<unknown | null>) {
         )
     )
   ) {
-    return 'The configured Git Credentials are invalid or expired. Update the credentials to restore access.';
+    return '配置的 Git 凭据无效或已过期。请更新凭据以恢复访问。';
   }
   return '';
 }

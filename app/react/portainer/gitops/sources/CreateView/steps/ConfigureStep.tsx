@@ -30,7 +30,7 @@ export function ConfigureStep() {
     <>
       <Widget.Title
         title={`Configure ${title}`}
-        subtitle="Enter the connection details and test the connection before proceeding"
+        subtitle="输入连接详情并测试连接，成功后再继续"
       />
       <Widget.Body>
         <SharedFields />

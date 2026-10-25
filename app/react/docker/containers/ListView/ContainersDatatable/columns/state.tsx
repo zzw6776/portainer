@@ -20,7 +20,7 @@ export const state = columnHelper.accessor('Status', {
   enableColumnFilter: true,
   filterFn: multiple,
   meta: {
-    filter: filterHOC('Filter by state'),
+    filter: filterHOC('按状态筛选'),
   },
 });
 
@@ -39,9 +39,9 @@ function StatusCell({
 
   const statusClassName = getClassName();
 
-  let transformedStatus: ContainerStatus | string = status;
-  if (transformedStatus === ContainerStatus.Exited) {
-    transformedStatus = `${transformedStatus} - code ${extractExitCode(
+  let transformedStatus = getStatusLabel(status);
+  if (status === ContainerStatus.Exited) {
+    transformedStatus = `${transformedStatus} - 退出代码 ${extractExitCode(
       container.StatusText
     )}`;
   }
@@ -83,4 +83,22 @@ function StatusCell({
     const match = statusText.match(regex);
     return match ? match[1] : '';
   }
+}
+
+function getStatusLabel(status: ContainerStatus) {
+  const labels: Record<ContainerStatus, string> = {
+    [ContainerStatus.Paused]: '已暂停',
+    [ContainerStatus.Stopped]: '已停止',
+    [ContainerStatus.Created]: '已创建',
+    [ContainerStatus.Healthy]: '健康',
+    [ContainerStatus.Unhealthy]: '不健康',
+    [ContainerStatus.Starting]: '正在启动',
+    [ContainerStatus.Running]: '运行中',
+    [ContainerStatus.Dead]: '已失效',
+    [ContainerStatus.Exited]: '已退出',
+    [ContainerStatus.Restarting]: '正在重启',
+    [ContainerStatus.Removing]: '正在移除',
+  };
+
+  return labels[status];
 }

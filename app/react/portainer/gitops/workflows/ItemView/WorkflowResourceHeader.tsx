@@ -32,7 +32,7 @@ export function WorkflowResourceHeader({ workflow }: Props) {
             <ResourceStatBlock.Value align="center" size="base" dot>
               {rollup.total > 0
                 ? `${rollup.synced}/${rollup.total} synced`
-                : 'No artifacts'}
+                : '无产物'}
             </ResourceStatBlock.Value>
           </ResourceStatBlock>
         </HeaderStats>

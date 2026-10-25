@@ -13,19 +13,19 @@ export function VolumesView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Persistent volume claims',
+      name: '持久卷声明',
       icon: Database,
       widget: <PersistentVolumeClaimsDatatable />,
       selectedTabParam: 'volume-claims',
     },
     {
-      name: 'Persistent volumes',
+      name: '持久卷',
       icon: Database,
       widget: <PersistentVolumesDatatable />,
       selectedTabParam: 'volumes',
     },
     {
-      name: 'Storage classes',
+      name: '存储类',
       icon: HardDrive,
       widget: <StorageClassesDatatable />,
       selectedTabParam: 'storage',

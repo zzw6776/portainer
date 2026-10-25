@@ -15,7 +15,7 @@ export function EditAuthWidget() {
       <Card.Header
         icon={LockIcon}
         title="身份验证"
-        subtitle="Choose how Portainer authenticates to this source"
+        subtitle="选择 Portainer 连接此源时使用的身份验证方式"
       />
       <Card.Body>
         <GitAuthentication

@@ -83,7 +83,7 @@ export function NodeSummary({
       )}
       <tr>
         <td>角色</td>
-        <td>{parsedNode.role}</td>
+        <td>{parsedNode.role === 'Control plane' ? '控制平面' : '工作节点'}</td>
       </tr>
       <tr>
         <td>Kubelet 版本</td>
@@ -98,7 +98,7 @@ export function NodeSummary({
         <td>
           <div className="flex items-center">
             <StatusBadge color={parsedNode.statusType}>
-              {parsedNode.status}
+              {getStatusLabel(parsedNode.status)}
             </StatusBadge>
             {parsedNode.status === 'Warning' && parsedNode.warningMessage && (
               <span className="text-warning ml-2">
@@ -128,7 +128,7 @@ export function NodeSummary({
               <FormError>{error}</FormError>
             </>
           ) : (
-            availability
+            getAvailabilityLabel(availability)
           )}
         </td>
       </tr>
@@ -144,6 +144,24 @@ export function NodeSummary({
         </tr>
       )}
     </DetailsTable>
+  );
+}
+
+function getAvailabilityLabel(availability: NodeAvailability) {
+  return {
+    Active: '活动',
+    Pause: '暂停',
+    Drain: '排空',
+  }[availability];
+}
+
+function getStatusLabel(status: string) {
+  return (
+    {
+      Ready: '就绪',
+      Warning: '警告',
+      Unhealthy: '不健康',
+    }[status] || status
   );
 }
 

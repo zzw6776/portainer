@@ -13,7 +13,7 @@ export function useValidation(
       object({
         config: imageConfigValidation().test(
           'rate-limits',
-          'Rate limit exceeded',
+          '已超过速率限制',
           () => !isDockerhubRateLimited
         ),
       }),

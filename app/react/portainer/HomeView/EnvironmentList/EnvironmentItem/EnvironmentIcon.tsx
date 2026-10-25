@@ -24,58 +24,27 @@ export function EnvironmentIcon({ type, containerEngine }: Props) {
     case EnvironmentType.Docker:
       if (containerEngine === ContainerEngine.Podman) {
         return (
-          <img
-            src={podman}
-            width="60"
-            alt="podman environment"
-            aria-hidden="true"
-          />
+          <img src={podman} width="60" alt="Podman 环境" aria-hidden="true" />
         );
       }
       return (
-        <img
-          src={docker}
-          width="60"
-          alt="docker environment"
-          aria-hidden="true"
-        />
+        <img src={docker} width="60" alt="Docker 环境" aria-hidden="true" />
       );
     case EnvironmentType.Azure:
-      return (
-        <img
-          src={azure}
-          width="60"
-          alt="azure environment"
-          aria-hidden="true"
-        />
-      );
+      return <img src={azure} width="60" alt="Azure 环境" aria-hidden="true" />;
     case EnvironmentType.EdgeAgentOnDocker:
       if (containerEngine === ContainerEngine.Podman) {
         return (
-          <img
-            src={podmanEdge}
-            alt="podman edge environment"
-            aria-hidden="true"
-          />
+          <img src={podmanEdge} alt="Podman Edge 环境" aria-hidden="true" />
         );
       }
-      return (
-        <img
-          src={dockerEdge}
-          alt="docker edge environment"
-          aria-hidden="true"
-        />
-      );
+      return <img src={dockerEdge} alt="Docker Edge 环境" aria-hidden="true" />;
     case EnvironmentType.KubernetesLocal:
     case EnvironmentType.AgentOnKubernetes:
-      return <img src={kube} alt="kubernetes environment" aria-hidden="true" />;
+      return <img src={kube} alt="Kubernetes 环境" aria-hidden="true" />;
     case EnvironmentType.EdgeAgentOnKubernetes:
       return (
-        <img
-          src={kubeEdge}
-          alt="kubernetes edge environment"
-          aria-hidden="true"
-        />
+        <img src={kubeEdge} alt="Kubernetes Edge 环境" aria-hidden="true" />
       );
     default:
       return (

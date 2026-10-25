@@ -13,7 +13,7 @@ export function deploymentTypeValidation(
     .oneOf(['Replicated', 'Global'])
     .test(
       'exhaused',
-      `This application would exceed available resources. Please review resource reservations or the instance count.`,
+      `此应用将超出可用资源，请检查资源预留或实例数。`,
       (value) => {
         // ignore this validation if the user has selected Replicated, in this case, the isQuotaExceeded will below the instance count input
         if (value === 'Replicated') {

@@ -21,7 +21,7 @@ export function computePodStatus(pod: Pod): ContainerStatusInfo {
       return {
         status: 'Unknown',
         type: 'muted',
-        message: message || 'Pod status cannot be determined from the cluster.',
+        message: message || '无法从集群确定 Pod 状态。',
       };
     case 'Running': {
       const total = containerStatuses.length;
@@ -49,13 +49,13 @@ export function computePodStatus(pod: Pod): ContainerStatusInfo {
       return {
         status: 'Failed',
         type: 'danger',
-        message: message || reason || 'Pod failed.',
+        message: message || reason || 'Pod 失败。',
       };
     default:
       return {
         status: 'Unknown',
         type: 'muted',
-        message: message || 'Pod status cannot be determined from the cluster.',
+        message: message || '无法从集群确定 Pod 状态。',
       };
   }
 }

@@ -17,7 +17,7 @@ export function EditConnectionDetailsWidget() {
       <Card.Header
         icon={LinkIcon}
         title="连接详情"
-        subtitle="Source name, URL, and connection settings"
+        subtitle="源名称、URL 和连接设置"
       />
       <Card.Body>
         <FormControl inputId="name" label="名称" errors={errors.name} required>

@@ -19,7 +19,7 @@ export function useValidation({
         partialMatch: boolean().default(false),
         tagIds: array(number().required()).when('dynamic', {
           is: true,
-          then: (schema) => schema.min(1, 'Tags are required'),
+          then: (schema) => schema.min(1, '标签为必填项'),
         }),
         edgeGroupId: number().default(0).notRequired(),
       }),

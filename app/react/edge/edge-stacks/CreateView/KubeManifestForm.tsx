@@ -74,7 +74,7 @@ export function KubeManifestForm({
           value={values.fileContent}
           onChange={(value) => handleChange({ fileContent: value })}
           type="yaml"
-          textTip="Define or paste the content of your manifest file here"
+          textTip="在此定义或粘贴清单文件内容"
           error={errors?.fileContent}
           data-cy="stack-creation-editor"
         >

@@ -132,7 +132,7 @@ export function getPercentageString(value: number, total?: number | string) {
     return '';
   }
   if (value > totalNumber) {
-    return '- Exceeded';
+    return '- 已超出';
   }
   return `- ${Math.round((value / totalNumber) * 100)}%`;
 }

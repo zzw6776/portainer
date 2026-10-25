@@ -60,7 +60,7 @@ export function FilterBarButton({
         checked={isSelected}
         onClick={onClick}
         readOnly
-        aria-label={`Filter by ${label}`}
+        aria-label={`按${label}筛选`}
         tabIndex={0}
       />
       {colors && (

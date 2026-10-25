@@ -88,7 +88,7 @@ function ImageCell({
 export const appType = helper.accessor('ApplicationType', {
   header: '应用类型',
   meta: {
-    filter: filterHOC('Filter by application type'),
+    filter: filterHOC('按应用类型筛选'),
   },
   enableColumnFilter: true,
   filterFn: (row: Row<Application>, _: string, filterValue: string[]) =>

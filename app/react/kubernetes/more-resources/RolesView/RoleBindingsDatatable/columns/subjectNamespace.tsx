@@ -36,7 +36,7 @@ export const subjectNamespace = columnHelper.accessor(
     // use a custom filter, to remove empty namespace values
     meta: {
       filter: filterHOC(
-        'Filter by subject namespace',
+        '按主体命名空间筛选',
         filterNamespaceOptionsTransformer
       ),
     },

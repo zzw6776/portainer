@@ -37,7 +37,7 @@ export function AccessControlPanel({
   resourceId,
   environmentId,
   onUpdateSuccess,
-  resourceName = 'resource',
+  resourceName = '资源',
 }: Props) {
   const { t } = useTranslation();
   const [isEditMode, toggleEditMode] = useReducer((state) => !state, false);

@@ -73,7 +73,7 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title="GitOps 源" breadcrumbs="GitOps Sources" reload>
+      <PageHeader title="GitOps 数据源" breadcrumbs="GitOps 数据源" reload>
         <div className="ml-auto">
           <AddButton data-cy="add-source-button">新增</AddButton>
         </div>
@@ -96,8 +96,8 @@ export function ListView() {
           isLoading={sourcesQuery.isLoading}
           getItemKey={(item) => item.id}
           showGroupHeaders
-          emptyMessage="No sources found"
-          searchPlaceholder="Search"
+          emptyMessage="未找到数据源"
+          searchPlaceholder="搜索"
           renderItem={(item) => <SourceCard item={item} />}
           data-cy="sources-list"
         />

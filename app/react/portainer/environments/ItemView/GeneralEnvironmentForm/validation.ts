@@ -24,7 +24,7 @@ export function useGeneralValidation({
     name: nameValidation,
     environmentUrl:
       status !== EnvironmentStatus.Error
-        ? string().required('Environment address is required')
+        ? string().required('环境地址为必填项')
         : string().default(''),
     publicUrl: string().default(''),
     tls: tlsConfigValidation({ optionalCert: true }).optional(),

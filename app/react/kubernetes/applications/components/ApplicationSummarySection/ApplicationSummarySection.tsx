@@ -3,8 +3,8 @@ import { TextTip } from '@@/Tip/TextTip';
 
 import { ApplicationFormValues } from '../../types';
 
-import { getAppResourceSummaries, getArticle } from './utils';
-import { Summary } from './types';
+import { getAppResourceSummaries } from './utils';
+import { KubernetesResourceAction, Summary } from './types';
 
 type Props = {
   formValues: ApplicationFormValues;
@@ -54,16 +54,24 @@ export function ApplicationSummarySection({
 function SummaryItem({ summary }: { summary: Summary }) {
   return (
     <li>
-      {`${summary.action} ${getArticle(summary.kind, summary.action)} `}
+      {`${getActionLabel(summary.action)} `}
       <span className="bold">{summary.kind}</span>
-      {' named '}
+      {'，名称为 '}
       <code>{summary.name}</code>
       {!!summary.type && (
         <span>
-          {' of type '}
+          {'，类型为 '}
           <code>{summary.type}</code>
         </span>
       )}
     </li>
   );
+}
+
+function getActionLabel(action: KubernetesResourceAction) {
+  return {
+    Create: '创建',
+    Update: '更新',
+    Delete: '删除',
+  }[action];
 }

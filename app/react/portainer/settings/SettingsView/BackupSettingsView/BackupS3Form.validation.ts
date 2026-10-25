@@ -22,7 +22,7 @@ export function validationSchema(): SchemaOf<BackupS3Settings> {
             then: (schema) =>
               schema.matches(
                 /^(\*(\/[1-9][0-9]*)?|([0-5]?[0-9]|6[0-9]|7[0-9])(-[0-5]?[0-9])?)(\s+(\*(\/[1-9][0-9]*)?|([0-5]?[0-9]|6[0-9]|7[0-9])(-[0-5]?[0-9])?)){4}$/,
-                'Please enter a valid cron rule.'
+                '请输入有效的 Cron 规则。'
               ),
           }),
       }),

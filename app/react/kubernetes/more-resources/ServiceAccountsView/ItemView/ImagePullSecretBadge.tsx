@@ -60,7 +60,7 @@ export function ImagePullSecretBadge({
   );
 
   const registryNotFoundMessage =
-    'The registry associated with this secret could not be found. It may have been deleted.';
+    '找不到与此 Secret 关联的镜像仓库，它可能已被删除。';
   const showRegistryNotFound = !!registryId && !registry;
 
   const secretLink = (

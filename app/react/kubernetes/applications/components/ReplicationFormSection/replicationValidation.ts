@@ -22,10 +22,10 @@ export function replicationValidation(
   } = validationData || {};
   return object({
     replicaCount: nanNumberSchema('实例计数是必填项')
-      .min(0, 'Instance count must be greater than or equal to 0.')
+      .min(0, '实例数必须大于或等于 0。')
       .test(
         'overflow',
-        'This application would exceed available resources. Please review resource reservations or the instance count.',
+        '此应用将超出可用资源，请检查资源预留或实例数。',
         (value) => {
           // the user can't fix the error here with 1 replica. There are validation errors in the resource reservations section that are helpful in a case of resourceReservationsOverflow.
           if (value === 1) {
@@ -36,7 +36,7 @@ export function replicationValidation(
       )
       .test(
         'quota',
-        'This application would exceed available storage. Please review the persisted folders or the instance count.',
+        '此应用将超出可用存储，请检查持久化文件夹或实例数。',
         () => !quotaExceeded // must not have quota exceeded
       )
       .test(

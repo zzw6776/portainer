@@ -29,7 +29,7 @@ export function StatusSummaryBar<TValue extends string = string>({
   value,
   onChange,
   radioGroupName = 'status-summary-filter',
-  ariaLabel = 'Filter by status',
+  ariaLabel = '按状态筛选',
   isLoading = false,
   'data-cy': dataCy = 'status-summary-bar',
   rightSlot,

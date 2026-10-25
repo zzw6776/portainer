@@ -57,7 +57,7 @@ export function MemoryStats({ value }: StatsProps) {
 
 export function GpuStats({ value }: StatsProps) {
   return (
-    <StatsItem icon={Gpu} title="GPUS">
+    <StatsItem icon={Gpu} title="GPU">
       <span className="text-left">{value}</span>
     </StatsItem>
   );

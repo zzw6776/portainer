@@ -22,16 +22,16 @@ export function validation(): SchemaOf<Values> {
         then: (schema) =>
           schema
             .required('启用后必须填写 Logo URL')
-            .test('valid-url', 'Must be a valid URL', (value) =>
+            .test('valid-url', '必须是有效的 URL', (value) =>
               isValidUrl(value)
             ),
       }),
-    snapshotInterval: string().required('Snapshot interval is required'),
+    snapshotInterval: string().required('快照间隔为必填项'),
     templatesUrl: string()
       .default('')
       .test(
         'valid-url',
-        'Must be a valid URL',
+        '必须是有效的 URL',
         (value) => !value || isValidUrl(value)
       ),
   });

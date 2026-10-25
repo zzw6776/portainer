@@ -50,7 +50,7 @@ export function computeContainerStatus(
             type: 'danger',
             message:
               message ||
-              'Failed to pull container image. Check image name, registry access, and network connectivity.',
+              '拉取容器镜像失败。请检查镜像名称、镜像仓库访问权限和网络连接。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -60,9 +60,7 @@ export function computeContainerStatus(
           return {
             status: reason,
             type: 'info',
-            message:
-              message ||
-              'Container is being created. This may take a few moments.',
+            message: message || '正在创建容器，可能需要一些时间。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'info')
               ? restartCount
@@ -74,7 +72,7 @@ export function computeContainerStatus(
             type: 'info',
             message:
               message ||
-              'Waiting for init containers to complete. Wait a few moments or check the logs of any init containers that failed to complete.',
+              '正在等待初始化容器完成。请稍候，或检查未能完成的初始化容器日志。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'info')
               ? restartCount
@@ -87,7 +85,7 @@ export function computeContainerStatus(
             type: 'danger',
             message:
               message ||
-              'Failed to create container. Check resource limits, security contexts, and volume mounts.',
+              '创建容器失败。请检查资源限制、安全上下文和数据卷挂载。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -97,9 +95,7 @@ export function computeContainerStatus(
           return {
             status: reason,
             type: 'danger',
-            message:
-              message ||
-              'The specified container image name is invalid or malformed.',
+            message: message || '指定的容器镜像名称无效或格式错误。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -122,8 +118,7 @@ export function computeContainerStatus(
             status: reason,
             type: 'danger',
             message:
-              message ||
-              'Failed to start container process. Check command, arguments, and environment variables.',
+              message || '启动容器进程失败。请检查命令、参数和环境变量。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -133,9 +128,7 @@ export function computeContainerStatus(
           return {
             status: reason,
             type: 'danger',
-            message:
-              message ||
-              'Failed to stop container gracefully. Container may be unresponsive.',
+            message: message || '无法正常停止容器，容器可能无响应。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -147,7 +140,7 @@ export function computeContainerStatus(
             type: 'danger',
             message:
               message ||
-              'Container is trying to run as root but security policy requires non-root execution.',
+              '容器尝试以 root 身份运行，但安全策略要求以非 root 身份执行。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -157,9 +150,7 @@ export function computeContainerStatus(
           return {
             status: reason,
             type: 'danger',
-            message:
-              message ||
-              'Container configuration is invalid. Check resource requirements and security settings.',
+            message: message || '容器配置无效。请检查资源要求和安全设置。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -180,7 +171,7 @@ export function computeContainerStatus(
     return {
       status: 'Waiting',
       type: 'muted',
-      message: message || 'Container is waiting to be scheduled or started.',
+      message: message || '容器正在等待调度或启动。',
       hasLogs,
       restartCount: shouldShowRestartCount(restartCount, 'muted')
         ? restartCount
@@ -200,7 +191,7 @@ export function computeContainerStatus(
             type: 'danger',
             message: `Container exited with code ${exitCode}${
               restartCount > 0 ? ` (restarted ${restartCount} times)` : ''
-            }. ${message || 'Check application logs for error details.'}`,
+            }. ${message || '请查看应用日志了解错误详情。'}`,
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -220,9 +211,7 @@ export function computeContainerStatus(
           return {
             status: 'OOMKilled',
             type: 'danger',
-            message:
-              message ||
-              'Container was killed due to out-of-memory. Consider increasing memory limits.',
+            message: message || '容器因内存不足而被终止，请考虑提高内存限制。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -232,9 +221,7 @@ export function computeContainerStatus(
           return {
             status: 'DeadlineExceeded',
             type: 'danger',
-            message:
-              message ||
-              'Container was terminated because it exceeded the active deadline.',
+            message: message || '容器因超过活动截止时间而终止。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -244,9 +231,7 @@ export function computeContainerStatus(
           return {
             status: 'Evicted',
             type: 'warn',
-            message:
-              message ||
-              'Container was evicted due to resource pressure on the node.',
+            message: message || '容器因节点资源压力而被驱逐。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'warn')
               ? restartCount
@@ -256,8 +241,7 @@ export function computeContainerStatus(
           return {
             status: 'NodeLost',
             type: 'danger',
-            message:
-              message || 'Container was lost when the node became unreachable.',
+            message: message || '节点无法访问时容器已丢失。',
             hasLogs,
             restartCount: shouldShowRestartCount(restartCount, 'danger')
               ? restartCount
@@ -295,7 +279,7 @@ export function computeContainerStatus(
       type: 'danger',
       message: `Container exited with code ${exitCode}${
         restartCount > 0 ? ` (restarted ${restartCount} times)` : ''
-      }. ${message || 'Check application logs for error details.'}`,
+      }. ${message || '请查看应用日志了解错误详情。'}`,
       hasLogs,
       restartCount: shouldShowRestartCount(restartCount, 'danger')
         ? restartCount

@@ -12,7 +12,7 @@ export function getGitValidationSchema(): SchemaOf<GitFormValues> {
         .default('')
         .when('SupportRelativePath', {
           is: true,
-          then: string().required('Filesystem path is required'),
+          then: string().required('文件系统路径为必填项'),
         }),
     })
   );

@@ -186,7 +186,7 @@ function UnassignedGroupNameTip({
   return (
     <TextTip color="blue" className="mt-2">
       默认组无法重命名。
-      {isRenamed && ' Reset its name to save changes.'}
+      {isRenamed && ' 请先重置名称再保存更改。'}
       {isRenamed && (
         <Button
           color="link"

@@ -14,7 +14,7 @@ export const eventType = columnHelper.accessor('type', {
   ),
 
   meta: {
-    filter: filterHOC('Filter by event type'),
+    filter: filterHOC('按事件类型筛选'),
   },
   enableColumnFilter: true,
   filterFn: (row: Row<Event>, _: string, filterValue: string[]) =>

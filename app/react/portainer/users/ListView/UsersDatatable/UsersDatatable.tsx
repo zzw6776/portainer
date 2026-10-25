@@ -54,12 +54,11 @@ export function UsersDatatable() {
       return {
         ...user,
         isTeamLeader: teamMembership?.Role === TeamRole.Leader,
-        authMethod:
-          AuthenticationMethod[
-            user.Id === 1
-              ? AuthenticationMethod.Internal
-              : settingsQuery.data.AuthenticationMethod
-          ],
+        authMethod: getAuthenticationMethodLabel(
+          user.Id === 1
+            ? AuthenticationMethod.Internal
+            : settingsQuery.data.AuthenticationMethod
+        ),
       };
     });
   }, [membershipsQuery.data, settingsQuery.data, usersQuery.data]);
@@ -94,6 +93,14 @@ export function UsersDatatable() {
       data-cy="users-datatable"
     />
   );
+}
+
+function getAuthenticationMethodLabel(method: AuthenticationMethod) {
+  if (method === AuthenticationMethod.Internal) {
+    return '内置身份验证';
+  }
+
+  return AuthenticationMethod[method];
 }
 
 function useRemoveMutation() {

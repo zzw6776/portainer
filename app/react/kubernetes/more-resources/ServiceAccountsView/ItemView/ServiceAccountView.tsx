@@ -14,7 +14,7 @@ export function ServiceAccountView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Service account',
+      name: '服务账户',
       icon: User,
       widget: <ServiceAccountDetailsWidget namespace={namespace} name={name} />,
       selectedTabParam: 'service-account',

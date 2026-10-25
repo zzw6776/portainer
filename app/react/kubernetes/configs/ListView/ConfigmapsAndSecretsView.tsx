@@ -9,13 +9,13 @@ import { SecretsDatatable } from './SecretsDatatable';
 
 const tabs: Tab[] = [
   {
-    name: 'ConfigMaps',
+    name: 'ConfigMap',
     icon: FileCode,
     widget: <ConfigMapsDatatable />,
     selectedTabParam: 'configmaps',
   },
   {
-    name: 'Secrets',
+    name: 'Secret',
     icon: Lock,
     widget: <SecretsDatatable />,
     selectedTabParam: 'secrets',

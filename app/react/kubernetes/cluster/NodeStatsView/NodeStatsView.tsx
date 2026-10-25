@@ -170,7 +170,7 @@ export function NodeStatsView() {
                         >
                           {REFRESH_RATES.map((r) => (
                             <option key={r} value={r}>
-                              {r}s
+                              {r} 秒
                             </option>
                           ))}
                         </select>

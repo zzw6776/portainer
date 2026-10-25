@@ -83,7 +83,7 @@ function buildTabs(
 ): Tab[] {
   return [
     {
-      name: 'Node',
+      name: '节点',
       icon: HardDrive,
       widget: (
         <Widget className="mx-4">

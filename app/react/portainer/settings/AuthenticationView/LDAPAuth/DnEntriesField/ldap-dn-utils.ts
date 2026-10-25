@@ -28,10 +28,10 @@ export function validateDnEntryValue(value: string): string | undefined {
   // A leading '#' is read as a hex-encoded value, and leading/trailing spaces
   // are stripped, so both positions must be escaped (RFC 4514 §2.4).
   if (value.startsWith(' ') || value.startsWith('#')) {
-    return 'A DN entry value cannot start with a space or "#".';
+    return 'DN 条目值不能以空格或“#”开头。';
   }
   if (value.endsWith(' ')) {
-    return 'A DN entry value cannot end with a space.';
+    return 'DN 条目值不能以空格结尾。';
   }
 
   const hasControlChar = [...value].some((char) => {
@@ -39,7 +39,7 @@ export function validateDnEntryValue(value: string): string | undefined {
     return code <= CONTROL_CHAR_MAX || code === DELETE_CHAR;
   });
   if (hasControlChar) {
-    return 'A DN entry value cannot contain control characters.';
+    return 'DN 条目值不能包含控制字符。';
   }
 
   return undefined;

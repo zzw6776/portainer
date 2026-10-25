@@ -18,7 +18,7 @@ export function PollingWidget({ interval }: Props) {
       <Card.Header
         icon={RefreshCwIcon}
         title="轮询间隔"
-        subtitle="Periodically fetch this repository to detect changes"
+        subtitle="定期获取此仓库以检测更改"
       />
       <Card.Body>
         <div className="grid grid-cols-2 gap-4">

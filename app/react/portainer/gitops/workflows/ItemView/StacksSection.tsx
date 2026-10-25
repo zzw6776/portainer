@@ -57,7 +57,7 @@ function StackRow({ artifact }: { artifact: WorkflowArtifact }) {
           )}
         </p>
         <p className="m-0 mt-0.5 flex items-center gap-1 truncate font-mono text-xs text-gray-7 th-highcontrast:text-gray-3 th-dark:text-gray-4">
-          {artifact.files.map((file) => file.path).join(', ') || 'No files'}
+          {artifact.files.map((file) => file.path).join(', ') || '无文件'}
         </p>
       </div>
       <PlatformBadge platform={artifact.platform} />

@@ -44,13 +44,13 @@ export function KubernetesSummaryView({
           }
           return (
             <li key={`${idx}-${action.kind}-${action.name}`}>
-              {`${action.action} ${getArticle(action.action)} `}
+              {`${getActionLabel(action.action)} `}
               <span className="bold">{action.kind}</span>
-              {' named '}
+              {'，名称为 '}
               <code>{action.name}</code>
               {!!action.type && (
                 <span>
-                  {' of type '}
+                  {'，类型为 '}
                   <code>{action.type}</code>
                 </span>
               )}
@@ -72,9 +72,12 @@ export function KubernetesSummaryView({
   );
 }
 
-function getArticle(resourceAction: string): string {
-  if (resourceAction !== 'Create') {
-    return 'the';
-  }
-  return 'a';
+function getActionLabel(resourceAction: string): string {
+  return (
+    {
+      Create: '创建',
+      Update: '更新',
+      Delete: '删除',
+    }[resourceAction] || resourceAction
+  );
 }

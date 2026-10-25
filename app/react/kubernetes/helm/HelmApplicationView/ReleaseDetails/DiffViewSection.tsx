@@ -44,7 +44,7 @@ export function DiffViewSection({
       fileNames={{
         original: compareRevisionNumberFetched
           ? `Revision #${compareRevisionNumberFetched}`
-          : 'No revision selected',
+          : '未选择修订版本',
         modified: `Revision #${selectedRevisionNumber}`,
       }}
       className="mt-2"

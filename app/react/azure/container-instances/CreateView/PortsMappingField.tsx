@@ -39,7 +39,7 @@ export function PortsMappingField({
         label="端口映射"
         value={value}
         onChange={onChange}
-        addLabel="map additional port"
+        addLabel="映射其他端口"
         itemBuilder={() => ({
           host: 0,
           container: 0,

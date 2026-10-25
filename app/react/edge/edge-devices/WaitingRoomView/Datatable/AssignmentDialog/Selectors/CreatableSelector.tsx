@@ -32,7 +32,7 @@ export function CreatableSelector({
       options={options}
       value={
         isLoading
-          ? [...selectedValues, { label: 'Creating...', value: 0 }]
+          ? [...selectedValues, { label: '正在创建……', value: 0 }]
           : selectedValues
       }
       isMulti

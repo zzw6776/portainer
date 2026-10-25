@@ -10,14 +10,14 @@ export const annotationsSchema: SchemaOf<Annotation[]> = array(
   getAnnotationValidation()
 ).test(
   'unique',
-  'Duplicate keys are not allowed.',
-  buildUniquenessTest(() => 'Duplicate keys are not allowed.', 'key')
+  '不允许重复的键。',
+  buildUniquenessTest(() => '不允许重复的键。', 'key')
 );
 
 function getAnnotationValidation(): SchemaOf<Annotation> {
   return object({
     key: string()
-      .required('Key is required.')
+      .required('键为必填项。')
       .test('is-valid', (value, { createError }) => {
         if (!value) {
           return true;
@@ -61,7 +61,7 @@ function getAnnotationValidation(): SchemaOf<Annotation> {
         }
         return true;
       }),
-    value: string().required('Value is required.'),
-    id: string().required('ID is required.'),
+    value: string().required('值为必填项。'),
+    id: string().required('ID 为必填项。'),
   });
 }

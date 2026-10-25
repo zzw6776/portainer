@@ -17,7 +17,7 @@ describe('getDuplicateValidationSchema', () => {
       {
         name: '',
         environmentId: 2,
-        error: 'Stack name is required',
+        error: '堆栈名称是必填项',
         scenario: 'should fail with empty name',
       },
       {
@@ -47,22 +47,19 @@ describe('getDuplicateValidationSchema', () => {
       {
         name: 'MyStack',
         environmentId: 2,
-        error:
-          "Stack name must consist of lower case alphanumeric characters, '_' or '-'",
+        error: "堆栈名称只能包含小写字母、数字、'_' 或 '-'",
         scenario: 'should fail with uppercase letters',
       },
       {
         name: 'my stack',
         environmentId: 2,
-        error:
-          "Stack name must consist of lower case alphanumeric characters, '_' or '-'",
+        error: "堆栈名称只能包含小写字母、数字、'_' 或 '-'",
         scenario: 'should fail with spaces',
       },
       {
         name: 'my@stack',
         environmentId: 2,
-        error:
-          "Stack name must consist of lower case alphanumeric characters, '_' or '-'",
+        error: "堆栈名称只能包含小写字母、数字、'_' 或 '-'",
         scenario: 'should fail with special characters',
       },
     ])('$scenario', async ({ name, environmentId, error }) => {
@@ -117,15 +114,13 @@ describe('getMigrateValidationSchema', () => {
       {
         name: 'MyStack',
         environmentId: 2,
-        error:
-          "Stack name must consist of lower case alphanumeric characters, '_' or '-'",
+        error: "堆栈名称只能包含小写字母、数字、'_' 或 '-'",
         scenario: 'should fail with uppercase letters',
       },
       {
         name: 'my@stack',
         environmentId: 2,
-        error:
-          "Stack name must consist of lower case alphanumeric characters, '_' or '-'",
+        error: "堆栈名称只能包含小写字母、数字、'_' 或 '-'",
         scenario: 'should fail with special characters',
       },
     ])('$scenario', async ({ name, environmentId, error }) => {
@@ -147,19 +142,19 @@ describe('getMigrateValidationSchema', () => {
       {
         name: currentStackName,
         environmentId: currentEnvironmentId,
-        error: "Can't rename to the same name",
+        error: '不能重命名为相同名称',
         scenario: 'should fail when renaming to same name',
       },
       {
         name: '',
         environmentId: currentEnvironmentId,
-        error: 'Stack name is required when renaming',
+        error: '重命名时堆栈名称是必填项',
         scenario: 'should fail when renaming with empty name',
       },
       {
         name: undefined,
         environmentId: currentEnvironmentId,
-        error: 'Stack name is required when renaming',
+        error: '重命名时堆栈名称是必填项',
         scenario: 'should fail when renaming with undefined name',
       },
       {
@@ -309,7 +304,7 @@ function testEnvironmentIdValidation(schema: AnySchema) {
   it('should require environmentId', async () => {
     await expect(
       schema.validate({ name: 'mystack', environmentId: undefined })
-    ).rejects.toThrow('Target environment must be selected');
+    ).rejects.toThrow('必须选择目标环境');
   });
 
   it('should accept valid environmentId', async () => {

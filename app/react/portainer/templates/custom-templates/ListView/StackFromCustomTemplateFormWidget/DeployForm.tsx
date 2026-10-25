@@ -124,7 +124,7 @@ export function DeployForm({
               }}
               type="yaml"
               error={errors.fileContent}
-              textTip="Define or paste the content of your docker compose file here"
+              textTip="在此定义或粘贴 Docker Compose 文件内容"
               readonly={isGit}
               data-cy="custom-template-creation-editor"
             >
@@ -154,7 +154,7 @@ export function DeployForm({
             isLoading={mutation.isLoading}
             isValid={isValid}
             loadingText="正在部署……"
-            submitLabel="Deploy the stack"
+            submitLabel="部署堆栈"
             data-cy="deploy-stack-button"
           >
             <Button
@@ -248,8 +248,8 @@ export function DeployForm({
 
 function advancedSettingsLabel(isOpen: boolean, isGit: boolean) {
   if (isGit) {
-    return isOpen ? 'Hide stack' : 'View stack';
+    return isOpen ? '收起堆栈配置' : '查看堆栈配置';
   }
 
-  return isOpen ? 'Hide custom stack' : 'Customize stack';
+  return isOpen ? '收起自定义堆栈' : '自定义堆栈';
 }

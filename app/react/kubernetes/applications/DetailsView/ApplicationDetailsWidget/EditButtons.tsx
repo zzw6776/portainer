@@ -34,7 +34,7 @@ export function EditButtons({ isEdge, stackId, externalApp, stack }: Props) {
   return (
     <Authorized authorizations="K8sApplicationDetailsW">
       <EditButton to=".edit">
-        {externalApp ? 'Edit external application' : 'Edit this application'}
+        {externalApp ? '编辑外部应用' : '编辑此应用'}
       </EditButton>
     </Authorized>
   );

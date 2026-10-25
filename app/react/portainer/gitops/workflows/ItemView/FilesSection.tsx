@@ -71,7 +71,7 @@ function FileGroupRow({
   return (
     <li className="px-4 py-3">
       <p className="m-0 font-semibold text-gray-9 th-highcontrast:text-white th-dark:text-white">
-        {sourceName ?? 'Unknown source'}
+        {sourceName ?? '未知源'}
       </p>
       <ul className="m-0 mt-1 list-none space-y-1 p-0">
         {group.files.map((file) => (

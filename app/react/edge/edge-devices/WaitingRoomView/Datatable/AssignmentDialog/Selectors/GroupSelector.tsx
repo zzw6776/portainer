@@ -34,7 +34,7 @@ export function GroupSelector() {
       options={options}
       value={
         createMutation.isLoading
-          ? { label: 'Creating...', value: 0 }
+          ? { label: '正在创建……', value: 0 }
           : selectedValue
       }
       onCreateOption={handleCreate}

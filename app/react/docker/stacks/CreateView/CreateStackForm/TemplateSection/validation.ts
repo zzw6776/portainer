@@ -18,8 +18,8 @@ export function getTemplateValidationSchema({
       })
     ).default([]),
     fileContent: string()
-      .required('Template content is required')
-      .test('valid-yaml', 'Invalid YAML', function validateYamlTest(value) {
+      .required('模板内容为必填项')
+      .test('valid-yaml', 'YAML 无效', function validateYamlTest(value) {
         if (!value) {
           return true;
         }

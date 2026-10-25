@@ -33,7 +33,7 @@ export function ConfigureView() {
             link: 'portainer.endpoints.endpoint',
             linkParams: { id: environment?.Id },
           },
-          'Kubernetes configuration',
+          'Kubernetes 配置',
         ]}
         reload
       />

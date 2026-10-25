@@ -7,8 +7,7 @@ type ValidationData = {
   isEnvironmentAdmin: boolean;
 };
 
-const emptyValue =
-  'You do not have access to any namespace. Contact your administrator to get access to a namespace.';
+const emptyValue = '你无权访问任何命名空间，请联系管理员获取命名空间访问权限。';
 
 export function namespaceSelectorValidation(
   validationData?: ValidationData
@@ -25,9 +24,7 @@ export function namespaceSelectorValidation(
     .test(
       'resourceQuotaCapacityExceeded',
       `This namespace has exhausted its resource capacity and you will not be able to deploy the application.${
-        isEnvironmentAdmin
-          ? ''
-          : ' Contact your administrator to expand the capacity of the namespace.'
+        isEnvironmentAdmin ? '' : ' 请联系管理员扩展命名空间容量。'
       }`,
       () => {
         const hasQuotaExceeded = hasQuota && isResourceQuotaCapacityExceeded;

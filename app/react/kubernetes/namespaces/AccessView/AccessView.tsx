@@ -27,7 +27,7 @@ export function AccessView() {
             link: 'kubernetes.resourcePools.resourcePool',
             linkParams: { id: namespaceName },
           },
-          'Access management',
+          '访问管理',
         ]}
         reload
       />

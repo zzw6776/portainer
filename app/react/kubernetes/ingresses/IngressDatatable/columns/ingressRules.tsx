@@ -15,7 +15,7 @@ export const ingressRules = columnHelper.accessor(
       const isHttp = isHTTP(TLS || [], path.Host);
       return `${isHttp ? 'http' : 'https'}://${path.Host}${path.Path}${
         path.ServiceName
-      }:${path.Port} ${!path.HasService && "Service doesn't exist"}`;
+      }:${path.Port} ${!path.HasService && '服务不存在'}`;
     }).join(','),
   {
     header: '规则与路径',

@@ -80,7 +80,7 @@ function InnerForm({
       {values.dynamic ? <DynamicGroupFieldset /> : <StaticGroupFieldset />}
 
       <FormActions
-        submitLabel={isCreate ? 'Add edge group' : 'Save edge group'}
+        submitLabel={isCreate ? '添加 Edge 组' : '保存 Edge 组'}
         isLoading={isLoading}
         isValid={isValid}
         data-cy="edgeGroupCreate-addGroupButton"

@@ -23,7 +23,7 @@ export function TestConnectionWidget({ sourceId }: Props) {
       <Card.Header
         icon={ArrowLeftRight}
         title="测试连接"
-        subtitle="Verify settings before saving"
+        subtitle="保存前验证设置"
       />
       <Card.Body>
         <p className="mb-4 text-sm text-gray-7 th-highcontrast:text-white th-dark:text-gray-6">

@@ -5,21 +5,19 @@ export const dockerComposeSchema = {
   $schema: 'https://json-schema.org/draft-07/schema',
   $id: 'compose_spec.json',
   type: 'object',
-  title: 'Compose Specification',
-  description:
-    'The Compose file is a YAML file defining a multi-containers based application.',
+  title: 'Compose 规范',
+  description: 'Compose 文件是用于定义多容器应用的 YAML 文件。',
 
   properties: {
     version: {
       type: 'string',
       description:
-        'The version of the Docker Compose document. Declared for backward compatibility, ignored in recent versions.',
+        'Docker Compose 文档版本。该字段仅用于向后兼容，新版本会忽略它。',
     },
 
     name: {
       type: 'string',
-      description:
-        'Define the Compose project name, until user defines one explicitly.',
+      description: '定义 Compose 项目名称，除非用户另行明确指定。',
     },
 
     include: {
@@ -27,12 +25,12 @@ export const dockerComposeSchema = {
       items: {
         $ref: '#/definitions/include',
       },
-      description: 'Compose sub-projects to be included.',
+      description: '要包含的 Compose 子项目。',
     },
 
     services: {
       type: 'object',
-      description: 'The services in your project.',
+      description: '项目中的服务。',
       patternProperties: {
         '^[a-zA-Z0-9._-]+$': {
           $ref: '#/definitions/service',
@@ -43,7 +41,7 @@ export const dockerComposeSchema = {
 
     networks: {
       type: 'object',
-      description: 'Networks that are shared among multiple services.',
+      description: '多个服务共享的网络。',
       patternProperties: {
         '^[a-zA-Z0-9._-]+$': {
           $ref: '#/definitions/network',
@@ -53,7 +51,7 @@ export const dockerComposeSchema = {
 
     volumes: {
       type: 'object',
-      description: 'Named volumes that are shared among multiple services.',
+      description: '多个服务共享的命名卷。',
       patternProperties: {
         '^[a-zA-Z0-9._-]+$': {
           $ref: '#/definitions/volume',
@@ -64,7 +62,7 @@ export const dockerComposeSchema = {
 
     secrets: {
       type: 'object',
-      description: 'Secrets that are shared among multiple services.',
+      description: '多个服务共享的 Secret。',
       patternProperties: {
         '^[a-zA-Z0-9._-]+$': {
           $ref: '#/definitions/secret',
@@ -75,7 +73,7 @@ export const dockerComposeSchema = {
 
     configs: {
       type: 'object',
-      description: 'Configurations for services in the project.',
+      description: '项目中服务使用的配置。',
       patternProperties: {
         '^[a-zA-Z0-9._-]+$': {
           $ref: '#/definitions/config',
@@ -102,21 +100,21 @@ export const dockerComposeSchema = {
             { type: 'string' },
             {
               type: 'object',
-              description: 'The context used for building the image.',
+              description: '构建镜像时使用的上下文。',
               properties: {
                 context: {
                   type: 'string',
-                  description: 'The context used for building the image.',
+                  description: '构建镜像时使用的上下文。',
                 },
                 dockerfile: {
                   type: 'string',
-                  description: 'The Dockerfile used for building the image.',
+                  description: '构建镜像时使用的 Dockerfile。',
                 },
                 dockerfile_inline: { type: 'string' },
                 entitlements: { type: 'array', items: { type: 'string' } },
                 args: {
                   $ref: '#/definitions/list_or_dict',
-                  description: 'Arguments used during the image build process.',
+                  description: '镜像构建过程中使用的参数。',
                 },
                 ssh: { $ref: '#/definitions/list_or_dict' },
                 labels: { $ref: '#/definitions/list_or_dict' },
@@ -182,15 +180,15 @@ export const dockerComposeSchema = {
         cgroup_parent: { type: 'string' },
         command: {
           $ref: '#/definitions/command',
-          description: 'The command that will be run in the container.',
+          description: '将在容器中运行的命令。',
         },
         configs: {
           $ref: '#/definitions/service_config_or_secret',
-          description: 'Configurations the service will have access to.',
+          description: '服务可以访问的配置。',
         },
         container_name: {
           type: 'string',
-          description: 'The name that will be given to the container.',
+          description: '要赋予容器的名称。',
         },
         cpu_count: {
           oneOf: [{ type: 'string' }, { type: 'integer', minimum: 0 }],
@@ -249,8 +247,7 @@ export const dockerComposeSchema = {
               },
             },
           ],
-          description:
-            'Other services that this service depends on, which will be started before this one.',
+          description: '此服务依赖的其他服务，这些服务会先于此服务启动。',
         },
         device_cgroup_rules: { $ref: '#/definitions/list_of_strings' },
         devices: {
@@ -282,17 +279,16 @@ export const dockerComposeSchema = {
         domainname: { type: 'string' },
         entrypoint: {
           $ref: '#/definitions/command',
-          description: 'The entrypoint to the application in the container.',
+          description: '容器中应用的入口点。',
         },
         env_file: {
           $ref: '#/definitions/env_file',
-          description:
-            'Files containing environment variables that will be included.',
+          description: '要包含的环境变量文件。',
         },
         label_file: { $ref: '#/definitions/label_file' },
         environment: {
           $ref: '#/definitions/list_or_dict',
-          description: 'Environment variables that will be included.',
+          description: '要包含的环境变量。',
         },
 
         expose: {
@@ -301,8 +297,7 @@ export const dockerComposeSchema = {
             type: ['string', 'number'],
           },
           uniqueItems: true,
-          description:
-            'Ports exposed to the other services but not to the host machine.',
+          description: '向其他服务公开、但不向主机公开的端口。',
         },
         extends: {
           oneOf: [
@@ -335,25 +330,25 @@ export const dockerComposeSchema = {
         },
         healthcheck: {
           $ref: '#/definitions/healthcheck',
-          description: 'A command for checking if the container is healthy.',
+          description: '用于检查容器是否健康的命令。',
         },
         hostname: { type: 'string' },
         image: {
           type: 'string',
           description:
-            'The image that will be pulled for the service. If `build` is specified, the built image will be given this tag.',
+            '服务要拉取的镜像。如果指定了 `build`，构建出的镜像将使用此标签。',
         },
         init: { type: ['boolean', 'string'] },
         ipc: { type: 'string' },
         isolation: { type: 'string' },
         labels: {
           $ref: '#/definitions/list_or_dict',
-          description: 'Labels that will be given to the container.',
+          description: '要赋予容器的标签。',
         },
         links: { type: 'array', items: { type: 'string' }, uniqueItems: true },
         logging: {
           type: 'object',
-          description: 'Settings for logging for this service.',
+          description: '此服务的日志设置。',
           properties: {
             driver: { type: 'string' },
             options: {
@@ -402,8 +397,7 @@ export const dockerComposeSchema = {
               additionalProperties: false,
             },
           ],
-          description:
-            'The service will be included in these networks, allowing it to reach other containers on the same network.',
+          description: '服务将加入这些网络，从而能够访问同一网络中的其他容器。',
         },
         oom_kill_disable: { type: ['boolean', 'string'] },
         oom_score_adj: {
@@ -435,7 +429,7 @@ export const dockerComposeSchema = {
             ],
           },
           uniqueItems: true,
-          description: 'Ports that will be exposed to the host.',
+          description: '要向主机公开的端口。',
         },
         post_start: {
           type: 'array',
@@ -451,7 +445,7 @@ export const dockerComposeSchema = {
           items: { type: 'string' },
           uniqueItems: true,
           description:
-            'Profiles that this service is a part of. When the profile is started, this service will be started.',
+            '此服务所属的配置文件。启动该配置文件时，也会启动此服务。',
         },
         pull_policy: {
           type: 'string',
@@ -475,7 +469,7 @@ export const dockerComposeSchema = {
         shm_size: { type: ['number', 'string'] },
         secrets: {
           $ref: '#/definitions/service_config_or_secret',
-          description: 'Secrets the service will have access to.',
+          description: '服务可以访问的 Secret。',
         },
         sysctls: { $ref: '#/definitions/list_or_dict' },
         stdin_open: { type: ['boolean', 'string'] },
@@ -487,8 +481,7 @@ export const dockerComposeSchema = {
         ulimits: { $ref: '#/definitions/ulimits' },
         user: {
           type: 'string',
-          description:
-            'The username under which the app in the container will be started.',
+          description: '容器内应用启动时使用的用户名。',
         },
         uts: { type: 'string' },
         userns_mode: { type: 'string' },
@@ -540,8 +533,7 @@ export const dockerComposeSchema = {
             ],
           },
           uniqueItems: true,
-          description:
-            'Named volumes and paths on the host mapped to paths in the container.',
+          description: '映射到容器内路径的命名卷和主机路径。',
         },
         volumes_from: {
           type: 'array',
@@ -550,8 +542,7 @@ export const dockerComposeSchema = {
         },
         working_dir: {
           type: 'string',
-          description:
-            'The working directory in which the entrypoint or command will be run.',
+          description: '运行入口点或命令时使用的工作目录。',
         },
       },
       patternProperties: { '^x-': {} },
@@ -786,7 +777,7 @@ export const dockerComposeSchema = {
         name: { type: 'string' },
         driver: {
           type: 'string',
-          description: 'The driver used for this network.',
+          description: '此网络使用的驱动。',
         },
         driver_opts: {
           type: 'object',
@@ -852,7 +843,7 @@ export const dockerComposeSchema = {
         name: { type: 'string' },
         driver: {
           type: 'string',
-          description: 'The driver used for this volume.',
+          description: '此数据卷使用的驱动。',
         },
         driver_opts: {
           type: 'object',

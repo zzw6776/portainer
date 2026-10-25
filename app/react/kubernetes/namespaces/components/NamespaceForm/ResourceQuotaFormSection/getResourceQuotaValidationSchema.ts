@@ -7,11 +7,11 @@ export function getResourceQuotaValidationSchema(
   cpuLimit: number
 ): SchemaOf<ResourceQuotaFormValues> {
   return object({
-    enabled: boolean().required('Resource quota enabled status is required.'),
+    enabled: boolean().required('资源配额启用状态为必填项。'),
     memory: string()
       .test(
         'non-negative-memory-validation',
-        'Existing namespaces already have memory limits exceeding what is available in the cluster. Before you can set values here, you must reduce amounts in namespaces (and you may have to turn on over-commit temporarily to do so).',
+        '现有命名空间的内存限制已超过集群可用量。设置此处的值之前，必须先减少命名空间中的配额（可能需要临时启用超额分配）。',
         () => nonNegativeLimit(memoryLimit)
       )
       .test(
@@ -22,15 +22,11 @@ export function getResourceQuotaValidationSchema(
     cpu: string()
       .test(
         'non-negative-memory-validation',
-        'Existing namespaces already have CPU limits exceeding what is available in the cluster. Before you can set values here, you must reduce amounts in namespaces (and you may have to turn on over-commit temporarily to do so).',
+        '现有命名空间的 CPU 限制已超过集群可用量。设置此处的值之前，必须先减少命名空间中的配额（可能需要临时启用超额分配）。',
         () => nonNegativeLimit(cpuLimit)
       )
-      .test('cpu-validation', 'CPU limit value is required.', cpuValidation),
-  }).test(
-    'resource-quota-validation',
-    'At least a single limit must be set.',
-    oneLimitSet
-  );
+      .test('cpu-validation', 'CPU 限制值为必填项。', cpuValidation),
+  }).test('resource-quota-validation', '至少必须设置一项限制。', oneLimitSet);
 
   function oneLimitSet({
     enabled,

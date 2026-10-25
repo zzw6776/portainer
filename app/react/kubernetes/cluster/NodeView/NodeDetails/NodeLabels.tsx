@@ -32,7 +32,7 @@ export function NodeLabels({
         onChange={onChangeLabels}
         data-cy="node-labels-input"
         item={NodeLabelItem}
-        addLabel="Add label"
+        addLabel="添加标签"
         canUndoDelete
         itemBuilder={createNewLabel}
         errors={errors}

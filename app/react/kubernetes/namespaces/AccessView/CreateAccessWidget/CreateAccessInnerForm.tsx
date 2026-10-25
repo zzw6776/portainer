@@ -137,7 +137,7 @@ function useAvailableTeamOrUserOptions(
           name: user?.Username,
           type: 'user',
           role: {
-            name: 'Standard user',
+            name: '标准用户',
             id: userAccessPolicy?.RoleId,
           },
         };
@@ -166,7 +166,7 @@ function useAvailableTeamOrUserOptions(
           name: team?.Name,
           type: 'team',
           role: {
-            name: 'Standard user',
+            name: '标准用户',
             id: teamAccessPolicy?.RoleId,
           },
         };

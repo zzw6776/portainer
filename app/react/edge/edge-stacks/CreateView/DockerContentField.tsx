@@ -28,7 +28,7 @@ export function DockerContentField({
       value={value}
       onChange={onChange}
       type="yaml"
-      textTip="Define or paste the content of your docker compose file here"
+      textTip="在此定义或粘贴 Docker Compose 文件内容"
       error={error}
       readonly={readonly}
       schema={dockerComposeSchemaQuery.data}

@@ -31,8 +31,7 @@ export function PrivateRegistryFieldset({
   onChange,
   method,
 }: Props) {
-  const tooltipMessage =
-    'This allows you to provide credentials when using a private registry that requires authentication';
+  const tooltipMessage = '使用需要身份验证的私有镜像仓库时，可在此提供凭据';
 
   const isActive = !!value;
 

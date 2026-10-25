@@ -10,7 +10,7 @@ export const type = columnHelper.accessor('Type', {
   header: '类型',
   id: 'type',
   meta: {
-    filter: filterHOC('Filter by type'),
+    filter: filterHOC('按类型筛选'),
   },
   enableColumnFilter: true,
   filterFn: (

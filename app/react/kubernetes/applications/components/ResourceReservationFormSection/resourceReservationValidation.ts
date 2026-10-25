@@ -26,13 +26,13 @@ export function resourceReservationValidation(
 ): SchemaOf<ResourceQuotaFormValues> {
   return object().shape({
     memoryLimit: nanNumberSchema('内存限制是必填项。')
-      .min(0, 'Value must be greater than or equal to 0.')
+      .min(0, '值必须大于或等于 0。')
       .test(
         'exhaused',
         `The memory capacity for this namespace has been exhausted, so you cannot deploy the application.${
           validationData?.isEnvironmentAdmin
             ? ''
-            : ' Contact your administrator to expand the memory capacity of the namespace.'
+            : ' 请联系管理员扩展命名空间的内存容量。'
         }`,
         () => !!validationData && validationData.maxMemoryLimit > 0
       )
@@ -67,7 +67,7 @@ export function resourceReservationValidation(
         `The CPU capacity for this namespace has been exhausted, so you cannot deploy the application.${
           validationData?.isEnvironmentAdmin
             ? ''
-            : ' Contact your administrator to expand the CPU capacity of the namespace.'
+            : ' 请联系管理员扩展命名空间的 CPU 容量。'
         }`,
         () => !!validationData && validationData.maxCpuLimit > 0
       )

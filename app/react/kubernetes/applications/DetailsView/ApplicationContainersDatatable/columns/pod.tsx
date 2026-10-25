@@ -105,8 +105,8 @@ export function getPodColumns({
   isLoading,
 }: PodColumnsOptions) {
   const deleteTooltip = supportsRestartStrategy
-    ? 'Delete pod. If this pod is configured with the RestartAllContainers restart strategy, containers will restart in-place automatically.'
-    : 'Delete pod';
+    ? '删除 Pod。如果此 Pod 配置了 RestartAllContainers 重启策略，容器将自动原地重启。'
+    : '删除 Pod';
 
   const actions = columnHelper.display({
     id: 'actions',
@@ -118,7 +118,7 @@ export function getPodColumns({
             <LoadingButton
               color="dangerlight"
               className="!ml-0"
-              aria-label={`Delete pod ${podRow.podName}`}
+              aria-label={`删除 Pod ${podRow.podName}`}
               isLoading={isLoading || isDeleting}
               loadingText="正在加载"
               data-cy={`application-pod-delete-${podRow.podName}`}

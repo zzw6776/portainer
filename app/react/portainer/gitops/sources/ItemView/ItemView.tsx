@@ -21,7 +21,7 @@ import { AccessTab } from './AccessTab';
 
 const breadcrumbs = [
   { label: 'GitOps 源', link: 'portainer.gitops.sources' },
-  'Source',
+  '源',
 ];
 
 export function ItemView() {
@@ -48,8 +48,7 @@ export function ItemView() {
         <PageHeader breadcrumbs={breadcrumbs} />
         <div className="mx-4 mb-4 space-y-4">
           <Alert color="error">
-            加载源失败：{' '}
-            {error instanceof Error ? error.message : 'Unknown error'}
+            加载源失败： {error instanceof Error ? error.message : '未知错误'}
           </Alert>
         </div>
       </>
@@ -66,7 +65,7 @@ function PageContent({ source }: { source: SourceDetail }) {
   const tabs: Array<Tab & { isEditable?: boolean }> = useMemo(
     () => [
       {
-        name: 'Settings',
+        name: '设置',
         icon: Settings,
         widget: (
           <SettingsTab
@@ -89,7 +88,7 @@ function PageContent({ source }: { source: SourceDetail }) {
         selectedTabParam: 'workflows',
       },
       {
-        name: 'Access',
+        name: '访问控制',
         icon: UsersIcon,
         widget: (
           <AccessTab

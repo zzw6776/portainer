@@ -34,7 +34,7 @@ export function DockerStorageInfo({
     const errorMessage =
       dockerStorageUsageQuery.error instanceof Error
         ? dockerStorageUsageQuery.error.message
-        : 'Unknown error';
+        : '未知错误';
 
     const needsUpgrade =
       environmentQuery.isFetched &&

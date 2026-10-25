@@ -18,13 +18,13 @@ export function JobsView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Cron Jobs',
+      name: 'CronJob',
       icon: CalendarSync,
       widget: <CronJobsDatatable />,
       selectedTabParam: 'cronJobs',
     },
     {
-      name: 'Jobs',
+      name: 'Job',
       icon: CalendarCheck2,
       widget: <JobsDatatable />,
       selectedTabParam: 'jobs',

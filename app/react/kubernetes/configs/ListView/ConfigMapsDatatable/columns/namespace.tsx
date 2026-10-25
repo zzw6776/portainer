@@ -27,7 +27,7 @@ export const namespace = columnHelper.accessor('Namespace', {
     );
   },
   meta: {
-    filter: filterHOC('Filter by namespace'),
+    filter: filterHOC('按命名空间筛选'),
   },
   enableColumnFilter: true,
   filterFn: (

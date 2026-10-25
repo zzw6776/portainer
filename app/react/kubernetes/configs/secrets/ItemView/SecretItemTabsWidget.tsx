@@ -37,7 +37,7 @@ export function SecretItemTabsWidget({
 
   const tabs: Tab[] = [
     {
-      name: 'Secret',
+      name: 'Secret 详情',
       icon: Lock,
       widget: (
         <SecretDetailsWidget

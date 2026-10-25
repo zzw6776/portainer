@@ -50,7 +50,7 @@ function getOptions(
       description: '应用将以 StatefulSet 部署，每个实例使用各自的数据',
       tooltip: () =>
         isEdit || persistedFoldersUseExistingVolumes
-          ? 'Changing the data access policy is not allowed'
+          ? '不允许更改数据访问策略'
           : '',
       disabled: () =>
         (isEdit && value !== 'Isolated') || persistedFoldersUseExistingVolumes,
@@ -64,7 +64,7 @@ function getOptions(
       description: '应用将以 Deployment 部署，并共享存储访问',
       tooltip: () => {
         if (persistedFoldersUseExistingVolumes) {
-          return 'Changing the data access policy is not allowed';
+          return '不允许更改数据访问策略';
         }
         return '';
       },

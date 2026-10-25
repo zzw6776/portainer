@@ -10,7 +10,7 @@ export function validation(): SchemaOf<FormValues> {
   return object().shape({
     helmRepositoryUrl: string()
       .default('')
-      .test('valid-url', 'Invalid URL', (value) => !value || isValidUrl(value)),
+      .test('valid-url', 'URL 无效', (value) => !value || isValidUrl(value)),
     kubeconfigExpiry: string().required(),
     globalDeploymentOptions: object().shape({
       hideAddWithForm: boolean().required(),
@@ -19,15 +19,15 @@ export function validation(): SchemaOf<FormValues> {
       hideFileUpload: boolean().required(),
       requireNoteOnApplications: boolean().required(),
       hideStacksFunctionality: boolean().required(),
-      minApplicationNoteLength: nanNumberSchema('Must be a number')
+      minApplicationNoteLength: nanNumberSchema('必须是数字')
         .default(0)
         .when('requireNoteOnApplications', {
           is: true,
           then: (schema) =>
             schema
               .required()
-              .min(1, 'Value should be between 1 to 9999')
-              .max(9999, 'Value should be between 1 to 9999'),
+              .min(1, '值必须在 1 到 9999 之间')
+              .max(9999, '值必须在 1 到 9999 之间'),
         }),
     }),
   });

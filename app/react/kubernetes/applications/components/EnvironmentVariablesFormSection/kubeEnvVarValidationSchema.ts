@@ -7,10 +7,10 @@ export function kubeEnvVarValidationSchema(): SchemaOf<EnvVar[]> {
   return array(
     object({
       name: string()
-        .required('Environment variable name is required')
+        .required('环境变量名称为必填项')
         .matches(
           /^[a-zA-Z][a-zA-Z0-9_.-]*$/,
-          `This field must consist of alphabetic characters, digits, '_', '-', or '.', and must not start with a digit (e.g. 'my.env-name', or 'MY_ENV.NAME', or 'MyEnvName1'`
+          `此字段只能包含字母、数字、'_'、'-' 或 '.'，且不能以数字开头（例如 'my.env-name'、'MY_ENV.NAME' 或 'MyEnvName1'`
         ),
       value: string().default(''),
       needsDeletion: bool().default(false),
@@ -18,10 +18,7 @@ export function kubeEnvVarValidationSchema(): SchemaOf<EnvVar[]> {
     })
   ).test(
     'unique',
-    'This environment variable is already defined',
-    buildUniquenessTest(
-      () => 'This environment variable is already defined',
-      'name'
-    )
+    '此环境变量已定义',
+    buildUniquenessTest(() => '此环境变量已定义', 'name')
   );
 }

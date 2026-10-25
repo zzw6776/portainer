@@ -20,13 +20,13 @@ export function persistedFoldersValidation(
   return array(
     object({
       persistentVolumeClaimName: string(),
-      containerPath: string().required('Path is required.'),
+      containerPath: string().required('路径为必填项。'),
       size: string().when('useNewVolume', {
         is: true,
         then: string()
           .test(
             'quotaExceeded',
-            'Requested size exceeds available quota for this storage class.',
+            '请求的大小超过此存储类的可用配额。',
             function quotaExceeded(this) {
               const persistedFolderFormValue = this
                 .parent as PersistedFolderFormValue;
@@ -66,11 +66,11 @@ export function persistedFoldersValidation(
               return !quotaExceeded;
             }
           )
-          .required('Size is required.'),
+          .required('大小为必填项。'),
       }),
       sizeUnit: string().when('useNewVolume', {
         is: true,
-        then: string().required('Size unit is required.'),
+        then: string().required('大小单位为必填项。'),
       }),
       storageClass: storageClassValidation(),
       useNewVolume: boolean().required(),
@@ -79,8 +79,8 @@ export function persistedFoldersValidation(
     })
   ).test(
     'containerPath',
-    'This path is already defined.',
-    buildUniquenessTest(() => 'This path is already defined.', 'containerPath')
+    '此路径已定义。',
+    buildUniquenessTest(() => '此路径已定义。', 'containerPath')
   );
 }
 

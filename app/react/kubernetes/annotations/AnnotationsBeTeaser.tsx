@@ -35,7 +35,7 @@ export function AnnotationsBeTeaser() {
       <div className="block">
         <BETeaserButton
           className="!p-0"
-          heading="Add annotation"
+          heading="添加注解"
           buttonText="添加注解"
           message="允许为此资源指定注解。"
           featureId={FeatureId.K8S_ANNOTATIONS}

@@ -30,7 +30,7 @@ export function NamespaceView() {
 
   const tabs: Tab[] = [
     {
-      name: 'Namespace',
+      name: '命名空间',
       icon: Layers,
       widget: <UpdateNamespaceForm />,
       selectedTabParam: 'namespace',

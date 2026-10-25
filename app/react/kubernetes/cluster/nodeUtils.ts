@@ -198,16 +198,16 @@ type Conditions = {
 
 function getNodeStatusMessage(conditions: Conditions) {
   if (conditions.MemoryPressure) {
-    return 'Node memory is running low';
+    return '节点内存不足';
   }
   if (conditions.PIDPressure) {
-    return 'Too many processes running on the node';
+    return '节点上运行的进程过多';
   }
   if (conditions.DiskPressure) {
-    return 'Node disk capacity is running low';
+    return '节点磁盘空间不足';
   }
   if (conditions.NetworkUnavailable) {
-    return 'Incorrect node network configuration';
+    return '节点网络配置不正确';
   }
   return undefined;
 }

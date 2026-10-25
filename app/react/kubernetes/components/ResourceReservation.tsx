@@ -34,7 +34,7 @@ export function ResourceReservation({
   cpuLimit,
   memoryLimit,
   description,
-  title = 'Resource reservation',
+  title = '资源预留',
   isLoading = false,
   displayWarning = false,
   warningMessage = '',

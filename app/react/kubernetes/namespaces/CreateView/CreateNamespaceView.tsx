@@ -28,7 +28,7 @@ export function CreateNamespaceView() {
         title="创建命名空间"
         breadcrumbs={[
           { label: '命名空间', link: 'kubernetes.resourcePools' },
-          'Create a namespace',
+          '创建命名空间',
         ]}
         reload
       />

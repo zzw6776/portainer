@@ -88,7 +88,7 @@ export function PersistedFoldersFormSection({
           existingVolume: undefined,
           needsDeletion: false,
         })}
-        addLabel="Add persisted folder"
+        addLabel="添加持久化目录"
       />
     </FormSection>
   );
@@ -107,7 +107,7 @@ function usePVCOptions(existingPVCs: ExistingVolume[]): Option<string>[] {
 
 function getAddButtonError(storageClasses: StorageClass[]) {
   if (storageClasses.length === 0) {
-    return 'No storage option available';
+    return '没有可用的存储选项';
   }
   return '';
 }

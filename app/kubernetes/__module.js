@@ -114,7 +114,7 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
               throw new Error(
                 endpoint.Type === PortainerEndpointTypes.EdgeAgentOnKubernetesEnvironment
                   ? 'Unable to contact Edge agent, please ensure that the agent is properly running on the remote environment.'
-                  : `The environment named ${endpoint.Name} is unreachable.`
+                  : `名为 ${endpoint.Name} 的环境无法访问。`
               );
             }
 
@@ -207,8 +207,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Service details',
-          breadcrumbLabel: 'Services',
+          title: '服务详情',
+          breadcrumbLabel: '服务',
           breadcrumbLink: 'kubernetes.services',
           resourceType: 'service',
           apiVersion: 'v1',
@@ -603,8 +603,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Persistent Volume details',
-          breadcrumbLabel: 'Volumes',
+          title: '持久卷详情',
+          breadcrumbLabel: '数据卷',
           breadcrumbLink: 'kubernetes.volumes',
           breadcrumbTab: 'volumes',
           resourceType: 'persistentvolume',
@@ -627,8 +627,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Storage Class details',
-          breadcrumbLabel: 'Volumes',
+          title: '存储类详情',
+          breadcrumbLabel: '数据卷',
           breadcrumbLink: 'kubernetes.volumes',
           breadcrumbTab: 'storage',
           resourceType: 'storageclass',
@@ -722,8 +722,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Job details',
-          breadcrumbLabel: 'Cron Jobs & Jobs',
+          title: '任务详情',
+          breadcrumbLabel: 'CronJob 和 Job',
           breadcrumbLink: 'kubernetes.moreResources.jobs',
           breadcrumbTab: 'jobs',
           resourceType: 'job',
@@ -745,8 +745,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Cron Job details',
-          breadcrumbLabel: 'Cron Jobs & Jobs',
+          title: 'Cron 任务详情',
+          breadcrumbLabel: 'CronJob 和 Job',
           breadcrumbLink: 'kubernetes.moreResources.jobs',
           breadcrumbTab: 'cronJobs',
           resourceType: 'cronjob',
@@ -807,8 +807,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Cluster Role details',
-          breadcrumbLabel: 'Cluster Roles',
+          title: '集群角色详情',
+          breadcrumbLabel: '集群角色',
           breadcrumbLink: 'kubernetes.moreResources.clusterRoles',
           breadcrumbTab: 'clusterRoles',
           resourceType: 'clusterrole',
@@ -830,8 +830,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Cluster Role Binding details',
-          breadcrumbLabel: 'Cluster Roles',
+          title: '集群角色绑定详情',
+          breadcrumbLabel: '集群角色',
           breadcrumbLink: 'kubernetes.moreResources.clusterRoles',
           breadcrumbTab: 'clusterRoleBindings',
           resourceType: 'clusterrolebinding',
@@ -866,8 +866,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Role details',
-          breadcrumbLabel: 'Roles',
+          title: '角色详情',
+          breadcrumbLabel: '角色',
           breadcrumbLink: 'kubernetes.moreResources.roles',
           breadcrumbTab: 'roles',
           resourceType: 'role',
@@ -889,8 +889,8 @@ angular.module('portainer.kubernetes', ['portainer.app', registriesModule, custo
       },
       data: {
         resourceConfig: {
-          title: 'Role Binding details',
-          breadcrumbLabel: 'Roles',
+          title: '角色绑定详情',
+          breadcrumbLabel: '角色',
           breadcrumbLink: 'kubernetes.moreResources.roles',
           breadcrumbTab: 'roleBindings',
           resourceType: 'rolebinding',

@@ -18,10 +18,10 @@ export function autoScalingValidation(
       isUsed
         ? nanNumberSchema('最小实例数是必填项。')
             .required('最小实例数是必填项。')
-            .min(1, 'Minimum instances must be greater than 0.')
+            .min(1, '最小实例数必须大于 0。')
             .test(
               'maxReplicas',
-              'Minimum instances must be less than maximum instances.',
+              '最小实例数必须小于最大实例数。',
               // eslint-disable-next-line func-names
               function (this, value?: number): boolean {
                 if (!value) {
@@ -39,7 +39,7 @@ export function autoScalingValidation(
             .required('最大实例数是必填项。')
             .test(
               'minReplicas',
-              'Maximum instances must be greater than minimum instances.',
+              '最大实例数必须大于最小实例数。',
               // eslint-disable-next-line func-names
               function (this, value?: number): boolean {
                 if (!value) {
@@ -51,7 +51,7 @@ export function autoScalingValidation(
             )
             .test(
               'overflow',
-              'This application would exceed available resources. Please reduce the maximum instances or the resource reservations.',
+              '此应用将超出可用资源，请减少最大实例数或资源预留。',
               () => !autoScalerOverflow
             )
         : number()
@@ -61,8 +61,8 @@ export function autoScalingValidation(
       (isUsed: boolean) =>
         isUsed
           ? nanNumberSchema('目标 CPU 利用率百分比是必填项。')
-              .min(0, 'Target CPU usage must be greater than 0.')
-              .max(100, 'Target CPU usage must be smaller than 100.')
+              .min(0, '目标 CPU 使用率必须大于 0。')
+              .max(100, '目标 CPU 使用率必须小于 100。')
               .required('目标 CPU 利用率百分比是必填项。')
           : number()
     ),

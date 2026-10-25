@@ -14,7 +14,7 @@ export const status = columnHelper.accessor((item) => item.Status?.State, {
   enableColumnFilter: true,
   filterFn: multiple,
   meta: {
-    filter: filterHOC('Filter by state'),
+    filter: filterHOC('按状态筛选'),
     width: 100,
   },
   cell({ getValue }) {

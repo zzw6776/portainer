@@ -78,7 +78,7 @@ const healthDetails: Record<
 > = {
   Up: {
     type: EnvironmentHealth.Up,
-    description: 'Environments online and up-to-date',
+    description: '环境在线且为最新状态',
   },
   Down: {
     type: EnvironmentHealth.Down,

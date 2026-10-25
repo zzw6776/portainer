@@ -11,7 +11,7 @@ import { notifyError } from '@/portainer/services/notifications';
 import { isAxiosError } from '@/react/portainer/services/axios/utils/isAxiosError';
 import { parseAxiosError } from '@/react/portainer/services/axios/utils/parseAxiosError';
 
-export function withError(fallbackMessage?: string, title = 'Failure') {
+export function withError(fallbackMessage?: string, title = '失败') {
   return {
     meta: {
       error: { message: fallbackMessage, title },

@@ -30,18 +30,14 @@ export function EdgeStackDeploymentTypeSelector({
       value: DeploymentType.Compose,
       disabled: () => !allowKubeToSelectCompose && hasKubeEndpoint,
       tooltip: () =>
-        hasKubeEndpoint
-          ? 'Cannot use this option with Edge Kubernetes environments'
-          : '',
+        hasKubeEndpoint ? '此选项不能用于 Edge Kubernetes 环境' : '',
     },
     {
       ...kubernetes,
       value: DeploymentType.Kubernetes,
       disabled: () => hasDockerEndpoint,
       tooltip: () =>
-        hasDockerEndpoint
-          ? 'Cannot use this option with Edge Docker environments'
-          : '',
+        hasDockerEndpoint ? '此选项不能用于 Edge Docker 环境' : '',
       iconType: 'logo',
     },
   ];

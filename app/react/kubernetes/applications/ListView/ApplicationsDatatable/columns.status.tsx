@@ -16,7 +16,7 @@ export const status = helper.accessor(getStatusSummary, {
   header: '状态',
   cell: Cell,
   meta: {
-    filter: filterHOC('Filter by status'),
+    filter: filterHOC('按状态筛选'),
   },
   enableColumnFilter: true,
   filterFn: (row: Row<ApplicationRowData>, _: string, filterValue: string[]) =>
@@ -32,7 +32,7 @@ function Cell({
     item.Pods &&
     item.Pods.length > 0
   ) {
-    return item.Pods[0].Status;
+    return getStatusLabel(item.Pods[0].Status);
   }
 
   return (
@@ -71,21 +71,35 @@ function Cell({
           )}
         </>
       )}
-      {item.KubernetesApplications && <span>{item.Status}</span>}
+      {item.KubernetesApplications && (
+        <span>{getStatusLabel(item.Status)}</span>
+      )}
     </>
   );
 }
 
-function getStatusSummary(item: ApplicationRowData): 'Ready' | 'Not Ready' {
+function getStatusSummary(item: ApplicationRowData): '就绪' | '未就绪' {
   if (
     item.ApplicationType === KubernetesApplicationTypes.Pod &&
     item.Pods &&
     item.Pods.length > 0
   ) {
-    return item.Pods[0].Status === 'Running' ? 'Ready' : 'Not Ready';
+    return item.Pods[0].Status === 'Running' ? '就绪' : '未就绪';
   }
   return item.TotalPodsCount > 0 &&
     item.TotalPodsCount === item.RunningPodsCount
-    ? 'Ready'
-    : 'Not Ready';
+    ? '就绪'
+    : '未就绪';
+}
+
+function getStatusLabel(status: string) {
+  const labels: Record<string, string> = {
+    Running: '运行中',
+    Waiting: '等待中',
+    Terminated: '已终止',
+    Ready: '就绪',
+    'Not Ready': '未就绪',
+  };
+
+  return labels[status] || status;
 }

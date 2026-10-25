@@ -86,7 +86,7 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title="GitOps 工作流" breadcrumbs="GitOps Workflows" reload />
+      <PageHeader title="GitOps 工作流" breadcrumbs="GitOps 工作流" reload />
       <div className="mx-4 mb-4 space-y-4">
         <StatusSummaryBar
           total={summaryTotal}
@@ -105,8 +105,8 @@ export function ListView() {
           isLoading={workflowsQuery.isLoading}
           getItemKey={(item) => `workflow-${item.id}`}
           showGroupHeaders
-          emptyMessage="No workflows found"
-          searchPlaceholder="Search"
+          emptyMessage="未找到工作流"
+          searchPlaceholder="搜索"
           renderItem={(item) => <WorkflowCard item={item} />}
           data-cy="workflows-list"
         />

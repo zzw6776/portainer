@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import { http, HttpResponse } from 'msw';
 
 import { server } from '@/setup-tests/server';
+import '@/setup-tests/i18n';
 import { withTestQueryProvider } from '@/react/test-utils/withTestQuery';
 import { EnvironmentGroup } from '@/react/portainer/environments/environment-groups/types';
 import {
@@ -137,7 +138,7 @@ describe('StackDuplicationFormInner', () => {
 
     it('should disable Duplicate button when yamlError is present', async () => {
       const { getByRole } = renderFormInner({
-        yamlError: 'Invalid YAML',
+        yamlError: 'YAML 无效',
         initialValues: {
           environmentId: 2,
           newName: 'mystack',
@@ -268,7 +269,7 @@ describe('StackDuplicationFormInner', () => {
 
   describe('YAML error display', () => {
     it('should display yamlError when environment is selected and error exists', async () => {
-      const yamlError = 'Invalid YAML format';
+      const yamlError = 'YAML 格式无效';
       renderFormInner({
         yamlError,
         initialValues: {
@@ -279,13 +280,13 @@ describe('StackDuplicationFormInner', () => {
       });
 
       await waitFor(() => {
-        const errorElement = screen.getByRole('alert', { name: 'Yaml Error' });
+        const errorElement = screen.getByRole('alert', { name: 'YAML 错误' });
         expect(errorElement).toBeVisible();
       });
     });
 
     it('should not display yamlError when no environment is selected', async () => {
-      const yamlError = 'Invalid YAML format';
+      const yamlError = 'YAML 格式无效';
       renderFormInner({
         yamlError,
         initialValues: {
@@ -295,7 +296,7 @@ describe('StackDuplicationFormInner', () => {
         },
       });
       await waitFor(() => {
-        expect(screen.queryByRole('alert', { name: 'Yaml Error' })).toBeNull();
+        expect(screen.queryByRole('alert', { name: 'YAML 错误' })).toBeNull();
       });
     });
 
@@ -309,7 +310,7 @@ describe('StackDuplicationFormInner', () => {
       });
 
       await waitFor(() => {
-        expect(screen.queryByRole('alert', { name: 'Yaml Error' })).toBeNull();
+        expect(screen.queryByRole('alert', { name: 'YAML 错误' })).toBeNull();
       });
     });
   });

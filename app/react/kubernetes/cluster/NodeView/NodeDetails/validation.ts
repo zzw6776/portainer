@@ -9,38 +9,34 @@ import { buildUniquenessTest } from '@@/form-components/validate-unique';
 // unless empty, must begin and end with an alphanumeric character ([a-z0-9A-Z]),
 // could contain dashes (-), underscores (_), dots (.), and alphanumerics between.
 const labelKeyValidation = string()
-  .required('Label key is required')
-  .test(
-    'prefix-test',
-    'Label key prefix must be a valid DNS subdomain',
-    (value) => {
-      if (!value) return true; // handled by required()
+  .required('标签键为必填项')
+  .test('prefix-test', '标签键前缀必须是有效的 DNS 子域名', (value) => {
+    if (!value) return true; // handled by required()
 
-      const parts = value.split('/');
-      if (parts.length === 1) return true; // no prefix is valid
-      if (parts.length > 2) return false; // only one slash allowed
+    const parts = value.split('/');
+    if (parts.length === 1) return true; // no prefix is valid
+    if (parts.length > 2) return false; // only one slash allowed
 
-      const [prefix] = parts;
+    const [prefix] = parts;
 
-      // Prefix validation: DNS subdomain rules
-      if (prefix.length > 253) return false;
-      if (prefix === '') return false; // empty prefix not allowed if slash present
+    // Prefix validation: DNS subdomain rules
+    if (prefix.length > 253) return false;
+    if (prefix === '') return false; // empty prefix not allowed if slash present
 
-      // DNS subdomain: series of DNS labels separated by dots
-      const labels = prefix.split('.');
-      return labels.every((label) => {
-        // Each DNS label must be 1-63 chars, start/end with alphanumeric, contain only alphanumeric and hyphens
-        if (label.length === 0 || label.length > 63) return false;
-        if (!/^[a-zA-Z0-9]/.test(label) || !/[a-zA-Z0-9]$/.test(label))
-          return false;
-        if (!/^[a-zA-Z0-9-]+$/.test(label)) return false;
-        return true;
-      });
-    }
-  )
+    // DNS subdomain: series of DNS labels separated by dots
+    const labels = prefix.split('.');
+    return labels.every((label) => {
+      // Each DNS label must be 1-63 chars, start/end with alphanumeric, contain only alphanumeric and hyphens
+      if (label.length === 0 || label.length > 63) return false;
+      if (!/^[a-zA-Z0-9]/.test(label) || !/[a-zA-Z0-9]$/.test(label))
+        return false;
+      if (!/^[a-zA-Z0-9-]+$/.test(label)) return false;
+      return true;
+    });
+  })
   .test(
     'name-test',
-    'Label key must start and end with an alphanumeric character, and contain only alphanumeric characters, hyphens, underscores, and dots',
+    '标签键必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、下划线和点',
     (value) => {
       if (!value) return true; // handled by required()
 
@@ -58,10 +54,10 @@ const labelKeyValidation = string()
   );
 
 const labelValueValidation = string()
-  .max(63, 'Label value must be 63 characters or less')
+  .max(63, '标签值不能超过 63 个字符')
   .test(
     'value-format',
-    'Label value must start/end with alphanumeric and contain only alphanumeric, hyphens, underscores, and dots',
+    '标签值必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、下划线和点',
     (value) => {
       if (!value || value === '') return true; // empty values are allowed
 
@@ -86,11 +82,11 @@ const labelSchema = object({
 });
 
 const taintSchema = object({
-  key: string().required('Taint key is required'),
+  key: string().required('污点键为必填项'),
   value: string(),
   effect: string()
     .oneOf(['NoSchedule', 'PreferNoSchedule', 'NoExecute'])
-    .required('Effect is required'),
+    .required('作用效果为必填项'),
   needsDeletion: boolean().default(false),
   isNew: boolean().default(false),
   isChanged: boolean().default(false),
@@ -99,11 +95,11 @@ const taintSchema = object({
 const drainOptionsSchema = object({
   ignoreDaemonSets: boolean().default(true),
   timeoutSeconds: number()
-    .min(0, 'Timeout must be zero or a positive number of seconds')
-    .required('Timeout is required'),
+    .min(0, '超时时间必须为零或正数秒')
+    .required('超时时间为必填项'),
   gracePeriodSeconds: number()
-    .min(-1, 'Grace period must be -1 or a positive number of seconds')
-    .required('Grace period is required'),
+    .min(-1, '宽限期必须为 -1 或正数秒')
+    .required('宽限期为必填项'),
   force: boolean().default(false),
   deleteEmptyDirData: boolean().default(true),
   disableEviction: boolean().default(false),
@@ -117,19 +113,15 @@ export function createValidationSchema(
   return object({
     availability: string()
       .oneOf(['Active', 'Pause', 'Drain'])
-      .test(
-        'only-node-drain',
-        'Cannot drain the only node in cluster',
-        (value) => {
-          if (value === 'Drain' && isOnlyNode) {
-            return false;
-          }
-          return true;
+      .test('only-node-drain', '无法排空集群中的唯一节点', (value) => {
+        if (value === 'Drain' && isOnlyNode) {
+          return false;
         }
-      )
+        return true;
+      })
       .test(
         'other-node-drain',
-        'Cannot drain node when another node is currently being drained',
+        '另一个节点正在排空时无法排空此节点',
         (value) => {
           if (value === 'Drain' && hasDrainOperation) {
             return false;
@@ -137,26 +129,22 @@ export function createValidationSchema(
           return true;
         }
       )
-      .test(
-        'portainer-drain',
-        'Cannot drain node where the Portainer instance is running',
-        (value) => {
-          if (value === 'Drain' && containsPortainer) {
-            return false;
-          }
-          return true;
+      .test('portainer-drain', '无法排空运行 Portainer 实例的节点', (value) => {
+        if (value === 'Drain' && containsPortainer) {
+          return false;
         }
-      )
-      .required('Availability is required'),
+        return true;
+      })
+      .required('可用性为必填项'),
     labels: array(labelSchema).test(
       'unique-label-keys',
-      'Duplicate label keys are not allowed',
-      buildUniquenessTest(() => 'This label key is already defined', 'key')
+      '不允许重复的标签键',
+      buildUniquenessTest(() => '此标签键已定义', 'key')
     ),
     taints: array(taintSchema).test(
       'unique-taint-keys',
-      'Duplicate taint keys are not allowed',
-      buildUniquenessTest(() => 'This taint key is already defined', 'key')
+      '不允许重复的污点键',
+      buildUniquenessTest(() => '此污点键已定义', 'key')
     ),
     drainOptions: drainOptionsSchema,
   });

@@ -105,7 +105,7 @@ export function StaggerFieldset({
                   data-cy="edge-stacks-stagger-timeout-input"
                 />
               </div>
-              <span> {' minute(s) '} </span>
+              <span> 分钟 </span>
             </div>
           </FormControl>
 
@@ -129,7 +129,7 @@ export function StaggerFieldset({
                   }
                 />
               </div>
-              <span> {' minute(s) '} </span>
+              <span> 分钟 </span>
             </div>
           </FormControl>
 

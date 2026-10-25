@@ -12,29 +12,25 @@ export function getUploadValidationSchema({
   return object({
     file: mixed<File>()
       .required('堆栈文件是必填项')
-      .test(
-        'valid-yaml',
-        'Invalid YAML',
-        async function validateYamlTest(value) {
-          if (!value) {
-            return true;
-          }
-
-          let fileContent: string;
-          try {
-            fileContent = await value.text();
-          } catch {
-            return this.createError({ message: '无法读取文件' });
-          }
-
-          const yamlError = validateYAML(fileContent, containerNames, []);
-
-          if (yamlError) {
-            return this.createError({ message: yamlError });
-          }
-
+      .test('valid-yaml', 'YAML 无效', async function validateYamlTest(value) {
+        if (!value) {
           return true;
         }
-      ),
+
+        let fileContent: string;
+        try {
+          fileContent = await value.text();
+        } catch {
+          return this.createError({ message: '无法读取文件' });
+        }
+
+        const yamlError = validateYAML(fileContent, containerNames, []);
+
+        if (yamlError) {
+          return this.createError({ message: yamlError });
+        }
+
+        return true;
+      }),
   });
 }

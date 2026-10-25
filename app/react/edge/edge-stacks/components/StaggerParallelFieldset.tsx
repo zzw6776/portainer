@@ -81,7 +81,7 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
       {values.StaggerParallelOption === StaggerParallelOption.Incremental && (
         <div className="col-sm-9 col-lg-10">
           <div>
-            <span> {' start with '} </span>
+            <span> 从 </span>
             <div style={{ display: 'inline-block', width: '150px' }}>
               <Input
                 name="DeviceNumberStartFrom"
@@ -101,7 +101,7 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
                 }
               />
             </div>
-            <span> {' device(s) and multiply the group size by '} </span>
+            <span> 个设备开始，每次发布将组大小乘以 </span>
             <Select
               id="device-number-incremental"
               data-cy="edge-stack-device-number-incremental-select"
@@ -114,7 +114,6 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
               }
               options={deviceNumberIncrementBy}
             />
-            <span>{' for each rollout '} </span>
           </div>
           {errors?.DeviceNumberStartFrom && (
             <FormError>{errors?.DeviceNumberStartFrom}</FormError>

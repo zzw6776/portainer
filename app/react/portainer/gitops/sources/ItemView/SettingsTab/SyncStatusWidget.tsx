@@ -29,7 +29,7 @@ export function SyncStatusWidget({ source }: Props) {
       <Card.Header
         icon={ShieldAlertIcon}
         title="同步状态"
-        subtitle="Health and timing of the last sync"
+        subtitle="上次同步的健康状态和时间"
       />
       <Card.Body className="flex flex-col gap-4">
         <div className="grid grid-cols-2 gap-4">

@@ -202,7 +202,7 @@ function NodeDetailsForm({
       />
       {hasNodeWriteAccess && (
         <FormActions
-          submitLabel="Update node"
+          submitLabel="更新节点"
           loadingText="正在更新节点……"
           isLoading={isSubmitting}
           isValid={isValid && !isSubmitting}

@@ -40,7 +40,7 @@ export function NodeTaints({
         onChange={onChangeTaints}
         data-cy="node-taints-input"
         item={NodeTaintItem}
-        addLabel="Add taint"
+        addLabel="添加污点"
         canUndoDelete
         itemBuilder={createNewTaint}
         errors={errors}
