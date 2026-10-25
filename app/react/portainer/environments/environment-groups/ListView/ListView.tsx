@@ -16,7 +16,7 @@ export function ListView() {
         reload
       >
         <AddButton to=".new" data-cy="add-environment-group-button">
-          Add group
+          添加分组
         </AddButton>
       </PageHeader>
 

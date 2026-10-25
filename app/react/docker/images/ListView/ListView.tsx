@@ -13,7 +13,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('docker.images.list.title')} breadcrumbs={t('docker.images.list.breadcrumb')} reload />
+      <PageHeader
+        title={t('docker.images.list.title')}
+        breadcrumbs={t('docker.images.list.breadcrumb')}
+        reload
+      />
 
       <div className="row">
         <div className="col-sm-12">

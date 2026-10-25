@@ -17,12 +17,7 @@ import { WaitingRoomEnvironment } from '../types';
 
 import { AssignmentDialog } from './AssignmentDialog/AssignmentDialog';
 
-const overusedTooltip = (
-  <>
-    Associating devices is disabled as your node count exceeds your license
-    limit
-  </>
-);
+const overusedTooltip = <>节点数量已超过许可证限制，无法关联设备</>;
 
 export function TableActions({
   selectedRows,
@@ -41,7 +36,7 @@ export function TableActions({
         onConfirmed={() => handleRemoveDevice(selectedRows)}
         disabled={selectedRows.length === 0}
         data-cy="remove-device-button"
-        confirmMessage="You're about to remove edge device(s) from waiting room, which will not be shown until next agent startup."
+        confirmMessage="即将从待关联区移除边缘设备；这些设备会在 Agent 下次启动后重新显示。"
       >
         {t('edge.devices.remove_device')}
       </DeleteButton>
@@ -51,10 +46,7 @@ export function TableActions({
           licenseOverused ? (
             overusedTooltip
           ) : (
-            <>
-              Associate device(s) and assigning edge groups, group and tags with
-              overriding options
-            </>
+            <>关联设备，并分配边缘组、环境组和标签（可覆盖预分配设置）</>
           )
         }
       >
@@ -78,10 +70,7 @@ export function TableActions({
           licenseOverused ? (
             overusedTooltip
           ) : (
-            <>
-              Associate device(s) based on their pre-assigned edge groups, group
-              and tags
-            </>
+            <>按预分配的边缘组、环境组和标签关联设备</>
           )
         }
       >
@@ -118,7 +107,10 @@ export function TableActions({
       devices.map((d) => d.Id),
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('edge.devices.notifications.associated'));
+          notifySuccess(
+            t('common.success'),
+            t('edge.devices.notifications.associated')
+          );
         },
       }
     );
@@ -129,7 +121,10 @@ export function TableActions({
       devices.map((d) => ({ id: d.Id, name: d.Name })),
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('edge.devices.notifications.hidden'));
+          notifySuccess(
+            t('common.success'),
+            t('edge.devices.notifications.hidden')
+          );
         },
       }
     );

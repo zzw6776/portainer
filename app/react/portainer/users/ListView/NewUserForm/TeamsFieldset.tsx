@@ -45,9 +45,7 @@ function TeamSyncMessage() {
   return (
     <div className="form-group">
       <div className="col-sm-12">
-        <TextTip color="orange">
-          {t('users.team_sync_message')}
-        </TextTip>
+        <TextTip color="orange">{t('users.team_sync_message')}</TextTip>
       </div>
     </div>
   );
@@ -58,9 +56,7 @@ function NoTeamSelected() {
   return (
     <div className="form-group">
       <div className="col-sm-12">
-        <TextTip color="blue">
-          {t('users.no_team_note')}
-        </TextTip>
+        <TextTip color="blue">{t('users.no_team_note')}</TextTip>
       </div>
     </div>
   );

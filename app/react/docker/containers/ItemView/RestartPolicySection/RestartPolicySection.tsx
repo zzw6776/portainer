@@ -29,10 +29,22 @@ interface Props {
 }
 
 const restartPolicyOptions: Array<Option<RestartPolicy>> = [
-  { label: i18n.t('docker.containers.restart_policy.never'), value: RestartPolicy.No },
-  { label: i18n.t('docker.containers.restart_policy.on_failure'), value: RestartPolicy.OnFailure },
-  { label: i18n.t('docker.containers.restart_policy.always'), value: RestartPolicy.Always },
-  { label: i18n.t('docker.containers.restart_policy.unless_stopped'), value: RestartPolicy.UnlessStopped },
+  {
+    label: i18n.t('docker.containers.restart_policy.never'),
+    value: RestartPolicy.No,
+  },
+  {
+    label: i18n.t('docker.containers.restart_policy.on_failure'),
+    value: RestartPolicy.OnFailure,
+  },
+  {
+    label: i18n.t('docker.containers.restart_policy.always'),
+    value: RestartPolicy.Always,
+  },
+  {
+    label: i18n.t('docker.containers.restart_policy.unless_stopped'),
+    value: RestartPolicy.UnlessStopped,
+  },
 ];
 
 export function RestartPolicySection({
@@ -60,7 +72,7 @@ export function RestartPolicySection({
           >
             <Authorized authorizations="DockerContainerUpdate">
               <DetailsRow
-                label="Name"
+                label="策略名称"
                 columns={[
                   <LoadingButton
                     key="update-button"
@@ -68,9 +80,9 @@ export function RestartPolicySection({
                     disabled={!isValid || !dirty}
                     isLoading={updateMutation.isLoading}
                     data-cy="container-restart-policy-update-button"
-                    loadingText="Updating..."
+                    loadingText="正在更新..."
                   >
-                    Update
+                    更新
                   </LoadingButton>,
                 ]}
               >
@@ -83,7 +95,7 @@ export function RestartPolicySection({
               </DetailsRow>
             </Authorized>
             {values.name === RestartPolicy.OnFailure && (
-              <DetailsRow label="Maximum Retry Count">
+              <DetailsRow label="最大重试次数">
                 <Input
                   type="number"
                   value={values.maximumRetryCount}
@@ -114,7 +126,10 @@ export function RestartPolicySection({
       },
       {
         onSuccess: () => {
-          notifySuccess(t('common.success'), t('docker.containers.notifications.restart_policy_updated'));
+          notifySuccess(
+            t('common.success'),
+            t('docker.containers.notifications.restart_policy_updated')
+          );
 
           onUpdateSuccess?.(values);
         },

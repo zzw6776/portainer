@@ -47,7 +47,7 @@ export function ContainerStatusSection({
       <WidgetBody className="no-padding">
         <DetailsTable dataCy="container-status-table">
           <DetailsTable.Row label="ID">{container.Id}</DetailsTable.Row>
-          <DetailsTable.Row label="Name">
+          <DetailsTable.Row label="名称">
             <NameRow
               containerId={container.Id || ''}
               containerName={container.Name || ''}
@@ -57,23 +57,23 @@ export function ContainerStatusSection({
             />
           </DetailsTable.Row>
           {!!container.NetworkSettings?.IPAddress && (
-            <DetailsTable.Row label="IP address">
+            <DetailsTable.Row label="IP 地址">
               {container.NetworkSettings.IPAddress}
             </DetailsTable.Row>
           )}
-          <DetailsTable.Row label="Status">
+          <DetailsTable.Row label="状态">
             <StatusRow container={container} />
           </DetailsTable.Row>
-          <DetailsTable.Row label="Created">
+          <DetailsTable.Row label="创建时间">
             {isoDate(container.Created)}
           </DetailsTable.Row>
           {isRunning && (
-            <DetailsTable.Row label="Start time">
+            <DetailsTable.Row label="启动时间">
               {isoDate(container.State?.StartedAt)}
             </DetailsTable.Row>
           )}
           {!isRunning && !isCreated && (
-            <DetailsTable.Row label="Finished">
+            <DetailsTable.Row label="结束时间">
               {isoDate(container.State?.FinishedAt)}
             </DetailsTable.Row>
           )}

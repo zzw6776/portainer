@@ -12,8 +12,6 @@ import { NumberSchema, number } from 'yup';
  * @param errorMessage The custom error message to display when the value is required.
  * @returns A Yup number schema with a custom type error message.
  */
-export function nanNumberSchema(
-  errorMessage = 'Value is required'
-): NumberSchema {
+export function nanNumberSchema(errorMessage = '值是必填项'): NumberSchema {
   return number().typeError(errorMessage);
 }

@@ -42,12 +42,16 @@ export function InternalAuth({
 
   return (
     <>
-      <FormSectionTitle>{t('settings.internal_auth_info_section')}</FormSectionTitle>
+      <FormSectionTitle>
+        {t('settings.internal_auth_info_section')}
+      </FormSectionTitle>
       <div className="form-group col-sm-12 text-muted small">
         {t('settings.internal_auth_info_text')}
       </div>
 
-      <FormSectionTitle>{t('settings.password_rules_section')}</FormSectionTitle>
+      <FormSectionTitle>
+        {t('settings.password_rules_section')}
+      </FormSectionTitle>
       <div className="form-group col-sm-12 text-muted small">
         {t('settings.password_rules_text')}
       </div>

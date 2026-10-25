@@ -54,7 +54,7 @@
                   name="logs_search"
                   ng-model="ctrl.state.search"
                   ng-change="ctrl.state.selectedLines.length = 0;"
-                  placeholder="Filter..."
+                  placeholder="筛选……"
                   auto-focus
                 />
               </div>
@@ -63,7 +63,9 @@
             <!-- actions -->
             <div class="form-group">
               <div class="col-sm-12">
-                <button class="btn btn-primary btn-sm !ml-0" type="button" ng-click="ctrl.downloadLogs()"> <pr-icon icon="'download'"></pr-icon> {{ 'docker_log_viewer.download_logs' | i18n }} </button>
+                <button class="btn btn-primary btn-sm !ml-0" type="button" ng-click="ctrl.downloadLogs()">
+                  <pr-icon icon="'download'"></pr-icon> {{ 'docker_log_viewer.download_logs' | i18n }}
+                </button>
               </div>
             </div>
             <!-- !actions -->

@@ -27,9 +27,7 @@ export function HiddenContainersPanel() {
       <Widget.Title icon={Box} title={t('settings.hidden_title')} />
       <Widget.Body>
         <div className="mb-3">
-          <TextTip color="blue">
-            {t('settings.hidden_desc')}
-          </TextTip>
+          <TextTip color="blue">{t('settings.hidden_desc')}</TextTip>
         </div>
 
         <AddLabelForm
@@ -55,7 +53,7 @@ export function HiddenContainersPanel() {
       },
       {
         onSuccess: () => {
-          notifySuccess('Success', t('settings.hidden_updated'));
+          notifySuccess('成功', t('settings.hidden_updated'));
         },
       }
     );

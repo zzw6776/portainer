@@ -22,7 +22,7 @@ export function useNamespaceServices<T = Service[]>(
     ],
     queryFn: () => getServices(environmentId, namespace),
     onError: (err) => {
-      notifyError('Failure', err as Error, 'Unable to get services');
+      notifyError('失败', err as Error, '无法获取服务');
     },
     ...queryOptions,
   });

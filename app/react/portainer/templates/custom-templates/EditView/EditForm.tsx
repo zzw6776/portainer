@@ -99,7 +99,10 @@ export function EditForm({
       },
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('edge.custom_templates_updated'));
+          notifySuccess(
+            t('common.success'),
+            t('edge.custom_templates_updated')
+          );
           router.stateService.go('^');
         },
       }

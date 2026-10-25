@@ -17,14 +17,14 @@ export function RegistryBadge({ registryId, children, dataCy }: Props) {
   const { isPureAdmin } = useCurrentUser();
 
   if (registryQuery.isLoading) {
-    return <InlineLoader>Loading registry...</InlineLoader>;
+    return <InlineLoader>正在加载镜像仓库……</InlineLoader>;
   }
 
   if (registryQuery.isError || !registryQuery.data) {
     return (
       <Badge type="warn">
-        Registry not found
-        <Tooltip message="The registry associated with this secret could not be found. It may have been deleted." />
+        未找到镜像仓库
+        <Tooltip message="找不到与此 Secret 关联的镜像仓库，该仓库可能已被删除。" />
       </Badge>
     );
   }

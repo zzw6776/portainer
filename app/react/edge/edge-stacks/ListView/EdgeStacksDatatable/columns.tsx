@@ -190,12 +190,8 @@ function StatusHeader() {
         position="top"
         message={
           <>
-            <div>
-              {i18n.t('edge.stacks_status_tooltip1')}
-            </div>
-            <div>
-              {i18n.t('edge.stacks_status_tooltip2')}
-            </div>
+            <div>{i18n.t('edge.stacks_status_tooltip1')}</div>
+            <div>{i18n.t('edge.stacks_status_tooltip2')}</div>
           </>
         }
       />

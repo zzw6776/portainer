@@ -14,7 +14,7 @@ export function EditAuthWidget() {
     <Card.Container>
       <Card.Header
         icon={LockIcon}
-        title="Authentication"
+        title="身份验证"
         subtitle="Choose how Portainer authenticates to this source"
       />
       <Card.Body>

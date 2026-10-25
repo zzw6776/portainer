@@ -21,10 +21,10 @@ export function CreateFromManifestButton({
             referrer: state.name,
             ...params,
           }}
-          label="Create from manifest"
+          label="从清单创建"
           data-cy={`${dataCy}-manifest`}
         >
-          Manifest
+          清单
         </MenuButtonLink>,
         <MenuButtonLink
           key="helm"
@@ -33,16 +33,16 @@ export function CreateFromManifestButton({
             referrer: state.name,
             ...params,
           }}
-          label="Create from Helm chart"
+          label="从 Helm Chart 创建"
           data-cy={`${dataCy}-helm`}
         >
-          Helm chart
+          Helm Chart
         </MenuButtonLink>,
       ]}
       data-cy={dataCy}
     >
       <Icon icon={Plus} size="xs" />
-      Create from code
+      从代码创建
     </MenuButton>
   );
 }

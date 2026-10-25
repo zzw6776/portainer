@@ -33,16 +33,24 @@ export function AddLabelForm({
       {({ errors, isValid, dirty }) => (
         <Form className="form-horizontal">
           <div className="flex w-full items-start gap-4">
-            <FormControl label={i18n.t('settings.hidden_name')} errors={errors.name} className="flex-1">
+            <FormControl
+              label={i18n.t('settings.hidden_name')}
+              errors={errors.name}
+              className="flex-1"
+            >
               <Field
                 as={Input}
                 name="name"
-                placeholder="e.g. com.example.foo"
+                placeholder="例如 com.example.foo"
               />
             </FormControl>
 
-            <FormControl label={i18n.t('settings.hidden_value')} errors={errors.value} className="flex-1">
-              <Field as={Input} name="value" placeholder="e.g. bar" />
+            <FormControl
+              label={i18n.t('settings.hidden_value')}
+              errors={errors.value}
+              className="flex-1"
+            >
+              <Field as={Input} name="value" placeholder="例如 bar" />
             </FormControl>
 
             <Button

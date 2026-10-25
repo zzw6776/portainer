@@ -75,9 +75,13 @@ export function CustomTemplatesList({
             linkParams={templateLinkParams?.(template)}
           />
         ))}
-        {!templates && <div className="text-muted text-center">{t('common.loading')}</div>}
+        {!templates && (
+          <div className="text-muted text-center">{t('common.loading')}</div>
+        )}
         {filteredTemplates.length === 0 && (
-          <div className="text-muted text-center">{t('edge.custom_templates_empty')}</div>
+          <div className="text-muted text-center">
+            {t('edge.custom_templates_empty')}
+          </div>
         )}
       </div>
 

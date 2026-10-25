@@ -43,15 +43,14 @@ export function PersistedFoldersFormSection({
   const PVCOptions = usePVCOptions(availableVolumes);
 
   return (
-    <FormSection title="Persisted folders" titleSize="sm">
+    <FormSection title="持久化文件夹" titleSize="sm">
       {storageClasses.length === 0 && (
         <TextTip color="blue">
-          No storage option is available to persist data, contact your
-          administrator to enable a storage option.
+          没有可用于持久化数据的存储选项，请联系管理员启用存储选项。
         </TextTip>
       )}
       {environmentQuery.isLoading && (
-        <InlineLoader>Loading volumes...</InlineLoader>
+        <InlineLoader>正在加载数据卷……</InlineLoader>
       )}
       <InputList<PersistedFolderFormValue>
         value={values}

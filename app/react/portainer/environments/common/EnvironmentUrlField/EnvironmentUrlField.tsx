@@ -20,7 +20,11 @@ export function EnvironmentUrlField({
 
   return (
     <FormControl
-      label={isAgent ? t('environment_url_field.label_agent') : t('environment_url_field.label_url')}
+      label={
+        isAgent
+          ? t('environment_url_field.label_agent')
+          : t('environment_url_field.label_url')
+      }
       errors={meta.error}
       required={optional}
       inputId="environment-url-field"
@@ -34,7 +38,9 @@ export function EnvironmentUrlField({
         id="environment-url-field"
         name="environmentUrl"
         as={Input}
-        placeholder={t('environment_url_field.placeholder', { port: placeholderPort })}
+        placeholder={t('environment_url_field.placeholder', {
+          port: placeholderPort,
+        })}
         data-cy="endpointCreate-endpointUrlAgentInput"
         disabled={disabled}
       />

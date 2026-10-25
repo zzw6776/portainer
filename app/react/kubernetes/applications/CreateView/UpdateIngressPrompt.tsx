@@ -13,7 +13,9 @@ export async function confirmUpdateAppIngress(
   const noMatchSentence = !hasOnePort
     ? t('kubernetes.applications.update.portsNoMatchPlural', { rulePlural })
     : t('kubernetes.applications.update.portsNoMatchSingular', { rulePlural });
-  const inputLabel = t('kubernetes.applications.update.updateIngressRules', { rulePlural });
+  const inputLabel = t('kubernetes.applications.update.updateIngressRules', {
+    rulePlural,
+  });
 
   const result = await openSwitchPrompt(
     t('kubernetes.applications.update.areYouSure'),
@@ -25,7 +27,9 @@ export async function confirmUpdateAppIngress(
           <li>{noMatchSentence}</li>
         </ul>
       ),
-      confirmButton: buildConfirmButton(t('kubernetes.applications.update.updateButton')),
+      confirmButton: buildConfirmButton(
+        t('kubernetes.applications.update.updateButton')
+      ),
       'data-cy': 'kube-update-ingress-prompt-switch',
     }
   );

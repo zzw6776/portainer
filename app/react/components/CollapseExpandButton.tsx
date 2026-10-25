@@ -22,8 +22,8 @@ export function CollapseExpandButton({
         onClick?.(e);
       }}
       color="none"
-      title={isExpanded ? 'Collapse' : 'Expand'}
-      aria-label={isExpanded ? 'Collapse' : 'Expand'}
+      title={isExpanded ? '折叠' : '展开'}
+      aria-label={isExpanded ? '折叠' : '展开'}
       aria-expanded={isExpanded}
       type="button"
       className="group !ml-0 flex flex-none items-center border-none bg-transparent p-0"

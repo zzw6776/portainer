@@ -101,7 +101,7 @@ export function UpgradeHelmModal({
         title={
           <div className="inline-flex items-center gap-1 px-5">
             <WidgetIcon icon={ArrowUp} />
-            <h2 className="m-0 ml-1 text-base">Upgrade</h2>
+            <h2 className="m-0 ml-1 text-base">升级</h2>
           </div>
         }
       />
@@ -109,7 +109,7 @@ export function UpgradeHelmModal({
         <Modal.Body>
           <div className="form-horizontal">
             <FormControl
-              label="Release name"
+              label="发布名称"
               inputId="release-name-input"
               size="medium"
             >
@@ -122,7 +122,7 @@ export function UpgradeHelmModal({
               />
             </FormControl>
             <FormControl
-              label="Namespace"
+              label="命名空间"
               inputId="namespace-input"
               size="medium"
             >
@@ -140,7 +140,7 @@ export function UpgradeHelmModal({
                 data-cy="helm-namespace-input"
               />
             </FormControl>
-            <FormControl label="Version" inputId="version-input" size="medium">
+            <FormControl label="版本" inputId="version-input" size="medium">
               <PortainerSelect<ChartVersion>
                 value={version}
                 options={versionOptions}
@@ -153,8 +153,8 @@ export function UpgradeHelmModal({
               />
             </FormControl>
             <FormControl
-              label="Rollback on failure"
-              tooltip="Enables automatic rollback on failure. It may increase the time to upgrade."
+              label="失败时回滚"
+              tooltip="失败时自动回滚，可能会延长升级时间。"
               inputId="atomic-input"
               size="medium"
             >
@@ -175,7 +175,7 @@ export function UpgradeHelmModal({
               <ManifestPreviewFormSection
                 payload={submitPayload}
                 onChangePreviewValidation={setPreviewIsValid}
-                title="Manifest changes"
+                title="清单变更"
                 currentManifest={releaseManifest}
                 environmentId={environmentId}
               />
@@ -192,15 +192,15 @@ export function UpgradeHelmModal({
             size="medium"
             data-cy="cancel-button-cy"
           >
-            Cancel
+            取消
           </Button>
           <Button
             onClick={async () => {
               if (!previewIsValid) {
                 const confirmed = await confirm({
-                  title: 'Chart validation failed',
+                  title: 'Chart 验证失败',
                   message:
-                    'The Helm manifest preview validation failed, which may indicate configuration issues. This can be normal when creating new resources. Do you want to proceed with the upgrade?',
+                    'Helm 清单预览验证失败，可能存在配置问题。创建新资源时这也可能是正常现象。是否继续升级？',
                 });
                 if (!confirmed) {
                   return;
@@ -213,7 +213,7 @@ export function UpgradeHelmModal({
             size="medium"
             data-cy="update-button-cy"
           >
-            Upgrade
+            升级
           </Button>
         </Modal.Footer>
       </div>

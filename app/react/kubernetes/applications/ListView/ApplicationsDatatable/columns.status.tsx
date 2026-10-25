@@ -13,7 +13,7 @@ import { helper } from './columns.helper';
 import { ApplicationRowData } from './types';
 
 export const status = helper.accessor(getStatusSummary, {
-  header: 'Status',
+  header: '状态',
   cell: Cell,
   meta: {
     filter: filterHOC('Filter by status'),
@@ -52,19 +52,19 @@ function Cell({
         <>
           {item.DeploymentType ===
             KubernetesApplicationDeploymentTypes.Replicated && (
-            <span className="mr-1">Replicated</span>
+            <span className="mr-1">副本模式</span>
           )}
           {item.DeploymentType ===
             KubernetesApplicationDeploymentTypes.Global && (
-            <span className="mr-1">Global</span>
+            <span className="mr-1">全局</span>
           )}
           {item.RunningPodsCount >= 0 && item.TotalPodsCount >= 0 && (
             <span>
-              <code aria-label="Running Pods" title="Running Pods">
+              <code aria-label="运行中的 Pod" title="运行中的 Pod">
                 {item.RunningPodsCount}
               </code>{' '}
               /{' '}
-              <code aria-label="Total Pods" title="Total Pods">
+              <code aria-label="Pod 总数" title="Pod 总数">
                 {item.TotalPodsCount}
               </code>
             </span>

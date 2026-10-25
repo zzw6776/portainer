@@ -73,7 +73,7 @@ export function NodesDatatable() {
         kubernetesEndpointsQuery.isLoading ||
         environmentQuery.isLoading
       }
-      title="Nodes"
+      title="节点"
       titleIcon={HardDrive}
       getRowId={(row) => row.metadata?.uid ?? ''}
       initialTableState={getColumnVisibilityState(tableState.hiddenColumns)}

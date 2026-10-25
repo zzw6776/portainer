@@ -75,7 +75,7 @@ export function TimeWindowPickerInputGroup({
               })
             }
           />
-          to
+          到
           <TimePickerInput
             utcTime={values.EndTime}
             timeZone={timeZone}

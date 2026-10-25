@@ -157,15 +157,15 @@ export function ApplicationStatsView() {
   return (
     <>
       <PageHeader
-        title="Application stats"
+        title="应用统计"
         breadcrumbs={[
-          { label: 'Namespaces', link: 'kubernetes.resourcePools' },
+          { label: '命名空间', link: 'kubernetes.resourcePools' },
           {
             label: namespace,
             link: 'kubernetes.resourcePools.resourcePool',
             linkParams: { id: namespace },
           },
-          { label: 'Applications', link: 'kubernetes.applications' },
+          { label: '应用', link: 'kubernetes.applications' },
           {
             label: applicationName,
             link: 'kubernetes.applications.application',
@@ -180,11 +180,10 @@ export function ApplicationStatsView() {
       />
 
       {metricsState === 'unavailable' && (
-        <InformationPanel title="Unable to retrieve container metrics">
+        <InformationPanel title="无法获取容器指标">
           <span className="small text-warning">
-            Portainer was unable to retrieve any metrics associated to that
-            container. Please contact your administrator to ensure that the
-            Kubernetes metrics feature is properly configured.
+            Portainer 无法获取与该容器关联的指标。请联系管理员，确保 Kubernetes
+            指标功能已正确配置。
           </span>
         </InformationPanel>
       )}
@@ -194,14 +193,13 @@ export function ApplicationStatsView() {
           <div className="row">
             <div className="col-md-12">
               <Widget>
-                <WidgetTitle icon="info" title="About statistics" />
+                <WidgetTitle icon="info" title="关于统计信息" />
                 <WidgetBody>
                   <form className="form-horizontal">
                     <div className="form-group">
                       <div className="col-sm-12">
                         <span className="small text-warning">
-                          This view displays real-time statistics about the
-                          container <b>{containerName}</b>.
+                          此视图显示容器 <b>{containerName}</b>进行部署。
                         </span>
                       </div>
                     </div>
@@ -210,7 +208,7 @@ export function ApplicationStatsView() {
                         htmlFor="refreshRate"
                         className="col-sm-3 col-md-2 control-label text-left"
                       >
-                        Refresh rate
+                        刷新频率
                       </label>
                       <div className="col-sm-3 col-md-2">
                         <select
@@ -239,7 +237,7 @@ export function ApplicationStatsView() {
           <div className="row">
             <div className="col-lg-6 col-md-12">
               <Widget>
-                <WidgetTitle icon="svg-memory" title="Memory usage" />
+                <WidgetTitle icon="svg-memory" title="内存使用率" />
                 <WidgetBody>
                   <StatsLineChart
                     data={chartData}
@@ -259,7 +257,7 @@ export function ApplicationStatsView() {
 
             <div className="col-lg-6 col-md-12">
               <Widget>
-                <WidgetTitle icon="cpu" title="CPU usage" />
+                <WidgetTitle icon="cpu" title="CPU 使用率" />
                 <WidgetBody>
                   <StatsLineChart
                     data={chartData}

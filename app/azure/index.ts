@@ -32,7 +32,7 @@ function config($stateRegistryProvider: StateRegistry) {
         try {
           await StateManager.updateEndpointState(endpoint);
         } catch (e) {
-          notifyError('Failed loading environment', e as Error);
+          notifyError('加载环境失败', e as Error);
           $state.go('portainer.home', {}, { reload: true });
         }
       });

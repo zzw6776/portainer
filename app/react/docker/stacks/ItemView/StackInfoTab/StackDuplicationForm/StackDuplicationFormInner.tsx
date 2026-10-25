@@ -96,7 +96,9 @@ export function StackDuplicationFormInner({
           data-cy="stack-migrate-button"
           className="!ml-0"
         >
-          {values.environmentId === currentEnvironmentId ? t('docker.stacks.duplication.renameButton') : t('docker.stacks.duplication.migrateButton')}
+          {values.environmentId === currentEnvironmentId
+            ? t('docker.stacks.duplication.renameButton')
+            : t('docker.stacks.duplication.migrateButton')}
         </LoadingButton>
 
         <LoadingButton
@@ -115,7 +117,7 @@ export function StackDuplicationFormInner({
       </div>
 
       {yamlError && isEnvSelected && (
-        <div className="form-group" role="alert" aria-label="Yaml Error">
+        <div className="form-group" role="alert" aria-label="YAML 错误">
           <div>
             <span className="text-danger small">{yamlError}</span>
           </div>

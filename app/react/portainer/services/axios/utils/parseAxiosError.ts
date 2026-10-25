@@ -139,7 +139,7 @@ function extractErrorDetails(axiosError: AxiosError): {
     }
 
     return {
-      message: 'Server returned an error response',
+      message: '服务器返回错误响应',
       details: 'Server returned an error response',
     };
   }

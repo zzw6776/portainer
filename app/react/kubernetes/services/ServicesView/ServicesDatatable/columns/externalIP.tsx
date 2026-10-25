@@ -18,7 +18,7 @@ export const externalIP = columnHelper.accessor(
     return row.IngressStatus?.map((status) => status.IP).join(',') || '';
   },
   {
-    header: 'External IP',
+    header: '外部 IP',
     id: 'externalIP',
     cell: Cell,
     sortingFn: (rowA, rowB) => {

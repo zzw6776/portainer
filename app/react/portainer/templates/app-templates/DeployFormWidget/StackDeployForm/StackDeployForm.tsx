@@ -69,9 +69,7 @@ export function StackDeployForm({
   if (!isDeployable) {
     return (
       <div className="form-group">
-        <TextTip>
-          {t('portainer.templates.deploy.cannot_deploy')}
-        </TextTip>
+        <TextTip>{t('portainer.templates.deploy.cannot_deploy')}</TextTip>
       </div>
     );
   }
@@ -157,7 +155,10 @@ export function StackDeployForm({
       },
       {
         onSuccess() {
-          notifySuccess(i18n.t('common.success'), i18n.t('portainer.templates.deploy.stack_created'));
+          notifySuccess(
+            i18n.t('common.success'),
+            i18n.t('portainer.templates.deploy.stack_created')
+          );
           router.stateService.go('docker.stacks');
         },
       }

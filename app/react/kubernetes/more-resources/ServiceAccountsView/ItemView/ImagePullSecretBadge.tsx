@@ -34,7 +34,7 @@ export function ImagePullSecretBadge({
       message={
         <div className="flex flex-col gap-1">
           <span>
-            <span className="font-medium">Registry: </span>
+            <span className="font-medium">镜像仓库： </span>
             {isPureAdmin ? (
               <Link
                 to="portainer.registries.registry"
@@ -77,7 +77,7 @@ export function ImagePullSecretBadge({
   const missingSecretContent = (
     <>
       {secretName}
-      <Tooltip message="This secret doesn't exist in the namespace." />
+      <Tooltip message="此 Secret 不存在于该命名空间中。" />
     </>
   );
 

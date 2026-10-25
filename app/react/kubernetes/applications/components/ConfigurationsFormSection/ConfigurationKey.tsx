@@ -38,7 +38,7 @@ export function ConfigurationData({
   return (
     <div className="flex flex-wrap items-start gap-x-2 gap-y-2">
       <InputGroup size="small" className="min-w-[250px]">
-        <InputGroup.Addon>Key</InputGroup.Addon>
+        <InputGroup.Addon>键</InputGroup.Addon>
         <InputGroup.Input
           type="text"
           value={value.key}
@@ -62,7 +62,7 @@ export function ConfigurationData({
             icon={RotateCw}
             data-cy={`k8sAppCreate-${dataCyType}AutoButton_${configurationIndex}_${keyIndex}`}
           >
-            Environment
+            环境
           </Button>
           <Button
             color="light"
@@ -74,7 +74,7 @@ export function ConfigurationData({
             icon={List}
             data-cy={`k8sAppCreate-${dataCyType}OverrideButton_${configurationIndex}_${keyIndex}`}
           >
-            File system
+            文件系统
           </Button>
         </InputGroup.ButtonWrapper>
       </InputGroup>
@@ -82,11 +82,11 @@ export function ConfigurationData({
       {value.type === 'FILESYSTEM' && (
         <div>
           <InputGroup size="small" className="min-w-[250px]">
-            <InputGroup.Addon required>Path on disk</InputGroup.Addon>
+            <InputGroup.Addon required>磁盘路径</InputGroup.Addon>
             <InputGroup.Input
               type="text"
               value={value.path}
-              placeholder="e.g. /etc/myapp/conf.d"
+              placeholder="例如 /etc/myapp/conf.d"
               onChange={(e) => onChange({ ...value, path: e.target.value })}
               data-cy={`k8sAppCreate-${dataCyType}PathOnDiskInput_${configurationIndex}_${keyIndex}`}
             />

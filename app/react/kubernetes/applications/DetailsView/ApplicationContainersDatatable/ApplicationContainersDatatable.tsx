@@ -79,10 +79,10 @@ export function ApplicationContainersDatatable() {
             { podName },
             {
               onSuccess: () =>
-                notifySuccess('Success', `Pod '${podName}' deleted`),
+                notifySuccess('成功', `Pod '${podName}' deleted`),
               onError: (error) =>
                 notifyError(
-                  'Failure',
+                  '失败',
                   error as Error,
                   `Unable to delete pod '${podName}'`
                 ),
@@ -105,7 +105,7 @@ export function ApplicationContainersDatatable() {
             podsQuery.isLoading ||
             useServerMetricsQuery.isLoading
           }
-          title="Application pods"
+          title="应用 Pod"
           titleIcon={Server}
           getRowId={(row) => row.podName}
           disableSelect

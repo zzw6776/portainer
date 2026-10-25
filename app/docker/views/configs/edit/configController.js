@@ -17,7 +17,7 @@ angular.module('portainer.docker').controller('ConfigController', [
     };
 
     $scope.removeConfig = async function removeConfig(configId) {
-      if (!(await confirmDelete('Are you sure you want to delete this config?'))) {
+      if (!(await confirmDelete('确定要删除此配置吗？'))) {
         return;
       }
 

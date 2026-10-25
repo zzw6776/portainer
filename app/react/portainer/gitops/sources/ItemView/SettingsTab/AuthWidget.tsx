@@ -16,19 +16,19 @@ export function AuthWidget({ auth }: Props) {
     <Card.Container>
       <Card.Header
         icon={LockIcon}
-        title="Authentication"
+        title="身份验证"
         subtitle="Credentials used to connect to this source"
       />
       <Card.Body>
         <div className="grid grid-cols-2 gap-4">
           {auth ? (
             <>
-              <DetailField label="Authentication Method">
+              <DetailField label="身份验证方式">
                 <Badge type="info" data-cy="source-auth-method">
-                  Basic
+                  基本认证
                 </Badge>
               </DetailField>
-              <DetailField label="Username">
+              <DetailField label="用户名">
                 <span
                   className="font-mono text-sm"
                   data-cy="source-auth-credentials"
@@ -38,9 +38,9 @@ export function AuthWidget({ auth }: Props) {
               </DetailField>
             </>
           ) : (
-            <DetailField label="Authentication Method">
+            <DetailField label="身份验证方式">
               <Badge type={'muted'} data-cy="source-auth-method">
-                None
+                无 (None)
               </Badge>
             </DetailField>
           )}

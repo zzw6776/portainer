@@ -18,15 +18,14 @@ export function BackupFailedPanel() {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <InformationPanel title="Information">
+        <InformationPanel title="信息">
           <TextTip>
-            The latest automated backup has failed at{' '}
-            {isoDate(status.TimestampUTC)}. For details please see the log files
-            and have a look at the{' '}
+            最近一次自动备份失败，时间： {isoDate(status.TimestampUTC)}
+            。详情请查看日志文件，并检查{' '}
             <Link to="portainer.settings" data-cy="backup-failed-settings-link">
-              settings
+              设置
             </Link>{' '}
-            to verify the backup configuration.
+            以验证备份配置。
           </TextTip>
         </InformationPanel>
       </div>
@@ -40,7 +39,7 @@ function useBackupStatus() {
     () => getBackupStatus(),
     {
       onError(error) {
-        notifyError('Failure', error as Error, 'Failed to get license info');
+        notifyError('失败', error as Error, '获取许可证信息失败');
       },
     }
   );

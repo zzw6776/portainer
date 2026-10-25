@@ -38,7 +38,7 @@ export function ColumnVisibilityMenu<D extends object>({
               className="space-right"
               strokeWidth="3px"
               aria-hidden="true"
-              aria-label="Columns"
+              aria-label="列显示设置"
             />
           </MenuButton>
           <MenuList>

@@ -2,16 +2,15 @@
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.important_notice' | i18n }} </div>
   <div class="form-group">
     <span class="col-sm-12 text-muted small">
-      Docker requires you to connect to a
-      <a href="https://distribution.github.io/distribution/about/deploying/#run-an-externally-accessible-registry" target="_blank">secure registry</a>. You can find more
-      information about how to connect to an insecure registry
-      <a href="https://distribution.github.io/distribution/about/insecure/" target="_blank">in the Docker documentation</a>.
+      Docker 要求连接到
+      <a href="https://distribution.github.io/distribution/about/deploying/#run-an-externally-accessible-registry" target="_blank">安全镜像仓库</a
+      >。有关如何连接不安全镜像仓库的更多信息，请参阅 <a href="https://distribution.github.io/distribution/about/insecure/" target="_blank">Docker 文档中的说明</a>.
     </span>
   </div>
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.custom_registry_details' | i18n }} </div>
   <!-- name-input -->
   <div class="form-group">
-    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
     <div class="col-sm-9 col-lg-10">
       <input
         type="text"
@@ -44,8 +43,8 @@
   <!-- url-input -->
   <div class="form-group">
     <label for="registry_url" class="col-sm-3 col-lg-2 control-label required text-left">
-      Registry URL
-      <portainer-tooltip message="'Registry URL or IP. Using http:// means it will be saved as an HTTP registry. Otherwise, it will be saved as HTTPS.'"></portainer-tooltip>
+      镜像仓库 URL
+      <portainer-tooltip message="'镜像仓库 URL 或 IP。使用 http:// 时会保存为 HTTP 镜像仓库，否则保存为 HTTPS。'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -54,7 +53,7 @@
         id="registry_url"
         name="registry_url"
         ng-model="$ctrl.model.URL"
-        placeholder="10.0.0.10:5000 or myregistry.domain.tld"
+        placeholder="10.0.0.10:5000 或 myregistry.domain.tld"
         required
         data-cy="component-registryUrlInput"
       />
@@ -75,9 +74,9 @@
   <div class="form-group">
     <div class="col-sm-12">
       <por-switch-field
-        label="'Authentication'"
+        label="'身份验证'"
         label-class="'col-sm-3 col-lg-2'"
-        tooltip="'Enable this option if you need to specify credentials to connect to this registry.'"
+        tooltip="'如果连接此镜像仓库需要指定凭据，请启用此选项。'"
         name="'administrator'"
         checked="$ctrl.model.Authentication"
         on-change="($ctrl.toggleAuthentication)"
@@ -89,7 +88,7 @@
   <div ng-if="$ctrl.model.Authentication">
     <!-- credentials-user -->
     <div class="form-group">
-      <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">Username</label>
+      <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">用户名</label>
       <div class="col-sm-9 col-lg-10">
         <input
           type="text"
@@ -115,7 +114,7 @@
     <!-- !credentials-user -->
     <!-- credentials-password -->
     <div class="form-group">
-      <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">Password</label>
+      <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">密码</label>
       <div class="col-sm-9 col-lg-10">
         <input type="password" class="form-control" id="registry_password" name="registry_password" ng-model="$ctrl.model.Password" required />
         <div class="help-block" ng-show="$ctrl.registryFormCustom.registry_password.$invalid">

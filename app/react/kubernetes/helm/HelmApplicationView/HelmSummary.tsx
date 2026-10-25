@@ -35,26 +35,26 @@ export function HelmSummary({ release }: Props) {
         )}
         <Card.Container variant="filled">
           <Card.Body>
-            <div className="form-section-title">Details</div>
+            <div className="form-section-title">详情</div>
             <div
               className="grid grid-cols-1 gap-x-6 gap-y-1 text-sm lg:grid-cols-2 xl:grid-cols-3"
               data-cy="helm-release-info"
             >
               {!!release.namespace && (
                 <div className="min-w-0">
-                  <span className="text-muted">Namespace: </span>
+                  <span className="text-muted">命名空间： </span>
                   <span data-cy="helm-info-namespace">{release.namespace}</span>
                 </div>
               )}
               {!!release.version && (
                 <div className="min-w-0">
-                  <span className="text-muted">Revision: </span>
+                  <span className="text-muted">修订版本： </span>
                   <span data-cy="helm-info-revision">#{release.version}</span>
                 </div>
               )}
               {!!release.chart?.metadata?.name && (
                 <div className="min-w-0">
-                  <span className="text-muted">Chart: </span>
+                  <span className="text-muted">Chart： </span>
                   <span data-cy="helm-info-chart">
                     {release.chart.metadata.name}
                   </span>
@@ -63,7 +63,7 @@ export function HelmSummary({ release }: Props) {
               <ChartReferenceBadge chartReference={release.chartReference} />
               {!!release.chart?.metadata?.appVersion && (
                 <div className="min-w-0">
-                  <span className="text-muted">App version: </span>
+                  <span className="text-muted">应用版本： </span>
                   <span data-cy="helm-info-app-version">
                     {release.chart.metadata.appVersion}
                   </span>
@@ -71,7 +71,7 @@ export function HelmSummary({ release }: Props) {
               )}
               {!!release.chart?.metadata?.version && (
                 <div className="min-w-0">
-                  <span className="text-muted">Chart version: </span>
+                  <span className="text-muted">Chart 版本： </span>
                   <span className="inline-flex flex-wrap items-center gap-1">
                     <span data-cy="helm-info-chart-version">
                       {release.chart.metadata.name}-
@@ -82,7 +82,7 @@ export function HelmSummary({ release }: Props) {
               )}
               {!!release.info?.last_deployed && (
                 <div className="min-w-0">
-                  <span className="text-muted">Last deployed: </span>
+                  <span className="text-muted">上次部署： </span>
                   <span data-cy="helm-info-last-deployed">
                     {localizeDate(new Date(release.info.last_deployed))}
                   </span>
@@ -108,7 +108,7 @@ function ChartReferenceBadge({
 
   return (
     <div className="min-w-0">
-      <span className="text-muted">Chart source: </span>
+      <span className="text-muted">Chart 来源： </span>
       <span>{chartReference.repoURL}</span>
     </div>
   );

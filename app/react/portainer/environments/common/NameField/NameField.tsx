@@ -15,11 +15,7 @@ interface Props {
   placeholder?: string;
 }
 
-export function NameField({
-  readonly,
-  tooltip,
-  placeholder,
-}: Props) {
+export function NameField({ readonly, tooltip, placeholder }: Props) {
   const { t } = useTranslation();
   const [{ value }, meta, { setValue }] = useField('name');
 
@@ -74,6 +70,6 @@ export function useNameValidation(envId?: number) {
   );
 
   return string()
-    .required('Name is required')
-    .test('unique-name', 'Name should be unique', uniquenessTest);
+    .required('名称为必填项')
+    .test('unique-name', '环境名称必须唯一', uniquenessTest);
 }

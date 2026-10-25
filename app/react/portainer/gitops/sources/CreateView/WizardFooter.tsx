@@ -20,7 +20,7 @@ export function WizardFooter() {
         data-cy="gitops-source-wizard-back-button"
         size="medium"
       >
-        Back
+        上一步
       </Button>
       <LoadingButton
         color="primary"

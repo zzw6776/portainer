@@ -22,10 +22,8 @@ export function DataAccessPolicyFormSection({
   const options = getOptions(value, isEdit, persistedFoldersUseExistingVolumes);
 
   return (
-    <FormSection title="Data access policy" titleSize="sm">
-      <TextTip color="blue">
-        Specify how the data will be used across instances.
-      </TextTip>
+    <FormSection title="数据访问策略" titleSize="sm">
+      <TextTip color="blue">指定数据在各实例之间的使用方式。</TextTip>
       <BoxSelector
         slim
         options={options}
@@ -48,9 +46,8 @@ function getOptions(
       id: 'data_access_isolated',
       icon: Boxes,
       iconType: 'badge',
-      label: 'Isolated',
-      description:
-        'Application will be deployed as a StatefulSet with each instantiating their own data',
+      label: '隔离',
+      description: '应用将以 StatefulSet 部署，每个实例使用各自的数据',
       tooltip: () =>
         isEdit || persistedFoldersUseExistingVolumes
           ? 'Changing the data access policy is not allowed'
@@ -63,9 +60,8 @@ function getOptions(
       id: 'data_access_shared',
       icon: Box,
       iconType: 'badge',
-      label: 'Shared',
-      description:
-        'Application will be deployed as a Deployment with a shared storage access',
+      label: '共享',
+      description: '应用将以 Deployment 部署，并共享存储访问',
       tooltip: () => {
         if (persistedFoldersUseExistingVolumes) {
           return 'Changing the data access policy is not allowed';

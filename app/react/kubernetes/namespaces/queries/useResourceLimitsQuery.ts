@@ -19,7 +19,7 @@ export function useClusterResourceLimitsQuery(environmentId: EnvironmentId) {
     () => getResourceLimits(environmentId),
     {
       onError: (err) => {
-        notifyError('Failure', err as Error, 'Unable to get resource limits');
+        notifyError('失败', err as Error, '无法获取资源限制');
       },
     }
   );

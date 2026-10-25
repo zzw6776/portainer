@@ -68,7 +68,10 @@ export function ItemView() {
       <PageHeader
         title={t('azure_containers.container_instance_title')}
         breadcrumbs={[
-          { link: 'azure.containerinstances', label: t('azure_containers.container_instances') },
+          {
+            link: 'azure.containerinstances',
+            label: t('azure_containers.container_instances'),
+          },
           { label: container.name },
         ]}
         reload
@@ -78,8 +81,13 @@ export function ItemView() {
         <div className="col-sm-12">
           <Widget>
             <WidgetBody className="form-horizontal">
-              <FormSectionTitle>{t('azure_containers.azure_settings')}</FormSectionTitle>
-              <FormControl label={t('azure_containers.subscription')} inputId="subscription-input">
+              <FormSectionTitle>
+                {t('azure_containers.azure_settings')}
+              </FormSectionTitle>
+              <FormControl
+                label={t('azure_containers.subscription')}
+                inputId="subscription-input"
+              >
                 <Input
                   name="subscription"
                   id="subscription-input"
@@ -89,7 +97,10 @@ export function ItemView() {
                 />
               </FormControl>
 
-              <FormControl label={t('azure_containers.resource_group')} inputId="resourceGroup-input">
+              <FormControl
+                label={t('azure_containers.resource_group')}
+                inputId="resourceGroup-input"
+              >
                 <Input
                   name="resourceGroup"
                   id="resourceGroup-input"
@@ -99,7 +110,10 @@ export function ItemView() {
                 />
               </FormControl>
 
-              <FormControl label={t('azure_containers.location')} inputId="location-input">
+              <FormControl
+                label={t('azure_containers.location')}
+                inputId="location-input"
+              >
                 <Input
                   name="location"
                   id="location-input"
@@ -109,7 +123,9 @@ export function ItemView() {
                 />
               </FormControl>
 
-              <FormSectionTitle>{t('azure_containers.container_config')}</FormSectionTitle>
+              <FormSectionTitle>
+                {t('azure_containers.container_config')}
+              </FormSectionTitle>
 
               <FormControl label={t('common.name')} inputId="name-input">
                 <Input
@@ -143,7 +159,10 @@ export function ItemView() {
 
               <PortsMappingField value={container.ports} readOnly />
 
-              <FormControl label={t('azure_containers.public_ip')} inputId="public-ip">
+              <FormControl
+                label={t('azure_containers.public_ip')}
+                inputId="public-ip"
+              >
                 <Input
                   name="public-ip"
                   id="public-ip"
@@ -153,9 +172,14 @@ export function ItemView() {
                 />
               </FormControl>
 
-              <FormSectionTitle>{t('azure_containers.resources')}</FormSectionTitle>
+              <FormSectionTitle>
+                {t('azure_containers.resources')}
+              </FormSectionTitle>
 
-              <FormControl label={t('azure_containers.cpu')} inputId="cpu-input">
+              <FormControl
+                label={t('azure_containers.cpu')}
+                inputId="cpu-input"
+              >
                 <Input
                   name="cpu"
                   id="cpu-input"
@@ -167,7 +191,10 @@ export function ItemView() {
                 />
               </FormControl>
 
-              <FormControl label={t('azure_containers.memory')} inputId="cpu-input">
+              <FormControl
+                label={t('azure_containers.memory')}
+                inputId="cpu-input"
+              >
                 <Input
                   name="memory"
                   id="memory-input"
@@ -181,7 +208,9 @@ export function ItemView() {
               {container.environmentVariables &&
                 container.environmentVariables.length > 0 && (
                   <>
-                    <FormSectionTitle>{t('azure_containers.env_vars')}</FormSectionTitle>
+                    <FormSectionTitle>
+                      {t('azure_containers.env_vars')}
+                    </FormSectionTitle>
                     <FormControl
                       label={t('azure_containers.env_vars_label')}
                       inputId="env-vars-input"

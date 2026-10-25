@@ -11,7 +11,12 @@ export function PasswordField() {
   const [{ name, onBlur, onChange, value }, { error }] =
     useField<FormValues['password']>('password');
   return (
-    <FormControl label={t('users.password')} required inputId="psw-input" errors={error}>
+    <FormControl
+      label={t('users.password')}
+      required
+      inputId="psw-input"
+      errors={error}
+    >
       <Input
         type="password"
         name={name}

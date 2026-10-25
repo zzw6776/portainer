@@ -12,7 +12,10 @@ export function CreateView() {
       <PageHeader
         title={t('azure_containers.create_title')}
         breadcrumbs={[
-          { link: 'azure.containerinstances', label: t('azure_containers.container_instances') },
+          {
+            link: 'azure.containerinstances',
+            label: t('azure_containers.container_instances'),
+          },
           { label: t('azure_containers.add_container') },
         ]}
         reload

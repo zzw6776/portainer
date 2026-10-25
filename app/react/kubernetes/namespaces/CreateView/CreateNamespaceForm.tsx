@@ -110,7 +110,7 @@ export function CreateNamespaceForm() {
       {
         onSuccess: () => {
           notifySuccess(
-            'Success',
+            '成功',
             `Namespace '${values.name}' created successfully`
           );
           router.stateService.go('kubernetes.resourcePools');

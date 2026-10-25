@@ -6,9 +6,9 @@ import { RepoConfigResponse } from './types';
 
 export function confirmEnableTLSVerify() {
   return confirm({
-    title: 'Enable TLS Verification?',
+    title: '启用 TLS 验证？',
     message:
-      'Enabling the verification of TLS certificates without ensuring the correct configuration of your Certificate Authority (CA) for self-signed certificates can result in deployment failures.',
+      '如果未正确配置自签名证书的证书颁发机构（CA），启用 TLS 证书验证可能导致部署失败。',
   });
 }
 export function isGitConfigDiverged(

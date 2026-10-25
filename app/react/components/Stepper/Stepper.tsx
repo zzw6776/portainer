@@ -12,10 +12,7 @@ interface Props {
 
 export function Stepper({ currentStepIndex, steps, onStepClick }: Props) {
   return (
-    <nav
-      aria-label="Progress steps"
-      className="flex flex-wrap items-center gap-2"
-    >
+    <nav aria-label="进度步骤" className="flex flex-wrap items-center gap-2">
       {steps.map((step, index) => (
         <Step
           key={step.label}

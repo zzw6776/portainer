@@ -55,7 +55,7 @@ export function UpdateEdgeJobForm({ edgeJob }: { edgeJob: EdgeJobResponse }) {
           { id: edgeJob.Id, payload: getPayload(values) },
           {
             onSuccess: () => {
-              notifySuccess('Success', 'Edge job successfully updated');
+              notifySuccess('成功', '边缘任务更新成功');
               router.stateService.go('^');
             },
           }
@@ -93,7 +93,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
         error={errors.edgeGroupIds}
       />
 
-      <FormSection title="Target environments">
+      <FormSection title="目标环境">
         <AssociatedEdgeEnvironmentsSelector
           onChange={(value) => setFieldValue('environmentIds', value)}
           value={values.environmentIds}
@@ -105,7 +105,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
         isLoading={isLoading}
         isValid={isValid}
         data-cy="updateJobButton"
-        loadingText="In progress..."
+        loadingText="正在进行……"
         errors={errors}
       />
     </Form>

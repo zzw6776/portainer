@@ -38,7 +38,7 @@ export function SortByGroup<TSortKey extends string>({
         className="text-xs font-semibold tracking-wider text-gray-11 th-highcontrast:text-white th-dark:text-white"
         data-cy="sort-by-label"
       >
-        SORT BY:
+        排序方式：
       </span>
       <div
         className={clsx(
@@ -47,7 +47,7 @@ export function SortByGroup<TSortKey extends string>({
           'gap-1 rounded-md p-1 th-highcontrast:border th-highcontrast:border-solid th-highcontrast:border-white'
         )}
         role="group"
-        aria-label="Sort by"
+        aria-label="排序依据"
       >
         {sortOptions.map((option, index) => (
           <SortOptionItem

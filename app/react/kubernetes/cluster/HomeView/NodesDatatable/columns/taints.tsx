@@ -6,7 +6,7 @@ import { columnHelper } from './helper';
 export const taints = columnHelper.accessor(
   (row) => getNodeTaintStrings(row).join(' '),
   {
-    header: 'Taints',
+    header: '污点',
     id: 'taints',
     enableSorting: false,
     cell: ({ row: { original: node } }) => (

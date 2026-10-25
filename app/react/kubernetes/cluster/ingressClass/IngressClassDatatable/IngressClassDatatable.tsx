@@ -104,9 +104,7 @@ export function IngressClassDatatable({
           {initialValues &&
             values &&
             isUnsavedChanges(initialValues, values) && (
-              <TextTip>
-                {t('wizard_kube_scripts.unsaved_changes')}
-              </TextTip>
+              <TextTip>{t('wizard_kube_scripts.unsaved_changes')}</TextTip>
             )}
         </div>
       </div>

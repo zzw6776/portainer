@@ -15,13 +15,13 @@ interface Props {
 export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
   return (
     <>
-      <FormSectionTitle titleSize="sm">Drain options</FormSectionTitle>
+      <FormSectionTitle titleSize="sm">节点排空选项</FormSectionTitle>
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Ignore DaemonSets"
+            label="忽略 DaemonSet"
             labelClass="col-sm-5 col-lg-4"
-            tooltip="Ignore DaemonSet-managed pods. These are skipped because they are recreated by their controller and would otherwise block the drain."
+            tooltip="忽略由 DaemonSet 管理的 Pod。它们会由控制器重新创建，否则会阻止节点排空。"
             checked={values.ignoreDaemonSets}
             disabled={!hasNodeWriteAccess}
             onChange={(checked) =>
@@ -31,7 +31,7 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
           />
         </div>
       </div>
-      <FormControl label="Timeout (seconds)" size="large">
+      <FormControl label="超时时间（秒）" size="large">
         <Input
           type="number"
           min="0"
@@ -44,7 +44,7 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
           data-cy="node-drain-timeout-input"
         />
       </FormControl>
-      <FormControl label="Grace period (seconds)" size="large">
+      <FormControl label="宽限期（秒）" size="large">
         <Input
           type="number"
           min="-1"
@@ -63,9 +63,9 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Force"
+            label="强制"
             labelClass="col-sm-5 col-lg-4"
-            tooltip="Continue even if there are pods not managed by a ReplicationController, ReplicaSet, Job, DaemonSet, or StatefulSet. Deleted pods are not recreated."
+            tooltip="即使存在不受 ReplicationController、ReplicaSet、Job、DaemonSet 或 StatefulSet 管理的 Pod，也继续操作。被删除的 Pod 不会重新创建。"
             checked={values.force}
             disabled={!hasNodeWriteAccess}
             onChange={(checked) => onChange({ ...values, force: checked })}
@@ -77,8 +77,7 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
         <div className="form-group">
           <div className="col-sm-12">
             <Alert color="warn">
-              Force draining deletes standalone pods that are not managed by a
-              controller. Those pods will not be recreated.
+              强制排空会删除不受控制器管理的独立 Pod，这些 Pod 不会重新创建。
             </Alert>
           </div>
         </div>
@@ -86,9 +85,9 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Delete emptyDir data"
+            label="删除 emptyDir 数据"
             labelClass="col-sm-5 col-lg-4"
-            tooltip="Continue even if there are pods using emptyDir volumes."
+            tooltip="即使存在使用 emptyDir 数据卷的 Pod，也继续操作。"
             checked={values.deleteEmptyDirData}
             disabled={!hasNodeWriteAccess}
             onChange={(checked) =>
@@ -101,18 +100,16 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
       {values.deleteEmptyDirData && (
         <div className="form-group">
           <div className="col-sm-12">
-            <Alert color="warn">
-              Data in those volumes is deleted when the node is drained.
-            </Alert>
+            <Alert color="warn">排空节点时，这些数据卷中的数据将被删除。</Alert>
           </div>
         </div>
       )}
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Disable eviction"
+            label="禁用驱逐"
             labelClass="col-sm-5 col-lg-4"
-            tooltip="Force drain to use delete rather than evict. This bypasses checking PodDisruptionBudgets."
+            tooltip="强制排空时直接删除而不是驱逐，这会跳过 PodDisruptionBudget 检查。"
             checked={values.disableEviction}
             disabled={!hasNodeWriteAccess}
             onChange={(checked) =>
@@ -126,8 +123,8 @@ export function DrainOptions({ values, onChange, hasNodeWriteAccess }: Props) {
         <div className="form-group">
           <div className="col-sm-12">
             <Alert color="warn">
-              Pods will be deleted directly, ignoring any PodDisruptionBudgets
-              that would otherwise protect application availability.
+              Pod 将被直接删除，并忽略原本用于保护应用可用性的
+              PodDisruptionBudget。
             </Alert>
           </div>
         </div>

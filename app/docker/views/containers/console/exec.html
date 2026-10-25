@@ -42,7 +42,7 @@
                   type="text"
                   name="custom-command"
                   ng-model="formValues.customCommand"
-                  placeholder="e.g. ps aux"
+                  placeholder="例如 ps aux"
                   data-cy="custom-command"
                 />
               </div>
@@ -79,7 +79,8 @@
           </div>
           <div ng-if="state !== states.disconnected">
             <label
-              >{{ 'docker_containers.exec_as_user' | i18n }} <code class="align-baseline !text-sm">{{ ::formValues.user || ('docker_containers.default_user' | i18n) }}</code> {{ 'docker_containers.using_command' | i18n }}
+              >{{ 'docker_containers.exec_as_user' | i18n }} <code class="align-baseline !text-sm">{{ ::formValues.user || ('docker_containers.default_user' | i18n) }}</code>
+              {{ 'docker_containers.using_command' | i18n }}
               <code class="align-baseline !text-sm">{{ formValues.isCustomCommand ? formValues.customCommand : formValues.command }}</code>
               <terminal-tooltip class="align-sub"> </terminal-tooltip>
             </label>

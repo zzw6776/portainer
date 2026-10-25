@@ -31,20 +31,18 @@ const MAX_VISIBLE_SERVICE_ACCOUNTS = 5;
 
 const registryAccessAdminMessage = (
   <span>
-    This secret is linked to the default service account from the{' '}
+    此 Secret 已通过以下位置关联到默认服务账户：{' '}
     <Link to="kubernetes.registries" data-cy="registry-access-link">
-      registry access
+      镜像仓库访问权限
     </Link>{' '}
-    settings to allow pods to pull images automatically in this namespace.
-    Update the settings to remove the link.
+    设置，以允许 Pod 在此命名空间中自动拉取镜像。更新设置可移除此关联。
   </span>
 );
 
 const registryAccessUserMessage = (
   <span>
-    This secret is linked to the default service account from the registry
-    access settings to allow pods to pull images automatically in this
-    namespace. Contact your administrator to update the settings.
+    此 Secret 已通过镜像仓库访问设置关联到默认服务账户，以允许 Pod
+    在此命名空间中自动拉取镜像。请联系管理员更新设置。
   </span>
 );
 
@@ -83,13 +81,13 @@ export function LinkedServiceAccountsRow({
       ariaLabel="Linked service accounts"
       label={
         <span className="flex items-center">
-          Linked service accounts
-          <Tooltip message="Service accounts that use this secret as an image pull secret." />
+          已关联的服务账户
+          <Tooltip message="将此 Secret 用作镜像拉取 Secret 的服务账户。" />
         </span>
       }
     >
       {isLoading ? (
-        <InlineLoader>Loading service accounts...</InlineLoader>
+        <InlineLoader>正在加载服务账户……</InlineLoader>
       ) : (
         <LinkedServiceAccountsContent
           secretName={secretName}
@@ -158,7 +156,7 @@ function LinkedServiceAccountsContent({
         onChange={(names) =>
           setSelectedSANames(preserveProtectedValues(names, protectedSANames))
         }
-        placeholder="Select service accounts..."
+        placeholder="选择服务账户……"
         disabled={linkedSAsMutation.isLoading}
         data-cy="k8sSecretDetail-linkedSAs-select"
         components={{
@@ -170,13 +168,13 @@ function LinkedServiceAccountsContent({
         <LoadingButton
           size="small"
           isLoading={linkedSAsMutation.isLoading}
-          loadingText="Saving..."
+          loadingText="正在保存……"
           onClick={handleSave}
           data-cy="k8sSecretDetail-linkedSAs-save"
           // match the height of the portainer-select component
           className="h-[34px]"
         >
-          Save
+          保存
         </LoadingButton>
         <Button
           size="small"
@@ -187,7 +185,7 @@ function LinkedServiceAccountsContent({
           // match the height of the portainer-select component
           className="h-[34px]"
         >
-          Cancel
+          取消
         </Button>
       </div>
     </div>
@@ -209,23 +207,21 @@ function LinkedServiceAccountsContent({
           ))}
           {hidden.length > 0 && (
             <Badge type="muted" className="min-w-max cursor-default">
-              + {hidden.length} more
+              + {hidden.length} 更多
             </Badge>
           )}
         </div>
       ) : (
         <span className="text-muted">
-          No service accounts linked. Without a link, pods must specify this
-          secret manually. Link to a{' '}
+          未关联服务账户。未关联时，Pod 必须手动指定此 Secret。关联到{' '}
           <Link
             to="kubernetes.moreResources.serviceAccounts"
             data-cy="service-account-link"
           >
-            service account
+            服务账户
           </Link>{' '}
-          so pods using it can pull images automatically - or link to the{' '}
-          <code>default</code> service account to cover all pods in this
-          namespace that don&apos;t specify one.
+          ，使使用该账户的 Pod 能够自动拉取镜像；也可以关联到 <code>默认</code>{' '}
+          服务账户，以覆盖此命名空间中所有未指定服务账户的 Pod。
         </span>
       )}
       {canEdit && !isSystem && (
@@ -242,7 +238,7 @@ function LinkedServiceAccountsContent({
             // match the height of the portainer-select component
             className="h-[34px]"
           >
-            Edit
+            编辑
           </Button>
         </div>
       )}

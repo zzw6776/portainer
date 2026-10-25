@@ -50,10 +50,10 @@ export function PersistedFolderItem({
           size="small"
           className={clsx('min-w-[250px]', item.needsDeletion && 'striked')}
         >
-          <InputGroup.Addon required>Path in container</InputGroup.Addon>
+          <InputGroup.Addon required>容器内挂载路径</InputGroup.Addon>
           <Input
             type="text"
-            placeholder="e.g. /data"
+            placeholder="例如 /data"
             disabled={
               (isEdit && isExistingPersistedFolder()) ||
               applicationValues.Containers.length > 1
@@ -84,10 +84,10 @@ export function PersistedFolderItem({
           }
           value={item.useNewVolume}
           options={[
-            { value: true, label: 'New volume' },
+            { value: true, label: '新建数据卷' },
             {
               value: false,
-              label: 'Existing volume',
+              label: '现有数据卷',
               disabled: PVCOptions.length === 0,
             },
           ]}
@@ -104,12 +104,12 @@ export function PersistedFolderItem({
               )}
             >
               <InputGroup.Addon className="min-w-fit" required>
-                Requested size
+                申请容量
               </InputGroup.Addon>
               <Input
                 className="-mr-[1px] !w-20 !rounded-none"
                 type="number"
-                placeholder="e.g. 20"
+                placeholder="例如 20"
                 min="0"
                 disabled={
                   (isEdit && isExistingPersistedFolder()) ||
@@ -153,7 +153,7 @@ export function PersistedFolderItem({
             size="small"
             className={clsx(item.needsDeletion && 'striked')}
           >
-            <InputGroup.Addon>Storage</InputGroup.Addon>
+            <InputGroup.Addon>存储</InputGroup.Addon>
             <Select<Option<string>>
               className="w-40"
               size="sm"
@@ -186,7 +186,7 @@ export function PersistedFolderItem({
           size="small"
           className={clsx(item.needsDeletion && 'striked')}
         >
-          <InputGroup.Addon>Volume</InputGroup.Addon>
+          <InputGroup.Addon>数据卷</InputGroup.Addon>
           <Select<Option<string>>
             className="w-[440px]"
             size="sm"

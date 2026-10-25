@@ -19,7 +19,7 @@ export function createStorageClassesColumns(
 ) {
   return [
     helper.accessor('name', {
-      header: 'Name',
+      header: '名称',
       cell: ({ row, getValue }) => {
         const name = getValue();
         return (
@@ -31,34 +31,32 @@ export function createStorageClassesColumns(
             >
               {name}
             </Link>
-            {row.original.isDefault && <Badge type="success">Default</Badge>}
+            {row.original.isDefault && <Badge type="success">默认</Badge>}
           </div>
         );
       },
     }),
     helper.accessor('provisioner', {
-      header: 'Provisioner',
+      header: '供应器',
     }),
     helper.accessor('reclaimPolicy', {
-      header: 'Reclaim policy',
+      header: '回收策略',
       cell: ({ getValue }) => getValue() ?? '-',
     }),
     helper.accessor('allowVolumeExpansion', {
-      header: 'Volume expansion',
+      header: '数据卷扩容',
       cell: ({ getValue }) => (getValue() ? 'Allowed' : 'Disallowed'),
     }),
     helper.accessor((row) => formatDate(row.creationDate), {
-      header: 'Created',
+      header: '创建时间',
       id: 'created',
     }),
     helper.display({
       id: 'actions',
-      header: 'Actions',
+      header: '操作',
       cell: ({ row: { original } }) => (
         <TooltipWithChildren
-          message={
-            original.isDefault ? 'Already the default' : 'Set as default'
-          }
+          message={original.isDefault ? '已是默认项' : '设为默认'}
           position="top"
         >
           <Button

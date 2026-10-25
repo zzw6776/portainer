@@ -101,9 +101,9 @@ function ActiveSchedulesNoticeItem({
   return (
     <div className="flex items-center gap-1 text-sm">
       <Clock className="lucide" />
-      {scheduleCount} edge devices in {name} are scheduled for{' '}
-      {scheduleType === ScheduleType.Rollback ? 'rollback' : 'update'} from{' '}
-      {currentVersion} to {version}
+      {scheduleCount} 个位于 {name} 的边缘设备已计划执行{' '}
+      {scheduleType === ScheduleType.Rollback ? 'rollback' : 'update'} 从{' '}
+      {currentVersion} 到 {version}
     </div>
   );
 }

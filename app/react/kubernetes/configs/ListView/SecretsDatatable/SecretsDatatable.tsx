@@ -63,8 +63,8 @@ export function SecretsDatatable() {
       columns={columns}
       settingsManager={tableState}
       isLoading={secretsQuery.isLoading || namespacesQuery.isLoading}
-      emptyContentLabel="No secrets found"
-      title="Secrets"
+      emptyContentLabel="未找到 Secret"
+      title="Secret"
       titleIcon={Lock}
       getRowId={(row) => row.UID ?? ''}
       isRowSelectable={({ original: secret }) =>
@@ -146,7 +146,7 @@ function TableActions({
         data-cy="k8sSecret-removeSecretButton"
         confirmMessage={`Are you sure you want to remove the selected ${pluralize(
           selectedItems.length,
-          'secret'
+          'Secret'
         )}?`}
       />
 
@@ -156,7 +156,7 @@ function TableActions({
           data-cy="k8sSecret-addSecretWithFormButton"
           color="secondary"
         >
-          Add with form
+          通过表单添加
         </AddButton>
       )}
 

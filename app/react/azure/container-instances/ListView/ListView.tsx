@@ -67,11 +67,7 @@ function useRemoveMutation(environmentId: EnvironmentId) {
         ]);
       },
       onError(err) {
-        notifyError(
-          'Failure',
-          err as Error,
-          'Unable to remove container groups'
-        );
+        notifyError('失败', err as Error, '无法移除容器组');
       },
     }
   );
@@ -81,7 +77,7 @@ function useRemoveMutation(environmentId: EnvironmentId) {
   async function handleRemove(groupIds: string[]) {
     deleteMutation.mutate(groupIds, {
       onSuccess: () => {
-        notifySuccess('Success', 'Container groups successfully removed');
+        notifySuccess('成功', '容器组移除成功');
       },
     });
   }

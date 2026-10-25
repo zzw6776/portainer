@@ -65,7 +65,7 @@ export function PersistentVolumeClaimsDatatable() {
         dataset={claims}
         columns={columns}
         settingsManager={tableState}
-        title="Volume claims"
+        title="数据卷声明"
         titleIcon={Database}
         disableSelect={!hasWriteAuth}
         isRowSelectable={({ original: claim }) =>
@@ -74,7 +74,7 @@ export function PersistentVolumeClaimsDatatable() {
         renderTableActions={(selectedItems) => (
           <Authorized authorizations="K8sVolumesW">
             <DeleteButton
-              confirmMessage="Do you want to remove the selected volume claim(s)?"
+              confirmMessage="是否移除所选数据卷声明？"
               onConfirmed={() => deleteClaimsMutation.mutate(selectedItems)}
               disabled={selectedItems.length === 0}
               isLoading={deleteClaimsMutation.isLoading}
@@ -99,7 +99,7 @@ export function PersistentVolumeClaimsDatatable() {
         <Modal
           onDismiss={() => setEditResizeClaim(null)}
           size="md"
-          aria-label="Resize Persistent Volume Claim"
+          aria-label="调整持久卷声明容量"
         >
           <ResizeClaimEditForm
             claim={editResizeClaim}

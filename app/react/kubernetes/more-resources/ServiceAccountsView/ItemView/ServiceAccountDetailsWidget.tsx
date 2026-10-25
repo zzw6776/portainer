@@ -28,11 +28,11 @@ export function ServiceAccountDetailsWidget({ namespace, name }: Props) {
               dataCy="k8sSADetail-table"
               className="[&_td:first-child]:w-2/5"
             >
-              <DetailsRow label="Name">
+              <DetailsRow label="名称">
                 {serviceAccount?.name}
                 {serviceAccount?.isSystem && <SystemBadge className="ml-1" />}
               </DetailsRow>
-              <DetailsRow label="Namespace">
+              <DetailsRow label="命名空间">
                 <Link
                   to="kubernetes.resourcePools.resourcePool"
                   params={{ id: namespace }}
@@ -42,7 +42,7 @@ export function ServiceAccountDetailsWidget({ namespace, name }: Props) {
                 </Link>
                 {serviceAccount?.isSystem && <SystemBadge className="ml-1" />}
               </DetailsRow>
-              <DetailsRow label="Creation date">
+              <DetailsRow label="创建日期">
                 {serviceAccount?.creationDate
                   ? new Date(serviceAccount.creationDate).toLocaleString()
                   : '-'}
@@ -51,8 +51,8 @@ export function ServiceAccountDetailsWidget({ namespace, name }: Props) {
                 ariaLabel="Automount token"
                 label={
                   <>
-                    Automount token
-                    <Tooltip message="Controls whether pods automatically receive an API token for cluster access. Disabling this reduces attack surface for workloads that don't need Kubernetes API access. Individual pods can still override this setting." />
+                    自动挂载令牌
+                    <Tooltip message="控制 Pod 是否自动获取用于访问集群的 API 令牌。禁用后可减少不需要访问 Kubernetes API 的工作负载的攻击面；单个 Pod 仍可覆盖此设置。" />
                   </>
                 }
               >

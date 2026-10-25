@@ -62,26 +62,24 @@ export function LoadBalancerServicesForm({
       <Card.Body className="pb-5">
         <div className="flex flex-col gap-6">
           <TextTip color="blue">
-            Allow access to traffic <b>external</b> to the cluster via a{' '}
-            <b>LoadBalancer service</b>. If running on a cloud platform, this
-            auto provisions a cloud load balancer.
+            允许流量访问 <b>外部</b> 到集群，并通过 <b>LoadBalancer 服务</b>
+            。如果运行在云平台上，系统会自动创建云负载均衡器。
           </TextTip>
           {!loadBalancerEnabled && loadBalancerEnabledQuery.isSuccess && (
             <div className="flex flex-col">
               <FormError>
                 {isAdmin ? (
                   <>
-                    Load balancer use is not currently enabled in this cluster.
-                    Configure via{' '}
+                    此集群当前未启用负载均衡器。请前往以下位置配置：{' '}
                     <Link
                       to="kubernetes.cluster.setup"
                       target="_blank"
                       rel="noopener noreferrer"
                       data-cy="k8sAppCreate-clusterSetupLink"
                     >
-                      Cluster Setup
+                      集群设置
                     </Link>{' '}
-                    and then refresh this tab
+                    ，然后刷新此选项卡
                   </>
                 ) : (
                   'Load balancer use is not currently enabled in this cluster, contact your administrator.'
@@ -95,7 +93,7 @@ export function LoadBalancerServicesForm({
                   className="!ml-0"
                   onClick={() => loadBalancerEnabledQuery.refetch()}
                 >
-                  Refresh
+                  刷新
                 </Button>
               </div>
             </div>
@@ -147,7 +145,7 @@ export function LoadBalancerServicesForm({
               disabled={!loadBalancerEnabled}
               data-cy="k8sAppCreate-createServiceButton"
             >
-              Create service
+              创建服务
             </Button>
           </div>
         </div>

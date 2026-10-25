@@ -275,7 +275,7 @@ export function ContainersDatatableActions({
         notifications.success(successMessage, container.Names[0]);
       } catch (err) {
         notifications.error(
-          'Failure',
+          '操作失败',
           err as Error,
           `${errorMessage}:${container.Names[0]}`
         );
@@ -302,7 +302,7 @@ export function ContainersDatatableActions({
         );
       } catch (err) {
         notifications.error(
-          'Failure',
+          '操作失败',
           err as Error,
           t('docker_containers.remove_error')
         );

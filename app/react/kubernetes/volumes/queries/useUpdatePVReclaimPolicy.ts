@@ -20,7 +20,7 @@ export function useUpdatePVReclaimPolicy(environmentId: EnvironmentId) {
     mutationFn: (payload: UpdateReclaimPolicyPayload) =>
       updateReclaimPolicy(payload, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Reclaim policy successfully updated');
+      notifySuccess('成功', '回收策略更新成功');
       return queryClient.invalidateQueries(queryKeys.volumes(environmentId));
     },
     ...withError('Unable to update reclaim policy'),

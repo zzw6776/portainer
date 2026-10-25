@@ -56,7 +56,7 @@ export function NamespaceFilter({
       <InputGroup.Addon>
         <div className="flex items-center gap-1">
           <Icon icon={Filter} />
-          Namespace
+          命名空间
         </div>
       </InputGroup.Addon>
       <Select
@@ -65,7 +65,7 @@ export function NamespaceFilter({
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
         options={[
-          { label: 'All namespaces', value: '' },
+          { label: '所有命名空间', value: '' },
           ...transformedNamespaces,
         ]}
       />

@@ -180,9 +180,13 @@ function useValidation(): SchemaOf<FormValues> {
   const { t } = useTranslation();
   return object({
     name: useNameValidation(),
-    applicationId: string().required(t('wizard_env.azure.application_id_required')),
+    applicationId: string().required(
+      t('wizard_env.azure.application_id_required')
+    ),
     tenantId: string().required(t('wizard_env.azure.tenant_id_required')),
-    authenticationKey: string().required(t('wizard_env.azure.auth_key_required')),
+    authenticationKey: string().required(
+      t('wizard_env.azure.auth_key_required')
+    ),
     meta: metadataValidation(),
   });
 }

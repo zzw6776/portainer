@@ -25,8 +25,8 @@ export function HelmRepositoryDatatableActions({ selectedItems }: Props) {
         onConfirmed={() => onDeleteClick(selectedItems)}
         confirmMessage={`Are you sure you want to remove the selected Helm ${pluralize(
           selectedItems.length,
-          'repository',
-          'repositories'
+          '仓库',
+          '仓库'
         )}?`}
         data-cy="helmRepository-deleteButton"
       />

@@ -75,8 +75,8 @@ export function ServicesDatatable() {
       isLoading={
         servicesQuery.isInitialLoading || namespacesQuery.isInitialLoading
       }
-      emptyContentLabel="No services found"
-      title="Services"
+      emptyContentLabel="未找到服务"
+      title="服务"
       titleIcon={Shuffle}
       getRowId={(row) => row.UID}
       isRowSelectable={(row) => !namespaces?.[row.original.Namespace]?.IsSystem}
@@ -158,7 +158,7 @@ function TableActions({ selectedItems }: TableActionsProps) {
           <>
             <p>{`Are you sure you want to remove the selected ${pluralize(
               selectedItems.length,
-              'service'
+              '服务'
             )}?`}</p>
             <ul className="pl-6">
               {selectedItems.map((s, index) => (
@@ -188,14 +188,14 @@ function TableActions({ selectedItems }: TableActionsProps) {
       {
         onSuccess: () => {
           notifySuccess(
-            'Services successfully removed',
+            '服务移除成功',
             services.map((s) => `${s.Namespace}/${s.Name}`).join(', ')
           );
           router.stateService.reload();
         },
         onError: (error) => {
           notifyError(
-            'Unable to delete service(s)',
+            '无法删除服务',
             error as Error,
             services.map((s) => `${s.Namespace}/${s.Name}`).join(', ')
           );

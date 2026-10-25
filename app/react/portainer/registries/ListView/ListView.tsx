@@ -10,7 +10,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('registries.title')} breadcrumbs={t('registries.breadcrumbs')} reload />
+      <PageHeader
+        title={t('registries.title')}
+        breadcrumbs={t('registries.breadcrumbs')}
+        reload
+      />
 
       <div className="row">
         <div className="col-sm-12">

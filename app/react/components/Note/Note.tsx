@@ -52,7 +52,7 @@ export function Note({
             className="!m-0 !p-0"
           >
             {isNoteOpen ? <ChevronUp /> : <ChevronRight />} <Edit />
-            <span className={isRequired ? 'required' : ''}>Note</span>
+            <span className={isRequired ? 'required' : ''}>说明信息</span>
           </Button>
         )}
         {!isExpandable && (
@@ -62,7 +62,7 @@ export function Note({
               isRequired ? 'required' : ''
             )}
           >
-            Note
+            说明信息
           </span>
         )}
       </div>
@@ -76,7 +76,7 @@ export function Note({
             value={value}
             onChange={(e) => onChange(e.target.value)}
             rows={5}
-            placeholder="Enter a note about this application..."
+            placeholder="输入此应用的备注……"
             minLength={minLength}
           />
           {error && (

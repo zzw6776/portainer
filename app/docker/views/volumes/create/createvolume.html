@@ -1,4 +1,5 @@
-<page-header title="'docker_volumes.create_title' | i18n" breadcrumbs="[{label:'common.volumes' | i18n, link:'docker.volumes'}, 'docker_volumes.add_volume_breadcrumb' | i18n]"> </page-header>
+<page-header title="'docker_volumes.create_title' | i18n" breadcrumbs="[{label:'common.volumes' | i18n, link:'docker.volumes'}, 'docker_volumes.add_volume_breadcrumb' | i18n]">
+</page-header>
 
 <div class="row">
   <div class="col-sm-12">
@@ -9,7 +10,7 @@
           <div class="form-group">
             <label for="volume_name" class="col-sm-2 col-md-1 control-label text-left">{{ 'common.name' | i18n }}</label>
             <div class="col-sm-10 col-md-11">
-              <input type="text" class="form-control" ng-model="formValues.Name" id="volume_name" placeholder="e.g. myVolume" data-cy="volume-name-input" />
+              <input type="text" class="form-control" ng-model="formValues.Name" id="volume_name" placeholder="例如 myVolume" data-cy="volume-name-input" />
             </div>
           </div>
           <!-- !name-input -->
@@ -32,7 +33,7 @@
                 class="form-control"
                 ng-model="formValues.Driver"
                 id="volume_driver"
-                placeholder="e.g. driverName"
+                placeholder="例如 driverName"
                 ng-if="availableVolumeDrivers.length === 0"
                 data-cy="volume-driver-input"
               />
@@ -54,12 +55,12 @@
             <div class="col-sm-12 form-inline" style="margin-top: 10px">
               <div ng-repeat="option in formValues.DriverOptions" style="margin-top: 2px">
                 <div class="input-group col-sm-5 input-group-sm">
-                  <span class="input-group-addon">name</span>
-                  <input type="text" class="form-control" ng-model="option.name" placeholder="e.g. mountpoint" data-cy="driver-option-name-input" />
+                  <span class="input-group-addon">名称</span>
+                  <input type="text" class="form-control" ng-model="option.name" placeholder="例如 mountpoint" data-cy="driver-option-name-input" />
                 </div>
                 <div class="input-group col-sm-5 input-group-sm">
-                  <span class="input-group-addon">value</span>
-                  <input type="text" class="form-control" ng-model="option.value" placeholder="e.g. /path/on/host" data-cy="driver-option-value-input" />
+                  <span class="input-group-addon">值</span>
+                  <input type="text" class="form-control" ng-model="option.value" placeholder="例如 /path/on/host" data-cy="driver-option-value-input" />
                 </div>
                 <button class="btn btn-sm btn-light" type="button" ng-click="removeDriverOption($index)">
                   <pr-icon icon="'trash-2'" class-name="'icon-secondary icon-md'"></pr-icon>
@@ -72,14 +73,18 @@
           <!-- nfs-management -->
           <div class="form-group col-md-12">
             <por-switch-field checked="formValues.NFSData.useNFS" label="'docker_volumes.use_nfs_volume' | i18n" on-change="(onUseNFSChange)"></por-switch-field>
-            <div ng-if="formValues.NFSData.useNFS" class="small text-muted" style="margin-top: 10px"> {{ 'docker_volumes.nfs_utils_hint' | i18n }} <code>nfs-utils</code> {{ 'docker_volumes.nfs_utils_hint_suffix' | i18n }} </div>
+            <div ng-if="formValues.NFSData.useNFS" class="small text-muted" style="margin-top: 10px">
+              {{ 'docker_volumes.nfs_utils_hint' | i18n }} <code>nfs-utils</code> {{ 'docker_volumes.nfs_utils_hint_suffix' | i18n }}
+            </div>
           </div>
           <volumes-nfs-form data="formValues.NFSData" ng-show="formValues.Driver === 'local'"></volumes-nfs-form>
           <!-- !nfs-management -->
           <!-- cifs-management -->
           <div class="form-group col-md-12">
             <por-switch-field checked="formValues.CIFSData.useCIFS" label="'docker_volumes.use_cifs_volume' | i18n" on-change="(onUseCIFSChange)"></por-switch-field>
-            <div ng-if="formValues.CIFSData.useCIFS" class="small text-muted" style="margin-top: 10px"> {{ 'docker_volumes.nfs_utils_hint' | i18n }} <code>cifs-utils</code> {{ 'docker_volumes.nfs_utils_hint_suffix' | i18n }} </div>
+            <div ng-if="formValues.CIFSData.useCIFS" class="small text-muted" style="margin-top: 10px">
+              {{ 'docker_volumes.nfs_utils_hint' | i18n }} <code>cifs-utils</code> {{ 'docker_volumes.nfs_utils_hint_suffix' | i18n }}
+            </div>
           </div>
           <volumes-cifs-form data="formValues.CIFSData" ng-show="formValues.Driver === 'local'"></volumes-cifs-form>
           <!-- !cifs-management -->

@@ -20,9 +20,7 @@ export function UsersField({ name, users, value, onChange, errors }: Props) {
     <FormControl
       label={t('access_control.users_field_label')}
       tooltip={
-        users.length > 0
-          ? t('access_control.users_field_tooltip')
-          : undefined
+        users.length > 0 ? t('access_control.users_field_tooltip') : undefined
       }
       inputId="authorized-users-selector"
       errors={errors}
@@ -39,7 +37,9 @@ export function UsersField({ name, users, value, onChange, errors }: Props) {
       ) : (
         <span className="small text-muted">
           {t('access_control.no_users_prefix')}{' '}
-          <Link to="portainer.users" data-cy="access-control-users-link">{t('access_control.no_users_link')}</Link>{' '}
+          <Link to="portainer.users" data-cy="access-control-users-link">
+            {t('access_control.no_users_link')}
+          </Link>{' '}
           {t('access_control.no_users_suffix')}
         </span>
       )}

@@ -14,7 +14,7 @@ export function useDeletePersistentVolumes(environmentId: EnvironmentId) {
     mutationFn: (volumes: PersistentVolume[]) =>
       deleteVolumes(volumes, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Persistent volume successfully removed');
+      notifySuccess('成功', '持久卷移除成功');
       queryClient.invalidateQueries(queryKeys.storages(environmentId));
       return queryClient.invalidateQueries(queryKeys.volumes(environmentId));
     },

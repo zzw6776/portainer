@@ -53,7 +53,10 @@ export function EdgeGroupsSelector({
       {selector}
     </FormControl>
   ) : (
-    <FormSection title={`${t('edge_groups.edge_groups_label')}${required ? ' *' : ''}`} htmlFor={inputId}>
+    <FormSection
+      title={`${t('edge_groups.edge_groups_label')}${required ? ' *' : ''}`}
+      htmlFor={inputId}
+    >
       <div className="form-group">
         <div className="col-sm-12">{selector} </div>
         {error && (

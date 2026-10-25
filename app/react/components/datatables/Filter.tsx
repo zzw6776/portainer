@@ -25,7 +25,7 @@ export function MultipleSelectionFilter({
   value = [],
   filterKey,
   onChange,
-  menuTitle = 'Filter by state',
+  menuTitle = '按状态过滤',
 }: MultipleSelectionFilterProps) {
   const { t } = useTranslation();
   const enabled = value.length > 0;

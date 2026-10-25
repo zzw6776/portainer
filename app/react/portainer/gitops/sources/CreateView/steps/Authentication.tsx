@@ -15,7 +15,7 @@ export function Authentication() {
   const { authentication } = values.git;
 
   return (
-    <FormSection title="Authentication">
+    <FormSection title="身份验证">
       <GitAuthentication
         values={authentication}
         errors={errors.git?.authentication}

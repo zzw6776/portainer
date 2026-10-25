@@ -26,7 +26,7 @@ export function TableActions({
         />
       </Authorized>
       <Authorized authorizations="DockerVolumeCreate">
-        <AddButton data-cy="volume-addVolumeButton">Add volume</AddButton>
+        <AddButton data-cy="volume-addVolumeButton">添加存储卷</AddButton>
       </Authorized>
     </div>
   );

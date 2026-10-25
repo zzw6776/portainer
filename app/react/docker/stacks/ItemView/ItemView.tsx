@@ -54,7 +54,7 @@ export function ItemView() {
         stackType,
       })
     ) {
-      notifyError('Failure', undefined, t('docker.stacks.item.invalidType'));
+      notifyError('失败', undefined, t('docker.stacks.item.invalidType'));
     }
   }, [isExternal, isOrphaned, isOrphanedRunning, stackType]);
 
@@ -62,7 +62,10 @@ export function ItemView() {
     <>
       <PageHeader
         title={t('docker.stacks.item.title')}
-        breadcrumbs={[{ label: t('docker.stacks.item.breadcrumb'), link: '^' }, stackName]}
+        breadcrumbs={[
+          { label: t('docker.stacks.item.breadcrumb'), link: '^' },
+          stackName,
+        ]}
       />
       <StackDetails
         isExternal={isExternal}

@@ -47,7 +47,7 @@ export function DashboardItem({
           isRefetching ? 'opacity-100' : 'opacity-0'
         )}
       >
-        Refreshing total
+        正在刷新总数
         <Loader2 className="ml-1 h-4 animate-spin-slow" />
       </div>
       <div
@@ -56,7 +56,7 @@ export function DashboardItem({
           isLoading ? 'opacity-100' : 'opacity-0'
         )}
       >
-        Loading total
+        正在加载总数
         <Loader2 className="ml-1 h-4 animate-spin-slow" />
       </div>
       <div className="flex items-center" aria-label={type}>
@@ -79,7 +79,7 @@ export function DashboardItem({
               'th-dark:text-white',
               'th-highcontrast:text-white'
             )}
-            aria-label="value"
+            aria-label="标签值"
           >
             {typeof value === 'undefined' ? '-' : value}
           </div>

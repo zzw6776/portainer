@@ -83,7 +83,8 @@ function BuildInfoModal({ closeModal }: { closeModal: () => void }) {
                 <td>
                   <span className="inline-flex flex-wrap items-center">
                     <Server size="13" className="space-right" />
-                    {t('sidebar.build_info.server_version')} {ServerVersion} {VersionSupport}
+                    {t('sidebar.build_info.server_version')} {ServerVersion}{' '}
+                    {VersionSupport}
                   </span>
                 </td>
                 <td>
@@ -97,7 +98,8 @@ function BuildInfoModal({ closeModal }: { closeModal: () => void }) {
                 <td>
                   <span className="inline-flex flex-wrap items-center">
                     <Hash size="13" className="space-right" />
-                    {t('sidebar.build_info.ci_build_number')} {Build.BuildNumber}
+                    {t('sidebar.build_info.ci_build_number')}{' '}
+                    {Build.BuildNumber}
                   </span>
                 </td>
                 <td>
@@ -133,7 +135,7 @@ function BuildInfoModal({ closeModal }: { closeModal: () => void }) {
             <span className="text-muted small">
               Webpack v{Build.WebpackVersion}
             </span>
-            <span className="text-muted small">Go {Build.GoVersion}</span>
+            <span className="text-muted small">跳转 {Build.GoVersion}</span>
           </div>
         </div>
 
@@ -154,7 +156,7 @@ function BuildInfoModal({ closeModal }: { closeModal: () => void }) {
               Kubectl {Dependencies.KubectlVersion}
             </span>
             <span className="text-muted small">
-              Compose {Dependencies.ComposeVersion}
+              Compose 文件 {Dependencies.ComposeVersion}
             </span>
           </div>
         </div>

@@ -25,7 +25,7 @@ export function useColumns() {
     () =>
       _.compact([
         helper.accessor('Name', {
-          header: 'Name',
+          header: '名称',
           id: 'Name',
           cell: ({ getValue, row: { original: item } }) => {
             const name = getValue();
@@ -47,7 +47,7 @@ export function useColumns() {
           },
         }),
         helper.accessor('Status', {
-          header: 'Status',
+          header: '状态',
           cell({ getValue, row: { original: item } }) {
             const status = getValue();
             return (
@@ -65,7 +65,7 @@ export function useColumns() {
                         data-cy={`namespace-warning-link-${item.Name}`}
                         // use the badge text and hover color
                         className="!text-inherit hover:text-inherit"
-                        title="View events"
+                        title="查看事件"
                       >
                         {item.UnhealthyEventCount}{' '}
                         {pluralize(item.UnhealthyEventCount, 'warning')}
@@ -89,7 +89,7 @@ export function useColumns() {
           },
         }),
         helper.accessor('ResourceQuota', {
-          header: 'Quota',
+          header: '配额',
           cell({ getValue }) {
             const quota = getValue();
 
@@ -97,11 +97,11 @@ export function useColumns() {
               return '-';
             }
 
-            return <Badge type="warn">Enabled</Badge>;
+            return <Badge type="warn">已启用</Badge>;
           },
         }),
         helper.accessor('CreationDate', {
-          header: 'Created',
+          header: '创建时间',
           cell({ row: { original: item } }) {
             return (
               <>

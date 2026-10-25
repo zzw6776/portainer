@@ -102,7 +102,7 @@ export function KubernetesSidebar({ environmentId }: Props) {
         to="kubernetes.volumes"
         params={{ endpointId: environmentId }}
         icon={Database}
-        label="Volumes"
+        label="数据卷"
         data-cy="k8sSidebar-volumes"
       />
 

@@ -101,10 +101,10 @@ function CreateForm() {
       {isDuplicating && (
         <div className="row">
           <div className="col-sm-12">
-            <InformationPanel title-text={t('docker.containers.create.caution')}>
-              <TextTip>
-                {t('docker.containers.create.cautionMessage')}{' '}
-              </TextTip>
+            <InformationPanel
+              title-text={t('docker.containers.create.caution')}
+            >
+              <TextTip>{t('docker.containers.create.cautionMessage')} </TextTip>
             </InformationPanel>
           </div>
         </div>
@@ -132,7 +132,10 @@ function CreateForm() {
       const confirmed = await confirmDestructive({
         title: t('docker.containers.create.confirmTitle'),
         message: t('docker.containers.create.confirmMessage'),
-        confirmButton: buildConfirmButton(t('docker.containers.create.confirmReplace'), 'danger'),
+        confirmButton: buildConfirmButton(
+          t('docker.containers.create.confirmReplace'),
+          'danger'
+        ),
       });
 
       if (!confirmed) {
@@ -161,7 +164,7 @@ function CreateForm() {
       },
       {
         onSuccess() {
-          notifySuccess('Success', t('docker.containers.create.successMessage'));
+          notifySuccess('成功', t('docker.containers.create.successMessage'));
           router.stateService.go('docker.containers');
         },
       }

@@ -36,7 +36,7 @@ export function JobsView() {
   return (
     <>
       <PageHeader
-        title="Cron Job & Job lists"
+        title="CronJob 和 Job 列表"
         breadcrumbs={t('kubernetes.jobs.breadcrumbs')}
         reload
       />

@@ -19,7 +19,10 @@ export function AutomaticEdgeEnvCreation() {
 
   return (
     <Widget>
-      <WidgetTitle icon={Laptop} title={t('settings.edge.automatic_env_creation')} />
+      <WidgetTitle
+        icon={Laptop}
+        title={t('settings.edge.automatic_env_creation')}
+      />
       <WidgetBody>
         <AutoEnvCreationSettingsForm settings={settings} />
       </WidgetBody>

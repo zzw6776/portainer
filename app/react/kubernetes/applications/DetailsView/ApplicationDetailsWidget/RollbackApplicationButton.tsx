@@ -89,13 +89,13 @@ export function RollbackApplicationButton({
     <Authorized authorizations="K8sApplicationDetailsW">
       <div className="flex gap-x-2">
         {isRollbackNotAvailable ? (
-          <TooltipWithChildren message="Cannot roll back to previous configuration as none currently exists">
+          <TooltipWithChildren message="当前没有可用的历史配置，无法回滚">
             <span>{rollbackButton}</span>
           </TooltipWithChildren>
         ) : (
           rollbackButton
         )}
-        <Tooltip message="Only one level of rollback is available, i.e. if you roll back from v2 to v1, and then roll back again, you will end up back at v2. Note that service changes and autoscaler rule changes are not included in rollback functionality. This is how Kubernetes works natively." />
+        <Tooltip message="只支持一级回滚。例如，从 v2 回滚到 v1 后再次回滚，将回到 v2。请注意，服务变更和自动扩缩容规则变更不在回滚范围内，这是 Kubernetes 的原生行为。" />
       </div>
     </Authorized>
   );
@@ -112,11 +112,10 @@ export function RollbackApplicationButton({
 
     // confirm the action
     const confirmed = await confirm({
-      title: 'Are you sure?',
+      title: '确定吗？',
       modalType: ModalType.Warn,
-      confirmButton: buildConfirmButton('Rollback'),
-      message:
-        'Rolling back the application to a previous configuration may cause service interruption. Do you wish to continue?',
+      confirmButton: buildConfirmButton('回滚'),
+      message: '将应用回滚到以前的配置可能导致服务中断。是否继续？',
     });
     if (!confirmed) {
       return;
@@ -135,19 +134,18 @@ export function RollbackApplicationButton({
         },
         {
           onSuccess: () => {
-            notifySuccess(t('common.success'), t('kubernetes.applications.notifications.rolled_back'));
+            notifySuccess(
+              t('common.success'),
+              t('kubernetes.applications.notifications.rolled_back')
+            );
             router.stateService.reload();
           },
           onError: (error) =>
-            notifyError(
-              'Failure',
-              error as Error,
-              'Unable to rollback the application'
-            ),
+            notifyError('失败', error as Error, '无法回滚应用'),
         }
       );
     } catch (error) {
-      notifyError('Failure', error as Error);
+      notifyError('失败', error as Error);
     }
   }
 }

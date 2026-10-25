@@ -42,7 +42,11 @@ export function NotificationsView() {
 
   return (
     <>
-      <PageHeader title={t('notifications.title')} breadcrumbs={breadcrumbs} reload />
+      <PageHeader
+        title={t('notifications.title')}
+        breadcrumbs={breadcrumbs}
+        reload
+      />
       <Datatable
         columns={columns}
         title={t('notifications.title')}

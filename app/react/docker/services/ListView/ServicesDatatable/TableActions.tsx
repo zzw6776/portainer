@@ -42,7 +42,7 @@ export function TableActions({
               icon={RefreshCw}
               data-cy="service-updateServiceButton"
             >
-              Update
+              更新
             </Button>
           </Authorized>
         )}
@@ -58,7 +58,7 @@ export function TableActions({
 
       {isAddActionVisible && (
         <Authorized authorizations="DockerServiceCreate">
-          <AddButton data-cy="docker-add-service-button">Add service</AddButton>
+          <AddButton data-cy="docker-add-service-button">添加服务</AddButton>
         </Authorized>
       )}
     </div>
@@ -80,7 +80,10 @@ export function TableActions({
       },
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('docker.services.notifications.updated'));
+          notifySuccess(
+            t('common.success'),
+            t('docker.services.notifications.updated')
+          );
           router.stateService.reload();
         },
       }
@@ -92,7 +95,10 @@ export function TableActions({
       selectedItems.map((service) => service.Id),
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('docker.services.notifications.removed'));
+          notifySuccess(
+            t('common.success'),
+            t('docker.services.notifications.removed')
+          );
           router.stateService.reload();
         },
       }

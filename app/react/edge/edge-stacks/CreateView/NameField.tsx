@@ -28,7 +28,12 @@ export function NameField({
   const { t } = useTranslation();
 
   return (
-    <FormControl inputId="name-input" label={t('common.name', 'Name')} errors={errors} required>
+    <FormControl
+      inputId="name-input"
+      label={t('common.name', '名称')}
+      errors={errors}
+      required
+    >
       <Input
         id="name-input"
         onChange={(e) => onChange(e.target.value)}
@@ -46,7 +51,7 @@ export function nameValidation(
   isComposeStack: boolean | undefined
 ): SchemaOf<string> {
   let schema = string()
-    .required('Name is required')
+    .required('名称是必填项')
     .test('unique', 'Name should be unique', (value) =>
       stacks.every((s) => s.Name !== value)
     );

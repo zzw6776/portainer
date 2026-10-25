@@ -70,14 +70,14 @@ export function AppIngressPathsForm({
   }, [namespace, ingressControllers, ingresses]);
 
   if (ingressesQuery.isError || ingressControllersQuery.isError) {
-    return <FormError>Unable to load ingresses.</FormError>;
+    return <FormError>无法加载 Ingress。</FormError>;
   }
 
   if (ingressesQuery.isLoading || ingressControllersQuery.isLoading) {
     return (
       <p className="text-muted mt-2 flex items-center gap-x-2 text-sm">
         <Icon icon={Loader2} className="animate-spin-slow" />
-        Loading ingresses...
+        正在加载 Ingress……
       </p>
     );
   }
@@ -87,8 +87,8 @@ export function AppIngressPathsForm({
       <div className="!mb-0 flex w-full flex-wrap items-center gap-x-4 gap-y-2">
         <SwitchField
           fieldClass="w-max gap-x-8"
-          label="Expose via ingress"
-          tooltip="Expose this ClusterIP service externally using an ingress. This will create a new ingress path for the selected ingress hostname."
+          label="通过 Ingress 公开"
+          tooltip="使用 Ingress 将此 ClusterIP 服务公开到外部。这会为所选 Ingress 主机名创建新的路径。"
           labelClass="w-max"
           name="publish-ingress"
           checked={!!servicePortIngressPaths?.length}
@@ -109,17 +109,16 @@ export function AppIngressPathsForm({
         />
         {!!servicePortIngressPaths?.length && (
           <TextTip color="blue">
-            Select from available ingresses below, or add new or edit existing
-            ones via the{' '}
+            从下方可用的 Ingress 中选择，或前往以下页面新增或编辑：{' '}
             <Link
               to="kubernetes.ingresses"
               target="_blank"
               rel="noopener noreferrer"
               data-cy="applicationCreate-ingressesLink"
             >
-              Ingresses screen
+              Ingress 页面
             </Link>{' '}
-            and then reload the hostname dropdown.
+            ，然后重新加载主机名下拉列表。
           </TextTip>
         )}
       </div>
@@ -168,7 +167,7 @@ export function AppIngressPathsForm({
               onChangeIngressPaths(newIngressPaths);
             }}
           >
-            Add path
+            添加路径
           </Button>
         </div>
       )}

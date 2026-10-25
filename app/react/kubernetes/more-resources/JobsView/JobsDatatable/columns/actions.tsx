@@ -6,7 +6,7 @@ import { Icon } from '@@/Icon';
 import { columnHelper } from './helper';
 
 export const actions = columnHelper.accessor(() => '', {
-  header: 'Actions',
+  header: '操作',
   id: 'actions',
   enableSorting: false,
   cell: ({ row: { original: job } }) => (
@@ -40,7 +40,7 @@ function Cell({ name, namespace, podName, containerName }: CellProps) {
       data-cy={`job-logs-${namespace}-${name}-${containerName}`}
     >
       <Icon icon={FileText} />
-      Logs
+      日志
     </Link>
   );
 }

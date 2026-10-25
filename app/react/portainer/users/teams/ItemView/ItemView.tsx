@@ -57,9 +57,7 @@ export function ItemView() {
       {teamSyncQuery.data && (
         <div className="row">
           <div className="col-sm-12">
-            <TextTip color="orange">
-              {t('teams.team_sync_tip')}
-            </TextTip>
+            <TextTip color="orange">{t('teams.team_sync_tip')}</TextTip>
           </div>
         </div>
       )}

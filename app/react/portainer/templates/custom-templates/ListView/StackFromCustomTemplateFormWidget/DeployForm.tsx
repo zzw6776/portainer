@@ -84,12 +84,12 @@ export function DeployForm({
     >
       {({ values, errors, setFieldValue, isValid }) => (
         <Form className="form-horizontal">
-          <FormSection title="Configuration">
+          <FormSection title="配置">
             <NameField
               value={values.name}
               onChange={(v) => setFieldValue('name', v)}
               errors={errors.name}
-              placeholder="e.g. mystack"
+              placeholder="例如：mystack"
             />
           </FormSection>
 
@@ -129,15 +129,15 @@ export function DeployForm({
               data-cy="custom-template-creation-editor"
             >
               <p>
-                You can get more information about Compose file format in the{' '}
+                有关 Compose 文件格式的更多信息，请参阅{' '}
                 <a
                   href="https://docs.docker.com/reference/compose-file/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  official documentation
+                  官方文档
                 </a>
-                .
+                进行部署。
               </p>
             </WebEditorForm>
           </AdvancedSettings>
@@ -153,7 +153,7 @@ export function DeployForm({
           <FormActions
             isLoading={mutation.isLoading}
             isValid={isValid}
-            loadingText="Deployment in progress..."
+            loadingText="正在部署……"
             submitLabel="Deploy the stack"
             data-cy="deploy-stack-button"
           >
@@ -167,7 +167,7 @@ export function DeployForm({
               color="default"
               data-cy="cancel-stack-creation"
             >
-              Hide
+              隐藏
             </Button>
           </FormActions>
         </Form>
@@ -180,7 +180,7 @@ export function DeployForm({
 
     return mutation.mutate(payload, {
       onSuccess() {
-        notifySuccess('Success', 'Stack created');
+        notifySuccess('成功', '堆栈创建成功');
         router.stateService.go('docker.stacks');
       },
     });

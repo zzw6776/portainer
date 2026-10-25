@@ -38,11 +38,11 @@ export function buildActions({ nodeName }: { nodeName?: string } = {}) {
           color="dangerlight"
           data-cy="disconnect-network-button"
           isLoading={disconnectMutation.isLoading}
-          loadingText="Leaving network..."
+          loadingText="正在退出网络..."
           type="button"
           onClick={handleSubmit}
         >
-          Leave network
+          退出网络
         </LoadingButton>
       </Authorized>
     );
@@ -59,7 +59,7 @@ export function buildActions({ nodeName }: { nodeName?: string } = {}) {
         },
         {
           onSuccess() {
-            notifySuccess('Container successfully disconnected', networkId);
+            notifySuccess('容器已成功退出网络', networkId);
           },
         }
       );

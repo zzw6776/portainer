@@ -83,7 +83,7 @@ export function ButtonsLine({
             fileContent: appStackFileContent,
           }}
         >
-          Create template from application
+          从应用创建模板
         </AddButton>
       )}
     </div>

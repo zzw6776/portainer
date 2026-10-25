@@ -21,7 +21,7 @@ export function GroupNameField({
   return (
     <div className="form-group">
       <label htmlFor={id} className="col-sm-4 control-label text-left">
-        Group Name
+        组名称
       </label>
       <div className="col-sm-8">
         <div className="flex items-center gap-2">
@@ -43,8 +43,8 @@ export function GroupNameField({
               disabled={disabled}
               icon={Trash2}
               data-cy="group-dn-remove-button"
-              title="Remove Group"
-              aria-label="Remove Group"
+              title="移除组"
+              aria-label="移除组"
             />
           )}
         </div>

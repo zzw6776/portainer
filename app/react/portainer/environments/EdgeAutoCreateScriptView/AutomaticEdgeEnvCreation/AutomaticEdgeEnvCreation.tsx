@@ -34,14 +34,14 @@ const asyncModeOptions = [
   {
     icon: EdgeAgentStandardIcon,
     id: 'standard',
-    label: 'Edge Agent Standard',
+    label: '标准边缘 Agent',
     value: false,
     iconType: 'badge',
   },
   {
     icon: EdgeAgentAsyncIcon,
     id: 'async',
-    label: 'Edge Agent Async',
+    label: '异步边缘 Agent',
     value: true,
     iconType: 'badge',
   },
@@ -73,19 +73,18 @@ export function AutomaticEdgeEnvCreation() {
 
   return (
     <Widget>
-      <WidgetTitle icon={Laptop} title="Automatic Edge Environment Creation" />
+      <WidgetTitle icon={Laptop} title="自动创建边缘环境" />
       <WidgetBody className="form-horizontal">
         {!edgeComputeConfigurationOK ? (
           <TextTip color="orange">
-            In order to use this feature, please turn on Edge Compute features{' '}
+            要使用此功能，请启用边缘计算功能{' '}
             <Link
               to="portainer.settings.edgeCompute"
               data-cy="edge-disabled-portainer-edge-settings-link"
             >
-              here
+              此处
             </Link>{' '}
-            and have Portainer API server URL and tunnel server address properly
-            configured.
+            ，并正确配置 Portainer API 服务器 URL 和隧道服务器地址。
           </TextTip>
         ) : (
           <>
@@ -145,14 +144,14 @@ function EdgeKeyInfo({
   const [isConnectivityModalOpen, setIsConnectivityModalOpen] = useState(false);
 
   if (isLoading || !edgeKey) {
-    return <div>Generating key for {url} ... </div>;
+    return <div>正在为以下对象生成密钥： {url} ... </div>;
   }
 
   return (
     <>
       <hr />
 
-      <FormSection title="Edge key">
+      <FormSection title="边缘密钥">
         <div className="break-words">
           <code>{edgeKey}</code>
         </div>
@@ -161,7 +160,7 @@ function EdgeKeyInfo({
           copyText={edgeKey}
           data-cy="edge-auto-create-copy-token-button"
         >
-          Copy token
+          复制令牌
         </CopyButton>
       </FormSection>
 
@@ -174,21 +173,21 @@ function EdgeKeyInfo({
         showMetaFields
       >
         <TextTip color="blue">
-          Portainer Server URL{' '}
-          {!asyncMode ? 'and tunnel server address are' : 'is'} set{' '}
+          Portainer 服务器 URL{' '}
+          {!asyncMode ? 'and tunnel server address are' : 'is'} 已设置{' '}
           <Link
             to="portainer.settings.edgeCompute"
             data-cy="server-url-portainer-edge-settings-link"
           >
-            here
+            此处
           </Link>
         </TextTip>
-        <FormControl label="Portainer API server URL">
+        <FormControl label="Portainer API 服务器 URL">
           <Input value={url} readOnly data-cy="edge-auto-create-url-input" />
         </FormControl>
 
         {!asyncMode && (
-          <FormControl label="Portainer tunnel server address">
+          <FormControl label="Portainer 隧道服务器地址">
             <Input
               value={tunnelUrl}
               readOnly
@@ -204,7 +203,7 @@ function EdgeKeyInfo({
           onClick={() => setIsConnectivityModalOpen(true)}
           data-cy="edge-auto-create-test-connectivity-button"
         >
-          Test connectivity
+          测试连通性
         </Button>
       </EdgeScriptForm>
 

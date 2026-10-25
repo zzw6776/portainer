@@ -50,7 +50,7 @@ function InnerSidebar() {
           'flex flex-1 flex-col overflow-y-auto py-5 pl-5',
           { 'pr-5': isOpen }
         )}
-        aria-label="Main"
+        aria-label="主导航"
       >
         <Header logo={LogoURL} />
         {/* negative margin + padding -> scrollbar won't hide the content */}
@@ -65,7 +65,7 @@ function InnerSidebar() {
             <SidebarItem
               to="portainer.home"
               icon={Home}
-              label="Home"
+              label="首页"
               data-cy="portainerSidebar-home"
             />
 

@@ -18,15 +18,9 @@ export function confirmUpdateNode(
   } else if (taintsWarning && labelsWarning) {
     message = (
       <>
-        <p>
-          Changes to taints will immediately deschedule applications running on
-          this node without the corresponding tolerations.
-        </p>
-        <p>
-          Removing or changing a label that is used might prevent applications
-          from scheduling on this node in the future.
-        </p>
-        <p>Do you wish to continue?</p>
+        <p>更改污点后，当前节点上没有相应容忍的应用将立即被取消调度。</p>
+        <p>移除或更改正在使用的标签，可能导致应用以后无法调度到此节点。</p>
+        <p>是否继续？</p>
       </>
     );
   } else if (cordonWarning) {
@@ -38,9 +32,9 @@ export function confirmUpdateNode(
   }
 
   return confirm({
-    title: 'Are you sure?',
+    title: '确定吗？',
     modalType: ModalType.Warn,
     message,
-    confirmButton: buildConfirmButton('Update', 'primary'),
+    confirmButton: buildConfirmButton('更新', 'primary'),
   });
 }

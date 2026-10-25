@@ -34,12 +34,12 @@ export function TestConnectionButton({
         className="!ml-0"
         isLoading={mutation.isLoading}
         icon={ArrowLeftRight}
-        loadingText="Testing connection..."
+        loadingText="正在测试连接..."
         onClick={() => mutation.mutate({ id: sourceId, payload })}
         type="button"
         data-cy={dataCy}
       >
-        Test connection
+        测试连接
       </LoadingButton>
       {mutation.isSuccess && (
         <ConnectionTestStatusIcon
@@ -62,7 +62,7 @@ function ConnectionTestStatusIcon({
     return (
       <>
         <Icon icon={CheckCircle} mode="success" />
-        <span className="sr-only">Connection successful</span>
+        <span className="sr-only">连接成功</span>
       </>
     );
   }

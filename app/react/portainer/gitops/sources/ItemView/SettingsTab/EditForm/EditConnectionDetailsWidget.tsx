@@ -16,11 +16,11 @@ export function EditConnectionDetailsWidget() {
     <Card.Container>
       <Card.Header
         icon={LinkIcon}
-        title="Connection Details"
+        title="连接详情"
         subtitle="Source name, URL, and connection settings"
       />
       <Card.Body>
-        <FormControl inputId="name" label="Name" errors={errors.name} required>
+        <FormControl inputId="name" label="名称" errors={errors.name} required>
           <Input
             id="name"
             name="name"
@@ -31,7 +31,7 @@ export function EditConnectionDetailsWidget() {
         </FormControl>
         <FormControl
           inputId="url"
-          label="Repository URL"
+          label="仓库 URL"
           errors={errors.url}
           required
         >
@@ -44,7 +44,7 @@ export function EditConnectionDetailsWidget() {
           />
         </FormControl>
         <SwitchField
-          label="Skip TLS verification"
+          label="跳过 TLS 验证"
           name="tlsSkipVerify"
           checked={values.tlsSkipVerify}
           onChange={(checked) => setFieldValue('tlsSkipVerify', checked)}

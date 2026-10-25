@@ -54,7 +54,10 @@ export function DeploymentSyncOptions() {
   return (
     <div className="row">
       <Widget>
-        <WidgetTitle icon={Laptop} title={t('settings.deployment_sync_title')} />
+        <WidgetTitle
+          icon={Laptop}
+          title={t('settings.deployment_sync_title')}
+        />
         <WidgetBody>
           <Formik<FormValues>
             initialValues={initialValues}
@@ -119,7 +122,10 @@ export function DeploymentSyncOptions() {
       },
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('settings.deployment_sync_success'));
+          notifySuccess(
+            t('common.success'),
+            t('settings.deployment_sync_success')
+          );
           resetForm();
         },
       }

@@ -9,8 +9,8 @@ export function RestartApplicationButton() {
       data-cy="k8sAppDetail-restartButton"
       heading="Rolling restart"
       featureId={FeatureId.K8S_ROLLING_RESTART}
-      message="A rolling restart of the application is performed."
-      buttonText="Rolling restart"
+      message="将对应用执行滚动重启。"
+      buttonText="滚动重启"
     />
   );
 }

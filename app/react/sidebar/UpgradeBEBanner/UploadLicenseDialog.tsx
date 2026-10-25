@@ -32,12 +32,9 @@ export function UploadLicenseDialog({
   const upgradeMutation = useUpgradeEditionMutation();
 
   return (
-    <Modal
-      onDismiss={onDismiss}
-      aria-label="Upgrade Portainer to Business Edition"
-    >
+    <Modal onDismiss={onDismiss} aria-label="将 Portainer 升级到商业版">
       <Modal.Header
-        title={<h4 className="text-xl font-medium">Upgrade Portainer</h4>}
+        title={<h4 className="text-xl font-medium">升级 Portainer</h4>}
       />
       <Formik
         initialValues={initialValues}
@@ -50,19 +47,18 @@ export function UploadLicenseDialog({
             <Modal.Body>
               {!isGetLicenseSubmitted ? (
                 <p className="font-semibold text-gray-7">
-                  Please enter your Portainer License below
+                  请在下方输入 Portainer 许可证
                 </p>
               ) : (
                 <div className="mb-4">
-                  <Alert color="success" title="License successfully sent">
-                    Please check your email and copy your license into the field
-                    below to upgrade Portainer.
+                  <Alert color="success" title="许可证已成功发送">
+                    请查收邮件，并将许可证复制到下方字段以升级 Portainer。
                   </Alert>
                 </div>
               )}
 
               <FormControl
-                label="License"
+                label="许可证"
                 errors={errors.license}
                 required
                 size="vertical"
@@ -79,16 +75,16 @@ export function UploadLicenseDialog({
                   className="w-full"
                   onClick={goToGetLicense}
                 >
-                  Get a license
+                  获取许可证
                 </Button>
                 <LoadingButton
                   color="primary"
                   data-cy="start-upgrade-button"
                   size="medium"
-                  loadingText="Validating License"
+                  loadingText="正在验证许可证"
                   isLoading={upgradeMutation.isLoading}
                 >
-                  Start upgrade
+                  开始升级
                 </LoadingButton>
               </div>
             </Modal.Footer>
@@ -101,7 +97,7 @@ export function UploadLicenseDialog({
   function handleSubmit(values: FormValues) {
     upgradeMutation.mutate(values, {
       onSuccess() {
-        notifySuccess('Starting upgrade', 'License validated successfully');
+        notifySuccess('正在开始升级', '许可证验证成功');
         goToLoading();
       },
     });

@@ -48,7 +48,7 @@ function TitleContent({ isComposeFormat }: { isComposeFormat?: boolean }) {
       {isComposeFormat && (
         <TextTip color="orange">
           <p>
-            Portainer no longer supports{' '}
+            Portainer 不再支持{' '}
             <a
               href="https://docs.docker.com/reference/compose-file/"
               target="_blank"
@@ -56,45 +56,40 @@ function TitleContent({ isComposeFormat }: { isComposeFormat?: boolean }) {
             >
               docker-compose
             </a>{' '}
-            format manifests for Kubernetes deployments, and we have removed the{' '}
+            格式的 Kubernetes 部署清单，并已移除{' '}
             <a href="https://kompose.io/" target="_blank" rel="noreferrer">
               Kompose
             </a>{' '}
-            conversion tool which enables this. The reason for this is because
-            Kompose now poses a security risk, since it has a number of Common
-            Vulnerabilities and Exposures (CVEs).
+            转换工具。原因是 Kompose
+            存在多项常见漏洞与披露（CVE），目前会带来安全风险。
           </p>
           <p>
-            Unfortunately, while the Kompose project has a maintainer and is
-            part of the CNCF, it is not being actively maintained. Releases are
-            very infrequent and new pull requests to the project (including ones
-            we&apos;ve submitted) are taking months to be merged, with new CVEs
-            arising in the meantime.
+            遗憾的是，尽管 Kompose 项目有维护者且属于
+            CNCF，但目前维护并不活跃。版本发布非常少，新的拉取请求（包括我们提交的请求）需要数月才能合并，同时还在不断出现新的
+            CVE。
           </p>
           <p>
-            We advise installing your own instance of Kompose in a sandbox
-            environment, performing conversions of your Docker Compose files to
-            Kubernetes manifests and using those manifests to set up
-            applications.
+            建议在沙箱环境中自行安装 Kompose，将 Docker Compose 文件转换为
+            Kubernetes 清单，再使用这些清单部署应用。
           </p>
         </TextTip>
       )}
       {!isComposeFormat && (
         <TextTip color="blue">
           <p>
-            This feature allows you to deploy any kind of Kubernetes resource in
-            this environment (Deployment, Secret, ConfigMap...).
+            此功能允许在该环境中部署任意 Kubernetes
+            资源（Deployment、Secret、ConfigMap 等）。
           </p>
           <p>
-            You can get more information about Kubernetes file format in the{' '}
+            可在以下位置了解有关 Kubernetes 文件格式的更多信息：{' '}
             <a
               href="https://kubernetes.io/docs/concepts/overview/working-with-objects/"
               target="_blank"
               rel="noreferrer"
             >
-              official documentation
+              官方文档
             </a>
-            .
+            进行部署。
           </p>
         </TextTip>
       )}

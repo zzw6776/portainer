@@ -38,7 +38,7 @@ export function NamespaceSelector({
 
   return (
     <FormControl
-      label="Namespace"
+      label="命名空间"
       inputId="namespace-selector"
       isLoading={namespacesQuery.isLoading}
       errors={errors}
@@ -50,7 +50,7 @@ export function NamespaceSelector({
           onChange={onChange}
           disabled={isEdit}
           noOptionsMessage={() => 'No namespaces found'}
-          placeholder="No namespaces found" // will only show when there are no options
+          placeholder="未找到命名空间" // will only show when there are no options
           inputId="namespace-selector"
           data-cy="k8sAppCreate-nsSelect"
         />

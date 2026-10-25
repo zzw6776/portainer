@@ -3,7 +3,7 @@ import { columnHelper } from './helper';
 export const targetPorts = columnHelper.accessor(
   (row) => row.Ports?.map((port) => port.TargetPort).join(','),
   {
-    header: 'Target Ports',
+    header: '目标端口',
     id: 'targetPorts',
     cell: ({ row }) => {
       const ports = row.original.Ports?.map((port) => port.TargetPort) ?? [];

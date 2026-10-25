@@ -29,7 +29,11 @@ export function DashboardView() {
 
   return (
     <>
-      <PageHeader title={t('azure_dashboard.home')} breadcrumbs={[{ label: t('azure_dashboard.dashboard_breadcrumb') }]} reload />
+      <PageHeader
+        title={t('azure_dashboard.home')}
+        breadcrumbs={[{ label: t('azure_dashboard.dashboard_breadcrumb') }]}
+        reload
+      />
 
       <div className="mx-4">
         {subscriptionsQuery.data && (

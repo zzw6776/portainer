@@ -29,8 +29,7 @@ export function TeamsField({
       label={t('access_control.teams_field_label')}
       tooltip={
         teams.length > 0
-          ? overrideTooltip ||
-            t('access_control.teams_field_tooltip')
+          ? overrideTooltip || t('access_control.teams_field_tooltip')
           : undefined
       }
       inputId="authorized-teams-selector"
@@ -48,7 +47,9 @@ export function TeamsField({
       ) : (
         <span className="small text-muted">
           {t('access_control.no_teams_prefix')}{' '}
-          <Link to="portainer.teams" data-cy="teams-view-link">{t('access_control.no_teams_link')}</Link>{' '}
+          <Link to="portainer.teams" data-cy="teams-view-link">
+            {t('access_control.no_teams_link')}
+          </Link>{' '}
           {t('access_control.no_teams_suffix')}
         </span>
       )}

@@ -17,16 +17,19 @@ export function TemplatesUrlSection() {
     <FormSection title={t('settings.app_templates')}>
       <div className="form-group">
         <div className="col-sm-12 text-muted small">
+          <p>{t('settings.app_templates_desc')}</p>
           <p>
-            {t('settings.app_templates_desc')}
-          </p>
-          <p>
-            {t('settings.app_templates_default')} <a href={DEFAULT_URL}>{DEFAULT_URL}</a>
+            {t('settings.app_templates_default')}{' '}
+            <a href={DEFAULT_URL}>{DEFAULT_URL}</a>
           </p>
         </div>
       </div>
 
-      <FormControl label={t('settings.url')} inputId="templates_url" errors={error}>
+      <FormControl
+        label={t('settings.url')}
+        inputId="templates_url"
+        errors={error}
+      >
         <Field
           as={Input}
           id="templates_url"

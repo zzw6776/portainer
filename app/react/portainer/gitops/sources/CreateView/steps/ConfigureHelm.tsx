@@ -1,3 +1,3 @@
 export function ConfigureHelm() {
-  return <>Helm Panel</>;
+  return <>Helm 面板</>;
 }

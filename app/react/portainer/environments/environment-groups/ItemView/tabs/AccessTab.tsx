@@ -57,7 +57,7 @@ export function AccessTab() {
       createMutation,
       usersAndTeams.map((access) => ({ ...access, Role: { Id: roleId } })),
       'set',
-      'Access successfully updated',
+      '访问更新成功',
       onSuccess
     );
   }
@@ -70,17 +70,12 @@ export function AccessTab() {
       datatableMutation,
       [...updatedUsers, ...updatedTeams],
       'set',
-      'Access successfully updated'
+      '访问更新成功'
     );
   }
 
   function handleRemove(accesses: Array<Access>) {
-    updatePolicies(
-      datatableMutation,
-      accesses,
-      'delete',
-      'Access successfully removed'
-    );
+    updatePolicies(datatableMutation, accesses, 'delete', '访问移除成功');
   }
 
   function updatePolicies(
@@ -116,7 +111,7 @@ export function AccessTab() {
       { id: group.Id, userAccessPolicies, teamAccessPolicies },
       {
         onSuccess: () => {
-          notifySuccess('Success', successMessage);
+          notifySuccess('成功', successMessage);
           onSuccess?.();
         },
       }

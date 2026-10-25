@@ -53,18 +53,18 @@ export function NodeDetails({ nodeName, environmentId }: Props) {
   }
 
   if (nodeQuery.isError) {
-    return <Alert color="error">Error loading node details</Alert>;
+    return <Alert color="error">加载节点详情失败</Alert>;
   }
   if (applicationsQuery.isError) {
-    return <Alert color="error">Error loading applications</Alert>;
+    return <Alert color="error">加载应用失败</Alert>;
   }
   if (nodesAvailabilityQuery.isError) {
-    return <Alert color="error">Error loading nodes availability</Alert>;
+    return <Alert color="error">加载节点可用性失败</Alert>;
   }
   // continue even if endpointsQuery is error, because it's not critical for the node details page
 
   if (!nodeQuery.data) {
-    return <Alert color="error">Node not found</Alert>;
+    return <Alert color="error">未找到节点</Alert>;
   }
 
   const nodeFormValues = getNodeFormValues(nodeQuery.data);
@@ -132,7 +132,7 @@ export function NodeDetails({ nodeName, environmentId }: Props) {
     if (values.availability === 'Drain') {
       await drainNodeMutation.mutateAsync(values.drainOptions);
     }
-    notifySuccess('Success', 'Node updated successfully');
+    notifySuccess('成功', '节点更新成功');
 
     router.stateService.reload();
   }
@@ -203,7 +203,7 @@ function NodeDetailsForm({
       {hasNodeWriteAccess && (
         <FormActions
           submitLabel="Update node"
-          loadingText="Updating node..."
+          loadingText="正在更新节点……"
           isLoading={isSubmitting}
           isValid={isValid && !isSubmitting}
           data-cy="node-saveButton"
@@ -214,7 +214,7 @@ function NodeDetailsForm({
             onClick={() => resetForm()}
             data-cy="node-update-cancel"
           >
-            Cancel
+            取消
           </Button>
         </FormActions>
       )}

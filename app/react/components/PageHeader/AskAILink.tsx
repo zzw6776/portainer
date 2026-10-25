@@ -18,7 +18,7 @@ export function AskAILink() {
           'text-gray-8',
           'th-dark:text-gray-warm-7'
         )}
-        title="Ask AI"
+        title="询问 AI"
         rel="noreferrer"
         data-cy="ask-ai-button"
       >

@@ -25,8 +25,7 @@ export function validation() {
       protocol: mixed().oneOf(['tcp', 'udp']),
       publishMode: mixed().oneOf(['ingress', 'host']),
     }).test({
-      message:
-        'Invalid port specification: host port range must be equal to container port range',
+      message: '端口配置无效：主机端口范围必须与容器端口范围相同',
       test: (portBinding) => {
         const hostPort = portBinding.hostPort as Range | number | undefined;
         return !(
@@ -58,7 +57,7 @@ function range(): SchemaOf<Range> {
     start: port().required(),
     end: port().required(),
   }).test({
-    message: 'Start port must be less than end port',
+    message: '起始端口必须小于结束端口',
     test: (value) => !value.start || !value.end || value.start <= value.end,
   });
 }

@@ -34,7 +34,11 @@ export function SettingsView() {
 
   return (
     <>
-      <PageHeader title={t('settings.title')} breadcrumbs={t('settings.breadcrumbs')} reload />
+      <PageHeader
+        title={t('settings.title')}
+        breadcrumbs={t('settings.breadcrumbs')}
+        reload
+      />
 
       <div className="mx-4 space-y-4">
         {settingsQuery.data && (

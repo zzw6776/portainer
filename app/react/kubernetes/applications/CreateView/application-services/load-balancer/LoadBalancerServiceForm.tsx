@@ -67,10 +67,10 @@ export function LoadBalancerServiceForm({
               onChangeService(newServices);
             }}
           >
-            Remove service
+            移除服务
           </Button>
         </div>
-        <div className="control-label !mb-2 !pt-0 text-left">Ports</div>
+        <div className="control-label !mb-2 !pt-0 text-left">端口</div>
         <div className="flex flex-col gap-3">
           {servicePorts.map((servicePort, portIndex) => {
             const error = errors?.[portIndex];
@@ -130,13 +130,13 @@ export function LoadBalancerServiceForm({
                       <div className="flex min-w-min basis-1/4 flex-col">
                         <InputGroup size="small">
                           <InputGroup.Addon required>
-                            Loadbalancer port
+                            负载均衡器端口
                           </InputGroup.Addon>
                           <InputGroup.Input
                             type="number"
                             className="form-control min-w-max"
                             name={`loadbalancer_port_${portIndex}`}
-                            placeholder="e.g. 80"
+                            placeholder="例如 80"
                             min="1"
                             max="65535"
                             value={servicePort.port || ''}
@@ -187,7 +187,7 @@ export function LoadBalancerServiceForm({
                       data-cy={`k8sAppCreate-rmPortButton_${portIndex}`}
                       icon={Trash2}
                     >
-                      Remove port
+                      移除端口
                     </Button>
                   </div>
                   {initiallyHasIngressPath && (
@@ -224,7 +224,7 @@ export function LoadBalancerServiceForm({
                 onChangePort(newServicesPorts);
               }}
             >
-              Add port
+              添加端口
             </Button>
           </div>
         </div>

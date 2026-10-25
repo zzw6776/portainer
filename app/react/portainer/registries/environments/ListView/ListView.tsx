@@ -5,11 +5,7 @@ import { EnvironmentRegistriesDatatable } from './EnvironmentRegistriesDatatable
 export function ListView() {
   return (
     <>
-      <PageHeader
-        title="Environment registries"
-        breadcrumbs="Registry management"
-        reload
-      />
+      <PageHeader title="环境镜像仓库" breadcrumbs="镜像仓库管理" reload />
 
       <EnvironmentRegistriesDatatable />
     </>

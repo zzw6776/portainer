@@ -14,14 +14,14 @@ import { InputListActionButtons } from '@@/form-components/InputList/ActionButto
 import { DnEntry, validateDnEntryValue } from './ldap-dn-utils';
 
 const typeOptions = [
-  { label: 'OU Name', value: 'ou' },
-  { label: 'Folder Name', value: 'cn' },
+  { label: '组织单位 (OU)', value: 'ou' },
+  { label: '文件夹 (CN)', value: 'cn' },
 ] as const;
 
 export function DnEntriesField({
   value,
   onChange,
-  label = 'DN entries',
+  label = 'DN 记录',
   limitedFeatureId,
 }: {
   value: DnEntry[];
@@ -57,7 +57,7 @@ export function DnEntriesField({
           data-cy="ldap-dn-builder-add-button"
           disabled={isLimited}
         >
-          add another entry
+          添加另一项
         </Button>
       </div>
       {value.length > 0 && (

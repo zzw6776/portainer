@@ -56,9 +56,9 @@ export function UsersDatatable() {
         isTeamLeader: teamMembership?.Role === TeamRole.Leader,
         authMethod:
           AuthenticationMethod[
-          user.Id === 1
-            ? AuthenticationMethod.Internal
-            : settingsQuery.data.AuthenticationMethod
+            user.Id === 1
+              ? AuthenticationMethod.Internal
+              : settingsQuery.data.AuthenticationMethod
           ],
       };
     });

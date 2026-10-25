@@ -35,14 +35,14 @@ function RegistrySelectPrompt({ onSubmit, defaultValue, registries }: Props) {
           color="default"
           data-cy="registry-select-cancel-button"
         >
-          Cancel
+          取消
         </Button>
         <Button
           onClick={() => onSubmit(registryId)}
           color="primary"
           data-cy="registry-select-update-button"
         >
-          Update
+          更新
         </Button>
       </Modal.Footer>
     </Modal>

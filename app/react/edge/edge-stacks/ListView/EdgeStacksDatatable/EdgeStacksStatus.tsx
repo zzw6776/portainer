@@ -40,10 +40,10 @@ function getStatus(summary?: StatusSummary): {
 } {
   if (!summary) {
     return {
-      label: 'Unavailable',
+      label: '不可用',
       icon: MinusCircle,
       mode: 'secondary',
-      tooltip: 'Status summary is unavailable',
+      tooltip: '状态摘要不可用',
     };
   }
   const { Status, Reason } = summary;
@@ -51,45 +51,45 @@ function getStatus(summary?: StatusSummary): {
   switch (Status) {
     case SummarizedStatus.Deploying:
       return {
-        label: 'Deploying',
+        label: '正在部署',
         icon: Loader2,
         spin: true,
         mode: 'primary',
       };
     case SummarizedStatus.Failed:
       return {
-        label: 'Failed',
+        label: '失败',
         icon: XCircle,
         mode: 'danger',
       };
     case SummarizedStatus.Paused:
       return {
-        label: 'Paused',
+        label: '已暂停',
         icon: PauseCircle,
         mode: 'warning',
       };
     case SummarizedStatus.PartiallyRunning:
       return {
-        label: 'Partially Running',
+        label: '部分运行中',
         icon: AlertTriangle,
         mode: 'warning',
       };
     case SummarizedStatus.Completed:
       return {
-        label: 'Completed',
+        label: '已完成',
         icon: CheckCircle,
         mode: 'success',
       };
     case SummarizedStatus.Running:
       return {
-        label: 'Running',
+        label: '运行中',
         icon: CheckCircle,
         mode: 'success',
       };
     case SummarizedStatus.Unavailable:
     default:
       return {
-        label: 'Unavailable',
+        label: '不可用',
         icon: MinusCircle,
         mode: 'secondary',
         tooltip: Reason,

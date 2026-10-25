@@ -140,7 +140,9 @@ function InnerForm({
   return (
     <Form className="form-horizontal">
       <div className="flex flex-col">
-        <FormSection title={t('kubernetes.cluster.configure.networkingServices')}>
+        <FormSection
+          title={t('kubernetes.cluster.configure.networkingServices')}
+        >
           <div className="form-group">
             <div className="col-sm-12">
               <TextTip color="blue" inline={false}>
@@ -160,7 +162,9 @@ function InnerForm({
               <SwitchField
                 name="useLoadBalancer"
                 data-cy="kubeSetup-loadBalancerToggle"
-                label={t('kubernetes.cluster.configure.allowExternalLoadBalancers')}
+                label={t(
+                  'kubernetes.cluster.configure.allowExternalLoadBalancers'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={values.useLoadBalancer}
                 onChange={(checked) =>
@@ -170,15 +174,21 @@ function InnerForm({
             </div>
           </div>
         </FormSection>
-        <FormSection title={t('kubernetes.cluster.configure.networkingIngresses')}>
+        <FormSection
+          title={t('kubernetes.cluster.configure.networkingIngresses')}
+        >
           <IngressClassDatatable
             onChange={onChangeControllers}
-            description={t('kubernetes.cluster.configure.ingressControllerDescription')}
+            description={t(
+              'kubernetes.cluster.configure.ingressControllerDescription'
+            )}
             values={values.ingressClasses}
             initialValues={initialValues.ingressClasses}
             isLoading={isIngressClassesLoading}
             view="cluster"
-            noIngressControllerLabel={t('kubernetes.cluster.configure.noIngressControllerLabel')}
+            noIngressControllerLabel={t(
+              'kubernetes.cluster.configure.noIngressControllerLabel'
+            )}
           />
           <div className="form-group">
             <div className="col-sm-12">
@@ -186,7 +196,9 @@ function InnerForm({
                 name="allowNoneIngressClass"
                 data-cy="kubeSetup-allowNoneIngressClass"
                 label={t('kubernetes.cluster.configure.allowNoneIngressClass')}
-                tooltip={t('kubernetes.cluster.configure.allowNoneIngressClassTooltip')}
+                tooltip={t(
+                  'kubernetes.cluster.configure.allowNoneIngressClassTooltip'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={values.allowNoneIngressClass}
                 onChange={(checked) => {
@@ -210,8 +222,12 @@ function InnerForm({
               <SwitchField
                 name="ingressAvailabilityPerNamespace"
                 data-cy="kubeSetup-ingressAvailabilityPerNamespace"
-                label={t('kubernetes.cluster.configure.ingressAvailabilityPerNamespace')}
-                tooltip={t('kubernetes.cluster.configure.ingressAvailabilityPerNamespaceTooltip')}
+                label={t(
+                  'kubernetes.cluster.configure.ingressAvailabilityPerNamespace'
+                )}
+                tooltip={t(
+                  'kubernetes.cluster.configure.ingressAvailabilityPerNamespaceTooltip'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={values.ingressAvailabilityPerNamespace}
                 onChange={(checked) =>
@@ -225,9 +241,13 @@ function InnerForm({
               <SwitchField
                 name="restrictStandardUserIngressW"
                 data-cy="kubeSetup-restrictStandardUserIngressWToggle"
-                label={t('kubernetes.cluster.configure.onlyAdminsDeployIngresses')}
+                label={t(
+                  'kubernetes.cluster.configure.onlyAdminsDeployIngresses'
+                )}
                 featureId={FeatureId.K8S_ADM_ONLY_USR_INGRESS_DEPLY}
-                tooltip={t('kubernetes.cluster.configure.onlyAdminsDeployIngressesTooltip')}
+                tooltip={t(
+                  'kubernetes.cluster.configure.onlyAdminsDeployIngressesTooltip'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={values.restrictStandardUserIngressW}
                 onChange={(checked) =>
@@ -244,14 +264,18 @@ function InnerForm({
             </div>
           </div>
         </FormSection>
-        <FormSection title={t('kubernetes.cluster.configure.changeWindowSettings')}>
+        <FormSection
+          title={t('kubernetes.cluster.configure.changeWindowSettings')}
+        >
           <div className="form-group">
             <div className="col-sm-12">
               <SwitchField
                 name="changeWindow.Enabled"
                 data-cy="kubeSetup-changeWindowEnabledToggle"
                 label={t('kubernetes.cluster.configure.enableChangeWindow')}
-                tooltip={t('kubernetes.cluster.configure.enableChangeWindowTooltip')}
+                tooltip={t(
+                  'kubernetes.cluster.configure.enableChangeWindowTooltip'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={false}
                 featureId={FeatureId.HIDE_AUTO_UPDATE_WINDOW}
@@ -280,7 +304,9 @@ function InnerForm({
               <SwitchField
                 name="restrictDefaultNamespace"
                 data-cy="kubeSetup-restrictDefaultNsToggle"
-                label={t('kubernetes.cluster.configure.restrictDefaultNamespace')}
+                label={t(
+                  'kubernetes.cluster.configure.restrictDefaultNamespace'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={values.restrictDefaultNamespace}
                 onChange={(checked) =>
@@ -295,7 +321,9 @@ function InnerForm({
                 name="restrictSecrets"
                 data-cy="kubeSetup-restrictSecretsToggle"
                 label={t('kubernetes.cluster.configure.restrictSecrets')}
-                tooltip={t('kubernetes.cluster.configure.restrictSecretsTooltip')}
+                tooltip={t(
+                  'kubernetes.cluster.configure.restrictSecretsTooltip'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 checked={false}
                 featureId={FeatureId.K8S_ADM_ONLY_SECRETS}
@@ -304,35 +332,37 @@ function InnerForm({
             </div>
           </div>
         </FormSection>
-        <FormSection title={t('kubernetes.cluster.configure.resourcesAndMetrics')}>
+        <FormSection
+          title={t('kubernetes.cluster.configure.resourcesAndMetrics')}
+        >
           <InsightsBox
             insightCloseId="resourceOverCommit"
             className="mb-4"
             header={t('kubernetes.cluster.configure.resourceOverCommitHeader')}
-            content={t('kubernetes.cluster.configure.resourceOverCommitContent')}
+            content={t(
+              'kubernetes.cluster.configure.resourceOverCommitContent'
+            )}
           />
           <div className="form-group">
             <div className="col-sm-12">
               <TextTip color="blue" inline={false}>
-                <p>
-                  {t('kubernetes.cluster.configure.disableOverCommitTip')}
-                </p>
+                <p>{t('kubernetes.cluster.configure.disableOverCommitTip')}</p>
               </TextTip>
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12">
               <TextTip color="orange" inline={false}>
-                <p>
-                  {t('kubernetes.cluster.configure.enableOverCommitTip')}
-                </p>
+                <p>{t('kubernetes.cluster.configure.enableOverCommitTip')}</p>
               </TextTip>
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12">
               <SwitchField
-                label={t('kubernetes.cluster.configure.allowResourceOverCommit')}
+                label={t(
+                  'kubernetes.cluster.configure.allowResourceOverCommit'
+                )}
                 labelClass="col-sm-5 col-lg-4"
                 name="resourceOverCommitPercentage"
                 checked
@@ -354,7 +384,9 @@ function InnerForm({
             value={values.useServerMetrics}
           />
         </FormSection>
-        <FormSection title={t('kubernetes.cluster.configure.availableStorageOptions')}>
+        <FormSection
+          title={t('kubernetes.cluster.configure.availableStorageOptions')}
+        >
           {initialValues.storageClasses.length === 0 && (
             <div className="form-group">
               <div className="col-sm-12">
@@ -369,9 +401,7 @@ function InnerForm({
               <div className="form-group">
                 <div className="col-sm-12">
                   <TextTip color="blue" inline={false}>
-                    <p>
-                      {t('kubernetes.cluster.configure.storageOptionsTip')}
-                    </p>
+                    <p>{t('kubernetes.cluster.configure.storageOptionsTip')}</p>
                     <p>
                       {t('kubernetes.cluster.configure.accessModesInfo')}{' '}
                       <a
@@ -381,7 +411,7 @@ function InnerForm({
                       >
                         {t('kubernetes.cluster.configure.accessModesDocLink')}
                       </a>
-                      .
+                      进行部署。
                     </p>
                   </TextTip>
                 </div>

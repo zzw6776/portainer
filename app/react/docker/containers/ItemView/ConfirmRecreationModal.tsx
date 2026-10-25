@@ -17,16 +17,14 @@ function ConfirmRecreationModal({ onSubmit, cannotPullImage }: Props) {
   const { t } = useTranslation();
 
   return (
-    <Modal
-      onDismiss={() => onSubmit()}
-      aria-label="confirm recreate container modal"
-    >
-      <Modal.Header title={t('docker.containers.recreate.title')} modalType={ModalType.Destructive} />
+    <Modal onDismiss={() => onSubmit()} aria-label="确认重新创建容器">
+      <Modal.Header
+        title={t('docker.containers.recreate.title')}
+        modalType={ModalType.Destructive}
+      />
 
       <Modal.Body>
-        <p>
-          {t('docker.containers.recreate.message')}
-        </p>
+        <p>{t('docker.containers.recreate.message')}</p>
         <SwitchField
           name="pullLatest"
           data-cy="recreate-pull-latest-switch"

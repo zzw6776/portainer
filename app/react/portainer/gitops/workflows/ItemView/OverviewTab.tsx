@@ -38,10 +38,10 @@ function EmptyOverview() {
       <div className="flex flex-col items-center gap-2 py-12 text-center">
         <Icon icon={PackageOpenIcon} size="xl" className="text-gray-5" />
         <p className="m-0 font-semibold text-gray-9 th-highcontrast:text-white th-dark:text-white">
-          No artifacts
+          无产物
         </p>
         <p className="m-0 text-sm text-gray-6">
-          This workflow has no stacks or edge stacks associated with it yet.
+          此工作流尚未关联任何堆栈或边缘堆栈。
         </p>
       </div>
     </Card.Container>

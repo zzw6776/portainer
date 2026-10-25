@@ -18,8 +18,8 @@ export function EdgeIndicator({
   if (!associated) {
     return (
       <span role="status" aria-label="edge-status">
-        <EnvironmentStatusBadgeItem aria-label="unassociated">
-          <span className="whitespace-nowrap">Not associated</span>
+        <EnvironmentStatusBadgeItem aria-label="未关联">
+          <span className="whitespace-nowrap">未关联</span>
         </EnvironmentStatusBadgeItem>
       </span>
     );
@@ -35,7 +35,7 @@ export function EdgeIndicator({
         <span
           className="small text-muted vertical-center"
           aria-label="edge-last-checkin"
-          title="Last edge check-in"
+          title="边缘设备上次签入"
         >
           <Activity className="icon icon-sm space-right" aria-hidden="true" />
           {isoDateFromTimestamp(environment.LastCheckInDate)}

@@ -83,7 +83,9 @@ export function KubeServicesForm({
       value: 'ClusterIP',
       label: (
         <ServiceTabLabel
-          serviceTypeLabel={t('kubernetes.applications.services.clusterIpServices')}
+          serviceTypeLabel={t(
+            'kubernetes.applications.services.clusterIpServices'
+          )}
           serviceTypeCount={serviceTypeCounts.ClusterIP}
           serviceTypeHasErrors={serviceTypeHasErrors.ClusterIP}
         />
@@ -93,7 +95,9 @@ export function KubeServicesForm({
       value: 'NodePort',
       label: (
         <ServiceTabLabel
-          serviceTypeLabel={t('kubernetes.applications.services.nodePortServices')}
+          serviceTypeLabel={t(
+            'kubernetes.applications.services.nodePortServices'
+          )}
           serviceTypeCount={serviceTypeCounts.NodePort}
           serviceTypeHasErrors={serviceTypeHasErrors.NodePort}
         />
@@ -103,7 +107,9 @@ export function KubeServicesForm({
       value: 'LoadBalancer',
       label: (
         <ServiceTabLabel
-          serviceTypeLabel={t('kubernetes.applications.services.loadBalancerServices')}
+          serviceTypeLabel={t(
+            'kubernetes.applications.services.loadBalancerServices'
+          )}
           serviceTypeCount={serviceTypeCounts.LoadBalancer}
           serviceTypeHasErrors={serviceTypeHasErrors.LoadBalancer}
         />
@@ -113,7 +119,9 @@ export function KubeServicesForm({
 
   return (
     <div className="flex flex-col">
-      <FormSection title={t('kubernetes.applications.services.publishingApplication')} />
+      <FormSection
+        title={t('kubernetes.applications.services.publishingApplication')}
+      />
       <PublishingExplaination />
       <ServiceTabs
         serviceTypeOptions={serviceTypeOptions}

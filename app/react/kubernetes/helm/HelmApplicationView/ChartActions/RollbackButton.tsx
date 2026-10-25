@@ -37,21 +37,21 @@ export function RollbackButton({
     <LoadingButton
       onClick={handleClick}
       isLoading={rollbackMutation.isLoading}
-      loadingText="Rolling back..."
+      loadingText="正在回滚……"
       data-cy="rollback-button"
       icon={RotateCcw}
       color="default"
       size="medium"
     >
-      Rollback to #{rollbackRevision}
+      回滚到版本号{rollbackRevision}
     </LoadingButton>
   );
 
   async function handleClick() {
     const confirmed = await confirm({
-      title: 'Are you sure?',
+      title: '确定吗？',
       modalType: ModalType.Warn,
-      confirmButton: buildConfirmButton('Rollback'),
+      confirmButton: buildConfirmButton('回滚'),
       message: `Rolling back will restore the application to revision #${rollbackRevision}, which could cause service interruption. Do you wish to continue?`,
     });
     if (!confirmed) {
@@ -66,7 +66,7 @@ export function RollbackButton({
       {
         onSuccess: () => {
           notifySuccess(
-            'Success',
+            '成功',
             `Application rolled back to revision #${rollbackRevision} successfully.`
           );
           // set the revision url param to undefined to refresh the page at the latest revision

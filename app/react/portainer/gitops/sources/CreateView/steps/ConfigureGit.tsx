@@ -24,10 +24,10 @@ export function ConfigureGit() {
     <div className="grid">
       <FormControl
         inputId="repository-url-input"
-        label="Repository URL"
+        label="仓库 URL"
         required
         errors={errors.git?.url}
-        tooltip="Enter the full URL of your git repository"
+        tooltip="输入 Git 仓库的完整 URL"
       >
         <Input
           id="repository-url-input"
@@ -40,24 +40,24 @@ export function ConfigureGit() {
       </FormControl>
 
       <SwitchField
-        label="Skip TLS Verification"
+        label="跳过 TLS 验证"
         labelClass="col-sm-3 col-lg-2"
         name="TLSSkipVerify"
         checked={values.git.tlsSkipVerify || false}
         onChange={(value) => setFieldValue('git.tlsSkipVerify', value)}
-        tooltip="Enabling this will allow skipping TLS validation for any self-signed certificate."
+        tooltip="启用后，将跳过对自签名证书的 TLS 验证。"
         data-cy="tls-skip-verify"
       />
 
       <Authentication />
 
       <SwitchField
-        label="Enable polling"
+        label="启用轮询"
         labelClass="col-sm-3 col-lg-2"
         name="polling-enabled"
         checked={values.git.polling.enabled}
         onChange={(value) => setFieldValue('git.polling.enabled', value)}
-        tooltip="When enabled, Portainer periodically fetches this repository to detect changes."
+        tooltip="启用后，Portainer 会定期拉取此仓库以检测更改。"
         data-cy="source-polling-switch"
       />
 

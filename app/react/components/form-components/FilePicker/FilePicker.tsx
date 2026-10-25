@@ -45,9 +45,8 @@ export function FilePicker({
     <Widget>
       <div className="flex flex-col border-b border-l-0 border-r-0 border-t-0 border-solid border-gray-4 px-3 py-2 th-highcontrast:border-white th-dark:border-gray-7">
         <p>
-          Browse files, select individually, or use wildcard expressions.
-          Contains {allFilePaths.length}{' '}
-          {pluralize(allFilePaths.length, 'file')}. Try patterns like:
+          浏览文件、逐项选择或使用通配符表达式。包含 {allFilePaths.length}{' '}
+          {pluralize(allFilePaths.length, 'file')}。可尝试以下模式：
         </p>
         <div className="flex gap-1">
           {exampleExpressions.map((pattern, index) => {
@@ -84,7 +83,7 @@ export function FilePicker({
       <div ref={treeAreaRef} className="flex h-80 overflow-hidden">
         {allFilePaths.length === 0 && (
           <p className="w-full px-3 py-4 text-center text-xs text-gray-6 th-highcontrast:text-gray-5 th-dark:text-gray-5">
-            No files available
+            没有可用文件
           </p>
         )}
         {!filter.trim() && (
@@ -113,7 +112,7 @@ export function FilePicker({
 
       <div className="flex items-center justify-between border-b-0 border-l-0 border-r-0 border-t border-solid border-gray-4 px-3 py-2 th-highcontrast:border-white th-dark:border-gray-7">
         <span className="text-xs text-gray-6 th-highcontrast:text-white th-dark:text-gray-5">
-          {selected.size} selected
+          {selected.size} 项
         </span>
         <Button
           color="default"
@@ -121,7 +120,7 @@ export function FilePicker({
           onClick={() => onChange([])}
           data-cy="file-picker-clear"
         >
-          Clear
+          清除
         </Button>
       </div>
     </Widget>
@@ -132,7 +131,7 @@ export function FilePicker({
     return createPortal(
       paths.length === 0 ? (
         <p className="px-3 py-4 text-center text-xs text-gray-6 th-highcontrast:text-gray-5 th-dark:text-gray-5">
-          No matching files
+          没有匹配的文件
         </p>
       ) : (
         <ul className="h-full w-full overflow-y-auto px-1">

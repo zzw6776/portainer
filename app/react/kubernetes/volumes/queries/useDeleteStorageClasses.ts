@@ -14,7 +14,7 @@ export function useDeleteStorageClasses(environmentId: EnvironmentId) {
     mutationFn: (storageClasses: StorageClass[]) =>
       deleteStorageClasses(storageClasses, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Storage classes successfully removed');
+      notifySuccess('成功', '存储类移除成功');
       queryClient.invalidateQueries(queryKeys.storages(environmentId));
       return queryClient.invalidateQueries(queryKeys.volumes(environmentId));
     },

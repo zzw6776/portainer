@@ -85,7 +85,7 @@ export function K8sRegistryAccessNotice({
         className="pointer-events-none invisible"
         inline={false}
       >
-        <InlineLoader size="xs">Loading...</InlineLoader>
+        <InlineLoader size="xs">正在加载……</InlineLoader>
       </TextTip>
     );
   }
@@ -102,21 +102,21 @@ export function K8sRegistryAccessNotice({
   if (allRegistries.length === 0 && nsRegistries.length === 0) {
     return (
       <TextTip color="blue" inline={false}>
-        No registries configured for the namespace &apos;{effectiveNamespace}
-        &apos;.
+        以下命名空间未配置镜像仓库：“{effectiveNamespace}
+        ”。
         {isPureAdmin ? (
           <>
             {' '}
-            To pull private images automatically,{' '}
+            要自动拉取私有镜像，{' '}
             <Link
               to="portainer.registries.new"
               data-cy="add-registry-link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              add a registry
+              添加镜像仓库
             </Link>{' '}
-            and{' '}
+            和{' '}
             <Link
               to="kubernetes.registries"
               params={{ endpointId: environmentId }}
@@ -124,9 +124,9 @@ export function K8sRegistryAccessNotice({
               target="_blank"
               rel="noopener noreferrer"
             >
-              set up registry access
+              设置镜像仓库访问权限
             </Link>{' '}
-            .
+            进行部署。
           </>
         ) : (
           ' To pull private images automatically, contact your Portainer administrator to add a registry and set up registry access.'
@@ -139,13 +139,13 @@ export function K8sRegistryAccessNotice({
   if (nsRegistries.length === 0) {
     return (
       <TextTip color="blue" inline={false}>
-        Registry access not configured for the namespace &apos;
+        以下命名空间未配置镜像仓库访问权限：“
         {effectiveNamespace}
-        &apos;.
+        ”。
         {isEnvAdmin ? (
           <>
             {' '}
-            To pull private images automatically,{' '}
+            要自动拉取私有镜像，{' '}
             <Link
               to="kubernetes.registries"
               params={{ endpointId: environmentId }}
@@ -153,9 +153,9 @@ export function K8sRegistryAccessNotice({
               target="_blank"
               rel="noopener noreferrer"
             >
-              set up registry access
+              设置镜像仓库访问权限
             </Link>
-            .
+            进行部署。
           </>
         ) : (
           ' To pull private images automatically, contact your Portainer administrator to set up registry access.'
@@ -184,9 +184,9 @@ export function K8sRegistryAccessNotice({
           {registryCount} {pluralize(registryCount, 'registry', 'registries')}
         </span>
       </TooltipWithChildren>{' '}
-      available for namespace &apos;{effectiveNamespace}&apos; - pulling images
-      from {pluralize(registryCount, 'this registry', 'these registries')} will
-      work automatically (unless using a non default service account).
+      可用于命名空间“{effectiveNamespace}”——从{' '}
+      {pluralize(registryCount, 'this registry', 'these registries')}{' '}
+      将自动生效（使用非默认服务账户时除外）。
       {isEnvAdmin && (
         <>
           {' '}
@@ -197,7 +197,7 @@ export function K8sRegistryAccessNotice({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Manage access
+            管理访问权限
           </Link>
         </>
       )}

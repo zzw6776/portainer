@@ -19,7 +19,7 @@ export function useResizePVC(environmentId: EnvironmentId) {
     mutationFn: (payload: ResizePVCPayload) =>
       resizePVC(payload, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Persistent volume claim successfully resized');
+      notifySuccess('成功', '持久卷声明扩容成功');
       return queryClient.invalidateQueries(queryKeys.volumes(environmentId));
     },
     ...withError('Unable to resize persistent volume claim'),

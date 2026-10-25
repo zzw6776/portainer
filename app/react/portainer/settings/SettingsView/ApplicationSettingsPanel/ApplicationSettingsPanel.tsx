@@ -66,7 +66,10 @@ export function ApplicationSettingsPanel({
       },
       {
         onSuccess(settings) {
-          notifySuccess(t('common.success'), t('settings.app_settings_updated'));
+          notifySuccess(
+            t('common.success'),
+            t('settings.app_settings_updated')
+          );
           onSuccess(settings);
         },
       }
@@ -89,7 +92,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
         <Field
           as={Input}
           id="snapshot_interval"
-          placeholder="e.g. 15m"
+          placeholder="例如: 15m"
           name="snapshotInterval"
         />
       </FormControl>

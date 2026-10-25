@@ -45,7 +45,7 @@ export function AccessTab({ source, isEditing, onEditingChange }: Props) {
 
   return (
     <Widget>
-      <Widget.Title title="Access control" icon={Eye} />
+      <Widget.Title title="访问控制" icon={Eye} />
       <Widget.Body>
         <AccessControlPanelDetails
           resourceName="source"
@@ -85,7 +85,7 @@ function AccessForm({
       onSubmit={(values, { setSubmitting }) =>
         updateAccess.mutate(toAccessPayload(values), {
           onSuccess: () => {
-            notifySuccess('Source access updated', '');
+            notifySuccess('源访问权限更新成功', '');
             onClose();
           },
           onSettled: () => setSubmitting(false),
@@ -108,7 +108,7 @@ function AccessForm({
             noValidate
           >
             <Widget>
-              <Widget.Title title="Access control" icon={Eye} />
+              <Widget.Title title="访问控制" icon={Eye} />
               <Widget.Body>
                 <EditDetails
                   resourceName="source"
@@ -127,15 +127,15 @@ function AccessForm({
                 onClick={onClose}
                 data-cy="cancel-source-access-button"
               >
-                Cancel
+                取消
               </Button>
               <LoadingButton
                 isLoading={isSubmitting}
-                loadingText="Saving..."
+                loadingText="正在保存……"
                 disabled={!isValid || !dirty}
                 data-cy="save-source-access-button"
               >
-                Save Changes
+                保存更改
               </LoadingButton>
             </StickyFooter>
           </Form>

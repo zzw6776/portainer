@@ -85,10 +85,8 @@ function HelmDatatableDescription({ isAdmin }: { isAdmin: boolean }) {
   return (
     <TextTip color="blue" className="mb-3">
       <p>
-        Adding a Helm repository here makes it available only in your Portainer
-        user account. The Helm charts from these repositories (along with the
-        globally set Helm repository) are shown in the &apos;Create from
-        Code&apos; screen.
+        在此处添加 Helm 仓库仅在您的 Portainer 用户账户中可用。来自这些仓库的
+        Helm chart（连同全局设置的 Helm 仓库）将显示在“从代码创建”界面中。
       </p>
       {isAdmin && (
         <>
@@ -100,7 +98,7 @@ function HelmDatatableDescription({ isAdmin }: { isAdmin: boolean }) {
           >
             {t('helm_repos.manage_link')}
           </Link>
-          .
+          进行部署。
         </>
       )}
     </TextTip>

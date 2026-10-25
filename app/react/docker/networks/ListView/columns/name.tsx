@@ -22,7 +22,7 @@ export const name = columnHelper.accessor('Name', {
         </Link>
         {item.ResourceControl?.System && (
           <Badge type="info" className="ml-2">
-            System
+            系统
           </Badge>
         )}
       </>

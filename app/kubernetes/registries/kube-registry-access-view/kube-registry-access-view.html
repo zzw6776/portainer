@@ -1,4 +1,9 @@
-<page-header title="'k8s_registries.registry_access' | i18n" breadcrumbs="[{label:('sidebar.registries' | i18n), link:'kubernetes.registries'}, $ctrl.registry.Name, ('k8s_registries.access_management' | i18n)]" reload="true"> </page-header>
+<page-header
+  title="'k8s_registries.registry_access' | i18n"
+  breadcrumbs="[{label:('sidebar.registries' | i18n), link:'kubernetes.registries'}, $ctrl.registry.Name, ('k8s_registries.access_management' | i18n)]"
+  reload="true"
+>
+</page-header>
 
 <registry-details registry="$ctrl.registry" ng-if="$ctrl.registry"></registry-details>
 
@@ -17,7 +22,7 @@
                 ng-if="$ctrl.resourcePools.length"
                 value="$ctrl.selectedResourcePools"
                 namespaces="$ctrl.resourcePools"
-                placeholder="'Select one or more namespaces'"
+                placeholder="'选择一个或多个命名空间'"
                 on-change="($ctrl.onChangeResourcePools)"
                 allow-select-all="true"
               ></namespaces-selector>
@@ -38,7 +43,9 @@
                 ng-click="$ctrl.submit()"
                 button-spinner="$ctrl.state.actionInProgress"
               >
-                <span ng-hide="$ctrl.state.actionInProgress" class="vertical-center"><pr-icon icon="'plus'" size="'sm'"></pr-icon> {{ 'k8s_registries.create_access' | i18n }}</span>
+                <span ng-hide="$ctrl.state.actionInProgress" class="vertical-center"
+                  ><pr-icon icon="'plus'" size="'sm'"></pr-icon> {{ 'k8s_registries.create_access' | i18n }}</span
+                >
                 <span ng-show="$ctrl.state.actionInProgress">{{ 'k8s_registries.creating_access' | i18n }}</span>
               </button>
             </div>

@@ -155,14 +155,14 @@ function helmTabs(
 
   return compact([
     {
-      label: 'Resources',
+      label: '资源',
       id: 'resources',
       children: <ResourcesTable />,
     },
     {
       label: (
         <>
-          Events
+          事件
           {eventWarningCount >= 1 && (
             <Badge type="warnSecondary">
               <Icon icon={AlertTriangle} className="!mr-1" />
@@ -180,7 +180,7 @@ function helmTabs(
       ),
     },
     {
-      label: 'Values',
+      label: '值',
       id: 'values',
       children: (
         <ValuesDetails
@@ -210,7 +210,7 @@ function helmTabs(
       ),
     },
     {
-      label: 'Manifest',
+      label: '清单',
       id: 'manifest',
       children: (
         <ManifestDetails
@@ -238,7 +238,7 @@ function helmTabs(
       ),
     },
     !!release.info?.notes && {
-      label: 'Notes',
+      label: '说明',
       id: 'notes',
       children: (
         <NotesDetails

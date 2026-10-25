@@ -32,7 +32,7 @@ const imageColumnHelper = createColumnHelper<CachedImageRow>();
 const columns = [
   imageColumnHelper.accessor('image', {
     id: 'image',
-    header: 'Image',
+    header: '镜像',
     meta: {
       width: '70%',
     },
@@ -47,7 +47,7 @@ const columns = [
   }),
   imageColumnHelper.accessor('aliases', {
     id: 'aliases',
-    header: 'Aliases',
+    header: '别名',
     sortingFn: (left, right) =>
       left.original.aliasesCount - right.original.aliasesCount,
     meta: {
@@ -58,14 +58,14 @@ const columns = [
       const { aliasesCount } = row.original;
       return (
         <span className="text-muted text-sm">
-          {aliasesCount} alias{aliasesCount !== 1 ? 'es' : ''}
+          {aliasesCount} 别名{aliasesCount !== 1 ? 'es' : ''}
         </span>
       );
     },
   }),
   imageColumnHelper.accessor('sizeBytes', {
     id: 'sizeBytes',
-    header: 'Size',
+    header: '大小',
     sortingFn: 'alphanumeric',
     meta: {
       width: '15%',
@@ -81,7 +81,7 @@ export const cachedImages = columnHelper.accessor(
   (node) => node.status?.images?.length ?? 0,
   {
     id: 'cachedImages',
-    header: 'Cached Images',
+    header: '缓存镜像',
     cell: (props) => (
       <CachedImagesCell
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -165,9 +165,7 @@ function CachedImagesModal({
     >
       <ModalBody>
         {images.length === 0 && (
-          <div className="text-muted">
-            No cached images reported on this node.
-          </div>
+          <div className="text-muted">此节点未报告缓存镜像。</div>
         )}
         {images.length > 0 && (
           <Datatable<CachedImageRow>

@@ -19,13 +19,13 @@ export function ConnectionDetailsWidget({ source }: Props) {
     <Card.Container>
       <Card.Header
         icon={LinkIcon}
-        title="Connection Details"
+        title="连接详情"
         subtitle="Source name, URL, and connection settings"
       />
       <Card.Body className="grid grid-cols-1 gap-4">
         <div className="grid grid-cols-2 gap-4">
-          <DetailField label="Name">{source.name ?? '-'}</DetailField>
-          <DetailField label="Type">
+          <DetailField label="名称">{source.name ?? '-'}</DetailField>
+          <DetailField label="类型">
             {typeConfig ? (
               <span className="flex items-center gap-1.5">
                 <Icon icon={typeConfig.icon} size="sm" />
@@ -36,7 +36,7 @@ export function ConnectionDetailsWidget({ source }: Props) {
             )}
           </DetailField>
         </div>
-        <DetailField label="Repository URL">
+        <DetailField label="仓库 URL">
           <code
             className="bg-transparent p-0 font-mono text-sm"
             data-cy="source-url"

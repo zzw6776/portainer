@@ -44,9 +44,7 @@ function ActionsCell({
 
   switch (item.LogsStatus) {
     case LogsStatus.Pending:
-      return (
-        <>{i18n.t('edge.jobs.results.logs_pending')}</>
-      );
+      return <>{i18n.t('edge.jobs.results.logs_pending')}</>;
 
     case LogsStatus.Collected:
       return (

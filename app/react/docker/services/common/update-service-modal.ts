@@ -5,7 +5,7 @@ import { buildConfirmButton } from '@@/modals/utils';
 export async function confirmServiceForceUpdate(message: string) {
   const result = await openSwitchPrompt('Are you sure?', 'Re-pull image', {
     message,
-    confirmButton: buildConfirmButton('Update'),
+    confirmButton: buildConfirmButton('更新'),
     modalType: ModalType.Warn,
     'data-cy': 'confirm-service-force-update',
   });

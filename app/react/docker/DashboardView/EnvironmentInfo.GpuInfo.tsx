@@ -23,7 +23,7 @@ export function GpuInfo({
   }
 
   return (
-    <DetailsTable.Row label={gpus.length <= 1 ? 'GPU' : 'GPUs'}>
+    <DetailsTable.Row label={gpus.length <= 1 ? 'GPU' : 'GPU'}>
       {gpuFreeStr}
     </DetailsTable.Row>
   );

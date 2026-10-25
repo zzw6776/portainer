@@ -18,7 +18,7 @@ export function UpdateBadge() {
       )}
     >
       <span className="hidden text-sm 2xl:!inline">
-        Update Available: Edge Agent {version}
+        边缘代理有可用更新 {version}
       </span>
       <Link
         to="portainer.endpoints.updateSchedules.create"
@@ -30,7 +30,7 @@ export function UpdateBadge() {
         )}
         data-cy="home-schedule-update-link"
       >
-        Schedule Update
+        计划更新
       </Link>
     </span>
   );

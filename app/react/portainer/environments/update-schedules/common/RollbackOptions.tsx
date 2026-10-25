@@ -20,11 +20,7 @@ export function RollbackOptions() {
   }
 
   if (!count) {
-    return (
-      <TextTip>
-        There are no rollback options available for your selected groups(s)
-      </TextTip>
-    );
+    return <TextTip>所选组没有可用的回滚选项</TextTip>;
   }
 
   if (isLoading || !groupNames) {
@@ -34,8 +30,7 @@ export function RollbackOptions() {
   return (
     <div className="form-group">
       <div className="col-sm-12">
-        {count} edge device(s) from {groupNames} will rollback to version{' '}
-        {version}
+        {count} 个边缘设备将从 {groupNames} 回滚到版本 {version}
       </div>
     </div>
   );

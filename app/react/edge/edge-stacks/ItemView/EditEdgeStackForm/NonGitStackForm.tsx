@@ -152,7 +152,10 @@ export function NonGitStackForm({ edgeStack }: { edgeStack: EdgeStack }) {
       },
       {
         onSuccess: () => {
-          notifySuccess(t('common.success'), t('edge.stacks.edit.stack_deployed_success'));
+          notifySuccess(
+            t('common.success'),
+            t('edge.stacks.edit.stack_deployed_success')
+          );
           router.stateService.go('^');
         },
       }
@@ -232,15 +235,11 @@ function InnerForm({
       />
 
       {hasKubeEndpoint && hasDockerEndpoint && (
-        <TextTip>
-          {t('edge.stacks.create.multiple_types_error')}
-        </TextTip>
+        <TextTip>{t('edge.stacks.create.multiple_types_error')}</TextTip>
       )}
 
       {values.deploymentType === DeploymentType.Compose && hasKubeEndpoint && (
-        <FormError>
-          {t('edge.stacks.edit.compose_no_kube')}
-        </FormError>
+        <FormError>{t('edge.stacks.edit.compose_no_kube')}</FormError>
       )}
 
       <EdgeStackDeploymentTypeSelector
@@ -355,9 +354,7 @@ function InnerForm({
           </div>
           {staggerUpdating && (
             <div className="col-sm-12">
-              <FormError>
-                {t('edge.stacks.edit.concurrent_updates')}
-              </FormError>
+              <FormError>{t('edge.stacks.edit.concurrent_updates')}</FormError>
             </div>
           )}
         </div>
@@ -409,7 +406,9 @@ function useCachedContent() {
 
 function formValidation(): SchemaOf<FormValues> {
   return object({
-    content: string().required(i18n.t('edge.stacks.edit.content_required') as string),
+    content: string().required(
+      i18n.t('edge.stacks.edit.content_required') as string
+    ),
     deploymentType: number()
       .oneOf([0, 1, 2])
       .required(i18n.t('edge.stacks.edit.deployment_type_required') as string),

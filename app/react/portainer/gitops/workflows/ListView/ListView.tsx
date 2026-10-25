@@ -23,17 +23,17 @@ const STATUS_CONFIG: Array<{
   label: string;
   color: 'error' | 'gray' | 'warning' | 'success';
 }> = [
-  { key: 'error', label: 'Error', color: 'error' },
-  { key: 'paused', label: 'Paused', color: 'gray' },
-  { key: 'syncing', label: 'Syncing', color: 'warning' },
-  { key: 'healthy', label: 'Healthy', color: 'success' },
-  { key: 'unknown', label: 'Unknown', color: 'gray' },
+  { key: 'error', label: '错误', color: 'error' },
+  { key: 'paused', label: '已暂停', color: 'gray' },
+  { key: 'syncing', label: '正在同步', color: 'warning' },
+  { key: 'healthy', label: '健康', color: 'success' },
+  { key: 'unknown', label: '未知', color: 'gray' },
 ];
 
 const SORT_OPTIONS: SortOption[] = [
-  { key: 'name', label: 'Name' },
-  { key: 'status', label: 'Status', grouped: true },
-  { key: 'lastSyncDate', label: 'Last sync' },
+  { key: 'name', label: '名称' },
+  { key: 'status', label: '状态', grouped: true },
+  { key: 'lastSyncDate', label: '上次同步' },
 ];
 
 const SORT_KEY_SET = new Set(SORT_KEYS);
@@ -86,11 +86,7 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader
-        title="GitOps Workflows"
-        breadcrumbs="GitOps Workflows"
-        reload
-      />
+      <PageHeader title="GitOps 工作流" breadcrumbs="GitOps Workflows" reload />
       <div className="mx-4 mb-4 space-y-4">
         <StatusSummaryBar
           total={summaryTotal}
@@ -130,7 +126,7 @@ function buildGroups(
   const options = GROUP_OPTIONS[sortBy];
 
   if (!options) {
-    return items.length > 0 ? [{ key: 'all', label: 'All', items }] : [];
+    return items.length > 0 ? [{ key: 'all', label: '全部', items }] : [];
   }
 
   const getField = GROUP_FIELD[sortBy];

@@ -34,30 +34,30 @@ export function ConnectionTest() {
 
   if (!settled) {
     return (
-      <Alert color="info" title="Testing connection..." className="mt-4">
-        Checking that Portainer can reach the repository.
+      <Alert color="info" title="正在测试连接..." className="mt-4">
+        正在检查 Portainer 是否可以访问仓库。
       </Alert>
     );
   }
 
   if (query.isError) {
     return (
-      <Alert color="error" title="Connection failed" className="mt-4">
-        Unable to test the connection. Please try again.
+      <Alert color="error" title="连接失败" className="mt-4">
+        无法测试连接，请重试。
       </Alert>
     );
   }
 
   if (query.data?.success) {
     return (
-      <Alert color="success" title="Connection successful" className="mt-4">
-        Portainer reached the repository with these details.
+      <Alert color="success" title="连接成功" className="mt-4">
+        Portainer 已使用这些配置成功访问仓库。
       </Alert>
     );
   }
 
   return (
-    <Alert color="error" title="Connection failed" className="mt-4">
+    <Alert color="error" title="连接失败" className="mt-4">
       {query.data?.error || 'Unable to reach the repository.'}
     </Alert>
   );

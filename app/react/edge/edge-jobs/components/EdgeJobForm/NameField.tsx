@@ -10,11 +10,11 @@ import { EdgeJob } from '../../types';
 
 export function NameField({ errors }: { errors?: FormikErrors<string> }) {
   return (
-    <FormControl label="Name" required errors={errors} inputId="edgejob_name">
+    <FormControl label="名称" required errors={errors} inputId="edgejob_name">
       <Field
         as={Input}
         name="name"
-        placeholder="e.g. backup-app-prod"
+        placeholder="例如 backup-app-prod"
         data-cy="edgejob-name-input"
         id="edgejob_name"
       />
@@ -28,7 +28,7 @@ export function useNameValidation(id?: EdgeJob['Id']) {
   return useMemo(
     () =>
       string()
-        .required('Name is required')
+        .required('名称是必填项')
         .matches(
           /^[a-zA-Z0-9][a-zA-Z0-9_.-]+$/,
           'Allowed characters are: [a-zA-Z0-9_.-]'
@@ -39,7 +39,7 @@ export function useNameValidation(id?: EdgeJob['Id']) {
             !edgeJobsQuery.data?.find(
               (job) => job.Name === value && job.Id !== id
             ),
-          message: 'Name must be unique',
+          message: '名称必须唯一',
         }),
     [edgeJobsQuery.data, id]
   );

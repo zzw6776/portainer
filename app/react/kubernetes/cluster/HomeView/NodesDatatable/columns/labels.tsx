@@ -6,7 +6,7 @@ import { columnHelper } from './helper';
 export const labels = columnHelper.accessor(
   (row) => getNodeLabelStrings(row).join(' '),
   {
-    header: 'Labels',
+    header: '标签',
     id: 'labels',
     enableSorting: false,
     cell: ({ row: { original: node } }) => (

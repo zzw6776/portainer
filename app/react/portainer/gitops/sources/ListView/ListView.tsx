@@ -19,11 +19,11 @@ const STATUS_CONFIG: Array<{
   label: string;
   color: 'error' | 'gray' | 'warning' | 'success';
 }> = [
-  { key: 'error', label: 'Error', color: 'error' },
-  { key: 'paused', label: 'Paused', color: 'gray' },
-  { key: 'syncing', label: 'Syncing', color: 'warning' },
-  { key: 'healthy', label: 'Healthy', color: 'success' },
-  { key: 'unknown', label: 'Unknown', color: 'gray' },
+  { key: 'error', label: '错误', color: 'error' },
+  { key: 'paused', label: '已暂停', color: 'gray' },
+  { key: 'syncing', label: '正在同步', color: 'warning' },
+  { key: 'healthy', label: '健康', color: 'success' },
+  { key: 'unknown', label: '未知', color: 'gray' },
 ];
 
 const TYPE_CONFIG = Object.entries(SOURCE_TYPES).map(([key, { label }]) => ({
@@ -32,9 +32,9 @@ const TYPE_CONFIG = Object.entries(SOURCE_TYPES).map(([key, { label }]) => ({
 }));
 
 const SORT_OPTIONS: SortOption[] = [
-  { key: 'name', label: 'Name' },
-  { key: 'status', label: 'Status', grouped: true },
-  { key: 'type', label: 'Type', grouped: true },
+  { key: 'name', label: '名称' },
+  { key: 'status', label: '状态', grouped: true },
+  { key: 'type', label: '类型', grouped: true },
 ];
 
 const GROUP_OPTIONS = {
@@ -73,9 +73,9 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title="GitOps Sources" breadcrumbs="GitOps Sources" reload>
+      <PageHeader title="GitOps 源" breadcrumbs="GitOps Sources" reload>
         <div className="ml-auto">
-          <AddButton data-cy="add-source-button">Add new</AddButton>
+          <AddButton data-cy="add-source-button">新增</AddButton>
         </div>
       </PageHeader>
       <div className="mx-4 mb-4 space-y-4">
@@ -130,5 +130,5 @@ function buildGroups(
     })).filter((g) => g.items.length > 0);
   }
 
-  return [{ key: 'all', label: 'All', items }];
+  return [{ key: 'all', label: '全部', items }];
 }

@@ -82,7 +82,7 @@ export function CardExpandableListRow<D extends DefaultType>({
                 row.toggleExpanded();
               }}
               aria-expanded={isExpanded}
-              aria-label={isExpanded ? 'Collapse' : 'Expand'}
+              aria-label={isExpanded ? '折叠' : '展开'}
             >
               <Icon
                 icon={ChevronDown}

@@ -58,7 +58,7 @@ class KubernetesConfigurationsController {
   }
 
   removeAction(selectedItems) {
-    confirmDelete('Do you want to remove the selected ConfigMap(s) & Secret(s)?').then((confirmed) => {
+    confirmDelete('是否移除所选 ConfigMap 和 Secret？').then((confirmed) => {
       if (confirmed) {
         return this.$async(this.removeActionAsync, selectedItems);
       }

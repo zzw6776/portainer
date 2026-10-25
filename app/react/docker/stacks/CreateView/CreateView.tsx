@@ -24,7 +24,11 @@ export function CreateView() {
 
   return (
     <>
-      <PageHeader title={t('docker.stacks.create.title')} breadcrumbs={t('docker.stacks.create.breadcrumb')} reload />
+      <PageHeader
+        title={t('docker.stacks.create.title')}
+        breadcrumbs={t('docker.stacks.create.breadcrumb')}
+        reload
+      />
 
       <div className="row">
         <div className="col-sm-12">

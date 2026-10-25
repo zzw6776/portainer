@@ -38,7 +38,7 @@ export function useCreate({
 
     mutation.mutate(getPayload(method, values), {
       onSuccess: () => {
-        notifySuccess('Success', 'Edge stack created');
+        notifySuccess('成功', '边缘堆栈创建成功');
         router.stateService.go('^');
       },
     });
@@ -50,7 +50,7 @@ export function useCreate({
       switch (method) {
         case 'file':
           if (!values.file) {
-            throw new Error('File is required');
+            throw new Error('文件是必填项');
           }
 
           return {

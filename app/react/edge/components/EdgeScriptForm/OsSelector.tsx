@@ -26,7 +26,7 @@ export function OsSelector({ onChange, value }: Props) {
               label: (
                 <>
                   <Icon icon={Linux} className="mr-1" />
-                  Linux & Windows WSL
+                  Linux 与 Windows WSL
                 </>
               ),
             },

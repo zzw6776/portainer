@@ -32,17 +32,17 @@ export function KubeNoteMinimumCharacters() {
             onChange={(value) => setIsEnabled(value)}
             featureId={FeatureId.K8S_REQUIRE_NOTE_ON_APPLICATIONS}
             labelClass="col-sm-3 col-lg-2"
-            tooltip={isBE ? t('settings.deploy_note_tooltip_be') : t('settings.deploy_note_tooltip_ce')}
+            tooltip={
+              isBE
+                ? t('settings.deploy_note_tooltip_be')
+                : t('settings.deploy_note_tooltip_ce')
+            }
           />
         </div>
       </div>
       {isEnabled && (
         <FormControl
-          label={
-            <span className="pl-4">
-              {t('settings.deploy_note_min')}
-            </span>
-          }
+          label={<span className="pl-4">{t('settings.deploy_note_min')}</span>}
           errors={error}
         >
           <Input

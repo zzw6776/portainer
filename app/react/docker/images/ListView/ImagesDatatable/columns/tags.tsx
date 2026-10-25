@@ -23,8 +23,8 @@ function Cell({
   if (isDanglingImage) {
     return (
       <Badge type="muted">
-        Dangling
-        <Tooltip message="Dangling images are untagged and no longer referenced by any repository." />
+        虚悬 (Dangling)
+        <Tooltip message="虚悬镜像即未打标签且不再被任何镜像仓库引用的无用镜像。" />
       </Badge>
     );
   }

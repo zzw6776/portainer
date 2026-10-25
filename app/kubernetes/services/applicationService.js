@@ -220,7 +220,7 @@ class KubernetesApplicationService {
         try {
           await this.KubernetesServiceService.create(service);
         } catch (error) {
-          notifyError('Unable to create service', error);
+          notifyError('无法创建服务', error);
         }
       });
 
@@ -233,7 +233,7 @@ class KubernetesApplicationService {
           await Promise.all(this._generateIngressPatchPromises(formValues.OriginalIngresses, newIngresses));
         }
       } catch (error) {
-        notifyError('Unable to update service', error);
+        notifyError('无法更新服务', error);
       }
     }
 
@@ -244,7 +244,7 @@ class KubernetesApplicationService {
       try {
         headlessService = await this.KubernetesServiceService.create(headlessService);
       } catch (error) {
-        notifyError('Unable to create service', error);
+        notifyError('无法创建服务', error);
       }
       app.ServiceName = headlessService.metadata.name;
     } else {
@@ -303,7 +303,7 @@ class KubernetesApplicationService {
       try {
         await this.KubernetesServiceService.patch(oldHeadlessService, newHeadlessService);
       } catch (error) {
-        notifyError('Unable to update service', error);
+        notifyError('无法更新服务', error);
       }
     } else {
       const claimPromises = _.map(newClaims, (newClaim) => {
@@ -325,7 +325,7 @@ class KubernetesApplicationService {
         try {
           await this.KubernetesServiceService.create(service);
         } catch (error) {
-          notifyError('Unable to create service', error);
+          notifyError('无法创建服务', error);
         }
       });
     }
@@ -350,13 +350,13 @@ class KubernetesApplicationService {
           try {
             await this.KubernetesServiceService.patch(oldServiceMatched, newService);
           } catch (error) {
-            notifyError('Unable to update service', error);
+            notifyError('无法更新服务', error);
           }
         } else {
           try {
             await this.KubernetesServiceService.create(newService);
           } catch (error) {
-            notifyError('Unable to create service', error);
+            notifyError('无法创建服务', error);
           }
         }
       });
@@ -373,7 +373,7 @@ class KubernetesApplicationService {
           await Promise.all(this._generateIngressPatchPromises(newFormValues.OriginalIngresses, newIngresses));
         }
       } catch (error) {
-        notifyError('Unable to update service', error);
+        notifyError('无法更新服务', error);
       }
     }
 

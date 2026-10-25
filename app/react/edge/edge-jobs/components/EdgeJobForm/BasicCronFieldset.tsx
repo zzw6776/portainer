@@ -14,7 +14,7 @@ export function BasicCronFieldset() {
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Recurring Edge job"
+            label="周期性边缘任务"
             checked={values.recurring}
             onChange={(value) => {
               setFieldValue('recurring', value);

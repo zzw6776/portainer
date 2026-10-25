@@ -50,7 +50,7 @@ export function SettingsForm({ source, onCancel }: Props) {
 
         updateSource.mutate(payload, {
           onSuccess: () => {
-            notifySuccess('Source updated', '');
+            notifySuccess('源更新成功', '');
             onCancel();
           },
           onSettled: () => setSubmitting(false),
@@ -78,15 +78,15 @@ export function SettingsForm({ source, onCancel }: Props) {
                 }}
                 data-cy="cancel-settings-button"
               >
-                Cancel
+                取消
               </Button>
               <LoadingButton
                 isLoading={isSubmitting}
-                loadingText="Saving..."
+                loadingText="正在保存……"
                 disabled={!isValid || !dirty}
                 data-cy="save-settings-button"
               >
-                Save Changes
+                保存更改
               </LoadingButton>
             </StickyFooter>
           </Form>

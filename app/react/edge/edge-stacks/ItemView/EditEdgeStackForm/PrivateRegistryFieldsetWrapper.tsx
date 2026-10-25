@@ -82,7 +82,7 @@ export function PrivateRegistryFieldsetWrapper({
         );
       }
     } catch (err) {
-      notifyError('Failure', err as Error, 'Unable to retrieve registries');
+      notifyError('失败', err as Error, '无法获取镜像仓库');
     }
   }
 

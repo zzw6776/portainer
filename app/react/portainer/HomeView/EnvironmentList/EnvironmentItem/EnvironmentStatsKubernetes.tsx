@@ -9,7 +9,7 @@ interface Props {
 
 export function EnvironmentStatsKubernetes({ snapshot }: Props) {
   if (!snapshot) {
-    return <>No snapshot available</>;
+    return <>无可用快照</>;
   }
 
   const totalGpuCount = Object.values(snapshot.TotalGPU ?? {}).reduce(

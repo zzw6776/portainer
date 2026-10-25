@@ -21,7 +21,7 @@ interface Props {
 export function DockerfileDetails({ image }: Props) {
   return (
     <TableContainer>
-      <TableTitle label="Dockerfile details" icon={List} />
+      <TableTitle label="Dockerfile 详情" icon={List} />
       <DetailsTable dataCy="dockerfile-details-table">
         <DetailsTable.Row label="CMD">
           <code>{image.Command ? joinCommand(image.Command) : '-'}</code>
@@ -56,7 +56,7 @@ export function DockerfileDetails({ image }: Props) {
         )}
 
         {image.Env.length > 0 && (
-          <DetailsTable.Row label="ENV">
+          <DetailsTable.Row label="环境变量 (ENV)">
             <table className="table-bordered table-condensed table">
               <tbody>
                 {image.Env.map((variable) => (

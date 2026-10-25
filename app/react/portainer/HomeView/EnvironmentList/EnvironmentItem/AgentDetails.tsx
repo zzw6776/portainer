@@ -25,7 +25,7 @@ export function AgentDetails({ environment }: { environment: Environment }) {
     <span className="small text-muted vertical-center flex items-center gap-1 font-medium">
       <Icon icon={AlertTriangle} className="icon-warning" />
       <span className="icon-warning">{agentVersion || '< 2.15'}</span>
-      <Tooltip message="A newer agent version is available. Upgrade to access the latest features and bug fixes." />
+      <Tooltip message="有新版代理可用。升级后可获得最新功能和错误修复。" />
     </span>
   );
 }

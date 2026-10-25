@@ -9,7 +9,7 @@ import type { IngressControllerClassMap } from '../../types';
 import { columnHelper } from './helper';
 
 export const availability = columnHelper.accessor('Availability', {
-  header: 'Availability',
+  header: '可用性',
   cell: Cell,
   id: 'availability',
   invertSorting: true,

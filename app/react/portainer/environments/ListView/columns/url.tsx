@@ -105,7 +105,10 @@ function Cell({
       },
       {
         onSuccess: () => {
-          notifySuccess(i18n.t('environments.success'), i18n.t('environments.error_dismissed'));
+          notifySuccess(
+            i18n.t('environments.success'),
+            i18n.t('environments.error_dismissed')
+          );
         },
       }
     );

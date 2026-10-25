@@ -35,7 +35,12 @@ export function LogoFieldset() {
               {t('settings.app.logo_description')}
             </span>
           </div>
-          <FormControl label={t('settings.app.url')} inputId="logo_url" errors={error} required>
+          <FormControl
+            label={t('settings.app.url')}
+            inputId="logo_url"
+            errors={error}
+            required
+          >
             <Field
               as={Input}
               name={name}

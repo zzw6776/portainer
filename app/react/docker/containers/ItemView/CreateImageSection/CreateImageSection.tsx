@@ -43,7 +43,10 @@ export function CreateImageSection({
 
   return (
     <Widget>
-      <Widget.Title icon={ListIcon} title={t('docker.containers.create_image.title')} />
+      <Widget.Title
+        icon={ListIcon}
+        title={t('docker.containers.create_image.title')}
+      />
       <Widget.Body>
         <Formik
           initialValues={initialValues}
@@ -73,7 +76,10 @@ export function CreateImageSection({
       },
       {
         onSuccess() {
-          notifySuccess(t('docker.containers.notifications.image_created'), containerId);
+          notifySuccess(
+            t('docker.containers.notifications.image_created'),
+            containerId
+          );
           onSuccess?.();
         },
       }

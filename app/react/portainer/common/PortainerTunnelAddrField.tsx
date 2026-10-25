@@ -20,8 +20,8 @@ export function PortainerTunnelAddrField({
 
   return (
     <FormControl
-      label="Portainer tunnel server address"
-      tooltip="Address of this Portainer instance that will be used by Edge agents to establish a reverse tunnel."
+      label="Portainer 隧道服务器地址"
+      tooltip="边缘代理将使用此 Portainer 实例地址建立反向隧道。"
       required
       errors={metaProps.error}
       inputId={id}

@@ -15,7 +15,7 @@ export function SystemResourcesSettings({
       <Checkbox
         id="show-system-resources"
         data-cy="show-system-resources"
-        label="Show system resources"
+        label="显示系统资源"
         checked={value}
         onChange={(e) => onChange(e.target.checked)}
       />

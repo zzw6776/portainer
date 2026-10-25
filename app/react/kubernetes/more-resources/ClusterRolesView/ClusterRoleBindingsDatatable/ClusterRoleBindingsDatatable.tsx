@@ -51,8 +51,8 @@ export function ClusterRoleBindingsDatatable() {
       columns={columns}
       settingsManager={tableState}
       isLoading={clusterRoleBindingsQuery.isLoading}
-      emptyContentLabel="No supported cluster role bindings found"
-      title="Cluster Role Bindings"
+      emptyContentLabel="未找到受支持的集群角色绑定"
+      title="集群角色绑定"
       titleIcon={LinkIcon}
       getRowId={(row) => row.uid}
       isRowSelectable={(row) => !row.original.isSystem}
@@ -105,9 +105,7 @@ function TableActions({ selectedItems }: TableActionsProps) {
   async function handleRemoveClick(roles: SelectedRole[]) {
     const confirmed = await confirmDelete(
       <>
-        <p>
-          Are you sure you want to delete the selected cluster role binding(s)?
-        </p>
+        <p>确定要删除所选集群角色绑定吗？</p>
         <ul className="mt-2 max-h-96 list-inside overflow-hidden overflow-y-auto text-sm">
           {roles.map((s, index) => (
             <li key={index}>{s.name}</li>
@@ -129,14 +127,14 @@ function TableActions({ selectedItems }: TableActionsProps) {
       {
         onSuccess: () => {
           notifySuccess(
-            'Roles successfully removed',
+            '角色移除成功',
             roles.map((r) => `${r.name}`).join(', ')
           );
           router.stateService.reload();
         },
         onError: (error) => {
           notifyError(
-            'Unable to delete cluster role bindings',
+            '无法删除集群角色绑定',
             error as Error,
             roles.map((r) => `${r.name}`).join(', ')
           );
@@ -155,10 +153,10 @@ function TableActions({ selectedItems }: TableActionsProps) {
         onClick={() => handleRemoveClick(selectedItems)}
         icon={Trash2}
         isLoading={deleteClusterRoleBindingsMutation.isLoading}
-        loadingText="Removing cluster role bindings..."
+        loadingText="正在删除集群角色绑定……"
         data-cy="k8s-cluster-role-bindings-remove-button"
       >
-        Remove
+        移除
       </LoadingButton>
 
       <CreateFromManifestButton

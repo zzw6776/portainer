@@ -30,9 +30,7 @@ export function ListView() {
   );
 
   async function handleRemove(environmentsToDelete: Array<Environment>) {
-    const confirmed = await confirmDelete(
-      t('environments.remove_confirm')
-    );
+    const confirmed = await confirmDelete(t('environments.remove_confirm'));
 
     if (!confirmed) {
       return;

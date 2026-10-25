@@ -39,7 +39,9 @@
           <div class="form-group">
             <div class="col-sm-12">
               <span class="small text-muted" authorization="DockerImageDelete">
-                {{ 'docker_images.tag_icons_note' | i18n }} <pr-icon icon="'upload'"></pr-icon> {{ 'docker_images.tag_icons_note_push' | i18n }} <pr-icon icon="'download'"></pr-icon> {{ 'docker_images.tag_icons_note_pull' | i18n }} <pr-icon icon="'trash-2'"></pr-icon> {{ 'docker_images.tag_icons_note_delete' | i18n }}
+                {{ 'docker_images.tag_icons_note' | i18n }} <pr-icon icon="'upload'"></pr-icon> {{ 'docker_images.tag_icons_note_push' | i18n }}
+                <pr-icon icon="'download'"></pr-icon> {{ 'docker_images.tag_icons_note_pull' | i18n }} <pr-icon icon="'trash-2'"></pr-icon>
+                {{ 'docker_images.tag_icons_note_delete' | i18n }}
               </span>
             </div>
             <div class="col-sm-12">
@@ -79,13 +81,17 @@
           <!-- tag-note -->
           <div class="form-group">
             <div class="col-sm-12">
-              <span class="small text-muted">{{ 'docker_images.tag_note_prefix' | i18n }} <span class="label label-default">latest</span> {{ 'docker_images.tag_note_suffix' | i18n }}</span>
+              <span class="small text-muted"
+                >{{ 'docker_images.tag_note_prefix' | i18n }} <span class="label label-default">latest</span> {{ 'docker_images.tag_note_suffix' | i18n }}</span
+              >
             </div>
           </div>
           <!-- !tag-note -->
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="button" class="btn btn-primary btn-sm !ml-0" ng-disabled="!formValues.RegistryModel.Image" ng-click="tagImage()">{{ 'docker_images.tag_button' | i18n }}</button>
+              <button type="button" class="btn btn-primary btn-sm !ml-0" ng-disabled="!formValues.RegistryModel.Image" ng-click="tagImage()">{{
+                'docker_images.tag_button' | i18n
+              }}</button>
             </div>
           </div>
         </form>
@@ -137,7 +143,7 @@
             </tr>
             <tr>
               <td>{{ 'docker_images.build' | i18n }}</td>
-              <td>Docker {{ image.DockerVersion }} on {{ image.Os }}, {{ image.Architecture }}</td>
+              <td>{{ image.Os }} 上的 Docker {{ image.DockerVersion }}，{{ image.Architecture }}</td>
             </tr>
             <tr ng-if="!(image.Labels | emptyobject)">
               <td>{{ 'docker_images.labels' | i18n }}</td>

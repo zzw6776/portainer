@@ -94,7 +94,10 @@ export function EnvironmentCreationView() {
       </div>
       <div className={styles.wizardWrapper}>
         <Widget>
-          <WidgetTitle icon={Wand2} title={t('wizard_env.environment_wizard')} />
+          <WidgetTitle
+            icon={Wand2}
+            title={t('wizard_env.environment_wizard')}
+          />
           <WidgetBody>
             <FormSection title={formTitles[currentStep.id]}>
               <Component
@@ -117,7 +120,7 @@ export function EnvironmentCreationView() {
           data-cy="environment-wizard-back-button"
           size="medium"
         >
-          Back
+          上一步
         </Button>
         <Button
           color="primary"
@@ -125,7 +128,7 @@ export function EnvironmentCreationView() {
           data-cy="environment-wizard-continue-button"
           size="medium"
         >
-          {isLastStep ? 'Close' : 'Continue'}
+          {isLastStep ? '完成' : '继续'}
         </Button>
       </StickyFooter>
     </div>
@@ -179,7 +182,7 @@ function useParamEnvironmentTypes(): EnvironmentOptionValue[] {
   const router = useRouter();
 
   if (!envType) {
-    notifyError('No environment type provided');
+    notifyError('未提供环境类型');
     router.stateService.go('portainer.wizard.endpoints');
     return [];
   }

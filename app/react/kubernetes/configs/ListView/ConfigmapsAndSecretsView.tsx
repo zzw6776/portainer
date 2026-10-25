@@ -28,7 +28,7 @@ export function ConfigmapsAndSecretsView() {
   return (
     <>
       <PageHeader
-        title="ConfigMap & Secret lists"
+        title="ConfigMap 和 Secret 列表"
         breadcrumbs={t('kubernetes.configmaps.breadcrumbs')}
         reload
       />

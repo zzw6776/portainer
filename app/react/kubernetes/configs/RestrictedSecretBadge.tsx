@@ -3,9 +3,9 @@ import { TooltipWithChildren } from '@@/Tip/TooltipWithChildren';
 
 export function RestrictedSecretBadge() {
   return (
-    <TooltipWithChildren message="You can only view details of secrets you've created yourself in Portainer">
+    <TooltipWithChildren message="只能查看您本人在 Portainer 中创建的 Secret 详情">
       <div className="min-w-min">
-        <Badge type="warn">Restricted</Badge>
+        <Badge type="warn">受限</Badge>
       </div>
     </TooltipWithChildren>
   );

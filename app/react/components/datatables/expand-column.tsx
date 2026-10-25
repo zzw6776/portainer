@@ -17,9 +17,7 @@ export function buildExpandColumn<T extends DefaultType>(): ColumnDef<T> {
             onClick={table.getToggleAllRowsExpandedHandler()}
             data-cy="expand-all-rows-button"
             aria-label={
-              table.getIsAllRowsExpanded()
-                ? 'Collapse all rows'
-                : 'Expand all rows'
+              table.getIsAllRowsExpanded() ? '折叠所有行' : '展开所有行'
             }
           />
         )

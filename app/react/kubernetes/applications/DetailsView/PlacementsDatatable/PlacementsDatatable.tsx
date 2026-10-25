@@ -36,7 +36,7 @@ export function PlacementsDatatable({
     <ExpandableDatatable
       isLoading={isLoading}
       getRowCanExpand={(row) => !row.original.acceptsApplication}
-      title="Nodes vs. placement constraints/preferences"
+      title="节点与放置约束/偏好"
       titleIcon={Minimize2}
       dataset={dataset}
       settingsManager={tableState}
@@ -45,15 +45,9 @@ export function PlacementsDatatable({
       disableSelect
       description={
         hasPlacementWarning ? (
-          <TextTip>
-            Based on the placement rules, the application pod can&apos;t be
-            scheduled on any nodes.
-          </TextTip>
+          <TextTip>根据放置规则，应用 Pod 无法调度到任何节点。</TextTip>
         ) : (
-          <TextTip color="blue">
-            The table below shows whether or not this application can be
-            deployed on the nodes listed.
-          </TextTip>
+          <TextTip color="blue">下表显示此应用能否部署到所列节点。</TextTip>
         )
       }
       renderTableSettings={() => (

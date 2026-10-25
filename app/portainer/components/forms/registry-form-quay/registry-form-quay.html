@@ -2,7 +2,7 @@
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.quay_account_details' | i18n }} </div>
   <!-- name-input -->
   <div class="form-group">
-    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
     <div class="col-sm-9 col-lg-10">
       <input type="text" class="form-control" id="registry_name" name="registry_name" ng-model="$ctrl.model.Name" placeholder="Quay" required data-cy="registry-name-input" />
       <div class="help-block" ng-show="$ctrl.registryFormQuay.registry_name.$invalid">
@@ -24,7 +24,7 @@
   <!-- !name-input -->
   <!-- credentials-user -->
   <div class="form-group">
-    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">Username</label>
+    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">用户名</label>
     <div class="col-sm-9 col-lg-10">
       <input
         type="text"
@@ -51,7 +51,7 @@
   <!-- !credentials-user -->
   <!-- credentials-password -->
   <div class="form-group">
-    <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">Password</label>
+    <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">密码</label>
     <div class="col-sm-9 col-lg-10">
       <input type="password" class="form-control" id="registry_password" name="registry_password" ng-model="$ctrl.model.Password" required />
       <div class="help-block" ng-show="$ctrl.registryFormQuay.registry_password.$invalid">
@@ -71,19 +71,14 @@
   <!-- organization-checkbox -->
   <div class="form-group">
     <div class="col-sm-12">
-      <por-switch-field
-        label="'Use organization registry'"
-        checked="$ctrl.model.Quay.useOrganisation"
-        on-change="($ctrl.toggleOrganisation)"
-        label-class="'col-sm-2'"
-      ></por-switch-field>
+      <por-switch-field label="'使用组织镜像仓库'" checked="$ctrl.model.Quay.useOrganisation" on-change="($ctrl.toggleOrganisation)" label-class="'col-sm-2'"></por-switch-field>
     </div>
   </div>
   <!-- !organisation-checkbox -->
   <div ng-if="$ctrl.model.Quay.useOrganisation">
     <!-- organisation_name -->
     <div class="form-group">
-      <label for="organisation_name" class="col-sm-3 col-lg-2 control-label required text-left">Organization name</label>
+      <label for="organisation_name" class="col-sm-3 col-lg-2 control-label required text-left">组织名称</label>
       <div class="col-sm-9 col-lg-10">
         <input
           type="text"

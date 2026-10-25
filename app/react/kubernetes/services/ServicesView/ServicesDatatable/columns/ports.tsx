@@ -13,8 +13,8 @@ export const ports = columnHelper.accessor(
   {
     header: () => (
       <>
-        Ports
-        <Tooltip message="The format of Ports is port[:nodePort]/protocol. Protocol is either TCP, UDP or SCTP." />
+        端口
+        <Tooltip message="端口格式为 port[:nodePort]/protocol，协议可以是 TCP、UDP 或 SCTP。" />
       </>
     ),
     id: 'ports',

@@ -10,7 +10,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('users.title')} breadcrumbs={t('users.breadcrumbs')} reload />
+      <PageHeader
+        title={t('users.title')}
+        breadcrumbs={t('users.breadcrumbs')}
+        reload
+      />
 
       <NewUserForm />
 

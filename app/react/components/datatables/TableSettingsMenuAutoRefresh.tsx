@@ -36,7 +36,9 @@ export function TableSettingsMenuAutoRefresh({ onChange, value }: Props) {
 
       {isEnabled && (
         <div>
-          <label htmlFor="settings_refresh_rate">{t('common.refresh_rate')}</label>
+          <label htmlFor="settings_refresh_rate">
+            {t('common.refresh_rate')}
+          </label>
           <select
             data-cy="settings-refresh-rate"
             id="settings_refresh_rate"
@@ -44,11 +46,11 @@ export function TableSettingsMenuAutoRefresh({ onChange, value }: Props) {
             value={value}
             onChange={(e) => handleChange(e.target.value)}
           >
-            <option value={10 * SECOND_MS}>10s</option>
-            <option value={30 * SECOND_MS}>30s</option>
-            <option value={60 * SECOND_MS}>1min</option>
-            <option value={120 * SECOND_MS}>2min</option>
-            <option value={300 * SECOND_MS}>5min</option>
+            <option value={10 * SECOND_MS}>10秒</option>
+            <option value={30 * SECOND_MS}>30秒</option>
+            <option value={60 * SECOND_MS}>1分钟</option>
+            <option value={120 * SECOND_MS}>2分钟</option>
+            <option value={300 * SECOND_MS}>5分钟</option>
           </select>
           <span
             className={clsx(

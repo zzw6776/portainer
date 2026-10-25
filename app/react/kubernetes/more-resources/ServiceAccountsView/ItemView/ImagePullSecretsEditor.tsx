@@ -37,7 +37,7 @@ export function ImagePullSecretsEditor({
           // editor keeps them selected even if the user clears the field.
           onChange(preserveProtectedValues(names, protectedSecretNames))
         }
-        placeholder="Select secrets..."
+        placeholder="选择 Secret……"
         disabled={isSaving}
         data-cy="k8sSADetail-imagePullSecrets-select"
         components={{
@@ -49,12 +49,12 @@ export function ImagePullSecretsEditor({
         <LoadingButton
           size="small"
           isLoading={isSaving}
-          loadingText="Saving..."
+          loadingText="正在保存……"
           onClick={onSave}
           data-cy="k8sSADetail-imagePullSecrets-save"
           className="h-[34px]"
         >
-          Save
+          保存
         </LoadingButton>
         <Button
           size="small"
@@ -64,7 +64,7 @@ export function ImagePullSecretsEditor({
           data-cy="k8sSADetail-imagePullSecrets-cancel"
           className="h-[34px]"
         >
-          Cancel
+          取消
         </Button>
       </div>
     </div>

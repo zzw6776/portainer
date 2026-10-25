@@ -49,7 +49,10 @@ export function HelmApplicationView() {
       <PageHeader
         title={t('kubernetes.helm.details.title')}
         breadcrumbs={[
-          { label: t('kubernetes.helm.details.applications'), link: 'kubernetes.applications' },
+          {
+            label: t('kubernetes.helm.details.applications'),
+            link: 'kubernetes.applications',
+          },
           name,
         ]}
         reload
@@ -146,7 +149,12 @@ function HelmDetails({
   }
 
   if (!release || !selectedRevision) {
-    return <Alert color="error" title={t('kubernetes.helm.details.noDetailsFound')} />;
+    return (
+      <Alert
+        color="error"
+        title={t('kubernetes.helm.details.noDetailsFound')}
+      />
+    );
   }
 
   return (

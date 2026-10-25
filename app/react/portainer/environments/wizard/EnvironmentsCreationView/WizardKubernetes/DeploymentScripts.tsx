@@ -62,7 +62,9 @@ export function DeploymentScripts({
 
   return (
     <>
-      <FormSectionTitle>{t('wizard_kube_scripts.information')}</FormSectionTitle>
+      <FormSectionTitle>
+        {t('wizard_kube_scripts.information')}
+      </FormSectionTitle>
 
       <div className="form-group">
         <span className="col-sm-12 text-muted small">
@@ -112,7 +114,8 @@ function DeployCode({
         <p className="text-muted small my-6">
           <Icon icon={Info} mode="primary" className="mr-1" />
           {t('wizard_kube_scripts.agent_secret_note')}
-          <code>{agentSecret}</code>. {t('wizard_kube_scripts.update_manifest')}
+          <code>{agentSecret}</code>进行部署。{' '}
+          {t('wizard_kube_scripts.update_manifest')}
         </p>
       )}
       <Code>{code}</Code>

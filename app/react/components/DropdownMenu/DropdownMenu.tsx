@@ -86,7 +86,7 @@ export function DropdownMenu({
         {typeof options === 'undefined' ? (
           <div className="flex items-center justify-center gap-2 px-3 py-3 text-sm text-gray-6">
             <Loader2 className="h-3.5 w-3.5 animate-spin" />
-            Loading...
+            正在加载……
           </div>
         ) : (
           <>
@@ -97,7 +97,7 @@ export function DropdownMenu({
                 !selected ? menuItemSelected : menuItemUnselected
               )}
             >
-              <span className="flex-1">All</span>
+              <span className="flex-1">全部</span>
             </MenuItem>
             <div
               className="h-px bg-gray-4 th-highcontrast:bg-gray-7 th-dark:bg-gray-8"

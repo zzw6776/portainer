@@ -42,7 +42,7 @@ export function GroupSelector() {
       onBlur={onBlur}
       isLoading={createMutation.isLoading}
       isDisabled={createMutation.isLoading}
-      placeholder="Select a group"
+      placeholder="选择环境组"
       isClearable
       data-cy="edge-devices-assignment-selector"
       id="edge-devices-assignment-selector"
@@ -55,7 +55,7 @@ export function GroupSelector() {
       {
         onSuccess: (data) => {
           setValue(data.Id);
-          notifySuccess('Group created', `Group ${data.Name} created`);
+          notifySuccess('环境组创建成功', `Group ${data.Name} created`);
         },
       }
     );

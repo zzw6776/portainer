@@ -37,13 +37,13 @@ function TimeWindowDisplay() {
 
   return (
     <TextTip color="orange" className="mb-2">
-      A change window is enabled, GitOps updates will not occur outside of{' '}
+      已启用变更窗口，GitOps 更新不会在以下时间范围之外执行：{' '}
       <span className="font-bold">
         {shortTime(startTimeUtc)} - {shortTime(endTimeUtc)} UTC (
         {shortTime(startTimeLocal)} -{shortTime(endTimeLocal)}{' '}
         {isDST ? 'DST' : ''} {timezone})
       </span>
-      .
+      进行部署。
     </TextTip>
   );
 }

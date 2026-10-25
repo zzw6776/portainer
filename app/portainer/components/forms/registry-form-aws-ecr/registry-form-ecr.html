@@ -2,8 +2,8 @@
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.important_notice' | i18n }} </div>
   <div class="form-group">
     <span class="col-sm-12 text-muted small">
-      For information on how to generate an Access Key, follow the
-      <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console" target="_blank">AWS guide</a>.
+      有关如何生成访问密钥的信息，请参阅
+      <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console" target="_blank">AWS 指南</a>.
     </span>
   </div>
 
@@ -11,7 +11,7 @@
 
   <!-- name-input -->
   <div class="form-group">
-    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
     <div class="col-sm-9 col-lg-10">
       <input
         type="text"
@@ -45,8 +45,8 @@
   <!-- url-input -->
   <div class="form-group">
     <label for="registry_url" class="col-sm-3 col-lg-2 control-label text-left">
-      <span class="required">Registry URL</span>
-      <portainer-tooltip message="'URL of an Amazon Elastic Container Registry, which contains an account id and region.'"></portainer-tooltip>
+      <span class="required">镜像仓库 URL</span>
+      <portainer-tooltip message="'Amazon Elastic Container Registry 的 URL，其中包含账户 ID 和区域。'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -77,9 +77,9 @@
   <div class="form-group">
     <div class="col-sm-12">
       <por-switch-field
-        label="'Authentication'"
+        label="'身份验证'"
         label-class="'col-sm-3 col-lg-2'"
-        tooltip="'Enable this option if you need to specify credentials to connect to a private registry.'"
+        tooltip="'如果连接私有镜像仓库需要指定凭据，请启用此选项。'"
         name="'administrator'"
         checked="$ctrl.model.Authentication"
         on-change="($ctrl.toggleAuthentication)"
@@ -92,7 +92,7 @@
   <div ng-if="$ctrl.model.Authentication">
     <!-- aws-access-key -->
     <div class="form-group">
-      <label for="registry_access_key" class="col-sm-3 col-lg-2 control-label required text-left">AWS Access Key</label>
+      <label for="registry_access_key" class="col-sm-3 col-lg-2 control-label required text-left">AWS 访问密钥</label>
       <div class="col-sm-9 col-lg-10">
         <input type="text" class="form-control" id="registry_access_key" name="registry_access_key" ng-model="$ctrl.model.Username" required data-cy="registry-access-key-input" />
         <div class="help-block" ng-show="$ctrl.registryFormEcr.registry_access_key.$invalid">
@@ -111,7 +111,7 @@
 
     <!-- aws-secret-access-key -->
     <div class="form-group">
-      <label for="registry_secret_access_key" class="col-sm-3 col-lg-2 control-label required text-left">AWS Secret Access Key</label>
+      <label for="registry_secret_access_key" class="col-sm-3 col-lg-2 control-label required text-left">AWS 访问密钥密码</label>
       <div class="col-sm-9 col-lg-10">
         <input type="password" class="form-control" id="registry_secret_access_key" name="registry_secret_access_key" ng-model="$ctrl.model.Password" required />
         <div class="help-block" ng-show="$ctrl.registryFormEcr.registry_secret_access_key.$invalid">
@@ -130,7 +130,7 @@
 
     <!-- region -->
     <div class="form-group">
-      <label for="registry_region" class="col-sm-3 col-lg-2 control-label required text-left">Region</label>
+      <label for="registry_region" class="col-sm-3 col-lg-2 control-label required text-left">区域</label>
       <div class="col-sm-9 col-lg-10">
         <input
           type="text"

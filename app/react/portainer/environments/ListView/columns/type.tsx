@@ -26,7 +26,7 @@ export const type = columnHelper.accessor(
   {
     header: () => i18n.t('environments.col_type'),
     cell: Cell,
-    id: 'Type',
+    id: '类型',
   }
 );
 

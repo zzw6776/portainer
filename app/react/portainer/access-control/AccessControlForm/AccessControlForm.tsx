@@ -40,7 +40,9 @@ export function AccessControlForm({
     values.ownership !== ResourceControlOwnership.PUBLIC;
   return (
     <>
-      {!hideTitle && <FormSectionTitle>{t('access_control_form.title')}</FormSectionTitle>}
+      {!hideTitle && (
+        <FormSectionTitle>{t('access_control_form.title')}</FormSectionTitle>
+      )}
 
       <div className="form-group">
         <div className="col-sm-12">

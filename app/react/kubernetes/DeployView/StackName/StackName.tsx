@@ -35,21 +35,20 @@ export function StackName({
 
   const tooltip = (
     <>
-      You may specify a stack name to label resources that you want to group.
-      This includes Deployments, DaemonSets, StatefulSets and Pods.
+      可以指定堆栈名称，为希望归组的资源添加标签，包括
+      Deployment、DaemonSet、StatefulSet 和 Pod。
       {isAdmin && (
         <>
           <br />
-          You can leave the stack name empty, or even turn off Kubernetes Stacks
-          functionality entirely via{' '}
+          可以将堆栈名称留空，也可以通过以下位置完全关闭 Kubernetes 堆栈功能：{' '}
           <Link
             to="portainer.settings"
             target="_blank"
             data-cy="k8s-deploy-stack-input-settings-link"
           >
-            Kubernetes Settings
+            Kubernetes 设置
           </Link>
-          .
+          进行部署。
         </>
       )}
     </>
@@ -67,7 +66,7 @@ export function StackName({
           htmlFor="stack_name"
           className="col-lg-2 col-sm-3 control-label text-left"
         >
-          Stack
+          堆栈
           <Tooltip message={tooltip} setHtmlMessage />
         </label>
         <div className={inputClassName || 'col-sm-9 col-lg-10'}>
@@ -78,7 +77,7 @@ export function StackName({
             }))}
             value={stackName ?? ''}
             onChange={setStackName}
-            placeholder="e.g. myStack"
+            placeholder="例如 myStack"
             inputId="stack_name"
             data-cy="k8s-deploy-stack-input"
           />

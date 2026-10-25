@@ -27,14 +27,14 @@ export function SortableListPagerNav({
       <PagerButton
         disabled={safePage === 0}
         onClick={() => onPageChange(0)}
-        title="First page"
+        title="第一页"
       >
         <ChevronsLeft className="h-3.5 w-3.5" />
       </PagerButton>
       <PagerButton
         disabled={safePage === 0}
         onClick={() => onPageChange(safePage - 1)}
-        title="Previous page"
+        title="上一页"
       >
         <ChevronLeft className="h-3.5 w-3.5" />
       </PagerButton>
@@ -56,14 +56,14 @@ export function SortableListPagerNav({
       <PagerButton
         disabled={safePage >= totalPages - 1}
         onClick={() => onPageChange(safePage + 1)}
-        title="Next page"
+        title="下一页"
       >
         <ChevronRight className="h-3.5 w-3.5" />
       </PagerButton>
       <PagerButton
         disabled={safePage >= totalPages - 1}
         onClick={() => onPageChange(totalPages - 1)}
-        title="Last page"
+        title="最后一页"
       >
         <ChevronsRight className="h-3.5 w-3.5" />
       </PagerButton>

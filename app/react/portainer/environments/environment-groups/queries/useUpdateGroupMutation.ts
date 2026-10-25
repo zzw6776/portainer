@@ -49,7 +49,7 @@ export function useUpdateGroupMutation() {
       queryClient.invalidateQueries(queryKeys.base());
       queryClient.invalidateQueries(queryKeys.list(true));
       queryClient.invalidateQueries(environmentQueryKeys.base());
-      notifySuccess('Success', 'Group successfully updated');
+      notifySuccess('成功', '环境组更新成功');
     },
     ...withError('Failed to update group'),
   });

@@ -46,7 +46,9 @@ export function EnvironmentSidebar() {
           <div className="flex items-center gap-1">
             <span>{t('sidebar.environment')}:</span>
             <Icon icon={Slash} className="text-xl !text-gray-6" />
-            <span className="text-sm text-gray-6">{t('sidebar.none_selected')}</span>
+            <span className="text-sm text-gray-6">
+              {t('sidebar.none_selected')}
+            </span>
           </div>
         </SidebarSectionTitle>
       )}

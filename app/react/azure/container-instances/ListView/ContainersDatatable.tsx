@@ -47,7 +47,9 @@ export function ContainersDatatable({ dataset, onRemoveClick }: Props) {
           </Authorized>
 
           <Authorized authorizations="AzureContainerGroupCreate">
-            <AddButton data-cy="add-container-button">{t('azure_containers.add_container')}</AddButton>
+            <AddButton data-cy="add-container-button">
+              {t('azure_containers.add_container')}
+            </AddButton>
           </Authorized>
         </div>
       )}

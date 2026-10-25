@@ -89,7 +89,7 @@ export function useDeleteApplicationsMutation({
     },
     // failed service deletions are handled here
     onError: (error: unknown) => {
-      notifyError('Unable to remove applications', error as Error);
+      notifyError('无法移除应用', error as Error);
     },
     ...withError('Unable to remove applications'),
   });

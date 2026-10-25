@@ -24,10 +24,13 @@ export function ClusterAgentInfo() {
 
   return (
     <Widget>
-      <Widget.Title icon={GaugeIcon} title={t('docker.dashboard.cluster_info')} />
+      <Widget.Title
+        icon={GaugeIcon}
+        title={t('docker.dashboard.cluster_info')}
+      />
       <Widget.Body className="!px-5 !py-0">
         <DetailsTable dataCy="cluster-agent-info">
-          <DetailsTable.Row label="Nodes in the cluster">
+          <DetailsTable.Row label="集群节点数">
             {nodesCountQuery.data}
           </DetailsTable.Row>
 

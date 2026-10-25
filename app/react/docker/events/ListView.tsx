@@ -18,7 +18,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('docker.events.title')} breadcrumbs={t('docker.events.breadcrumbs')} reload />
+      <PageHeader
+        title={t('docker.events.title')}
+        breadcrumbs={t('docker.events.breadcrumbs')}
+        reload
+      />
 
       <EventsDatatable dataset={eventsQuery.data} />
     </>

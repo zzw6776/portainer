@@ -112,6 +112,6 @@ angular.module('portainer.app').controller('AccountController', [
 function confirmForceChangePassword() {
   return openDialog({
     message: i18n.t('account.force_change_message'),
-    buttons: [buildConfirmButton('OK')],
+    buttons: [buildConfirmButton('确定')],
   });
 }

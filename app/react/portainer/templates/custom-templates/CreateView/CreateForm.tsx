@@ -67,7 +67,10 @@ export function CreateForm({
       },
       {
         onSuccess() {
-          notifySuccess(t('common.success'), t('edge.custom_templates_created'));
+          notifySuccess(
+            t('common.success'),
+            t('edge.custom_templates_created')
+          );
           router.stateService.go('^');
         },
       }

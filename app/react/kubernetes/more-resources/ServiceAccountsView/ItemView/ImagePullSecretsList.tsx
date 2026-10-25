@@ -56,7 +56,7 @@ export function ImagePullSecretsList({
             >
               <span>
                 <Badge type="muted" className="min-w-max cursor-default">
-                  + {hiddenSecrets.length} more
+                  + {hiddenSecrets.length} 更多
                 </Badge>
               </span>
             </TooltipWithChildren>
@@ -76,7 +76,7 @@ export function ImagePullSecretsList({
           data-cy="k8sSADetail-imagePullSecrets-edit"
           className="h-[34px]"
         >
-          Edit
+          编辑
         </Button>
       )}
     </div>
@@ -92,15 +92,15 @@ function ImagePullSecretsEmptyState({
     <span className="text-muted">
       {isDefaultServiceAccount ? (
         <>
-          No image pull secrets configured. Pods in this namespace without an
-          explicit service account must specify <code>imagePullSecrets</code>{' '}
-          manually. Add a secret here so they can pull images automatically.
+          未配置镜像拉取 Secret。此命名空间中未明确指定服务账户的 Pod 必须{' '}
+          <code>imagePullSecrets</code> 手动指定。在此添加 Secret 后，Pod
+          可自动拉取镜像。
         </>
       ) : (
         <>
-          No image pull secrets configured. Pods using this service account must
-          specify <code>imagePullSecrets</code> manually. Add a secret here so
-          pods using this service account can pull images automatically.
+          未配置镜像拉取 Secret。使用此服务账户的 Pod 必须{' '}
+          <code>imagePullSecrets</code> 手动指定。在此添加 Secret
+          后，使用此服务账户的 Pod 可自动拉取镜像。
         </>
       )}
     </span>

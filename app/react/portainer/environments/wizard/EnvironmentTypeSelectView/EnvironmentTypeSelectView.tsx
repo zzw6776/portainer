@@ -34,7 +34,10 @@ export function EnvironmentTypeSelectView() {
       <div className="row">
         <div className="col-sm-12">
           <Widget>
-            <WidgetTitle icon={Wand2} title={t('wizard_env.environment_wizard')} />
+            <WidgetTitle
+              icon={Wand2}
+              title={t('wizard_env.environment_wizard')}
+            />
             <WidgetBody>
               <div className="form-horizontal">
                 <FormSection title={t('wizard_env_types.select_environments')}>
@@ -49,7 +52,9 @@ export function EnvironmentTypeSelectView() {
                     onChange={setTypes}
                     options={existingEnvironmentTypes}
                   />
-                  <p className="control-label !mb-2">{t('wizard_env_types.setup_new')}</p>
+                  <p className="control-label !mb-2">
+                    {t('wizard_env_types.setup_new')}
+                  </p>
                   <EnvironmentSelector
                     value={types}
                     onChange={setTypes}

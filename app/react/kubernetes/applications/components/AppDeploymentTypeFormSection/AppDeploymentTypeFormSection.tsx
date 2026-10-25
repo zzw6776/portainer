@@ -24,10 +24,8 @@ export function AppDeploymentTypeFormSection({
   const options = getOptions(supportGlobalDeployment);
 
   return (
-    <FormSection title="Deployment">
-      <TextTip color="blue">
-        Select how you want to deploy your application inside the cluster.
-      </TextTip>
+    <FormSection title="部署">
+      <TextTip color="blue">选择应用在集群内的部署方式。</TextTip>
       <BoxSelector
         slim
         options={options}
@@ -46,11 +44,11 @@ function getOptions(
   return [
     {
       id: 'deployment_replicated',
-      label: 'Replicated',
+      label: '副本模式',
       value: 'Replicated',
       icon: Sliders,
       iconType: 'badge',
-      description: 'Run one or multiple instances of this container',
+      description: '运行此容器的一个或多个实例',
     },
     {
       id: 'deployment_global',
@@ -59,9 +57,8 @@ function getOptions(
         !supportGlobalDeployment
           ? 'The storage or access policy used for persisted folders cannot be used with this option'
           : '',
-      label: 'Global',
-      description:
-        'Application will be deployed as a DaemonSet with an instance on each node of the cluster',
+      label: '全局',
+      description: '应用将以 DaemonSet 部署，在集群的每个节点上运行一个实例',
       value: 'Global',
       icon: Boxes,
       iconType: 'badge',

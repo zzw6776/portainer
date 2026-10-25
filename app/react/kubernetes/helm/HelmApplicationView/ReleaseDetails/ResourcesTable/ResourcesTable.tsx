@@ -55,10 +55,10 @@ export function ResourcesTable() {
         columns={columns}
         includeSearch
         settingsManager={tableState}
-        emptyContentLabel="No resources found"
+        emptyContentLabel="未找到资源"
         title={
           <TextTip inline color="blue" className="!text-xs">
-            Only resources currently in the cluster will be displayed.
+            仅显示集群中当前存在的资源。
           </TextTip>
         }
         disableSelect

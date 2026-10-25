@@ -17,18 +17,18 @@ export function PollingWidget({ interval }: Props) {
     <Card.Container>
       <Card.Header
         icon={RefreshCwIcon}
-        title="Polling"
+        title="轮询间隔"
         subtitle="Periodically fetch this repository to detect changes"
       />
       <Card.Body>
         <div className="grid grid-cols-2 gap-4">
-          <DetailField label="Status">
+          <DetailField label="状态">
             <span className="text-gray-6 th-dark:text-gray-5">
               {interval ? 'Enabled' : 'Disabled'}
             </span>
           </DetailField>
           {interval && (
-            <DetailField label="Interval">
+            <DetailField label="间隔">
               <span className="text-gray-6 th-dark:text-gray-5">
                 {interval}
               </span>

@@ -30,7 +30,7 @@ export function ResizeClaimEditForm({ claim, onDismiss }: Props) {
 
   return (
     <>
-      <Modal.Header title="Resize Persistent Volume Claim" />
+      <Modal.Header title="调整持久卷声明容量" />
 
       <Formik<ResizeClaimEditFormValues>
         initialValues={initialValues}
@@ -43,7 +43,7 @@ export function ResizeClaimEditForm({ claim, onDismiss }: Props) {
             <Modal.Body>
               <Form className="form-vertical" onSubmit={handleSubmit}>
                 <FormControl
-                  label="New size"
+                  label="新容量"
                   inputId="newSize-input"
                   errors={errors.newSize}
                   size="vertical"
@@ -52,7 +52,7 @@ export function ResizeClaimEditForm({ claim, onDismiss }: Props) {
                     as={Input}
                     id="newSize-input"
                     name="newSize"
-                    placeholder="e.g. 10Gi"
+                    placeholder="例如 10Gi"
                     data-cy="kubernetes-pvc-resize-size-input"
                   />
                 </FormControl>
@@ -61,12 +61,12 @@ export function ResizeClaimEditForm({ claim, onDismiss }: Props) {
 
             <Modal.Footer>
               <LoadingButton
-                loadingText="Resizing..."
+                loadingText="正在调整容量……"
                 isLoading={isSubmitting}
                 onClick={() => handleSubmit()}
                 data-cy="kubernetes-pvc-resize-submit"
               >
-                Resize
+                调整容量
               </LoadingButton>
             </Modal.Footer>
           </>

@@ -36,7 +36,10 @@ export function AppTemplatesView() {
 
   return (
     <>
-      <PageHeader title={t('templates.title')} breadcrumbs={t('templates.breadcrumbs')} />
+      <PageHeader
+        title={t('templates.title')}
+        breadcrumbs={t('templates.breadcrumbs')}
+      />
       {selectedTemplate && (
         <DeployForm
           template={selectedTemplate}

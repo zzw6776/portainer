@@ -3,7 +3,7 @@ import { columnHelper } from './helper';
 export const clusterIP = columnHelper.accessor(
   (row) => row.ClusterIPs?.join(','),
   {
-    header: 'Cluster IP',
+    header: '集群 IP',
     id: 'clusterIP',
     cell: ({ row }) => {
       const clusterIPs = row.original.ClusterIPs;

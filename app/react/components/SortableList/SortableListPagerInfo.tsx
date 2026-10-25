@@ -25,11 +25,11 @@ export function SortableListPagerInfo({
   return (
     <div className="flex items-center gap-3">
       <span>
-        Showing{' '}
+        正在显示{' '}
         <strong>
           {start}–{end}
         </strong>{' '}
-        of <strong>{totalCount}</strong>
+        个容器中有 <strong>{totalCount}</strong>
       </span>
 
       <select

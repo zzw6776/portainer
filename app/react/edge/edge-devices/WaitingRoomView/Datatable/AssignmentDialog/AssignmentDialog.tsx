@@ -43,15 +43,11 @@ export function AssignmentDialog({
   const hasPreAssignedGroup = environments.some((e) => isAssignedToGroup(e));
 
   return (
-    <Modal
-      aria-label="Associate and assignment"
-      onDismiss={() => onSubmit()}
-      size="lg"
-    >
+    <Modal aria-label="关联与分配" onDismiss={() => onSubmit()} size="lg">
       <Modal.Header
         title={`Associate with assignment (${addPlural(
           environments.length,
-          'selected edge environment'
+          '所选边缘环境'
         )})`}
       />
       <Formik onSubmit={handleSubmit} initialValues={initialValues}>
@@ -61,8 +57,8 @@ export function AssignmentDialog({
               <div>
                 <FormControl
                   size="vertical"
-                  label="Group"
-                  tooltip="For managing RBAC with user access"
+                  label="组"
+                  tooltip="用于通过用户访问权限管理 RBAC"
                   errors={errors.group}
                 >
                   <GroupSelector />
@@ -70,7 +66,7 @@ export function AssignmentDialog({
                   {hasPreAssignedGroup && (
                     <div className="mt-2">
                       <Checkbox
-                        label="Override pre-assigned group"
+                        label="覆盖预分配的环境组"
                         data-cy="override-group-checkbox"
                         id="overrideGroup"
                         bold={false}
@@ -85,8 +81,8 @@ export function AssignmentDialog({
 
                 <FormControl
                   size="vertical"
-                  label="Edge Groups"
-                  tooltip="Required to manage edge job and edge stack deployments"
+                  label="边缘组"
+                  tooltip="管理边缘任务和边缘堆栈部署所必需"
                   errors={errors.edgeGroups}
                 >
                   <EdgeGroupsSelector />
@@ -94,7 +90,7 @@ export function AssignmentDialog({
                   {hasPreAssignedEdgeGroups && (
                     <div className="mt-2">
                       <Checkbox
-                        label="Override pre-assigned edge groups"
+                        label="覆盖预分配的边缘组"
                         data-cy="override-edge-groups-checkbox"
                         bold={false}
                         id="overrideEdgeGroups"
@@ -109,15 +105,14 @@ export function AssignmentDialog({
 
                 <div className="mb-3">
                   <TextTip color="blue">
-                    Edge group(s) created here are static only, use tags to
-                    assign to dynamic edge groups
+                    此处只能创建静态边缘组；请使用标签将设备分配到动态边缘组。
                   </TextTip>
                 </div>
 
                 <FormControl
                   size="vertical"
-                  label="Tags"
-                  tooltip="Assigning tags will auto populate environments to dynamic edge groups that these tags are assigned to and any ege jobs or stacks that are deployed to that edge group"
+                  label="标签"
+                  tooltip="分配标签后，环境会自动加入使用这些标签的动态边缘组，并接收部署到该边缘组的边缘任务或堆栈。"
                   errors={errors.tags}
                 >
                   <TagSelector />
@@ -125,7 +120,7 @@ export function AssignmentDialog({
                   {hasPreAssignedTags && (
                     <div className="mt-2">
                       <Checkbox
-                        label="Override pre-assigned tags"
+                        label="覆盖预分配的标签"
                         data-cy="override-tags-checkbox"
                         bold={false}
                         id="overrideTags"
@@ -145,22 +140,22 @@ export function AssignmentDialog({
                 color="default"
                 data-cy="waiting-room-cancel-assignment-button"
               >
-                Cancel
+                取消
               </Button>
               <LoadingButton
                 isLoading={assignRelationsMutation.isLoading}
                 data-cy="waiting-room-associate-button"
-                loadingText="Associating..."
+                loadingText="正在关联……"
               >
-                Associate
+                关联
               </LoadingButton>
             </Modal.Footer>
             <div className="mt-2">
               <BetaAlert
                 message={
                   <>
-                    <b>Beta Feature</b> - This feature is currently in beta,
-                    some functions might not work as expected.
+                    <b>测试功能</b> —
+                    此功能目前处于测试阶段，部分功能可能无法按预期工作。
                   </>
                 }
               />
@@ -176,7 +171,7 @@ export function AssignmentDialog({
       Object.fromEntries(environments.map((e) => createPayload(e, values))),
       {
         onSuccess: () => {
-          notifySuccess('Success', 'Edge environments assigned successfully');
+          notifySuccess('成功', '边缘环境分配成功');
           onSubmit(true);
         },
       }

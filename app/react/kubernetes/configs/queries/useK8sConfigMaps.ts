@@ -31,7 +31,7 @@ export function useK8sConfigMaps(
     {
       onError: (err) => {
         notifyError(
-          'Failure',
+          '失败',
           err as Error,
           `Unable to get ConfigMaps in namespace '${namespace}'`
         );

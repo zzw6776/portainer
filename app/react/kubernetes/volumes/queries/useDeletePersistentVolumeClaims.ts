@@ -14,7 +14,7 @@ export function useDeletePersistentVolumeClaims(environmentId: EnvironmentId) {
     mutationFn: (claims: PersistentVolumeClaim[]) =>
       deleteClaims(claims, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Persistent volume claim successfully removed');
+      notifySuccess('成功', '持久卷声明移除成功');
       queryClient.invalidateQueries(queryKeys.storages(environmentId));
       return queryClient.invalidateQueries(queryKeys.claims(environmentId));
     },

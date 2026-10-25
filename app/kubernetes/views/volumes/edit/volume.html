@@ -1,6 +1,6 @@
 <page-header
   ng-if="ctrl.state.viewReady"
-  title="'Volume details'"
+  title="'数据卷详情'"
   breadcrumbs="[
     { label:'Namespaces', link:'kubernetes.resourcePools' },
     {
@@ -26,34 +26,34 @@
             <uib-tab index="0" classes="btn-sm" select="ctrl.selectTab(0)">
               <uib-tab-heading class="vertical-center" data-cy="k8sVolDetail-volTab">
                 <pr-icon icon="'database'"></pr-icon>
-                Volume
+                数据卷
               </uib-tab-heading>
               <div class="widget-body">
                 <table class="table">
                   <tbody>
                     <tr>
-                      <td class="w-1/3">Name</td>
+                      <td class="w-1/3">名称</td>
                       <td class="w-2/3" data-cy="k8sVolDetail-volName">
                         {{ ctrl.volume.PersistentVolumeClaim.Name }}
-                        <span class="label label-primary image-tag label-margins" ng-if="!ctrl.isSystemNamespace() && ctrl.isExternalVolume()">external</span>
-                        <span class="label label-warning image-tag label-margins" ng-if="!ctrl.isSystemNamespace() && !ctrl.isUsed()">unused</span>
+                        <span class="label label-primary image-tag label-margins" ng-if="!ctrl.isSystemNamespace() && ctrl.isExternalVolume()">外部</span>
+                        <span class="label label-warning image-tag label-margins" ng-if="!ctrl.isSystemNamespace() && !ctrl.isUsed()">未使用</span>
                       </td>
                     </tr>
                     <tr>
-                      <td>Namespace</td>
+                      <td>命名空间</td>
                       <td>
                         <a ui-sref="kubernetes.resourcePools.resourcePool({ id: ctrl.volume.ResourcePool.Namespace.Name })" data-cy="k8sVolDetail-volNamespace">{{
                           ctrl.volume.ResourcePool.Namespace.Name
                         }}</a>
-                        <span style="margin-left: 5px" class="label label-info image-tag" ng-if="ctrl.isSystemNamespace()">system</span>
+                        <span style="margin-left: 5px" class="label label-info image-tag" ng-if="ctrl.isSystemNamespace()">系统</span>
                       </td>
                     </tr>
                     <tr>
-                      <td>Storage Class</td>
+                      <td>存储类</td>
                       <td data-cy="k8sVolDetail-volStorageClassname">{{ ctrl.volume.PersistentVolumeClaim.storageClass.Name }}</td>
                     </tr>
                     <tr>
-                      <td>Access Modes</td>
+                      <td>访问模式</td>
                       <td data-cy="k8sVolDetail-volAccessPolicy">
                         <div ng-repeat="(index, accessPolicy) in ctrl.state.volumeSharedAccessPolicies" class="flex flex-col gap-y-1">
                           <div class="flex items-center gap-x-1">
@@ -67,17 +67,17 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Provisioner</td>
+                      <td>供应器</td>
                       <td data-cy="k8sVolDetail-volProvisioner">{{
                         ctrl.volume.PersistentVolumeClaim.storageClass.Provisioner ? ctrl.volume.PersistentVolumeClaim.storageClass.Provisioner : '-'
                       }}</td>
                     </tr>
                     <tr>
-                      <td>Creation date</td>
+                      <td>创建日期</td>
                       <td data-cy="k8sVolDetail-volCreatedAt">{{ ctrl.volume.PersistentVolumeClaim.CreationDate | getisodate }}</td>
                     </tr>
                     <tr>
-                      <td>size</td>
+                      <td>容量</td>
                       <td ng-if="!ctrl.state.increaseSize">
                         {{ ctrl.state.volumeSize }} {{ ctrl.state.volumeSizeUnit }}
                         <button
@@ -86,7 +86,7 @@
                           ng-click="ctrl.state.increaseSize = true"
                           ng-if="ctrl.volume.PersistentVolumeClaim.storageClass.AllowVolumeExpansion"
                           data-cy="k8sVolDetail-increaseSizeButton"
-                          >Increase size</button
+                          >扩容</button
                         >
                       </td>
                       <td ng-if="ctrl.state.increaseSize">
@@ -123,20 +123,18 @@
                               ng-click="ctrl.updateVolume()"
                               data-cy="k8sVolDetail-updateSizeConfirm"
                             >
-                              Update size
+                              更新容量
                             </button>
-                            <button type="button" class="btn btn-sm btn-default" ng-click="ctrl.state.increaseSize = false" data-cy="k8sVolDetail-cancelUpdateSize">
-                              Cancel
-                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-click="ctrl.state.increaseSize = false" data-cy="k8sVolDetail-cancelUpdateSize"> 取消 </button>
                           </div>
 
                           <div class="form-inline">
                             <div class="small text-warning" style="margin-top: 5px" ng-show="ctrl.state.errors.volumeSize || kubernetesVolumeUpdateForm.size.$invalid">
                               <div class="vertical-center" ng-messages="kubernetesVolumeUpdateForm.size.$error">
-                                <p ng-message="required"><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> This field is required.</p>
+                                <p ng-message="required"><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> 此字段是必填项。</p>
                               </div>
                               <p class="vertical-center" ng-show="ctrl.state.errors.volumeSize"
-                                ><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> The new size must be greater than the actual size.</p
+                                ><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> 新容量必须大于当前容量。</p
                               >
                             </div>
                           </div>
@@ -150,10 +148,10 @@
 
             <uib-tab index="1" classes="btn-sm" select="ctrl.selectTab(1)">
               <uib-tab-heading class="vertical-center" data-cy="k8sVolDetail-volEventsTab">
-                <pr-icon icon="'history'"></pr-icon> Events
+                <pr-icon icon="'history'"></pr-icon> 事件
                 <div ng-if="ctrl.hasEventWarnings()">
                   <pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon>
-                  {{ ctrl.state.eventWarningCount }} warning(s)
+                  {{ ctrl.state.eventWarningCount }} 条警告
                 </div>
               </uib-tab-heading>
               <resource-events-datatable
@@ -182,7 +180,7 @@
     is-loading="!ctrl.volume.Applications"
     table-key="'kubernetes.volume.applications'"
     on-refresh="(ctrl.getVolume)"
-    table-title="'Applications using this volume'"
+    table-title="'使用此数据卷的应用'"
   >
   </kubernetes-integrated-applications-datatable>
 </div>

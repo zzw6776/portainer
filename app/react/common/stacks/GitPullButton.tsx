@@ -27,7 +27,7 @@ export function GitPullButton({ stack }: { stack: Stack }) {
         data-cy="git-pull-button"
       >
         <Icon icon={GitMerge} className="mr-1" />
-        Pull and redeploy
+        拉取并重新部署
       </Button>
     </Authorized>
   );
@@ -52,13 +52,13 @@ export function GitPullButton({ stack }: { stack: Stack }) {
       {
         onSuccess: () => {
           notifySuccess(
-            'Success',
+            '成功',
             `${capitalize(stackLabel)} successfully pulled and redeployed`
           );
           router.stateService.reload();
         },
         onError: (err) => {
-          notifyError('Failure', err, 'Unable to pull and redeploy');
+          notifyError('失败', err, '无法拉取并重新部署');
         },
       }
     );

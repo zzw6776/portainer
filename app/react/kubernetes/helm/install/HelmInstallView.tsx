@@ -42,13 +42,20 @@ export function HelmInstallView() {
 
   return (
     <>
-      <PageHeader title={t('kubernetes.helm.install.title')} breadcrumbs={t('kubernetes.helm.install.title')} reload />
+      <PageHeader
+        title={t('kubernetes.helm.install.title')}
+        breadcrumbs={t('kubernetes.helm.install.title')}
+        reload
+      />
       <div className="row">
         <div className="col-sm-12 form-horizontal">
           <Widget>
             <WidgetBody>
               <FormSection title={t('kubernetes.helm.install.deployTo')}>
-                <FormControl label={t('kubernetes.helm.install.namespace')} required>
+                <FormControl
+                  label={t('kubernetes.helm.install.namespace')}
+                  required
+                >
                   <div className="mb-1">
                     <K8sRegistryAccessNotice
                       namespace={namespace}
@@ -63,11 +70,16 @@ export function HelmInstallView() {
                   />
                 </FormControl>
 
-                <FormControl label={t('kubernetes.helm.install.releaseName')} required>
+                <FormControl
+                  label={t('kubernetes.helm.install.releaseName')}
+                  required
+                >
                   <Input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder={t('kubernetes.helm.install.releaseNamePlaceholder')}
+                    placeholder={t(
+                      'kubernetes.helm.install.releaseNamePlaceholder'
+                    )}
                     data-cy="k8sHelmInstall-nameInput"
                   />
                 </FormControl>

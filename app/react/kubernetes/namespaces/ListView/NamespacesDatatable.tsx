@@ -63,7 +63,7 @@ export function NamespacesDatatable() {
       columns={columns}
       settingsManager={tableState}
       isLoading={namespacesQuery.isLoading}
-      title="Namespaces"
+      title="命名空间"
       titleIcon={Layers}
       getRowId={(item) => item.Id}
       disableSelect={!hasWriteAuthQuery.authorized}
@@ -119,7 +119,7 @@ function TableActions({
       />
 
       <AddButton color="secondary" data-cy="add-namespace-form-button">
-        Add with form
+        通过表单添加
       </AddButton>
 
       <CreateFromManifestButton data-cy="k8s-namespaces-deploy-button" />
@@ -150,7 +150,7 @@ function TableActions({
           // notify user of success and errors
           if (errors.length > 0) {
             notifyError(
-              'Error',
+              '错误',
               new Error(
                 `Failed to delete ${erroredNamespacePlural}: ${errors
                   .map((err) => `${err.namespaceName}: ${err.error}`)
@@ -160,7 +160,7 @@ function TableActions({
           }
           if (deletedNamespaces.length > 0) {
             notifySuccess(
-              'Success',
+              '成功',
               `Successfully deleted ${deletedNamespacePlural}: ${deletedNamespaces.join(
                 ', '
               )}`

@@ -39,7 +39,7 @@ export function ClusterRolesView() {
   return (
     <>
       <PageHeader
-        title="Cluster Role list"
+        title="集群角色列表"
         breadcrumbs={t('kubernetes.cluster_roles.breadcrumbs')}
         reload
       />

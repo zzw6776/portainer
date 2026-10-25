@@ -13,7 +13,7 @@
               <div class="col-sm-12">
                 <span class="small text-muted" ng-if="$ctrl.users.length === 0"> {{ 'roles.no_user_available' | i18n }} </span>
 
-                <por-select ng-if="$ctrl.users.length > 0" value="$ctrl.selectedUserId" options="$ctrl.users" on-change="($ctrl.onUserSelect)" placeholder="'Select a user'">
+                <por-select ng-if="$ctrl.users.length > 0" value="$ctrl.selectedUserId" options="$ctrl.users" on-change="($ctrl.onUserSelect)" placeholder="'选择用户'">
                 </por-select>
               </div>
             </div>

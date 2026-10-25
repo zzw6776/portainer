@@ -17,9 +17,7 @@ export function EffectiveAccessViewerDatatable({
 
   if (dataset?.length === 0) {
     return (
-      <TextTip color="blue">
-        {t('roles.no_access_to_environments')}
-      </TextTip>
+      <TextTip color="blue">{t('roles.no_access_to_environments')}</TextTip>
     );
   }
 
@@ -31,9 +29,7 @@ export function EffectiveAccessViewerDatatable({
       noWidget
       title={t('roles.access')}
       description={
-        <TextTip color="blue">
-          {t('roles.effective_role_description')}
-        </TextTip>
+        <TextTip color="blue">{t('roles.effective_role_description')}</TextTip>
       }
       disableSelect
       data-cy="effective-access-viewer-datatable"

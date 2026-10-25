@@ -5,7 +5,7 @@ import { columnHelper } from './helper';
 export const instanceType = columnHelper.accessor(
   (row) => getInstanceType(row) ?? '',
   {
-    header: 'Instance type',
+    header: '实例类型',
     id: 'instanceType',
     cell: ({ getValue }) => getValue() || '-',
   }

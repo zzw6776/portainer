@@ -53,7 +53,7 @@ export function useUpdateNamespaceMutation(environmentId: EnvironmentId) {
           typeof failure.reason?.err?.message === 'string'
             ? failure.reason?.err?.message
             : '';
-        notifyError('Unable to update namespace', undefined, errorMessage);
+        notifyError('无法更新命名空间', undefined, errorMessage);
       });
       return updatedNamespace;
     },

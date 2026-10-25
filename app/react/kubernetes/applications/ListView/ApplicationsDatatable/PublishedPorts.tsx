@@ -15,7 +15,7 @@ export function PublishedPorts({ item }: { item: Application }) {
 
   return (
     <div className="published-url-container flex">
-      <div className="text-muted mr-12">Published URL(s)</div>
+      <div className="text-muted mr-12">已公开的 URL</div>
       <div className="flex flex-col">
         {urlsWithTypes.map(({ url, type }) => (
           <a

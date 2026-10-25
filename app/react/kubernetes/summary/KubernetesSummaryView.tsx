@@ -31,14 +31,12 @@ export function KubernetesSummaryView({
 
   return (
     <FormSection
-      title="Summary"
+      title="摘要"
       isFoldable
       defaultFolded={!isExpanded}
       setIsDefaultFolded={(isFolded) => setIsExpanded(!isFolded)}
     >
-      <TextTip color="blue">
-        Portainer will execute the following Kubernetes actions.
-      </TextTip>
+      <TextTip color="blue">Portainer 将执行以下 Kubernetes 操作。</TextTip>
       <ul className="small text-muted ml-5 w-full">
         {actions.map((action, idx) => {
           if (!action.action || !action.kind || !action.name) {
@@ -61,13 +59,12 @@ export function KubernetesSummaryView({
         })}
         {!!memoryLimit && (
           <li>
-            Set the memory resources limits and requests to{' '}
-            <code>{memoryLimit}M</code>
+            将内存资源限制和请求设置为 <code>{memoryLimit}M</code>
           </li>
         )}
         {!!cpuLimit && (
           <li>
-            Set the CPU resources limits and requests to <code>{cpuLimit}</code>
+            将 CPU 资源限制和请求设置为 <code>{cpuLimit}</code>
           </li>
         )}
       </ul>

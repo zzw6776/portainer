@@ -7,7 +7,7 @@ import { ResourceRow } from '../types';
 import { columnHelper } from './helper';
 
 export const resourceType = columnHelper.accessor((row) => row.resourceType, {
-  header: 'Resource type',
+  header: '资源类型',
   id: 'resourceType',
   meta: {
     filter: filterHOC('Filter by resource type'),

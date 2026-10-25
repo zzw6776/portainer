@@ -5,7 +5,7 @@ import { columnHelper } from './helper';
 export const nodeGroup = columnHelper.accessor(
   (row) => getNodeGroup(row) ?? '',
   {
-    header: 'Node group',
+    header: '节点组',
     id: 'nodeGroup',
     cell: ({ getValue }) => getValue() || '-',
   }

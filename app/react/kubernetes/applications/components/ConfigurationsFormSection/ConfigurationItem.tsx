@@ -46,7 +46,7 @@ export function ConfigurationItem({
       <div className="flex items-start gap-x-2 gap-y-2">
         <div>
           <InputGroup size="small" className="min-w-[250px]">
-            <InputGroup.Addon>Name</InputGroup.Addon>
+            <InputGroup.Addon>名称</InputGroup.Addon>
             <Select
               options={configurations}
               isMulti={false}
@@ -77,7 +77,7 @@ export function ConfigurationItem({
               icon={RotateCw}
               data-cy={`k8sAppCreate-add${configurationType}AutoButton_${index}`}
             >
-              Auto
+              自动
             </Button>
             <Button
               color="light"
@@ -87,7 +87,7 @@ export function ConfigurationItem({
               icon={List}
               data-cy={`k8sAppCreate-add${configurationType}OverrideButton_${index}`}
             >
-              Override
+              自定义覆盖
             </Button>
           </InputGroup.ButtonWrapper>
         </InputGroup>
@@ -102,9 +102,9 @@ export function ConfigurationItem({
       </div>
       {!item.overriden && (
         <TextTip color="blue">
-          The following keys will be loaded from the{' '}
+          以下键将加载自{' '}
           <code>{item.selectedConfiguration.metadata?.name}</code>{' '}
-          {configurationType} as environment variables:
+          {configurationType} 作为环境变量：
           {Object.keys(configurationData).map((key, index) => (
             <span key={key}>
               <code>{key}</code>

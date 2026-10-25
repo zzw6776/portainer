@@ -104,19 +104,19 @@ export function UpgradeButton({
           isError ||
           release?.info?.status?.startsWith('pending')
         }
-        loadingText="Upgrading..."
+        loadingText="正在升级……"
         isLoading={updateHelmReleaseMutation.isLoading}
         icon={ArrowUp}
         size="medium"
       >
-        Edit/Upgrade
+        编辑/升级
       </LoadingButton>
       {isLoading && (
         <InlineLoader
           size="xs"
           className="absolute -bottom-5 left-0 right-0 whitespace-nowrap"
         >
-          Checking for new versions...
+          正在检查新版本……
         </InlineLoader>
       )}
       {!isLoading && !isError && (
@@ -130,15 +130,14 @@ export function UpgradeButton({
             <Tooltip
               message={
                 <div>
-                  Portainer is unable to find any versions for this chart in the
-                  repositories saved. Try adding a new repository which contains
-                  the chart in the{' '}
+                  Portainer 无法在已保存的仓库中找到此 Chart
+                  的任何版本。请在以下位置添加包含此 Chart 的新仓库：{' '}
                   <Link
                     to="portainer.account"
                     params={{ '#': 'helm-repositories' }}
                     data-cy="user-settings-link"
                   >
-                    Helm repositories settings
+                    Helm 仓库设置
                   </Link>
                 </div>
               }
@@ -151,7 +150,7 @@ export function UpgradeButton({
             onClick={handleRefreshVersions}
             type="button"
           >
-            Refresh
+            刷新
           </Button>
         </span>
       )}
@@ -185,14 +184,14 @@ export function UpgradeButton({
           info: {
             ...release.info,
             status: 'pending-upgrade',
-            description: 'Preparing upgrade',
+            description: '正在准备升级',
           },
         };
         updateRelease(updatedRelease);
       }
       updateHelmReleaseMutation.mutate(payload, {
         onSuccess: () => {
-          notifySuccess('Success', 'Helm chart upgraded successfully');
+          notifySuccess('成功', 'Helm Chart 升级成功');
           // set the revision url param to undefined to refresh the page at the latest revision
           router.stateService.go('kubernetes.helm', {
             namespace,

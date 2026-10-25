@@ -62,10 +62,10 @@ export function ClusterIpServiceForm({
               onChangeService(newServices);
             }}
           >
-            Remove service
+            移除服务
           </Button>
         </div>
-        <div className="control-label !mb-2 !pt-0 text-left">Ports</div>
+        <div className="control-label !mb-2 !pt-0 text-left">端口</div>
         <div className="flex flex-col gap-3">
           {servicePorts.map((servicePort, portIndex) => {
             const error = errors?.[portIndex];
@@ -152,7 +152,7 @@ export function ClusterIpServiceForm({
                       data-cy={`k8sAppCreate-rmPortButton-${serviceIndex}-${portIndex}`}
                       icon={Trash2}
                     >
-                      Remove port
+                      移除端口
                     </Button>
                   </div>
                   <AppIngressPathsForm
@@ -187,7 +187,7 @@ export function ClusterIpServiceForm({
                 onChangePort(newServicesPorts);
               }}
             >
-              Add port
+              添加端口
             </Button>
           </div>
         </div>

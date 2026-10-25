@@ -27,7 +27,7 @@ const columnHelper = createColumnHelper<SecretViewModel>();
 const columns = [
   buildNameColumn<SecretViewModel>('Name', '.secret', 'docker-secrets-name'),
   columnHelper.accessor((item) => isoDate(item.CreatedAt), {
-    header: 'Creation Date',
+    header: '创建日期',
   }),
   createOwnershipColumn<SecretViewModel>(),
 ];
@@ -108,7 +108,7 @@ function TableActions({
       </Authorized>
 
       <Authorized authorizations="DockerSecretCreate">
-        <AddButton data-cy="secret-addSecretButton">Add secret</AddButton>
+        <AddButton data-cy="secret-addSecretButton">添加 Secret</AddButton>
       </Authorized>
     </div>
   );

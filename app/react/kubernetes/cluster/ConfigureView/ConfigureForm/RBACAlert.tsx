@@ -4,37 +4,33 @@ export function RBACAlert() {
   return (
     <Alert color="warn" className="mb-4">
       <div className="flex flex-col">
+        <p>您的集群未启用 Kubernetes 基于角色的访问控制（RBAC）。</p>
         <p>
-          Your cluster does not have Kubernetes role-based access control (RBAC)
-          enabled.
-        </p>
-        <p>
-          This means you can&apos;t use Portainer RBAC functionality to regulate
-          access to environment resources based on user roles.
+          这意味着无法使用 Portainer RBAC 功能按用户角色控制对环境资源的访问。
         </p>
         <p className="mb-0">
-          To enable RBAC, start the&nbsp;
+          要启用 RBAC，请启动&nbsp;
           <a
             className="th-highcontrast:text-blue-4 th-dark:text-blue-7"
             href="https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver"
             target="_blank"
             rel="noreferrer"
           >
-            API server
+            API 服务器
           </a>
-          &nbsp;with the&nbsp;
+          &nbsp;，并使用&nbsp;
           <code className="bg-gray-4 box-decoration-clone th-highcontrast:bg-black th-dark:bg-black">
             --authorization-mode
           </code>
-          &nbsp;flag set to a comma-separated list that includes&nbsp;
+          &nbsp;参数，并将其设置为包含以下值的逗号分隔列表：&nbsp;
           <code className="bg-gray-4 th-highcontrast:bg-black th-dark:bg-black">
             RBAC
           </code>
-          , for example:&nbsp;
+          ，例如：&nbsp;
           <code className="bg-gray-4 box-decoration-clone th-highcontrast:bg-black th-dark:bg-black">
             kube-apiserver --authorization-mode=Example1,RBAC,Example2
           </code>
-          .
+          进行部署。
         </p>
       </div>
     </Alert>

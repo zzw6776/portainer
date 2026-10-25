@@ -50,7 +50,7 @@ function ShowHide({
         color="link"
         type="button"
         onClick={() => setShow((show) => !show)}
-        title="Show/Hide value"
+        title="显示/隐藏值"
         icon={show ? EyeIcon : EyeOffIcon}
         data-cy="show-hide-button"
       >

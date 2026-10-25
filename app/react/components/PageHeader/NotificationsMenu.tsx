@@ -45,7 +45,7 @@ export function NotificationsMenu() {
           headerStyles.menuButton
         )}
         data-cy="notificationsMenu-button"
-        aria-label="Notifications menu toggle"
+        aria-label="切换通知菜单"
       >
         <div
           className={clsx(
@@ -66,7 +66,7 @@ export function NotificationsMenu() {
 
       <MenuList
         className={clsx(headerStyles.menuList, notificationStyles.root)}
-        aria-label="Notifications Menu"
+        aria-label="通知菜单"
         data-cy="notificationsMenu"
       >
         <div>

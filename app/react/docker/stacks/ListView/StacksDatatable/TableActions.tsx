@@ -27,7 +27,7 @@ export function TableActions({
 
       <Authorized authorizations="PortainerStackCreate">
         <AddButton data-cy="stack-addStackButton" to=".newstack">
-          Add stack
+          添加堆栈
         </AddButton>
       </Authorized>
     </div>

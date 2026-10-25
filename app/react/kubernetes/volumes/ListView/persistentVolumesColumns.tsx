@@ -19,7 +19,7 @@ export function createPersistentVolumesColumns(
 ) {
   return [
     helper.accessor('name', {
-      header: 'Name',
+      header: '名称',
       cell: ({ getValue }) => {
         const name = getValue();
         return (
@@ -34,28 +34,28 @@ export function createPersistentVolumesColumns(
       },
     }),
     helper.accessor('status', {
-      header: 'Status',
+      header: '状态',
       cell: ({ getValue }) => {
         const status = getValue();
         return <StatusBadge color={statusColor(status)}>{status}</StatusBadge>;
       },
     }),
     helper.accessor((row) => row.capacity?.storage, {
-      header: 'Capacity',
+      header: '容量',
       id: 'capacity',
     }),
     helper.accessor((row) => row.humanReadableAccessModes.join(', '), {
-      header: 'Access modes',
+      header: '访问模式',
       id: 'accessModes',
     }),
     helper.accessor('persistentVolumeReclaimPolicy', {
-      header: 'Reclaim policy',
+      header: '回收策略',
     }),
     helper.accessor('storageClassName', {
-      header: 'Storage class',
+      header: '存储类',
     }),
     helper.accessor('claimRef', {
-      header: 'Claim',
+      header: '声明',
       id: 'claim',
       cell: ({ row: { original } }) =>
         original.claimRef ? (
@@ -74,15 +74,15 @@ export function createPersistentVolumesColumns(
         ),
     }),
     helper.accessor((row) => formatDate(row.creationDate), {
-      header: 'Created',
+      header: '创建时间',
       id: 'created',
     }),
     helper.display({
       id: 'actions',
-      header: 'Actions',
+      header: '操作',
       cell: ({ row: { original } }) => {
         return (
-          <TooltipWithChildren message="Edit reclaim policy" position="top">
+          <TooltipWithChildren message="编辑回收策略" position="top">
             <Button
               color="light"
               className="!ml-0"

@@ -9,7 +9,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('edge.groups.title')} breadcrumbs={t('edge.groups.title')} reload />
+      <PageHeader
+        title={t('edge.groups.title')}
+        breadcrumbs={t('edge.groups.title')}
+        reload
+      />
       <EdgeGroupsDatatable />
     </>
   );

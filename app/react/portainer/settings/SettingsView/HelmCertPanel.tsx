@@ -34,10 +34,7 @@ export function HelmCertPanel() {
   return (
     <BEOverlay featureId={FeatureId.CA_FILE} variant="widget">
       <Widget>
-        <Widget.Title
-          icon={Key}
-          title={t('settings.helm.title')}
-        />
+        <Widget.Title icon={Key} title={t('settings.helm.title')} />
         <Widget.Body>
           <Formik
             initialValues={initialValues}
@@ -61,7 +58,7 @@ export function HelmCertPanel() {
       { clientCertFile },
       {
         onSuccess() {
-          notifySuccess('Success', t('settings.helm.updated'));
+          notifySuccess('成功', t('settings.helm.updated'));
         },
       }
     );
@@ -77,9 +74,7 @@ function InnerForm({ isLoading }: { isLoading: boolean }) {
     <Form className="form-horizontal">
       <div className="form-group">
         <div className="col-sm-12">
-          <TextTip color="blue">
-            {t('settings.helm.description')}
-          </TextTip>
+          <TextTip color="blue">{t('settings.helm.description')}</TextTip>
         </div>
       </div>
 

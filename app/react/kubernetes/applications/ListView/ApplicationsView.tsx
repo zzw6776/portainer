@@ -38,7 +38,11 @@ export function ApplicationsView() {
 
   return (
     <>
-      <PageHeader title={t('kubernetes.applications.title')} breadcrumbs={t('kubernetes.applications.breadcrumbs')} reload />
+      <PageHeader
+        title={t('kubernetes.applications.title')}
+        breadcrumbs={t('kubernetes.applications.breadcrumbs')}
+        reload
+      />
       {hideStacks ? (
         <ApplicationsDatatable tableState={tableState} hideStacks />
       ) : (

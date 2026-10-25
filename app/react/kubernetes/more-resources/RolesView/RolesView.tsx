@@ -35,7 +35,11 @@ export function RolesView() {
 
   return (
     <>
-      <PageHeader title={t('kubernetes.roles.title')} breadcrumbs={t('kubernetes.roles.breadcrumbs')} reload />
+      <PageHeader
+        title={t('kubernetes.roles.title')}
+        breadcrumbs={t('kubernetes.roles.breadcrumbs')}
+        reload
+      />
       <>
         <WidgetTabs tabs={tabs} currentTabIndex={currentTabIndex} />
         <div className="content">{tabs[currentTabIndex].widget}</div>

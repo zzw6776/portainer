@@ -9,7 +9,11 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('docker.configs.list.title')} breadcrumbs={t('docker.configs.list.breadcrumb')} reload />
+      <PageHeader
+        title={t('docker.configs.list.title')}
+        breadcrumbs={t('docker.configs.list.breadcrumb')}
+        reload
+      />
 
       <ConfigsDatatable />
     </>

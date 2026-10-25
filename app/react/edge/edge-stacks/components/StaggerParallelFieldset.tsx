@@ -15,11 +15,11 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
   const staggerParallelOptions = [
     {
       value: StaggerParallelOption.Fixed.toString(),
-      label: 'Number of device(s)',
+      label: '设备数量',
     },
     {
       value: StaggerParallelOption.Incremental.toString(),
-      label: 'Exponential rollout',
+      label: '指数递增发布',
     },
   ];
 
@@ -63,7 +63,7 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
             data-cy="edge-stack-device-number-input"
             id="device-number"
             type="number"
-            placeholder="eg. 1 or 10"
+            placeholder="例如 1 或 10"
             min={1}
             value={values.DeviceNumber || ''}
             onChange={(e) => {
@@ -89,7 +89,7 @@ export function StaggerParallelFieldset({ values, onChange, errors }: Props) {
                 type="number"
                 id="device-number-start-from"
                 min={1}
-                placeholder="eg. 1"
+                placeholder="例如 1"
                 value={values.DeviceNumberStartFrom}
                 onChange={(e) =>
                   handleChange({

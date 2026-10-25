@@ -41,9 +41,7 @@ export function DefaultRegistryAction() {
             {t('registries.hide_for_all_users')}
           </Button>
           <BEFeatureIndicator featureId={FeatureId.HIDE_DOCKER_HUB_ANONYMOUS} />
-          {isLimited && (
-            <Tooltip message={t('registries.hide_tooltip')} />
-          )}
+          {isLimited && <Tooltip message={t('registries.hide_tooltip')} />}
         </div>
       ) : (
         <div className="vertical-center">

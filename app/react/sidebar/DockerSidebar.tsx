@@ -149,7 +149,7 @@ export function DockerSidebar({ environmentId, environment }: Props) {
         to="docker.volumes"
         params={{ endpointId: environmentId }}
         icon={Database}
-        label="Volumes"
+        label="存储卷"
         data-cy="dockerSidebar-volumes"
       />
 

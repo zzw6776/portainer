@@ -39,7 +39,7 @@ export function NodeSelector({
   }, [nodesQuery.data, onChange, value]);
 
   return (
-    <FormControl label="Node" inputId="node-selector" errors={error}>
+    <FormControl label="节点" inputId="node-selector" errors={error}>
       <PortainerSelect
         inputId="node-selector"
         value={value}

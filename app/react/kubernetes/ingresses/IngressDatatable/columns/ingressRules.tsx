@@ -18,7 +18,7 @@ export const ingressRules = columnHelper.accessor(
       }:${path.Port} ${!path.HasService && "Service doesn't exist"}`;
     }).join(','),
   {
-    header: 'Rules and Paths',
+    header: '规则与路径',
     id: 'ingressRules',
     cell: Cell,
   }
@@ -46,7 +46,7 @@ function Cell({ row }: CellContext<Ingress, string>) {
             {!path.HasService && (
               <Badge type="warn" className="ml-1 gap-1">
                 <Icon icon={AlertTriangle} />
-                Service doesn&apos;t exist
+                服务不存在
               </Badge>
             )}
           </span>

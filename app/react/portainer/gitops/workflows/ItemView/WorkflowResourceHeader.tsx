@@ -28,7 +28,7 @@ export function WorkflowResourceHeader({ workflow }: Props) {
             status={rollup.tone}
             data-cy="workflow-targets-stat"
           >
-            <ResourceStatBlock.Label>Targets</ResourceStatBlock.Label>
+            <ResourceStatBlock.Label>目标</ResourceStatBlock.Label>
             <ResourceStatBlock.Value align="center" size="base" dot>
               {rollup.total > 0
                 ? `${rollup.synced}/${rollup.total} synced`

@@ -46,15 +46,11 @@ export function SourceCard({ item }: { item: Source }) {
             )}
           </div>
           <div className="flex shrink-0 gap-2">
-            <StatBlock icon={GitCommit} label="Workflows" value={item.usedBy} />
-            <StatBlock
-              icon={Server}
-              label="Environments"
-              value={item.environments}
-            />
+            <StatBlock icon={GitCommit} label="工作流" value={item.usedBy} />
+            <StatBlock icon={Server} label="环境" value={item.environments} />
             <StatBlock
               icon={WatchIcon}
-              label="Last sync"
+              label="上次同步"
               value={lastSyncLabel}
             />
           </div>

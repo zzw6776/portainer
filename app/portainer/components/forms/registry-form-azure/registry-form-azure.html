@@ -2,7 +2,7 @@
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.azure_registry_details' | i18n }} </div>
   <!-- name-input -->
   <div class="form-group">
-    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
     <div class="col-sm-9 col-lg-10">
       <input
         type="text"
@@ -35,8 +35,8 @@
   <!-- url-input -->
   <div class="form-group">
     <label for="registry_url" class="col-sm-3 col-lg-2 control-label text-left">
-      <span class="required">Registry URL</span>
-      <portainer-tooltip message="'URL of an Azure Container Registry. Any protocol will be stripped.'"></portainer-tooltip>
+      <span class="required">镜像仓库 URL</span>
+      <portainer-tooltip message="'Azure Container Registry 的 URL，输入的协议部分将被移除。'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -64,7 +64,7 @@
   <!-- url-input -->
   <!-- credentials-user -->
   <div class="form-group">
-    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">Username</label>
+    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">用户名</label>
     <div class="col-sm-9 col-lg-10">
       <input type="text" class="form-control" id="registry_username" name="registry_username" ng-model="$ctrl.model.Username" required data-cy="registry-username-input" />
       <div class="help-block" ng-show="$ctrl.registryFormAzure.registry_username.$invalid">
@@ -82,7 +82,7 @@
   <!-- !credentials-user -->
   <!-- credentials-password -->
   <div class="form-group">
-    <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">Password</label>
+    <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">密码</label>
     <div class="col-sm-9 col-lg-10">
       <input type="password" class="form-control" id="registry_password" name="registry_password" ng-model="$ctrl.model.Password" required />
       <div class="help-block" ng-show="$ctrl.registryFormAzure.registry_password.$invalid">

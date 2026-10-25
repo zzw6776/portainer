@@ -87,7 +87,7 @@ function StackTarget({
   const { data: environment } = useEnvironment(target.endpointId);
 
   if (!target.endpointId) {
-    return <span className="text-gray-5">No target</span>;
+    return <span className="text-gray-5">无目标</span>;
   }
 
   const envName = environment?.Name ?? `Environment ${target.endpointId}`;

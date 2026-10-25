@@ -17,10 +17,10 @@ interface Props {
 
 export function StacksSection({ artifacts }: Props) {
   return (
-    <Card.Container aria-label="Stacks">
+    <Card.Container aria-label="堆栈">
       <Card.Header
         icon={LayersIcon}
-        title="Stacks"
+        title="堆栈"
         actions={<Badge type="muted">{artifacts.length}</Badge>}
       />
       <ul className="m-0 list-none divide-y divide-solid divide-gray-3 p-0 th-dark:divide-gray-9">

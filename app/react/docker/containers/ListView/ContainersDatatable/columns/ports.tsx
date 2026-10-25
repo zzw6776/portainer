@@ -64,7 +64,7 @@ function Cell({ row }: CellContext<ContainerListViewModel, string>) {
           }
         >
           <Badge type="muted" size="sm">
-            +{hiddenPorts.length} more
+            +{hiddenPorts.length} 更多
           </Badge>
         </TooltipWithChildren>
       )}

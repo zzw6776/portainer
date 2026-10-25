@@ -91,17 +91,17 @@ export function EnvironmentsDatatable() {
   );
 
   const envStatusSelectOptions = [
-    { value: StatusType.Pending, label: 'Pending' },
-    { value: StatusType.Acknowledged, label: 'Acknowledged' },
-    { value: StatusType.ImagesPulled, label: 'Images pre-pulled' },
-    { value: StatusType.Running, label: 'Deployed' },
-    { value: StatusType.Error, label: 'Failed' },
+    { value: StatusType.Pending, label: '等待中' },
+    { value: StatusType.Acknowledged, label: '已确认' },
+    { value: StatusType.ImagesPulled, label: '镜像已预先拉取' },
+    { value: StatusType.Running, label: '已部署' },
+    { value: StatusType.Error, label: '失败' },
   ];
   if (isBE) {
     envStatusSelectOptions.concat([
-      { value: StatusType.PausedDeploying, label: 'Paused' },
-      { value: StatusType.RollingBack, label: 'Rolling back' },
-      { value: StatusType.RolledBack, label: 'Rolled back' },
+      { value: StatusType.PausedDeploying, label: '已暂停' },
+      { value: StatusType.RollingBack, label: '正在回滚' },
+      { value: StatusType.RolledBack, label: '已回滚' },
     ]);
   }
 
@@ -111,7 +111,7 @@ export function EnvironmentsDatatable() {
       isLoading={environmentsQuery.isLoading}
       dataset={environments}
       settingsManager={tableState}
-      title="Environments Status"
+      title="环境状态"
       titleIcon={HardDrive}
       isServerSidePagination
       page={page}

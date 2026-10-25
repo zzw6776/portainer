@@ -73,7 +73,7 @@ export function CreateForm({ steps }: Props) {
 
     mutation.mutate(formValuesToCreatePayload(formValues), {
       onSuccess: () => {
-        notifySuccess('Success', 'Source successfully created');
+        notifySuccess('成功', '源创建成功');
         router.stateService.go('.^');
       },
       onSettled: () => setSubmitting(false),

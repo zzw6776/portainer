@@ -176,7 +176,7 @@ class AuthenticationController {
 
       return this.$state.go('portainer.home');
     } catch (err) {
-      this.error(err, 'Unable to retrieve environments');
+      this.error(err, '无法获取环境列表');
     }
   }
 
@@ -198,7 +198,7 @@ class AuthenticationController {
       await this.Authentication.OAuthLogin(code);
       this.URLHelper.cleanParameters();
     } catch (err) {
-      this.error(err, 'Unable to login via OAuth');
+      this.error(err, '无法通过 OAuth 登录');
     }
   }
 
@@ -242,7 +242,7 @@ class AuthenticationController {
     if (this.hasValidState(state)) {
       await this.oAuthLoginAsync(code);
     } else {
-      this.error(null, 'Invalid OAuth state, try again.');
+      this.error(null, '无效的 OAuth 状态，请重试。');
     }
   }
 
@@ -253,7 +253,7 @@ class AuthenticationController {
         this.$state.go('portainer.init.admin');
       }
     } catch (err) {
-      this.error(err, 'Unable to verify administrator account existence');
+      this.error(err, '无法验证管理员账户是否存在');
     }
   }
 
@@ -307,7 +307,7 @@ class AuthenticationController {
 
       await this.authEnabledFlowAsync();
     } catch (err) {
-      this.Notifications.error(this.t('auth.failure'), err, 'Unable to retrieve public settings');
+      this.Notifications.error(this.t('auth.failure'), err, '无法获取公共设置');
     }
   }
 

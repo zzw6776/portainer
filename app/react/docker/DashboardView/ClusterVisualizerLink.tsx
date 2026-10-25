@@ -16,7 +16,7 @@ export function ClusterVisualizerLink() {
           }}
           data-cy="cluster-visualizer"
         >
-          Go to cluster visualizer
+          打开集群可视化工具
         </Button>
       </td>
     </tr>

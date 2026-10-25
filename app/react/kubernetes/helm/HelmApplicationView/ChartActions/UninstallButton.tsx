@@ -24,10 +24,10 @@ export function UninstallButton({
       size="medium"
       data-cy="k8sApp-removeHelmChartButton"
       isLoading={uninstallHelmAppMutation.isLoading}
-      confirmMessage="Do you want to remove the selected Helm chart? This will delete all resources associated with the Helm chart."
+      confirmMessage="是否移除所选 Helm Chart？这会删除与该 Chart 关联的所有资源。"
       onConfirmed={handleUninstall}
     >
-      Uninstall
+      卸载
     </DeleteButton>
   );
 
@@ -39,7 +39,7 @@ export function UninstallButton({
           router.stateService.go('kubernetes.applications', {
             endpointId: environmentId,
           });
-          notifySuccess('Success', 'Helm chart uninstalled successfully');
+          notifySuccess('成功', 'Helm Chart 卸载成功');
         },
       }
     );

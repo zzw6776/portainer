@@ -44,7 +44,7 @@ export function NodeApplicationsDatatable() {
       settingsManager={tableState}
       columns={columns}
       disableSelect
-      title="Applications running on this node"
+      title="此节点上运行的应用"
       titleIcon={LaptopCode}
       isLoading={applicationsQuery.isLoading}
       renderTableSettings={() => (

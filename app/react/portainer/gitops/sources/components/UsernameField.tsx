@@ -12,7 +12,7 @@ export function UsernameField({ value, onChange, tooltip, error }: Props) {
   return (
     <FormControl
       inputId="Username"
-      label="Username"
+      label="用户名"
       errors={error}
       tooltip={tooltip}
     >
@@ -23,7 +23,7 @@ export function UsernameField({ value, onChange, tooltip, error }: Props) {
         autoComplete="off"
         onChange={(e) => onChange(e.target.value)}
         data-cy="component-gitUsernameInput"
-        placeholder="git username"
+        placeholder="Git 用户名"
       />
     </FormControl>
   );

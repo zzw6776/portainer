@@ -22,27 +22,25 @@ export interface Props {
 
 type Strength = 'weak' | 'good' | 'strong' | 'veryStrong';
 
-const sliderProperties: Record<
-  Strength,
-  { strength: string; color: string }
-> = {
-  weak: {
-    strength: 'weak',
-    color: '#F04438',
-  },
-  good: {
-    strength: 'good',
-    color: '#F79009',
-  },
-  strong: {
-    strength: 'strong',
-    color: '#12B76A',
-  },
-  veryStrong: {
-    strength: 'veryStrong',
-    color: '#0BA5EC',
-  },
-};
+const sliderProperties: Record<Strength, { strength: string; color: string }> =
+  {
+    weak: {
+      strength: 'weak',
+      color: '#F04438',
+    },
+    good: {
+      strength: 'good',
+      color: '#F79009',
+    },
+    strong: {
+      strength: 'strong',
+      color: '#12B76A',
+    },
+    veryStrong: {
+      strength: 'veryStrong',
+      color: '#0BA5EC',
+    },
+  };
 
 export function PasswordLengthSlider({
   min,

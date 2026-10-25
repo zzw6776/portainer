@@ -16,7 +16,7 @@ export function SnapshotBadge() {
         aria-label="edge-heartbeat"
         className={clsx('block h-2 w-2 rounded-full', 'bg-warning-7')}
       />
-      <span>Snapshot available</span>
+      <span>快照可用</span>
     </span>
   );
 }

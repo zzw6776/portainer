@@ -20,7 +20,7 @@ export function ScaleServiceButton({ service }: { service: ServiceViewModel }) {
           onClick={() => setIsEdit(true)}
           data-cy="scale-service-button"
         >
-          Scale
+          扩缩容
         </Button>
       </Authorized>
     );

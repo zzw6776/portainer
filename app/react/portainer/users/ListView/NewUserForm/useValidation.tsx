@@ -46,10 +46,8 @@ function passwordValidation(minLength: number | undefined = 12) {
   return object({
     password: string()
       .required(i18n.t('users.password_required'))
-      .min(
-        minLength,
-        ({ value, min }) =>
-          i18n.t('users.password_min_length', { min, current: value.length })
+      .min(minLength, ({ value, min }) =>
+        i18n.t('users.password_min_length', { min, current: value.length })
       ),
     confirmPassword: string().oneOf(
       [ref('password'), null],

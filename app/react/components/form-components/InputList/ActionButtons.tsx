@@ -89,8 +89,8 @@ export function InputListActionButtons<T = DefaultType>({
               data-cy={`${dataCy}RemoveButton_${index}`}
               icon={Trash2Icon}
               disabled={disabled}
-              aria-label="Remove item"
-              title="Remove item"
+              aria-label="移除项目"
+              title="移除项目"
             />
           )}
         </>

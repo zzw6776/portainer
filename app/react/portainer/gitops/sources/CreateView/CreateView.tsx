@@ -12,13 +12,13 @@ import {
 const steps: WizardStep[] = [
   {
     id: 'configure',
-    label: 'Configure connection',
+    label: '配置连接',
     component: ConfigureStep,
     validateStep: validateConfigureStep,
   },
   {
     id: 'access',
-    label: 'Access control',
+    label: '访问控制',
     component: AccessControlStep,
     validateStep: validateAccessControlStep,
   },
@@ -30,11 +30,8 @@ export function CreateView() {
   return (
     <div className="form-horizontal pb-20">
       <PageHeader
-        title="Create Source"
-        breadcrumbs={[
-          { link: '.^', label: 'GitOps Sources' },
-          { label: 'Create Source' },
-        ]}
+        title="创建源"
+        breadcrumbs={[{ link: '.^', label: 'GitOps 源' }, { label: '创建源' }]}
         reload
       />
 

@@ -22,8 +22,7 @@ export function PasswordCheckHint({
     <div>
       <p className="text-warning vertical-center">
         <Icon icon={AlertTriangle} className="icon-warning" />
-        {forceChangePassword &&
-          t('password_check.admin_changed_requirements')}
+        {forceChangePassword && t('password_check.admin_changed_requirements')}
         {t('password_check.min_length', { minPasswordLength })}
         {passwordValid && (
           <Icon icon={Check} className="!ml-1" mode="success" />

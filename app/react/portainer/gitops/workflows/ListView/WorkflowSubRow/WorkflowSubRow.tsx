@@ -43,9 +43,9 @@ export function WorkflowSubRow({
       <table className="w-full table-fixed border-collapse">
         <thead className="border-0 border-b border-solid border-gray-3 bg-gray-2 th-dark:border-gray-9 th-dark:bg-gray-iron-11">
           <tr>
-            <Th>Source</Th>
-            <Th divider>Artifacts</Th>
-            <Th divider>Targets</Th>
+            <Th>凭据来源</Th>
+            <Th divider>产物</Th>
+            <Th divider>目标</Th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +62,7 @@ export function WorkflowSubRow({
                     />
                   ))
                 ) : (
-                  <span className="text-gray-5">No source</span>
+                  <span className="text-gray-5">无源</span>
                 )}
               </div>
             </Td>
@@ -151,7 +151,7 @@ function ArtifactCell({
           </div>
         ))
       ) : (
-        <span className="text-gray-5">No files</span>
+        <span className="text-gray-5">无文件</span>
       )}
     </Block>
   );

@@ -38,7 +38,7 @@ export function RemoveButtonMenu({
             handleRemove(false);
           }}
         >
-          Remove
+          移除
         </Button>
         <Menu>
           <MenuButton
@@ -49,7 +49,7 @@ export function RemoveButtonMenu({
             icon={ChevronDown}
             data-cy="image-toggleRemoveButtonMenu"
           >
-            <span className="sr-only">Toggle Dropdown</span>
+            <span className="sr-only">切换下拉菜单</span>
           </MenuButton>
           <MenuPopover position={positionRight}>
             <div className="mt-3 bg-white th-highcontrast:bg-black th-dark:bg-black">
@@ -58,7 +58,7 @@ export function RemoveButtonMenu({
                   handleRemove(true);
                 }}
               >
-                Force Remove
+                强制移除
               </MenuItem>
             </div>
           </MenuPopover>
@@ -69,19 +69,18 @@ export function RemoveButtonMenu({
 
   function confirmForceRemove() {
     return confirmDestructive({
-      title: 'Are you sure?',
+      title: '确定吗？',
       message:
-        "Forcing removal of an image will remove it even if it's used by stopped containers, and delete all associated tags. Are you sure you want to remove the selected image(s)?",
-      confirmButton: buildConfirmButton('Remove the image', 'danger'),
+        '强制移除镜像会删除被已停止容器使用的镜像及其所有关联标签。确定要移除所选镜像吗？',
+      confirmButton: buildConfirmButton('移除镜像', 'danger'),
     });
   }
 
   function confirmRegularRemove() {
     return confirmDestructive({
-      title: 'Are you sure?',
-      message:
-        'Removing an image will also delete all associated tags. Are you sure you want to remove the selected image(s)?',
-      confirmButton: buildConfirmButton('Remove the image', 'danger'),
+      title: '确定吗？',
+      message: '移除镜像也会删除所有关联标签。确定要移除所选镜像吗？',
+      confirmButton: buildConfirmButton('移除镜像', 'danger'),
     });
   }
 

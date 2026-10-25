@@ -20,7 +20,7 @@ import { WorkflowsCountDot } from './WorkflowsCountDot';
 import { AccessTab } from './AccessTab';
 
 const breadcrumbs = [
-  { label: 'GitOps Sources', link: 'portainer.gitops.sources' },
+  { label: 'GitOps 源', link: 'portainer.gitops.sources' },
   'Source',
 ];
 
@@ -48,7 +48,7 @@ export function ItemView() {
         <PageHeader breadcrumbs={breadcrumbs} />
         <div className="mx-4 mb-4 space-y-4">
           <Alert color="error">
-            Failed loading source:{' '}
+            加载源失败：{' '}
             {error instanceof Error ? error.message : 'Unknown error'}
           </Alert>
         </div>
@@ -81,7 +81,7 @@ function PageContent({ source }: { source: SourceDetail }) {
       {
         name: (
           <>
-            Workflows <WorkflowsCountDot sourceId={source.id} />
+            工作流 <WorkflowsCountDot sourceId={source.id} />
           </>
         ),
         icon: GitCommit,
@@ -112,7 +112,7 @@ function PageContent({ source }: { source: SourceDetail }) {
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'GitOps Sources', link: 'portainer.gitops.sources' },
+          { label: 'GitOps 源', link: 'portainer.gitops.sources' },
           source.name,
         ]}
         reload
@@ -128,7 +128,7 @@ function PageContent({ source }: { source: SourceDetail }) {
           <div className="ml-auto">
             {isTabEditable &&
               (isEditing ? (
-                <Badge type="info">Editing</Badge>
+                <Badge type="info">正在编辑</Badge>
               ) : (
                 <Button
                   icon={PenBoxIcon}
@@ -136,7 +136,7 @@ function PageContent({ source }: { source: SourceDetail }) {
                   data-cy="edit-settings-button"
                   onClick={() => setIsEditing(true)}
                 >
-                  Edit
+                  编辑
                 </Button>
               ))}
           </div>

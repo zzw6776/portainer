@@ -50,7 +50,7 @@ export function SourceResourceHeader({ source }: Props) {
         <HeaderStats>
           <ResourceStatBlock>
             <ResourceStatBlock.Label icon={<Icon icon={GitCommitIcon} />}>
-              Workflows
+              工作流
             </ResourceStatBlock.Label>
             <ResourceStatBlock.Value align="center" size="base">
               <WorkflowsStatValue
@@ -62,7 +62,7 @@ export function SourceResourceHeader({ source }: Props) {
           </ResourceStatBlock>
           <ResourceStatBlock>
             <ResourceStatBlock.Label icon={<Icon icon={ClockIcon} />}>
-              Last sync
+              上次同步
             </ResourceStatBlock.Label>
             <ResourceStatBlock.Value align="center" size="base">
               {lastSyncLabel}
@@ -119,13 +119,13 @@ function SourceDeleteButton({
 
   return (
     <DeleteButton
-      confirmMessage="Are you sure you want to delete this Source?"
+      confirmMessage="确定要删除此源吗？"
       data-cy="delete-btn"
       disabled={hasWorkflows}
       onConfirmed={() =>
         mutation.mutate(sourceId, {
           onSuccess() {
-            notifySuccess('Success', 'Source deleted');
+            notifySuccess('成功', '源已删除');
             router.stateService.go('^');
           },
         })

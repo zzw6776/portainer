@@ -67,10 +67,7 @@ export function CreateInnerForm({
 
             <div className="mt-4">
               <Widget>
-                <Widget.Title
-                  title="Advanced container settings"
-                  icon={Settings}
-                />
+                <Widget.Title title="高级容器设置" icon={Settings} />
                 <Widget.Body>
                   <NavTabs<string>
                     onSelect={setTab}
@@ -80,7 +77,7 @@ export function CreateInnerForm({
                     options={[
                       {
                         id: 'commands',
-                        label: 'Commands & logging',
+                        label: '命令与日志',
                         children: (
                           <CommandsTab
                             apiVersion={apiVersion}
@@ -93,7 +90,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'volumes',
-                        label: 'Volumes',
+                        label: '存储卷',
                         children: (
                           <VolumesTab
                             values={values.volumes}
@@ -106,7 +103,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'network',
-                        label: 'Network',
+                        label: '网络',
                         children: (
                           <NetworkTab
                             values={values.network}
@@ -118,7 +115,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'env',
-                        label: 'Env',
+                        label: '环境变量',
                         children: (
                           <EnvVarsTab
                             values={values.env}
@@ -129,7 +126,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'labels',
-                        label: 'Labels',
+                        label: '标签',
                         children: (
                           <LabelsTab
                             values={values.labels}
@@ -140,7 +137,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'restart',
-                        label: 'Restart policy',
+                        label: '重启策略',
                         children: (
                           <RestartPolicyTab
                             values={values.restartPolicy}
@@ -152,7 +149,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'runtime',
-                        label: 'Runtime & resources',
+                        label: '运行环境与资源限制',
                         children: (
                           <ResourcesTab
                             values={values.resources}
@@ -203,7 +200,7 @@ export function CreateInnerForm({
                       },
                       {
                         id: 'capabilities',
-                        label: 'Capabilities',
+                        label: '特权与能力 (Capabilities)',
                         hidden: hideCapabilities,
                         children: (
                           <CapabilitiesTab

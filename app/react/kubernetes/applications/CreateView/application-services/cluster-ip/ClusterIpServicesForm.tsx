@@ -41,9 +41,8 @@ export function ClusterIpServicesForm({
       <Card.Body className="pb-5">
         <div className="flex flex-col gap-6">
           <TextTip color="blue">
-            Publish <b>internally</b> in the cluster via a{' '}
-            <b>ClusterIP service</b>, optionally exposing <b>externally</b> to
-            the outside world via an <b>ingress</b>.
+            公开 <b>到内部</b> 在集群内通过 <b>ClusterIP 服务</b>，并可选择公开{' '}
+            <b>到外部</b> 到外部，并通过 <b>Ingress</b>进行部署。
           </TextTip>
           {clusterIPServiceCount > 0 && (
             <div className="flex w-full flex-col gap-4">
@@ -91,7 +90,7 @@ export function ClusterIpServicesForm({
               }}
               data-cy="k8sAppCreate-createServiceButton"
             >
-              Create service
+              创建服务
             </Button>
           </div>
         </div>

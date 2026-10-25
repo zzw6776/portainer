@@ -1,15 +1,12 @@
 <form class="form-horizontal" name="$ctrl.registryFormProGet" ng-submit="$ctrl.formAction()">
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.important_notice' | i18n }} </div>
   <div class="form-group">
-    <div class="col-sm-12 text-muted small">
-      Any Portainer user that has access to this registry will be able to use the Registry Manager features against the content of any Feed in the ProGet registry that the ProGet
-      user has access to.
-    </div>
+    <div class="col-sm-12 text-muted small"> 任何有权访问此镜像仓库的 Portainer 用户，都可以使用镜像仓库管理功能操作该 ProGet 用户有权访问的任意 Feed 内容。 </div>
   </div>
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.proget_registry_details' | i18n }} </div>
   <!-- name-input -->
   <div class="form-group">
-    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+    <label for="registry_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
     <div class="col-sm-9 col-lg-10">
       <input
         type="text"
@@ -42,8 +39,8 @@
   <!-- url-input -->
   <div class="form-group">
     <label for="registry_url" class="col-sm-3 col-lg-2 control-label text-left">
-      <span class="required">Registry URL</span>
-      <portainer-tooltip message="'The URL of the ProGet registry including the Feed name'"></portainer-tooltip>
+      <span class="required">镜像仓库 URL</span>
+      <portainer-tooltip message="'包含 Feed 名称的 ProGet 镜像仓库 URL'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -72,8 +69,8 @@
   <!-- base-url-input -->
   <div class="form-group">
     <label for="registry_base_url" class="col-sm-3 col-lg-2 control-label text-left">
-      <span class="required">Base URL</span>
-      <portainer-tooltip message="'The base URL of the ProGet registry'"></portainer-tooltip>
+      <span class="required">基础 URL</span>
+      <portainer-tooltip message="'ProGet 镜像仓库的基础 URL'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -102,7 +99,7 @@
   <div>
     <!-- credentials-user -->
     <div class="form-group">
-      <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">Username</label>
+      <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">用户名</label>
       <div class="col-sm-9 col-lg-10">
         <input type="text" class="form-control" id="registry_username" name="registry_username" ng-model="$ctrl.model.Username" required data-cy="registry-username-input" />
         <div class="help-block" ng-show="$ctrl.registryFormProGet.registry_username.$invalid">
@@ -120,7 +117,7 @@
     <!-- !credentials-user -->
     <!-- credentials-password -->
     <div class="form-group">
-      <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">Password</label>
+      <label for="registry_password" class="col-sm-3 col-lg-2 control-label required text-left">密码</label>
       <div class="col-sm-9 col-lg-10">
         <input type="password" class="form-control" id="registry_password" name="registry_password" ng-model="$ctrl.model.Password" required />
         <div class="help-block" ng-show="$ctrl.registryFormProGet.registry_password.$invalid">

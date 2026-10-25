@@ -39,10 +39,7 @@ export function AutoEnvCreationSettingsForm({ settings }: Props) {
         { TrustOnFirstConnect: !variables.EnableWaitingRoom },
         {
           onSuccess() {
-            notifySuccess(
-              t('common.success'),
-              t('settings.auto_env_success')
-            );
+            notifySuccess(t('common.success'), t('settings.auto_env_success'));
           },
         }
       );

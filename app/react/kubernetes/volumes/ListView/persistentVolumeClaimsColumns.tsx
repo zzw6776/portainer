@@ -19,7 +19,7 @@ export function createPersistentVolumeClaimsColumns(
 ) {
   return [
     helper.accessor('name', {
-      header: 'Name',
+      header: '名称',
       cell: ({ row: { original } }) => {
         return original.namespace && original.name ? (
           <Link
@@ -38,10 +38,10 @@ export function createPersistentVolumeClaimsColumns(
       },
     }),
     helper.accessor('namespace', {
-      header: 'Namespace',
+      header: '命名空间',
     }),
     helper.accessor('owningApplications', {
-      header: 'Used by',
+      header: '使用者',
       id: 'owningApplications',
       cell: ({ getValue }) => {
         const apps = getValue();
@@ -69,40 +69,38 @@ export function createPersistentVolumeClaimsColumns(
       },
     }),
     helper.accessor('phase', {
-      header: 'Status',
+      header: '状态',
       cell: ({ getValue }) => {
         const phase = getValue();
         return <StatusBadge color={phaseColor(phase)}>{phase}</StatusBadge>;
       },
     }),
     helper.accessor('storageRequest', {
-      header: 'Capacity',
+      header: '容量',
     }),
     helper.accessor((row) => row.humanReadableAccessModes.join(', '), {
-      header: 'Access modes',
+      header: '访问模式',
       id: 'accessModes',
     }),
     helper.accessor('storageClass', {
-      header: 'Storage class',
+      header: '存储类',
     }),
     helper.accessor('volumeName', {
-      header: 'Volume',
+      header: '数据卷',
     }),
     helper.accessor((row) => formatDate(row.creationDate), {
-      header: 'Created',
+      header: '创建时间',
       id: 'created',
     }),
     helper.display({
       id: 'actions',
-      header: 'Actions',
+      header: '操作',
       cell: ({ row: { original } }) => {
         const isExpandable = original.allowVolumeExpansion;
         return (
           <TooltipWithChildren
             message={
-              isExpandable
-                ? 'Resize volume claim'
-                : 'Storage class does not allow volume expansion'
+              isExpandable ? '调整数据卷声明容量' : '存储类不允许数据卷扩容'
             }
             position="top"
           >

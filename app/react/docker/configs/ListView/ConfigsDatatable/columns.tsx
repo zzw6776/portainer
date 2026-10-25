@@ -16,7 +16,7 @@ export const columns = [
     dataCy: 'docker-configs-name',
   }),
   columnHelper.accessor('CreatedAt', {
-    header: 'Creation Date',
+    header: '创建日期',
     cell: ({ getValue }) => {
       const date = getValue();
       return <time dateTime={date}>{isoDate(date)}</time>;

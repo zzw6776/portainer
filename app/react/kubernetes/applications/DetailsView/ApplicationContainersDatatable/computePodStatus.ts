@@ -7,7 +7,7 @@ export function computePodStatus(pod: Pod): ContainerStatusInfo {
     return {
       status: 'Terminating',
       type: 'warn',
-      message: 'Pod is being deleted.',
+      message: 'Pod 正在删除。',
     };
   }
 

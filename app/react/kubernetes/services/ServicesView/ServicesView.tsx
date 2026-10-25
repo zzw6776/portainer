@@ -9,7 +9,11 @@ export function ServicesView() {
 
   return (
     <>
-      <PageHeader title={t('kubernetes.services.title')} breadcrumbs={t('kubernetes.services.breadcrumbs')} reload />
+      <PageHeader
+        title={t('kubernetes.services.title')}
+        breadcrumbs={t('kubernetes.services.breadcrumbs')}
+        reload
+      />
       <ServicesDatatable />
     </>
   );

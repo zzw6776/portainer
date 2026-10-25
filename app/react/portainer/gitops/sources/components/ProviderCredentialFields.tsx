@@ -30,8 +30,8 @@ export function ProviderCredentialFields({
       <PasswordField
         value={password || ''}
         onChange={(value) => onChange({ password: value })}
-        label="Personal Access Token"
-        tooltip="Provide a personal access token or password"
+        label="个人访问令牌 (Personal Access Token)"
+        tooltip="提供个人访问令牌或密码"
         error={errors?.password}
         required={!isEditing}
       />

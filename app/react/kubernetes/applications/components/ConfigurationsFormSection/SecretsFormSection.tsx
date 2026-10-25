@@ -28,16 +28,15 @@ export function SecretsFormSection({
   const secrets = secretsQuery.data || [];
 
   if (secretsQuery.isLoading) {
-    return <InlineLoader>Loading Secrets...</InlineLoader>;
+    return <InlineLoader>正在加载 Secret……</InlineLoader>;
   }
 
   return (
-    <FormSection title="Secrets" titleSize="sm">
+    <FormSection title="Secret" titleSize="sm">
       {!!values.length && (
         <TextTip color="blue">
-          Portainer will automatically expose all the keys of a Secret as
-          environment variables. This behavior can be overridden to filesystem
-          mounts for each key via the override option.
+          Portainer 会自动将 Secret
+          的所有键公开为环境变量。可通过覆盖选项，将各个键改为挂载到文件系统。
         </TextTip>
       )}
 

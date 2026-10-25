@@ -29,7 +29,7 @@ export function WorkflowsTab({ sourceId }: Props) {
     <Card.Container>
       <Card.Header
         icon={GitCommitIcon}
-        title="Workflows"
+        title="工作流"
         subtitle={
           workflows
             ? `${addPlural(workflows.length, 'workflow')} using this source`
@@ -59,7 +59,7 @@ function WorkflowsBody({
   if (!workflows) {
     return (
       <Card.Body>
-        <p className="text-muted text-sm">Unable to load workflows.</p>
+        <p className="text-muted text-sm">无法加载工作流。</p>
       </Card.Body>
     );
   }
@@ -67,9 +67,7 @@ function WorkflowsBody({
   if (workflows.length === 0) {
     return (
       <Card.Body>
-        <p className="text-muted text-sm">
-          No workflows are using this source.
-        </p>
+        <p className="text-muted text-sm">没有工作流使用此源。</p>
       </Card.Body>
     );
   }
@@ -127,7 +125,7 @@ function WorkflowCard({ item }: { item: SourceWorkflow }) {
             </code>
           )}
           <span>
-            Last sync:{' '}
+            上次同步：{' '}
             {item.lastSyncDate
               ? moment.unix(item.lastSyncDate).fromNow()
               : 'Never'}
@@ -161,7 +159,7 @@ function EdgeStackTargetBlock({ target }: { target: WorkflowTarget }) {
         {target.edgeGroupIds?.length ?? 0}
       </span>
       <span className="th-dark:text-gray text-xs text-gray-6 th-highcontrast:text-white th-dark:text-gray-6">
-        Groups
+        组
       </span>
     </div>
   );

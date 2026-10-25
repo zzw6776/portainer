@@ -45,8 +45,8 @@ export function KubeManifestForm({
       <div className="form-group">
         <div className="col-sm-12">
           <SwitchField
-            label="Use namespace(s) specified from manifest"
-            tooltip="If you have defined namespaces in your deployment file turning this on will enforce the use of those only in the deployment"
+            label="使用清单中指定的命名空间"
+            tooltip="如果部署文件中已定义命名空间，启用后将强制仅使用这些命名空间进行部署。"
             checked={values.useManifestNamespaces}
             onChange={(value) =>
               handleChange({
@@ -58,7 +58,7 @@ export function KubeManifestForm({
         </div>
       </div>
 
-      <FormSection title="Build Method">
+      <FormSection title="构建方式">
         <BoxSelector
           options={buildMethods}
           onChange={(value) => handleChange({ method: value })}
@@ -87,7 +87,7 @@ export function KubeManifestForm({
           value={values.file}
           onChange={(file) => handleChange({ file })}
           required
-          description="You can upload a Manifest file from your computer."
+          description="可以从本机上传清单文件。"
           data-cy="stack-creation-file-upload"
         >
           <KubeDeployDescription />
@@ -128,19 +128,19 @@ function KubeDeployDescription() {
   return (
     <>
       <div>
-        Templates allow deploying any kind of Kubernetes resource (Deployment,
-        Secret, ConfigMap...)
+        模板可用于部署任意类型的 Kubernetes 资源（Deployment、Secret、ConfigMap
+        等）。
       </div>
       <div>
-        You can get more information about Kubernetes file format in the
+        可在以下位置了解有关 Kubernetes 文件格式的更多信息：
         <a
           href="https://kubernetes.io/docs/concepts/overview/working-with-objects/"
           target="_blank"
           rel="noreferrer"
         >
-          official documentation
+          官方文档
         </a>
-        .
+        进行部署。
       </div>
     </>
   );

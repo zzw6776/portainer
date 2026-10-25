@@ -23,9 +23,7 @@ export function FilterBar({
         <form className="form-horizontal">
           <DateRangePicker value={value} onChange={onChange} />
 
-          <TextTip color="blue">
-            {t('activity_logs.retention_note')}
-          </TextTip>
+          <TextTip color="blue">{t('activity_logs.retention_note')}</TextTip>
 
           <div className="mt-4">
             <Button

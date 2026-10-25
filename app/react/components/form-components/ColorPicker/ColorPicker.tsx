@@ -47,7 +47,7 @@ export function ColorPicker({
   return (
     <div className="flex items-center gap-2">
       <label
-        aria-label="Choose color"
+        aria-label="选择颜色"
         htmlFor={pickerId}
         className="form-control relative !mb-0 h-[34px] w-[34px] shrink-0 cursor-pointer overflow-hidden rounded"
         style={{ backgroundColor: swatchColor }}
@@ -58,7 +58,7 @@ export function ColorPicker({
           value={swatchColor}
           onChange={handleColorChange}
           className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
-          aria-label="Choose highlight color"
+          aria-label="选择高亮颜色"
         />
       </label>
       <Input
@@ -68,7 +68,7 @@ export function ColorPicker({
         onBlur={handleBlur}
         className="w-28 uppercase"
         maxLength={7}
-        placeholder="e.g. #ffbbbb"
+        placeholder="例如 #ffbbbb"
         spellCheck={false}
         data-cy={dataCy}
       />

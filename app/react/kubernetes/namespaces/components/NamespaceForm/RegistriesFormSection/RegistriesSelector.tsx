@@ -30,21 +30,18 @@ export function RegistriesSelector({
       <p className="text-muted mb-1 mt-2 text-xs">
         {isPureAdmin ? (
           <span>
-            No registries available. Head over to the{' '}
+            没有可用的镜像仓库。请前往{' '}
             <Link
               to="portainer.registries"
               target="_blank"
               data-cy="namespace-permissions-registries-selector"
             >
-              registry view
+              镜像仓库页面
             </Link>{' '}
-            to define a container registry.
+            定义容器镜像仓库。
           </span>
         ) : (
-          <span>
-            No registries available. Contact your administrator to create a
-            container registry.
-          </span>
+          <span>没有可用的镜像仓库。请联系管理员创建容器镜像仓库。</span>
         )}
       </p>
     );

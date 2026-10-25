@@ -50,7 +50,7 @@ export function UsersList({ users, disabled, teamId }: Props) {
               icon={UserPlus}
               data-cy="add-all-users-button"
             >
-            {t('teams.add_all')}
+              {t('teams.add_all')}
             </Button>
           )
         }

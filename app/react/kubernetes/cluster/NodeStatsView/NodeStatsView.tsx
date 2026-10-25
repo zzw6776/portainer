@@ -114,9 +114,9 @@ export function NodeStatsView() {
   return (
     <>
       <PageHeader
-        title="Node stats"
+        title="节点统计"
         breadcrumbs={[
-          { label: 'Cluster', link: 'kubernetes.cluster' },
+          { label: '集群', link: 'kubernetes.cluster' },
           {
             label: nodeName,
             link: 'kubernetes.cluster.node',
@@ -127,11 +127,10 @@ export function NodeStatsView() {
       />
 
       {metricsState === 'unavailable' && (
-        <InformationPanel title="Unable to retrieve node metrics">
+        <InformationPanel title="无法获取节点指标">
           <span className="small text-muted">
-            Portainer was unable to retrieve any metrics associated to that
-            node. Please contact your administrator to ensure that the
-            Kubernetes metrics feature is properly configured.
+            Portainer 无法获取与该节点关联的指标。请联系管理员，确保 Kubernetes
+            指标功能已正确配置。
           </span>
         </InformationPanel>
       )}
@@ -141,14 +140,14 @@ export function NodeStatsView() {
           <div className="row">
             <div className="col-md-12">
               <Widget>
-                <WidgetTitle icon="info" title="About statistics" />
+                <WidgetTitle icon="info" title="关于统计信息" />
                 <WidgetBody>
                   <form className="form-horizontal">
                     <div className="form-group">
                       <div className="col-sm-12">
                         <span className="small text-muted">
-                          This view displays real-time statistics about the node{' '}
-                          <b>{nodeName}</b>.
+                          此页面显示节点的实时统计信息 <b>{nodeName}</b>
+                          进行部署。
                         </span>
                       </div>
                     </div>
@@ -157,7 +156,7 @@ export function NodeStatsView() {
                         htmlFor="refreshRate"
                         className="col-sm-3 col-md-2 control-label text-left"
                       >
-                        Refresh rate
+                        刷新频率
                       </label>
                       <div className="col-sm-3 col-md-2">
                         <select
@@ -186,7 +185,7 @@ export function NodeStatsView() {
           <div className="row">
             <div className="col-lg-6 col-md-12">
               <Widget>
-                <WidgetTitle icon="cpu" title="Memory usage" />
+                <WidgetTitle icon="cpu" title="内存使用率" />
                 <WidgetBody>
                   <StatsLineChart
                     data={chartData}
@@ -206,7 +205,7 @@ export function NodeStatsView() {
 
             <div className="col-lg-6 col-md-12">
               <Widget>
-                <WidgetTitle icon="cpu" title="CPU usage" />
+                <WidgetTitle icon="cpu" title="CPU 使用率" />
                 <WidgetBody>
                   <StatsLineChart
                     data={chartData}

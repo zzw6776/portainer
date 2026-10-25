@@ -20,20 +20,18 @@ import { ImagePullSecretsList } from './ImagePullSecretsList';
 
 const registryAccessAdminMessage = (
   <span>
-    This secret is linked to the default service account from the{' '}
+    此 Secret 已通过以下位置关联到默认服务账户：{' '}
     <Link to="kubernetes.registries" data-cy="registry-access-link">
-      registry access
+      镜像仓库访问权限
     </Link>{' '}
-    settings to allow pods to pull images automatically in this namespace.
-    Update the settings to remove the link.
+    设置，以允许 Pod 在此命名空间中自动拉取镜像。更新设置可移除此关联。
   </span>
 );
 
 const registryAccessUserMessage = (
   <span>
-    This secret is linked to the default service account from the registry
-    access settings to allow pods to pull images automatically in this
-    namespace. Contact your administrator to update the settings.
+    此 Secret 已通过镜像仓库访问设置关联到默认服务账户，以允许 Pod
+    在此命名空间中自动拉取镜像。请联系管理员更新设置。
   </span>
 );
 
@@ -92,19 +90,19 @@ export function ImagePullSecretsRow({
       ariaLabel="Image pull secrets"
       label={
         <span className="flex items-center">
-          Image pull secrets
+          镜像拉取 Secret
           <Tooltip
             message={
-              name === 'default' ? (
+              name === '默认' ? (
                 <>
-                  <code>imagePullSecrets</code> from this &apos;default&apos;
-                  service account apply to all <strong>pods</strong> without an
-                  explicit service account in this namespace.
+                  <code>imagePullSecrets</code>{' '}
+                  来自此“默认”服务账户的设置适用于所有 <strong>Pod</strong>{' '}
+                  此命名空间中未明确指定服务账户的 Pod。
                 </>
               ) : (
                 <>
-                  These <code>imagePullSecrets</code> are inherited by pods
-                  using this service account.
+                  这些 <code>imagePullSecrets</code> 会由使用此服务账户的 Pod
+                  继承。
                 </>
               )
             }
@@ -113,7 +111,7 @@ export function ImagePullSecretsRow({
       }
     >
       {isLoading ? (
-        <InlineLoader size="xs">Loading image pull secrets...</InlineLoader>
+        <InlineLoader size="xs">正在加载镜像拉取 Secret……</InlineLoader>
       ) : isEditing ? (
         <ImagePullSecretsEditor
           selectedNames={selectedNames}

@@ -57,7 +57,7 @@ export function CreateIngressView() {
   useEffect(() => {
     if (!isAuthorizedToAddEdit) {
       const message = `Not authorized to ${isEdit ? 'edit' : 'add'} ingresses`;
-      notifyError('Error', new Error(message));
+      notifyError('错误', new Error(message));
       router.stateService.go('kubernetes.ingresses');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -276,7 +276,7 @@ export function CreateIngressView() {
   );
   const tlsOptions: Option<string>[] = useMemo(
     () => [
-      { label: 'No TLS', value: '' },
+      { label: '不使用 TLS', value: '' },
       ...(secrets?.map((config) => ({
         label: config.metadata?.name as string,
         value: config.metadata?.name as string,
@@ -481,9 +481,8 @@ export function CreateIngressView() {
           ) {
             errors[`hosts[${hi}].paths[${pi}].servicename`] = (
               <span>
-                Currently set to {path.ServiceName}, which does not exist. You
-                can create a service with this name for a particular deployment
-                via{' '}
+                当前设置为 {path.ServiceName}
+                ，但该服务不存在。可通过以下方式为特定 Deployment 创建同名服务：{' '}
                 <Link
                   to="kubernetes.applications"
                   params={{ id: environmentId }}
@@ -491,9 +490,9 @@ export function CreateIngressView() {
                   target="_blank"
                   data-cy="ingresses-create-application-link"
                 >
-                  Applications
+                  应用
                 </Link>
-                , and on returning here it will be picked up.
+                ，返回此处后系统会自动识别。
               </span>
             );
           }
@@ -567,11 +566,11 @@ export function CreateIngressView() {
   return (
     <>
       <PageHeader
-        title={isEdit ? 'Edit ingress' : 'Create ingress'}
+        title={isEdit ? '编辑 Ingress' : '创建 Ingress'}
         breadcrumbs={[
           {
             link: 'kubernetes.ingresses',
-            label: 'Ingresses',
+            label: 'Ingress',
           },
           {
             label: isEdit ? 'Edit ingress' : 'Create ingress',
@@ -841,7 +840,10 @@ export function CreateIngressView() {
         { environmentId, ingress },
         {
           onSuccess: () => {
-            notifySuccess(t('common.success'), t('kubernetes.ingresses.notifications.updated'));
+            notifySuccess(
+              t('common.success'),
+              t('kubernetes.ingresses.notifications.updated')
+            );
             router.stateService.go('kubernetes.ingresses');
           },
         }
@@ -851,7 +853,10 @@ export function CreateIngressView() {
         { environmentId, ingress },
         {
           onSuccess: () => {
-            notifySuccess(t('common.success'), t('kubernetes.ingresses.notifications.created'));
+            notifySuccess(
+              t('common.success'),
+              t('kubernetes.ingresses.notifications.created')
+            );
             router.stateService.go('kubernetes.ingresses');
           },
         }

@@ -31,7 +31,10 @@ export function ListView() {
 
   return (
     <>
-      <PageHeader title={t('portainer.templates.custom.title')} breadcrumbs={t('portainer.templates.custom.breadcrumb')} />
+      <PageHeader
+        title={t('portainer.templates.custom.title')}
+        breadcrumbs={t('portainer.templates.custom.breadcrumb')}
+      />
 
       {viewType === ContainerEngine.Docker && !!selectedTemplateId && (
         <StackFromCustomTemplateFormWidget templateId={selectedTemplateId} />
@@ -56,7 +59,10 @@ export function ListView() {
 
     deleteMutation.mutate(templateId, {
       onSuccess: () => {
-        notifySuccess(i18n.t('common.success'), i18n.t('portainer.templates.custom.delete_success'));
+        notifySuccess(
+          i18n.t('common.success'),
+          i18n.t('portainer.templates.custom.delete_success')
+        );
       },
     });
   }

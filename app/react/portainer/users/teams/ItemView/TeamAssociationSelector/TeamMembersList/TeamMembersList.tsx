@@ -66,7 +66,7 @@ export function TeamMembersList({ users, roles, disabled, teamId }: Props) {
               icon={UserX}
               data-cy="remove-all-users-button"
             >
-            {t('teams.remove_all')}
+              {t('teams.remove_all')}
             </Button>
           )
         }

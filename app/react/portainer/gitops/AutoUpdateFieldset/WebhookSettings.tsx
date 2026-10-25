@@ -21,11 +21,9 @@ export function WebhookSettings({
       tooltip={
         !!docsLink && (
           <>
-            See{' '}
-            <HelpLink docLink={docsLink}>
-              Portainer documentation on webhook usage
-            </HelpLink>
-            .
+            请参阅{' '}
+            <HelpLink docLink={docsLink}>Portainer Webhook 使用文档</HelpLink>
+            进行部署。
           </>
         )
       }
@@ -33,7 +31,7 @@ export function WebhookSettings({
       <div className="flex items-center gap-2">
         <span
           className="text-muted"
-          aria-label="webhook url"
+          aria-label="Webhook URL"
           role="textbox"
           aria-readonly
         >
@@ -44,7 +42,7 @@ export function WebhookSettings({
           color="light"
           data-cy="copy-webhook-link-button"
         >
-          Copy link
+          复制链接
         </CopyButton>
       </div>
     </FormControl>

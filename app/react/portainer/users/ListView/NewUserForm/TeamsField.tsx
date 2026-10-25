@@ -20,7 +20,11 @@ export function TeamsField({
     useField<FormValues['teams']>('teams');
 
   return (
-    <FormControl label={t('users.add_to_teams')} inputId="teams-field" errors={error}>
+    <FormControl
+      label={t('users.add_to_teams')}
+      inputId="teams-field"
+      errors={error}
+    >
       {teams.length > 0 ? (
         <TeamsSelector
           dataCy="user-teamSelect"
@@ -32,9 +36,7 @@ export function TeamsField({
           disabled={disabled}
         />
       ) : (
-        <span className="small text-muted">
-          {t('users.no_teams_message')}
-        </span>
+        <span className="small text-muted">{t('users.no_teams_message')}</span>
       )}
     </FormControl>
   );

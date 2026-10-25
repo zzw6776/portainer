@@ -55,7 +55,7 @@ export function InnerForm({
         onChange={(value) => setFieldValue('name', value)}
         value={values.name}
         errors={errors.name}
-        placeholder="e.g. my-stack"
+        placeholder="例如 my-stack"
       />
 
       <EdgeGroupsSelector

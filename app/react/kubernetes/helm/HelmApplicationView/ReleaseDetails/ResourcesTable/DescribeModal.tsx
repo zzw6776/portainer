@@ -33,12 +33,12 @@ export function DescribeModal({
       <ModalHeader title={title} />
       <ModalBody>
         {isLoading ? (
-          <InlineLoader>Loading...</InlineLoader>
+          <InlineLoader>正在加载……</InlineLoader>
         ) : (
           <>
             {isError ? (
-              <Alert color="error" title="Error">
-                Error loading resource details
+              <Alert color="error" title="错误">
+                加载资源详情失败
               </Alert>
             ) : (
               <CodeEditor

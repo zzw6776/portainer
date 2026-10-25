@@ -32,7 +32,7 @@ export function ReclaimPolicyEditForm({ volume, onDismiss }: Props) {
 
   return (
     <>
-      <Modal.Header title="Edit Persistent Volume Reclaim Policy" />
+      <Modal.Header title="编辑持久卷回收策略" />
 
       <Formik<ReclaimPolicyEditFormValues>
         initialValues={initialValues}
@@ -45,7 +45,7 @@ export function ReclaimPolicyEditForm({ volume, onDismiss }: Props) {
             <Modal.Body>
               <Form className="form-vertical" onSubmit={handleSubmit}>
                 <FormControl
-                  label="Reclaim Policy"
+                  label="回收策略"
                   inputId="reclaimPolicy-input"
                   errors={errors.reclaimPolicy}
                   size="vertical"
@@ -71,12 +71,12 @@ export function ReclaimPolicyEditForm({ volume, onDismiss }: Props) {
 
             <Modal.Footer>
               <LoadingButton
-                loadingText="Updating..."
+                loadingText="正在更新..."
                 isLoading={isSubmitting}
                 onClick={() => handleSubmit()}
                 data-cy="kubernetes-pv-reclaim-edit-submit"
               >
-                Save
+                保存
               </LoadingButton>
             </Modal.Footer>
           </>

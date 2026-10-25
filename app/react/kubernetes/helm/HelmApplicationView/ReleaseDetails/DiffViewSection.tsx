@@ -31,7 +31,7 @@ export function DiffViewSection({
   }
 
   if (isCompareReleaseError) {
-    return <Alert color="error">Error loading compare values</Alert>;
+    return <Alert color="error">加载比较值失败</Alert>;
   }
 
   return (
@@ -40,7 +40,7 @@ export function DiffViewSection({
       originalCode={originalText}
       id={id}
       data-cy={dataCy}
-      placeholder="No values found"
+      placeholder="未找到值"
       fileNames={{
         original: compareRevisionNumberFetched
           ? `Revision #${compareRevisionNumberFetched}`

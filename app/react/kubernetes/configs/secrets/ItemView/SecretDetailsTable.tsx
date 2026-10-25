@@ -38,10 +38,10 @@ export function SecretDetailsTable({
       dataCy="k8sConfigDetail-configTable"
       className="[&_td:first-child]:w-2/5"
     >
-      <DetailsRow label="Name">
+      <DetailsRow label="名称">
         {name} {isSystem && <SystemBadge />}
       </DetailsRow>
-      <DetailsRow label="Namespace">
+      <DetailsRow label="命名空间">
         <Link
           to="kubernetes.resourcePools.resourcePool"
           params={{ id: namespace }}
@@ -52,12 +52,12 @@ export function SecretDetailsTable({
         {isSystem && <SystemBadge />}
       </DetailsRow>
       {secretTypeLabel && (
-        <DetailsRow label="Secret Type">{secretTypeLabel}</DetailsRow>
+        <DetailsRow label="Secret 类型">{secretTypeLabel}</DetailsRow>
       )}
       {parsedRegistryId && (
-        <DetailsRow label="Registry">
+        <DetailsRow label="镜像仓库">
           <RegistryBadge registryId={parsedRegistryId}>
-            <Tooltip message="This registry secret was created by Portainer to allow pulling images. Manually editing this secret is disabled." />
+            <Tooltip message="此镜像仓库 Secret 由 Portainer 创建，用于拉取镜像，不能手动编辑。" />
           </RegistryBadge>
         </DetailsRow>
       )}

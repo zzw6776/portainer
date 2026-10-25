@@ -5,9 +5,8 @@ import { buildConfirmButton } from '@@/modals/utils';
 export async function confirmImageExport() {
   return openConfirm({
     modalType: ModalType.Warn,
-    title: 'Caution',
-    message:
-      'The export may take several minutes, do not navigate away whilst the export is in progress.',
-    confirmButton: buildConfirmButton('Continue'),
+    title: '注意',
+    message: '导出可能需要几分钟，导出期间请勿离开此页面。',
+    confirmButton: buildConfirmButton('继续'),
   });
 }

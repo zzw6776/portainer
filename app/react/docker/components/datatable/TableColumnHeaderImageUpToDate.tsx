@@ -53,15 +53,15 @@ export function ImageUpToDateTooltip() {
         <div className="flex flex-col gap-y-2 p-2">
           <div className="flex items-center gap-2">
             <Icon icon={UpToDate} />
-            Images are up to date
+            镜像均为最新
           </div>
           <div className="flex items-center gap-2">
             <Icon icon={UpdatesAvailable} />
-            Updates are available
+            有可用更新
           </div>
           <div className="flex items-center gap-2">
             <Icon icon={UpdatesUnknown} />
-            Updates availability unknown
+            无法确定是否有更新
           </div>
         </div>
       }

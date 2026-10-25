@@ -92,7 +92,10 @@ export function HelmInstallInnerForm({
   return (
     <Form className="form-horizontal">
       <div className="form-group !m-0">
-        <FormSection title={t('kubernetes.helm.install.configuration')} className="mt-4">
+        <FormSection
+          title={t('kubernetes.helm.install.configuration')}
+          className="mt-4"
+        >
           <FormControl
             label={t('kubernetes.helm.install.version')}
             inputId="version-input"
@@ -102,7 +105,9 @@ export function HelmInstallInnerForm({
             <PortainerSelect<ChartVersion>
               value={selectedVersion}
               options={versionOptions}
-              noOptionsMessage={() => t('kubernetes.helm.install.noVersionsFound')}
+              noOptionsMessage={() =>
+                t('kubernetes.helm.install.noVersionsFound')
+              }
               placeholder={t('kubernetes.helm.install.selectVersion')}
               onChange={(version) => {
                 if (version) {

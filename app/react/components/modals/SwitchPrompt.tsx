@@ -13,7 +13,7 @@ import { buildCancelButton, buildConfirmButton } from './utils';
 function SwitchPrompt({
   onSubmit,
   title,
-  confirmButton = buildConfirmButton('OK'),
+  confirmButton = buildConfirmButton('确定'),
   switchLabel,
   modalType,
   message,

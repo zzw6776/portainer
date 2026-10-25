@@ -30,24 +30,20 @@ export function ApplicationSummarySection({
   }
 
   return (
-    <FormSection title="Summary" isFoldable defaultFolded={false}>
-      <TextTip color="blue">
-        Portainer will execute the following Kubernetes actions.
-      </TextTip>
+    <FormSection title="摘要" isFoldable defaultFolded={false}>
+      <TextTip color="blue">Portainer 将执行以下 Kubernetes 操作。</TextTip>
       <ul className="small text-muted ml-5 w-full">
         {appResourceSummaries.map((summary) => (
           <SummaryItem key={JSON.stringify(summary)} summary={summary} />
         ))}
         {!!limits.memory && (
           <li>
-            Set the memory resources limits and requests to{' '}
-            <code>{limits.memory}M</code>
+            将内存资源限制和请求设置为 <code>{limits.memory}M</code>
           </li>
         )}
         {!!limits.cpu && (
           <li>
-            Set the CPU resources limits and requests to{' '}
-            <code>{limits.cpu}</code>
+            将 CPU 资源限制和请求设置为 <code>{limits.cpu}</code>
           </li>
         )}
       </ul>

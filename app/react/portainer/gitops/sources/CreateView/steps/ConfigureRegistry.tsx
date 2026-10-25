@@ -1,3 +1,3 @@
 export function ConfigureRegistry() {
-  return <>Registry panel</>;
+  return <>镜像仓库面板</>;
 }

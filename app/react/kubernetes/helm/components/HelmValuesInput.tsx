@@ -18,25 +18,24 @@ export function HelmValuesInput({
   return (
     <div className="grid grid-cols-2 gap-4">
       <FormControl
-        label="User-defined values"
+        label="用户定义值"
         inputId="user-values-editor"
         size="vertical"
         className="!mx-0 [&>label]:!mb-1"
         tooltip={
           <>
-            User-defined values will override the default chart values.
+            用户定义值将覆盖 Chart 默认值。
             <br />
-            You can get more information about the Helm values file format in
-            the{' '}
+            有关 Helm values 文件格式的更多信息，请参阅{' '}
             <a
               href="https://helm.sh/docs/chart_template_guide/values_files/"
               target="_blank"
               data-cy="helm-values-reference-link"
               rel="noreferrer"
             >
-              official documentation
+              官方文档
             </a>
-            .
+            进行部署。
           </>
         }
       >
@@ -47,21 +46,21 @@ export function HelmValuesInput({
           height="50vh"
           type="yaml"
           data-cy="helm-user-values-editor"
-          placeholder="Define or paste the content of your values yaml file here"
+          placeholder="在此定义或粘贴 values YAML 文件内容"
           showToolbar={false}
         />
       </FormControl>
       <FormControl
         label={
           <div className="flex w-full justify-between">
-            Values reference (read-only)
+            值参考（只读）
             <ShortcutsTooltip />
           </div>
         }
         inputId="values-reference"
         size="vertical"
         isLoading={isValuesRefLoading}
-        loadingText="Loading values..."
+        loadingText="正在加载值……"
         className="!mx-0 [&>label]:!mb-1 [&>label]:w-full"
       >
         <CodeEditor
@@ -71,7 +70,7 @@ export function HelmValuesInput({
           type="yaml"
           readonly
           data-cy="helm-values-reference"
-          placeholder="No values reference found"
+          placeholder="未找到值参考"
           showToolbar={false}
         />
       </FormControl>

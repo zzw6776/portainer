@@ -34,15 +34,15 @@ type Props = {
 
 const availabilityOptions: Option<NodeAvailability>[] = [
   {
-    label: 'Active',
+    label: '活动',
     value: 'Active',
   },
   {
-    label: 'Pause',
+    label: '暂停',
     value: 'Pause',
   },
   {
-    label: 'Drain',
+    label: '排空',
     value: 'Drain',
   },
 ];
@@ -65,7 +65,7 @@ export function NodeSummary({
   return (
     <DetailsTable dataCy="node-summary">
       <tr>
-        <td className="col-sm-3">Hostname</td>
+        <td className="col-sm-3">主机名</td>
         <td>
           {parsedNode.name}
           {parsedNode.isApi && (
@@ -82,19 +82,19 @@ export function NodeSummary({
         </tr>
       )}
       <tr>
-        <td>Role</td>
+        <td>角色</td>
         <td>{parsedNode.role}</td>
       </tr>
       <tr>
-        <td>Kubelet version</td>
+        <td>Kubelet 版本</td>
         <td>{parsedNode.version || '-'}</td>
       </tr>
       <tr>
-        <td>Creation date</td>
+        <td>创建日期</td>
         <td>{parsedNode.creationDate || '-'}</td>
       </tr>
       <tr>
-        <td>Status</td>
+        <td>状态</td>
         <td>
           <div className="flex items-center">
             <StatusBadge color={parsedNode.statusType}>
@@ -109,7 +109,7 @@ export function NodeSummary({
         </td>
       </tr>
       <tr>
-        <td>Availability</td>
+        <td>可用性</td>
         <td>
           {hasNodeWriteAccess ? (
             <>
@@ -123,7 +123,7 @@ export function NodeSummary({
                 }}
                 data-cy="node-availability-select"
                 inputId="node-availability-select"
-                aria-label="Availability"
+                aria-label="可用性"
               />
               <FormError>{error}</FormError>
             </>

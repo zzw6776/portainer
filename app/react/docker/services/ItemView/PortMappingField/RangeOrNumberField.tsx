@@ -37,7 +37,7 @@ export function RangeOrNumberField({
       ) : (
         <InputLabeled
           size="small"
-          placeholder="e.g. 80"
+          placeholder="例如 80"
           className="w-1/2"
           label={label}
           disabled={disabled}
@@ -73,7 +73,7 @@ function RangeInput({
     <div className="flex items-center gap-2">
       <label className="m-0 font-normal">{label}</label>
       <InputLabeled
-        label="from"
+        label="从"
         size="small"
         value={value.start || ''}
         onChange={(e) =>
@@ -87,7 +87,7 @@ function RangeInput({
       />
 
       <InputLabeled
-        label="to"
+        label="到"
         size="small"
         value={value.end || ''}
         onChange={(e) =>
@@ -122,7 +122,7 @@ function RangeCheckbox({
   const isValueRange = isRange(value);
   return (
     <Checkbox
-      label="range"
+      label="范围"
       checked={isValueRange}
       onChange={() => {
         if (!isValueRange) {

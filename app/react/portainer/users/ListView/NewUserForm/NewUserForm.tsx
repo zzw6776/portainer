@@ -61,10 +61,7 @@ export function NewUserForm() {
                   },
                   {
                     onSuccess() {
-                      notifySuccess(
-                        t('users.user_created'),
-                        values.username
-                      );
+                      notifySuccess(t('users.user_created'), values.username);
                       resetForm();
                     },
                   }

@@ -13,12 +13,14 @@ export function HelmSection() {
   return (
     <FormSection title={t('settings.helm_repo_title')}>
       <div className="mb-2">
-        <TextTip color="blue">
-          {t('settings.helm_repo_desc')}
-        </TextTip>
+        <TextTip color="blue">{t('settings.helm_repo_desc')}</TextTip>
       </div>
 
-      <FormControl label={t('settings.url')} errors={error} inputId="helm-repo-url">
+      <FormControl
+        label={t('settings.url')}
+        errors={error}
+        inputId="helm-repo-url"
+      >
         <Field
           as={Input}
           id="helm-repo-url"

@@ -48,15 +48,14 @@ export function useHelmRepoOptions() {
         .sort((a, b) => a.label.localeCompare(b.label));
       return [
         {
-          label: 'Helm Repositories',
+          label: 'Helm 仓库',
           options: repoOptions,
         },
         {
-          label: 'OCI Registries',
+          label: 'OCI 镜像仓库',
           options: [
             {
-              label:
-                'Installing from an OCI registry is a Portainer Business Feature',
+              label: '从 OCI 镜像仓库安装是 Portainer 商业版功能',
               value: {},
               disabled: true,
             },

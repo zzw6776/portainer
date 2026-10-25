@@ -27,7 +27,6 @@ const TABS_FOR_INDEX: Tab[] = [
   },
 ];
 
-
 export function ItemView() {
   const { t } = useTranslation();
   const id = useIdParam();
@@ -69,7 +68,10 @@ export function ItemView() {
     <>
       <PageHeader
         title={t('edge.jobs_details')}
-        breadcrumbs={[{ label: t('edge.jobs_title'), link: 'edge.jobs' }, edgeJob.Name]}
+        breadcrumbs={[
+          { label: t('edge.jobs_title'), link: 'edge.jobs' },
+          edgeJob.Name,
+        ]}
       />
 
       {tabs.length === 1 ? (

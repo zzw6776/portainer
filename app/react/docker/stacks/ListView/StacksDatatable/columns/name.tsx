@@ -18,10 +18,10 @@ import { DecoratedStack } from '../types';
 import { columnHelper } from './helper';
 
 const filterOptions = [
-  'Active Stacks',
-  'Inactive Stacks',
-  'Deploying Stacks',
-  'Error Stacks',
+  '活动堆栈',
+  '未激活堆栈',
+  '部署中堆栈',
+  '错误堆栈',
 ] as const;
 
 type FilterOption = (typeof filterOptions)[number];
@@ -47,13 +47,12 @@ export const name = columnHelper.accessor('Name', {
 
     return (
       (stack.Status === StackStatus.Active &&
-        filterValue.includes('Active Stacks')) ||
+        filterValue.includes('活动堆栈')) ||
       (stack.Status === StackStatus.Inactive &&
-        filterValue.includes('Inactive Stacks')) ||
+        filterValue.includes('未激活堆栈')) ||
       (stack.Status === StackStatus.Deploying &&
-        filterValue.includes('Deploying Stacks')) ||
-      (stack.Status === StackStatus.Error &&
-        filterValue.includes('Error Stacks'))
+        filterValue.includes('部署中堆栈')) ||
+      (stack.Status === StackStatus.Error && filterValue.includes('错误堆栈'))
     );
   },
   meta: {
@@ -69,17 +68,17 @@ function NameCell({
       <NameLink item={item} />
       {isRegularStack(item) && item.Status === StackStatus.Inactive && (
         <span className="label label-warning image-tag space-left ml-2">
-          Inactive
+          未激活
         </span>
       )}
       {isRegularStack(item) && item.Status === StackStatus.Deploying && (
         <span className="label label-info image-tag space-left ml-2">
-          Deploying...
+          部署中...
         </span>
       )}
       {isRegularStack(item) && item.Status === StackStatus.Error && (
         <span className="label label-danger image-tag space-left ml-2">
-          Error
+          错误
         </span>
       )}
     </>
@@ -146,7 +145,7 @@ function Filter<TData extends { Used: boolean }>({
       filterKey={id}
       value={valueAsArray}
       onChange={setFilterValue}
-      menuTitle="Filter by activity"
+      menuTitle="按活动状态过滤"
     />
   );
 }

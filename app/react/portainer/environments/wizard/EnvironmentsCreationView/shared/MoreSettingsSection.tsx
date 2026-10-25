@@ -8,7 +8,11 @@ import { FormSection } from '@@/form-components/FormSection';
 export function MoreSettingsSection({ children }: PropsWithChildren<unknown>) {
   const { t } = useTranslation();
   return (
-    <FormSection title={t('wizard_env.more_settings')} className="ml-0" isFoldable>
+    <FormSection
+      title={t('wizard_env.more_settings')}
+      className="ml-0"
+      isFoldable
+    >
       <div className="ml-8">
         {children}
 

@@ -15,9 +15,7 @@ export function useValidation(): SchemaOf<FormValues> {
       .default('')
       .when('overridePath', (overridePath, schema) =>
         overridePath
-          ? schema.required(
-              i18n.t('validation.socket_path_required_override')
-            )
+          ? schema.required(i18n.t('validation.socket_path_required_override'))
           : schema
       ),
   });

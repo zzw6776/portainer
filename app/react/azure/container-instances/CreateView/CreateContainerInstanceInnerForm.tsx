@@ -41,9 +41,9 @@ export function CreateContainerInstanceInnerForm({
 }: Props) {
   return (
     <Form className="form-horizontal" onSubmit={handleSubmit} noValidate>
-      <FormSectionTitle>Azure settings</FormSectionTitle>
+      <FormSectionTitle>Azure 设置</FormSectionTitle>
       <FormControl
-        label="Subscription"
+        label="订阅"
         inputId="subscription-input"
         errors={errors.subscription}
       >
@@ -56,7 +56,7 @@ export function CreateContainerInstanceInnerForm({
       </FormControl>
 
       <FormControl
-        label="Resource group"
+        label="资源组"
         inputId="resourceGroup-input"
         errors={errors.resourceGroup}
       >
@@ -72,7 +72,7 @@ export function CreateContainerInstanceInnerForm({
       </FormControl>
 
       <FormControl
-        label="Location"
+        label="位置"
         inputId="location-input"
         errors={errors.location}
       >
@@ -84,27 +84,27 @@ export function CreateContainerInstanceInnerForm({
         />
       </FormControl>
 
-      <FormSectionTitle>Container configuration</FormSectionTitle>
+      <FormSectionTitle>容器配置</FormSectionTitle>
 
-      <FormControl label="Name" inputId="name-input" errors={errors.name}>
+      <FormControl label="名称" inputId="name-input" errors={errors.name}>
         <Field
           name="name"
           as={Input}
           id="name-input"
-          placeholder="e.g. myContainer"
+          placeholder="例如 myContainer"
         />
       </FormControl>
 
-      <FormControl label="Image" inputId="image-input" errors={errors.image}>
+      <FormControl label="镜像" inputId="image-input" errors={errors.image}>
         <Field
           name="image"
           as={Input}
           id="image-input"
-          placeholder="e.g. nginx:alpine"
+          placeholder="例如 nginx:alpine"
         />
       </FormControl>
 
-      <FormControl label="OS" inputId="os-input" errors={errors.os}>
+      <FormControl label="操作系统" inputId="os-input" errors={errors.os}>
         <Field
           name="os"
           as={Select}
@@ -130,11 +130,11 @@ export function CreateContainerInstanceInnerForm({
 
       <div className="form-group">
         <div className="col-sm-12 small text-muted">
-          This will automatically deploy a container with a public IP address
+          这会自动部署一个具有公网 IP 地址的容器
         </div>
       </div>
 
-      <FormSectionTitle>Container Resources</FormSectionTitle>
+      <FormSectionTitle>容器资源</FormSectionTitle>
 
       <FormControl label="CPU" inputId="cpu-input" errors={errors.cpu}>
         <Field
@@ -146,7 +146,7 @@ export function CreateContainerInstanceInnerForm({
         />
       </FormControl>
 
-      <FormControl label="Memory" inputId="cpu-input" errors={errors.memory}>
+      <FormControl label="内存" inputId="cpu-input" errors={errors.memory}>
         <Field
           name="memory"
           as={Input}
@@ -169,11 +169,11 @@ export function CreateContainerInstanceInnerForm({
           <LoadingButton
             disabled={!isValid}
             isLoading={isSubmitting}
-            loadingText="Deployment in progress..."
+            loadingText="正在部署……"
             icon={Plus}
             data-cy="aci-create-button"
           >
-            Deploy the container
+            部署容器
           </LoadingButton>
         </div>
       </div>

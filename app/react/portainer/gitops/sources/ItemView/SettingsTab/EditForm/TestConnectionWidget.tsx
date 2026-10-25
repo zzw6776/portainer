@@ -22,12 +22,12 @@ export function TestConnectionWidget({ sourceId }: Props) {
     <Card.Container>
       <Card.Header
         icon={ArrowLeftRight}
-        title="Test Connection"
+        title="测试连接"
         subtitle="Verify settings before saving"
       />
       <Card.Body>
         <p className="mb-4 text-sm text-gray-7 th-highcontrast:text-white th-dark:text-gray-6">
-          Test the connection to verify your settings are correct before saving.
+          保存前测试连接，以确认设置正确。
         </p>
         <TestConnectionButton
           sourceId={sourceId}

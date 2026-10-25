@@ -9,7 +9,7 @@ export const created = columnHelper.accessor(
     return owner ? `${date} by ${owner}` : date;
   },
   {
-    header: 'Created',
+    header: '创建时间',
     id: 'created',
     cell: ({ row }) => {
       const date = formatDate(row.original.CreationDate);

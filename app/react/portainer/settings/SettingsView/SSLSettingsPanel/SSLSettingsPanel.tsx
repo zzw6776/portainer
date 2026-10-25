@@ -53,7 +53,7 @@ function SSLSettingsPanel() {
 
   return (
     <Widget>
-      <Widget.Title icon={Key} title="SSL certificate" />
+      <Widget.Title icon={Key} title="SSL 证书" />
       <Widget.Body>
         <Formik
           initialValues={initialValues}
@@ -67,9 +67,8 @@ function SSLSettingsPanel() {
               <div className="form-group">
                 <div className="col-sm-12">
                   <TextTip color="orange">
-                    Forcing HTTPs only will cause Portainer to stop listening on
-                    the HTTP port. Any edge agent environment that is using HTTP
-                    will no longer be available.
+                    强制仅使用 HTTPS 后，Portainer 将停止监听 HTTP
+                    端口。所有使用 HTTP 的 Edge Agent 环境都将不可用。
                   </TextTip>
                 </div>
               </div>
@@ -79,7 +78,7 @@ function SSLSettingsPanel() {
                   <SwitchField
                     checked={values.forceHTTPS}
                     data-cy="settings-ssl-force-https-switch"
-                    label="Force HTTPS only"
+                    label="仅启用 HTTPS"
                     labelClass="col-sm-3 col-lg-2"
                     name="forceHTTPS"
                     onChange={(value) => setFieldValue('forceHTTPS', value)}
@@ -90,11 +89,9 @@ function SSLSettingsPanel() {
               <div className="form-group">
                 <div className="col-sm-12">
                   <TextTip color="blue">
-                    Forcing secure cookies is intended for when users are
-                    accessing Portainer via a TLS-terminating reverse proxy or
-                    Kubernetes ingress. Forcing secure cookies when accessing
-                    Portainer over plain HTTP will break Portainer login
-                    entirely.
+                    强制使用安全 Cookie 适用于通过终止 TLS 的反向代理或
+                    Kubernetes Ingress 访问 Portainer 的场景。若通过普通 HTTP
+                    访问时强制使用安全 Cookie，将导致 Portainer 完全无法登录。
                   </TextTip>
                 </div>
               </div>
@@ -104,7 +101,7 @@ function SSLSettingsPanel() {
                   <SwitchField
                     checked={values.forceSecureCookies}
                     data-cy="settings-force-secure-cookies-switch"
-                    label="Force Secure cookies"
+                    label="强制使用安全 Cookie"
                     labelClass="col-sm-3 col-lg-2"
                     name="forceSecureCookies"
                     onChange={(value) =>
@@ -117,15 +114,14 @@ function SSLSettingsPanel() {
               <div className="form-group">
                 <div className="col-sm-12">
                   <TextTip color="blue">
-                    Provide a new SSL Certificate to replace the existing one
-                    that is used for HTTPS connections.
+                    提供新的 SSL 证书，以替换现有用于 HTTPS 连接的证书。
                   </TextTip>
                 </div>
               </div>
 
               <FormControl
-                label="SSL/TLS certificate"
-                tooltip="Select an X.509 certificate file, commonly a crt, cer or pem file."
+                label="SSL/TLS 证书"
+                tooltip="选择 X.509 证书文件，通常为 crt、cer 或 pem 文件。"
                 inputId="ca-cert-field"
                 errors={errors.certFile}
               >
@@ -139,8 +135,8 @@ function SSLSettingsPanel() {
               </FormControl>
 
               <FormControl
-                label="SSL/TLS private key"
-                tooltip="Select a private key file, commonly a key, or pem file."
+                label="SSL/TLS 私钥"
+                tooltip="选择私钥文件，通常为 key 或 pem 文件。"
                 inputId="ca-cert-field"
                 errors={errors.keyFile}
               >
@@ -159,10 +155,10 @@ function SSLSettingsPanel() {
                     isLoading={isLoading}
                     data-cy="save-ssl-settings-button"
                     disabled={!dirty || !isValid}
-                    loadingText={reloadingPage ? 'Reloading' : 'Saving'}
+                    loadingText={reloadingPage ? '正在重新加载' : '正在保存'}
                     className="!ml-0"
                   >
-                    Save SSL settings
+                    保存 SSL 设置
                   </LoadingButton>
                 </div>
               </div>
@@ -183,7 +179,7 @@ function SSLSettingsPanel() {
       { ForceSecureCookies: forceSecureCookies },
       {
         onSuccess: () => {
-          notifySuccess('Success', 'Security settings updated');
+          notifySuccess('成功', '安全设置更新成功');
         },
       }
     );

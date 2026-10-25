@@ -118,7 +118,7 @@ export function CodeEditor({
                   className="!pr-0 !text-sm !font-medium hover:no-underline focus:no-underline"
                   indicatorPosition="left"
                 >
-                  Copy
+                  复制
                 </CopyButton>
               </div>
             )}
@@ -160,7 +160,7 @@ export function CodeEditor({
           }}
           data-cy={dataCy}
           placeholder={placeholder}
-          aria-label={ariaLabel || 'Code Editor'}
+          aria-label={ariaLabel || '代码编辑器'}
         />
       </div>
     </>

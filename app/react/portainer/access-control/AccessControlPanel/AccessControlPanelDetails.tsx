@@ -75,7 +75,7 @@ export function AccessControlPanelDetails({
     <table className="table">
       <tbody>
         <tr data-cy="access-ownership">
-          <td className="w-1/5">Ownership</td>
+          <td className="w-1/5">所有权</td>
           <td>
             <i
               className={clsx(ownershipIcon(ownership), 'space-right')}
@@ -89,13 +89,13 @@ export function AccessControlPanelDetails({
         {inheritanceMessage}
         {restrictedToUsers.length > 0 && (
           <tr data-cy="access-authorisedUsers">
-            <td>Authorized users</td>
+            <td>已授权用户</td>
             <td aria-label="authorized-users">{userMessage}</td>
           </tr>
         )}
         {restrictedToTeams.length > 0 && (
           <tr data-cy="access-authorisedTeams">
-            <td>Authorized teams</td>
+            <td>已授权团队</td>
             <td aria-label="authorized-teams">{teamsMessage}</td>
           </tr>
         )}
@@ -137,8 +137,8 @@ function getInheritanceMessage(
     parentType === ResourceControlType.Service
   ) {
     return (
-      <InheritanceMessage tooltip="Access control applied on a service is also applied on each container of that service.">
-        Access control on this resource is inherited from the following service:
+      <InheritanceMessage tooltip="应用到服务的访问控制，也会应用到该服务的每个容器。">
+        此资源的访问控制继承自以下服务：
         <Link
           to="docker.services.service"
           params={{ id: resourceId }}
@@ -156,9 +156,8 @@ function getInheritanceMessage(
     parentType === ResourceControlType.Container
   ) {
     return (
-      <InheritanceMessage tooltip="Access control applied on a container created using a template is also applied on each volume associated to the container.">
-        Access control on this resource is inherited from the following
-        container:
+      <InheritanceMessage tooltip="通过模板创建容器时应用的访问控制，也会应用到该容器关联的每个数据卷。">
+        此资源的访问控制继承自以下容器：
         <Link
           to="docker.containers.container"
           params={{ id: resourceId }}
@@ -173,10 +172,8 @@ function getInheritanceMessage(
 
   if (parentType === ResourceControlType.Stack) {
     return (
-      <InheritanceMessage tooltip="Access control applied on a stack is also applied on each resource in the stack.">
-        <span className="space-right">
-          Access control on this resource is inherited from the following stack:
-        </span>
+      <InheritanceMessage tooltip="应用到堆栈的访问控制，也会应用到该堆栈中的每个资源。">
+        <span className="space-right">此资源的访问控制继承自以下堆栈：</span>
         {removeEndpointIdFromStackResourceId(resourceId)}
       </InheritanceMessage>
     );

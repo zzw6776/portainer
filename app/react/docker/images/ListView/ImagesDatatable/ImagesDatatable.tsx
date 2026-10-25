@@ -82,7 +82,7 @@ export function ImagesDatatable({
               to="docker.images.build"
               data-cy="image-buildImageButton"
             >
-              Build a new image
+              构建新镜像
             </AddButton>
           </Authorized>
         </div>

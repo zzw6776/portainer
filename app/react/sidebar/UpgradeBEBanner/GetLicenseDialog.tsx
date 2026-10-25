@@ -15,7 +15,7 @@ export function GetLicenseDialog({
   return (
     <Modal
       onDismiss={onDismiss}
-      aria-label="Upgrade Portainer to Business Edition"
+      aria-label="将 Portainer 升级到商业版"
       size="lg"
       className="!bg-white [&>.close-button]:!text-black"
     >
@@ -28,7 +28,7 @@ export function GetLicenseDialog({
             onSubmitted={() => {
               goToUploadLicense(true);
             }}
-            loading={<div className="text-black">Loading...</div>}
+            loading={<div className="text-black">正在加载……</div>}
           />
         </div>
       </Modal.Body>

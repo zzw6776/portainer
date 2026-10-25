@@ -14,7 +14,7 @@ export function useCreateUserAccessTokenMutation() {
   return useMutation(createUserAccessToken, {
     ...withError('Unable to create access token'),
     onSuccess: () => {
-      notifySuccess('Success', 'Access token successfully created');
+      notifySuccess('成功', '访问令牌创建成功');
       // TODO: invalidate query when user page migrated to react.
     },
   });

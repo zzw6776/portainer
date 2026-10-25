@@ -8,7 +8,11 @@ export function NamespacesView() {
   const { t } = useTranslation();
   return (
     <>
-      <PageHeader title={t('kubernetes.namespaces.list.title')} breadcrumbs={t('kubernetes.namespaces.list.breadcrumbs')} reload />
+      <PageHeader
+        title={t('kubernetes.namespaces.list.title')}
+        breadcrumbs={t('kubernetes.namespaces.list.breadcrumbs')}
+        reload
+      />
       <NamespacesDatatable />
     </>
   );

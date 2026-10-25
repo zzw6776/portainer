@@ -23,7 +23,11 @@ export function getColumns(t: (key: string) => string) {
       icon: X,
       mode: 'danger',
     },
-    [ActivityType.Logout]: { label: t('logs.result.logout'), icon: undefined, mode: undefined },
+    [ActivityType.Logout]: {
+      label: t('logs.result.logout'),
+      icon: undefined,
+      mode: undefined,
+    },
   } as const;
 
   const authMethodLabel = (context?: number) => {
@@ -78,7 +82,7 @@ export function getColumns(t: (key: string) => string) {
         const { label, icon, mode } = props;
 
         return (
-          <span className="flex gap-1 items-center">
+          <span className="flex items-center gap-1">
             {label}
             {icon && mode && <Icon icon={icon} mode={mode} />}
           </span>

@@ -58,7 +58,7 @@ export function AccessControlPanelForm({
       ),
     {
       meta: {
-        error: { title: 'Failure', message: 'Unable to update access control' },
+        error: { title: '失败', message: '无法更新访问控制' },
       },
       onSuccess() {
         return onUpdateSuccess();
@@ -142,7 +142,7 @@ export function AccessControlPanelForm({
 
     updateAccess.mutate(accessControl, {
       onSuccess() {
-        notifySuccess('Success', t('access_control.update_success'));
+        notifySuccess('成功', t('access_control.update_success'));
       },
     });
   }

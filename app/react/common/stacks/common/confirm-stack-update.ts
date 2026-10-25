@@ -11,7 +11,7 @@ export async function confirmStackUpdate(
     'Re-pull image and redeploy',
     {
       message,
-      confirmButton: buildConfirmButton('Update'),
+      confirmButton: buildConfirmButton('更新'),
       modalType: ModalType.Warn,
       defaultValue,
       'data-cy': 'confirm-stack-update',

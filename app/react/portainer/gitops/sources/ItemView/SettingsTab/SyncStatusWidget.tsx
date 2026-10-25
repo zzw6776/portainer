@@ -28,12 +28,12 @@ export function SyncStatusWidget({ source }: Props) {
     <Card.Container>
       <Card.Header
         icon={ShieldAlertIcon}
-        title="Sync Status"
+        title="同步状态"
         subtitle="Health and timing of the last sync"
       />
       <Card.Body className="flex flex-col gap-4">
         <div className="grid grid-cols-2 gap-4">
-          <DetailField label="Status">
+          <DetailField label="状态">
             {source.status ? (
               <Badge type={dotColor} shape="pill" data-cy="source-status">
                 <StatusDot color={dotColor} size="xs" /> {statusLabel}
@@ -42,7 +42,7 @@ export function SyncStatusWidget({ source }: Props) {
               '-'
             )}
           </DetailField>
-          <DetailField label="Last Sync">
+          <DetailField label="上次同步">
             <span data-cy="source-last-sync">{lastSyncLabel}</span>
           </DetailField>
         </div>

@@ -42,10 +42,10 @@ export function FilesSection({ artifacts, sources }: Props) {
   );
 
   return (
-    <Card.Container aria-label="Files">
+    <Card.Container aria-label="文件">
       <Card.Header
         icon={FileTextIcon}
-        title="Files"
+        title="文件"
         actions={<Badge type="muted">{groups.length}</Badge>}
       />
       <ul className="m-0 list-none divide-y divide-solid divide-gray-3 p-0 th-dark:divide-gray-9">

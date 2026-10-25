@@ -46,7 +46,11 @@ export function DashboardView() {
 
   return (
     <>
-      <PageHeader title={t('docker.dashboard.title')} breadcrumbs={t('docker.dashboard.environmentSummary')} reload />
+      <PageHeader
+        title={t('docker.dashboard.title')}
+        breadcrumbs={t('docker.dashboard.environmentSummary')}
+        reload
+      />
 
       <div className="mx-4 space-y-6">
         <InfoPanels isAgent={isAgentEnvironment(env.Type)} />
@@ -57,6 +61,7 @@ export function DashboardView() {
               to="docker.stacks"
               icon={LayersIcon}
               type={t('docker.dashboard.stack')}
+              pluralType={t('docker.dashboard.stack_plural')}
               value={dashboardStats.stacks}
               data-cy="stacks"
             />
@@ -67,6 +72,7 @@ export function DashboardView() {
               to="docker.services"
               icon={ShuffleIcon}
               type={t('docker.dashboard.service')}
+              pluralType={t('docker.dashboard.service_plural')}
               value={dashboardStats.services}
               data-cy="services"
             />
@@ -76,6 +82,7 @@ export function DashboardView() {
             to="docker.containers"
             icon={BoxIcon}
             type={t('docker.dashboard.container')}
+            pluralType={t('docker.dashboard.container_plural')}
             value={dashboardStats.containers.total}
             data-cy="containers"
           >
@@ -86,6 +93,7 @@ export function DashboardView() {
             to="docker.images"
             icon={ListIcon}
             type={t('docker.dashboard.image')}
+            pluralType={t('docker.dashboard.image_plural')}
             value={dashboardStats.images.total}
             data-cy="images"
           >
@@ -96,6 +104,7 @@ export function DashboardView() {
             to="docker.volumes"
             icon={DatabaseIcon}
             type={t('docker.dashboard.volume')}
+            pluralType={t('docker.dashboard.volume_plural')}
             value={dashboardStats.volumes}
             data-cy="volumes"
           />
@@ -104,6 +113,7 @@ export function DashboardView() {
             to="docker.networks"
             icon={NetworkIcon}
             type={t('docker.dashboard.network')}
+            pluralType={t('docker.dashboard.network_plural')}
             value={dashboardStats.networks}
             data-cy="networks"
           />
@@ -112,6 +122,7 @@ export function DashboardView() {
             <DashboardItem
               icon={CpuIcon}
               type={t('docker.dashboard.gpu')}
+              pluralType={t('docker.dashboard.gpu_plural')}
               value={env.Gpus?.length}
               data-cy="gpus"
             />

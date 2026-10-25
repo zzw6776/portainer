@@ -63,7 +63,7 @@ export function BackupFileForm() {
 
     downloadMutate.mutate(payload, {
       onSuccess() {
-        notifySuccess('Success', i18n.t('settings.backup_success'));
+        notifySuccess('成功', i18n.t('settings.backup_success'));
       },
     });
   }

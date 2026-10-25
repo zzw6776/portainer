@@ -13,7 +13,7 @@ export function AccessControlStep() {
   return (
     <>
       <Widget.Title
-        title="Access control"
+        title="访问控制"
         subtitle="Configure who can use this source to create workflows and deployments."
       />
       <Widget.Body>

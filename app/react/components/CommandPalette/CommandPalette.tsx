@@ -80,7 +80,7 @@ export const CommandPalette = forwardRef<HTMLInputElement, Props>(
               onChange('');
             }
           }}
-          placeholder="Filter or add expression, e.g. *.yml, src/**/*.ts"
+          placeholder="筛选或添加表达式，例如 *.yml、src/**/*.ts"
           className="flex-1 border-0 bg-transparent text-sm text-gray-11 outline-none placeholder:text-gray-6 th-highcontrast:text-white th-dark:text-white"
           data-cy="command-palette-search-input"
         />
@@ -90,10 +90,10 @@ export const CommandPalette = forwardRef<HTMLInputElement, Props>(
               color="primary"
               onClick={() => handleAddExpression()}
               className="shrink-0 border-0 bg-transparent text-gray-7 hover:text-gray-11 th-highcontrast:text-white th-dark:text-gray-5"
-              aria-label="Add expression"
+              aria-label="添加表达式"
               data-cy="command-palette-search-add-expression"
             >
-              Add expression
+              添加表达式
             </Button>
             <span className="shrink-0 text-xs text-gray-7 th-highcontrast:text-gray-5 th-dark:text-gray-5">
               {matchingPaths.length}{' '}
@@ -106,7 +106,7 @@ export const CommandPalette = forwardRef<HTMLInputElement, Props>(
             type="button"
             onClick={() => onChange('')}
             className="shrink-0 border-0 bg-transparent text-gray-7 hover:text-gray-11 th-highcontrast:text-white th-dark:text-gray-5"
-            aria-label="Clear search"
+            aria-label="清除搜索"
             data-cy="command-palette-search-clear-expression"
           >
             <X size={12} />

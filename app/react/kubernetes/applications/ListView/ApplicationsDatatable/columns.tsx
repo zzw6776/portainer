@@ -13,12 +13,12 @@ import { Application } from './types';
 import { helper } from './columns.helper';
 
 export const stackName = helper.accessor('StackName', {
-  header: 'Stack',
+  header: '堆栈',
   cell: ({ getValue }) => getValue() || '-',
 });
 
 export const namespace = helper.accessor('ResourcePool', {
-  header: 'Namespace',
+  header: '命名空间',
   cell: NamespaceCell,
 });
 
@@ -40,7 +40,7 @@ function NamespaceCell({ row, getValue }: CellContext<Application, string>) {
 }
 
 export const image = helper.accessor('Image', {
-  header: 'Image',
+  header: '镜像',
   cell: ({ row: { original: item } }) => (
     <ImageCell image={item.Image} imageCount={item.Containers?.length || 0} />
   ),
@@ -86,7 +86,7 @@ function ImageCell({
 }
 
 export const appType = helper.accessor('ApplicationType', {
-  header: 'Application type',
+  header: '应用类型',
   meta: {
     filter: filterHOC('Filter by application type'),
   },
@@ -98,14 +98,14 @@ export const appType = helper.accessor('ApplicationType', {
 });
 
 export const published = helper.accessor('Services', {
-  header: 'Published',
+  header: '已公开',
   cell: ({ row: { original: item } }) =>
     item.Services?.length === 0 ? 'No' : 'Yes',
   enableSorting: false,
 });
 
 export const created = helper.accessor('CreationDate', {
-  header: 'Created',
+  header: '创建时间',
   cell({ row: { original: item } }) {
     return (
       <>

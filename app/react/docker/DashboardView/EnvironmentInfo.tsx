@@ -40,10 +40,13 @@ export function EnvironmentInfo() {
 
   return (
     <Widget>
-      <Widget.Title icon={GaugeIcon} title={t('docker.dashboard.environment_info')} />
+      <Widget.Title
+        icon={GaugeIcon}
+        title={t('docker.dashboard.environment_info')}
+      />
       <Widget.Body className="!px-5 !py-0">
         <DetailsTable dataCy="environment-info">
-          <DetailsTable.Row label="Environment">
+          <DetailsTable.Row label="环境">
             <div className="flex items-center gap-2">
               {environment.Name}
               <SnapshotStats snapshot={environment.Snapshots[0]} />
@@ -53,7 +56,7 @@ export function EnvironmentInfo() {
           </DetailsTable.Row>
 
           {isEnvUrlVisible && (
-            <DetailsTable.Row label="URL">
+            <DetailsTable.Row label="地址 (URL)">
               {stripProtocol(environment.URL)}
             </DetailsTable.Row>
           )}

@@ -30,7 +30,9 @@ export function FileUploadForm({
   const resolvedTitle = title || t('common.fileUpload.select_a_file');
   return (
     <div className="file-upload-form">
-      <FormSectionTitle htmlFor="file-upload-field">{t('common.fileUpload.upload')}</FormSectionTitle>
+      <FormSectionTitle htmlFor="file-upload-field">
+        {t('common.fileUpload.upload')}
+      </FormSectionTitle>
       <div className="form-group">
         <span className="col-sm-12 text-muted small">{description}</span>
         {error && (

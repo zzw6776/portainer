@@ -11,7 +11,7 @@ import { columnHelper } from './helper';
 
 export function getActions(metricsEnabled: boolean) {
   return columnHelper.accessor(() => '', {
-    header: 'Actions',
+    header: '操作',
     enableSorting: false,
     cell: (props) => (
       <ActionsCell
@@ -40,7 +40,7 @@ function ActionsCell({
           className="flex items-center p-1"
           data-cy="nodeStatsButton"
         >
-          <TooltipWithChildren message="Stats" position="top">
+          <TooltipWithChildren message="统计" position="top">
             <Icon icon={BarChart} />
           </TooltipWithChildren>
         </Link>

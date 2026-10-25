@@ -36,7 +36,7 @@ export function PortsMappingField({
   return (
     <>
       <InputList<PortMapping>
-        label="Port mapping"
+        label="端口映射"
         value={value}
         onChange={onChange}
         addLabel="map additional port"
@@ -72,9 +72,9 @@ function Item({
     <div className={styles.item}>
       <div className="flex items-center gap-2">
         <InputGroup size="small">
-          <InputGroup.Addon>host</InputGroup.Addon>
+          <InputGroup.Addon>主机路径</InputGroup.Addon>
           <InputGroup.Input
-            placeholder="e.g. 80"
+            placeholder="例如 80"
             value={item.host}
             onChange={(e) =>
               handleChange('host', parseInt(e.target.value || '0', 10))
@@ -91,9 +91,9 @@ function Item({
         </span>
 
         <InputGroup size="small">
-          <InputGroup.Addon>container</InputGroup.Addon>
+          <InputGroup.Addon>容器路径</InputGroup.Addon>
           <InputGroup.Input
-            placeholder="e.g. 80"
+            placeholder="例如 80"
             value={item.container}
             onChange={(e) =>
               handleChange('container', parseInt(e.target.value || '0', 10))

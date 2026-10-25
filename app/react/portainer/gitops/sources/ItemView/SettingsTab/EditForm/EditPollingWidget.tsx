@@ -19,12 +19,12 @@ export function EditPollingWidget() {
     <Card.Container>
       <Card.Header
         icon={RefreshCwIcon}
-        title="Polling"
+        title="轮询间隔"
         subtitle="Periodically fetch this repository to detect changes"
       />
       <Card.Body>
         <SwitchField
-          label="Enable polling"
+          label="启用轮询"
           name="pollingEnabled"
           checked={values.pollingEnabled}
           onChange={(value) => setFieldValue('pollingEnabled', value)}

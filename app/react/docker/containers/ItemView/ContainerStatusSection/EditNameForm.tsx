@@ -22,8 +22,8 @@ const validationSchema = yup.object({
   name: yup
     .string()
     .trim()
-    .required('Container name is required')
-    .min(1, 'Container name cannot be empty'),
+    .required('容器名称为必填项')
+    .min(1, '容器名称不能为空'),
 });
 
 export function EditNameForm({
@@ -119,7 +119,7 @@ export function EditNameForm({
       {
         onSuccess(_, variables) {
           notifySuccess(
-            'Success',
+            '成功',
             t('docker.containers.item.renameSuccess', { name: variables.name })
           );
           onSuccess();

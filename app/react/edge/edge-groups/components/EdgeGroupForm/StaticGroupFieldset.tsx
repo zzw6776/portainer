@@ -12,7 +12,7 @@ export function StaticGroupFieldset({ isEdit }: { isEdit?: boolean }) {
   const { values, setFieldValue, errors } = useFormikContext<FormValues>();
 
   return (
-    <FormSection title="Associated environments">
+    <FormSection title="关联环境">
       <div className="form-group">
         <AssociatedEdgeGroupEnvironmentsSelector
           value={values.environmentIds}
@@ -20,10 +20,9 @@ export function StaticGroupFieldset({ isEdit }: { isEdit?: boolean }) {
           onChange={async (environmentIds, meta) => {
             if (meta.type === 'remove' && isEdit) {
               const confirmed = await confirmDestructive({
-                title: 'Confirm action',
-                message:
-                  'Removing the environment from this group will remove its corresponding edge stacks',
-                confirmButton: buildConfirmButton('Confirm'),
+                title: '确认操作',
+                message: '从此组中移除环境也会移除其对应的边缘堆栈',
+                confirmButton: buildConfirmButton('确认'),
               });
 
               if (!confirmed) {

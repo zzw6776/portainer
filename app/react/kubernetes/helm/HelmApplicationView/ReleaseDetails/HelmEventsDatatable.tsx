@@ -42,8 +42,7 @@ export function HelmEventsDatatable({
         dataset={eventsQuery.data || []}
         title={
           <TextTip inline color="blue" className="!text-xs">
-            Only events for resources currently in the cluster will be
-            displayed.
+            仅显示集群中当前资源的事件。
           </TextTip>
         }
         titleIcon={null}

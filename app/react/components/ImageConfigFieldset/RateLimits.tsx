@@ -79,9 +79,8 @@ function RateLimitsInner({
           <TextTip color="blue">
             {isAuthenticated ? (
               <>
-                You are currently using a free account to pull images from
-                DockerHub and will be limited to 200 pulls every 6 hours.
-                Remaining pulls:{' '}
+                当前使用免费账户从 Docker Hub 拉取镜像，每 6 小时最多拉取 200
+                次。剩余次数：{' '}
                 <span className="font-bold">
                   {pullRateLimits.remaining}/{pullRateLimits.limit}
                 </span>
@@ -90,26 +89,23 @@ function RateLimitsInner({
               <>
                 {isPureAdmin ? (
                   <>
-                    You are currently using an anonymous account to pull images
-                    from DockerHub and will be limited to 100 pulls every 6
-                    hours. You can configure DockerHub authentication in the{' '}
+                    当前使用匿名账户从 Docker Hub 拉取镜像，每 6 小时最多拉取
+                    100 次。可以在以下位置配置 Docker Hub 身份验证：{' '}
                     <Link
                       to="portainer.registries"
                       data-cy="image-registry-rate-limits-registries-view-link"
                     >
-                      Registries View
+                      镜像仓库视图
                     </Link>
-                    . Remaining pulls:{' '}
+                    。剩余拉取次数：{' '}
                     <span className="font-bold">
                       {pullRateLimits.remaining}/{pullRateLimits.limit}
                     </span>
                   </>
                 ) : (
                   <>
-                    You are currently using an anonymous account to pull images
-                    from DockerHub and will be limited to 100 pulls every 6
-                    hours. Contact your administrator to configure DockerHub
-                    authentication. Remaining pulls:{' '}
+                    当前使用匿名账户从 Docker Hub 拉取镜像，每 6 小时最多拉取
+                    100 次。请联系管理员配置 Docker Hub 身份验证。剩余次数：{' '}
                     <span className="font-bold">
                       {pullRateLimits.remaining}/{pullRateLimits.limit}
                     </span>
@@ -122,15 +118,13 @@ function RateLimitsInner({
           <TextTip>
             {isAuthenticated ? (
               <>
-                Your authorized pull count quota as a free user is now exceeded.
-                You will not be able to pull any image from the DockerHub
-                registry.
+                免费用户的授权拉取配额已用尽，将无法从 Docker Hub
+                镜像仓库拉取镜像。
               </>
             ) : (
               <>
-                Your authorized pull count quota as an anonymous user is now
-                exceeded. You will not be able to pull any image from the
-                DockerHub registry.
+                匿名用户的授权拉取配额已用尽，将无法从 Docker Hub
+                镜像仓库拉取镜像。
               </>
             )}
           </TextTip>

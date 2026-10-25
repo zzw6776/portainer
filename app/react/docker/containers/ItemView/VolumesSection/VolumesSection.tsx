@@ -20,11 +20,14 @@ export function VolumesSection({ volumes, nodeName }: Props) {
 
   return (
     <Widget>
-      <Widget.Title icon={DatabaseIcon} title={t('docker.containers.volumes.title')} />
+      <Widget.Title
+        icon={DatabaseIcon}
+        title={t('docker.containers.volumes.title')}
+      />
       <WidgetBody className="no-padding">
         <DetailsTable
           dataCy="containerDetails-volumesTable"
-          headers={['Host/volume', 'Path in container']}
+          headers={['主机路径 / 存储卷', '容器内挂载路径']}
         >
           {volumes.map((volume) => (
             <VolumeRow

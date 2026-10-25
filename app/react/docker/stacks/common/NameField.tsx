@@ -24,7 +24,7 @@ export function NameField({
   return (
     <FormControl
       inputId="name-input"
-      label="Name"
+      label="名称"
       errors={errors}
       required
       size="xsmall"
@@ -66,7 +66,7 @@ export function nameValidation({
     .matches(new RegExp(STACK_NAME_VALIDATION_REGEX), {
       excludeEmptyString: true,
       message:
-        "This field must consist of lower case alphanumeric characters, '_' or '-' (e.g. 'my-name', or 'abc-123').",
+        '此字段只能包含小写字母、数字、下划线或连字符（例如“my-name”或“abc-123”）。',
     });
 }
 
@@ -78,7 +78,7 @@ export function useNameValidation(
   return useMemo(
     () =>
       nameValidation({ environmentId, stacks: stacksQuery.data }).required(
-        'Name is required'
+        '名称是必填项'
       ),
     [environmentId, stacksQuery.data]
   );

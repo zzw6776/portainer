@@ -119,7 +119,7 @@ export function Terminal({
 
     function onError(e: Event) {
       if (socket.readyState !== WebSocket.CLOSED) {
-        notifyError('Failure', e, 'Websocket connection error');
+        notifyError('失败', e, 'WebSocket 连接错误');
       }
       cleanup();
     }

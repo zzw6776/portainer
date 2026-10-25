@@ -64,7 +64,11 @@ export function SimpleForm({
         />
       </FormControl>
 
-      <FormControl label={t('common.imageConfig.image')} inputId="image-field" errors={errors?.image}>
+      <FormControl
+        label={t('common.imageConfig.image')}
+        inputId="image-field"
+        errors={errors?.image}
+      >
         <InputGroup>
           <InputGroup.Addon>{registryUrl}</InputGroup.Addon>
 
@@ -233,7 +237,7 @@ function ImageFieldAutoComplete({
       value={value}
       onChange={(value) => onChange(value)}
       data-cy="component-imageInput"
-      placeholder="e.g. my-image:my-tag"
+      placeholder="例如 my-image:my-tag"
       options={imageOptions}
       inputId={inputId}
     />

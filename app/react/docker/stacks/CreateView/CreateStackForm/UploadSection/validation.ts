@@ -11,7 +11,7 @@ export function getUploadValidationSchema({
 }): SchemaOf<UploadFormValues> {
   return object({
     file: mixed<File>()
-      .required('Stack file is required')
+      .required('堆栈文件是必填项')
       .test(
         'valid-yaml',
         'Invalid YAML',
@@ -24,7 +24,7 @@ export function getUploadValidationSchema({
           try {
             fileContent = await value.text();
           } catch {
-            return this.createError({ message: 'Unable to read file' });
+            return this.createError({ message: '无法读取文件' });
           }
 
           const yamlError = validateYAML(fileContent, containerNames, []);

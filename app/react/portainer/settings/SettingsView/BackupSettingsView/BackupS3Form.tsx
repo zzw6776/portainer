@@ -72,7 +72,9 @@ export function BackupS3Form() {
                   name="schedule-automatic-backup"
                   data-cy="settings-scheduleAutomaticBackupSwitch"
                   labelClass="col-sm-3 col-lg-2"
-                  label={t('portainer.settings.backup.s3.schedule_automatic_backups')}
+                  label={t(
+                    'portainer.settings.backup.s3.schedule_automatic_backups'
+                  )}
                   checked={values.scheduleAutomaticBackup}
                   onChange={(e) => setFieldValue('scheduleAutomaticBackup', e)}
                 />
@@ -132,13 +134,19 @@ export function BackupS3Form() {
               />
             </FormControl>
 
-            <FormControl label={t('portainer.settings.backup.s3.region')} inputId="region" errors={errors.region}>
+            <FormControl
+              label={t('portainer.settings.backup.s3.region')}
+              inputId="region"
+              errors={errors.region}
+            >
               <Field
                 id="region"
                 name="region"
                 type="text"
                 as={Input}
-                placeholder={t('portainer.settings.backup.s3.region_placeholder')}
+                placeholder={t(
+                  'portainer.settings.backup.s3.region_placeholder'
+                )}
                 data-cy="settings-backupRegionInput"
                 className={clsx({ 'limited-be': limitedToBE })}
                 disabled={limitedToBE}
@@ -164,7 +172,9 @@ export function BackupS3Form() {
             <FormControl
               label={t('portainer.settings.backup.s3.s3_compatible_host')}
               inputId="s3_compatible_host"
-              tooltip={t('portainer.settings.backup.s3.s3_compatible_host_tooltip')}
+              tooltip={t(
+                'portainer.settings.backup.s3.s3_compatible_host_tooltip'
+              )}
               errors={errors.s3CompatibleHost}
             >
               <Field
@@ -172,7 +182,9 @@ export function BackupS3Form() {
                 name="s3CompatibleHost"
                 type="text"
                 as={Input}
-                placeholder={t('portainer.settings.backup.s3.s3_host_placeholder')}
+                placeholder={t(
+                  'portainer.settings.backup.s3.s3_host_placeholder'
+                )}
                 data-cy="settings-backupS3CompatibleHostInput"
                 className={clsx({ 'limited-be': limitedToBE })}
                 disabled={limitedToBE}
@@ -206,7 +218,9 @@ export function BackupS3Form() {
             <div className="form-group">
               <div className="col-sm-12">
                 <LoadingButton
-                  loadingText={t('portainer.settings.backup.s3.saving_settings')}
+                  loadingText={t(
+                    'portainer.settings.backup.s3.saving_settings'
+                  )}
                   isLoading={isSubmitting}
                   className={clsx('!ml-0', { 'limited-be': limitedToBE })}
                   disabled={!isValid || limitedToBE}
@@ -234,7 +248,10 @@ export function BackupS3Form() {
     };
     exportS3Mutate.mutate(payload, {
       onSuccess() {
-        notifySuccess(i18n.t('common.success'), i18n.t('portainer.settings.backup.s3.export_success'));
+        notifySuccess(
+          i18n.t('common.success'),
+          i18n.t('portainer.settings.backup.s3.export_success')
+        );
       },
     });
   }
@@ -252,7 +269,10 @@ export function BackupS3Form() {
 
     updateS3Mutate.mutate(payload, {
       onSuccess() {
-        notifySuccess(i18n.t('common.success'), i18n.t('portainer.settings.backup.s3.save_success'));
+        notifySuccess(
+          i18n.t('common.success'),
+          i18n.t('portainer.settings.backup.s3.save_success')
+        );
       },
     });
   }

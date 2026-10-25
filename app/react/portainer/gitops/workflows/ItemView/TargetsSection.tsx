@@ -19,10 +19,10 @@ export function TargetsSection({ artifacts }: Props) {
   );
 
   return (
-    <Card.Container aria-label="Targets">
+    <Card.Container aria-label="目标">
       <Card.Header
         icon={CrosshairIcon}
-        title="Targets"
+        title="目标"
         actions={<Badge type="muted">{targetCount}</Badge>}
       />
       <div className="divide-y divide-solid divide-gray-3 th-dark:divide-gray-9">

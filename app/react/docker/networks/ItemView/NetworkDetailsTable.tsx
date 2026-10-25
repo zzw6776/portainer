@@ -35,7 +35,9 @@ export function NetworkDetailsTable({
       <TableTitle label={t('docker_networks.detail_title')} icon={Network} />
       <DetailsTable dataCy="networkDetails-detailsTable">
         {/* networkRowContent */}
-        <DetailsTable.Row label={t('docker_networks.name_label')}>{network.Name}</DetailsTable.Row>
+        <DetailsTable.Row label={t('docker_networks.name_label')}>
+          {network.Name}
+        </DetailsTable.Row>
         <DetailsTable.Row label={t('docker_networks.id_label')}>
           {network.Id}
           {allowRemoveNetwork && (
@@ -53,8 +55,12 @@ export function NetworkDetailsTable({
             </span>
           )}
         </DetailsTable.Row>
-        <DetailsTable.Row label={t('docker_networks.driver_label')}>{network.Driver}</DetailsTable.Row>
-        <DetailsTable.Row label={t('docker_networks.scope_label')}>{network.Scope}</DetailsTable.Row>
+        <DetailsTable.Row label={t('docker_networks.driver_label')}>
+          {network.Driver}
+        </DetailsTable.Row>
+        <DetailsTable.Row label={t('docker_networks.scope_label')}>
+          {network.Scope}
+        </DetailsTable.Row>
         <DetailsTable.Row label={t('docker_networks.attachable_label')}>
           {String(network.Attachable)}
         </DetailsTable.Row>

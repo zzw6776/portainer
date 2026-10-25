@@ -43,29 +43,27 @@ export function ApplicationPersistentDataTable({
     <>
       <div className="text-muted mb-4 mt-6 flex items-center">
         <Icon icon={Database} className="!mr-2 !shrink-0" />
-        Data persistence
+        数据持久化
       </div>
       {!persistedFolders.length && (
-        <TextTip color="blue">
-          This application has no persisted folders.
-        </TextTip>
+        <TextTip color="blue">此应用没有持久化文件夹。</TextTip>
       )}
       {persistedFolders.length > 0 && (
         <>
           <div className="small text-muted vertical-center mb-4">
-            Data access policy:
+            数据访问策略：
             {dataAccessPolicy === 'isolated' && (
               <>
                 <Icon icon={Boxes} />
-                Isolated
-                <Tooltip message="All the instances of this application are using their own data." />
+                隔离
+                <Tooltip message="此应用的每个实例使用各自的数据。" />
               </>
             )}
             {dataAccessPolicy === 'shared' && (
               <>
                 <Icon icon={Box} />
-                Shared
-                <Tooltip message="All the instances of this application are sharing the same data." />
+                共享
+                <Tooltip message="此应用的所有实例共享同一份数据。" />
               </>
             )}
           </div>
@@ -73,10 +71,10 @@ export function ApplicationPersistentDataTable({
             <table className="table">
               <thead>
                 <tr className="text-muted">
-                  <td className="w-1/4">Container name</td>
-                  <td className="w-1/4">Pod name</td>
-                  <td className="w-1/4">Persisted folder</td>
-                  <td className="w-1/4">Persistence</td>
+                  <td className="w-1/4">容器名称</td>
+                  <td className="w-1/4">Pod 名称</td>
+                  <td className="w-1/4">持久化文件夹</td>
+                  <td className="w-1/4">持久化</td>
                 </tr>
               </thead>
               <tbody>
@@ -92,7 +90,7 @@ export function ApplicationPersistentDataTable({
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            init container
+                            初始化容器
                           </a>
                           )
                         </span>
@@ -127,8 +125,8 @@ export function ApplicationPersistentDataTable({
             <table className="table">
               <thead>
                 <tr className="text-muted">
-                  <td className="w-1/3">Persisted folder</td>
-                  <td className="w-2/3">Persistence</td>
+                  <td className="w-1/3">持久化文件夹</td>
+                  <td className="w-2/3">持久化</td>
                 </tr>
               </thead>
               <tbody className="border-t-0">

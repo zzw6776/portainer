@@ -182,10 +182,17 @@ export function StackActions({
       { id: stackId, environmentId },
       {
         onError(err) {
-          notifyError(t('common.failure'), err as Error, t('docker.stacks.notifications.unable_stop'));
+          notifyError(
+            t('common.failure'),
+            err as Error,
+            t('docker.stacks.notifications.unable_stop')
+          );
         },
         onSuccess() {
-          notifySuccess(t('common.success'), `Stack ${stack.Name} ${t('docker.stacks.notifications.stopped')}`);
+          notifySuccess(
+            t('common.success'),
+            `Stack ${stack.Name} ${t('docker.stacks.notifications.stopped')}`
+          );
           router.stateService.reload();
         },
       }
@@ -193,9 +200,7 @@ export function StackActions({
   }
 
   async function handleDelete() {
-    const confirmed = await confirmDelete(
-      t('docker.stacks.confirm_delete')
-    );
+    const confirmed = await confirmDelete(t('docker.stacks.confirm_delete'));
     if (!confirmed) {
       return;
     }

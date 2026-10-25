@@ -90,9 +90,9 @@ export function HelmInstallForm({
 
     if (!previewIsValid) {
       const confirmed = await confirm({
-        title: 'Chart validation failed',
+        title: 'Chart 验证失败',
         message:
-          'The Helm manifest preview validation failed, which may indicate configuration issues. This can be normal when creating new resources. Do you want to proceed with the installation?',
+          'Helm 清单预览验证失败，可能存在配置问题。创建新资源时这也可能是正常现象。是否继续安装？',
       });
       if (!confirmed) {
         return;
@@ -110,7 +110,7 @@ export function HelmInstallForm({
       },
       {
         onSuccess() {
-          notifySuccess('Success', 'Helm chart successfully installed');
+          notifySuccess('成功', 'Helm Chart 安装成功');
 
           // Reset the form so page can be navigated away from without getting "Are you sure?"
           formikRef.current?.resetForm();

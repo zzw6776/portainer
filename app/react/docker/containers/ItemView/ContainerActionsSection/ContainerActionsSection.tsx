@@ -44,7 +44,10 @@ export function ContainerActionsSection({
   const isPortainer = container.IsPortainer || false;
   return (
     <Widget>
-      <Widget.Title icon="settings" title={t('docker.containers.actions.title')} />
+      <Widget.Title
+        icon="settings"
+        title={t('docker.containers.actions.title')}
+      />
       <WidgetBody>
         <div className="flex gap-2">
           <PrimaryActions

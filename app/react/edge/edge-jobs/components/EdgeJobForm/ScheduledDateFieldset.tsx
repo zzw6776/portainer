@@ -14,7 +14,7 @@ export function ScheduledDateFieldset() {
         value={value}
         onChange={(date) => setValue(date)}
         error={error}
-        label="Scheduled date"
+        label="计划日期"
         name="dateTime"
         data-cy="edge-job-date-time-picker"
       />

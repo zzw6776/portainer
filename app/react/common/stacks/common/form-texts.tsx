@@ -2,18 +2,18 @@ import { StackType } from '../types';
 
 const dockerTexts = {
   editor: {
-    placeholder: 'Define or paste the content of your docker compose file here',
+    placeholder: '在此定义或粘贴 Docker Compose 文件内容',
     description: (
       <p>
-        You can get more information about Compose file format in the{' '}
+        有关 Compose 文件格式的更多信息，请参阅{' '}
         <a
           href="https://docs.docker.com/reference/compose-file/"
           target="_blank"
           rel="noreferrer"
         >
-          official documentation
+          官方文档
         </a>
-        .
+        进行部署。
       </p>
     ),
   },
@@ -25,23 +25,23 @@ export const textByType = {
   [StackType.DockerSwarm]: dockerTexts,
   [StackType.Kubernetes]: {
     editor: {
-      placeholder: 'Define or paste the content of your manifest file here',
+      placeholder: '在此定义或粘贴清单文件内容',
       description: (
         <>
           <p>
-            Templates allow deploying any kind of Kubernetes resource
-            (Deployment, Secret, ConfigMap...)
+            模板可用于部署任意类型的 Kubernetes
+            资源（Deployment、Secret、ConfigMap 等）。
           </p>
           <p>
-            You can get more information about Kubernetes file format in the{' '}
+            可在以下位置了解有关 Kubernetes 文件格式的更多信息：{' '}
             <a
               href="https://kubernetes.io/docs/concepts/overview/working-with-objects/"
               target="_blank"
               rel="noreferrer"
             >
-              official documentation
+              官方文档
             </a>
-            .
+            进行部署。
           </p>
         </>
       ),

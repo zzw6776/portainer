@@ -170,7 +170,7 @@ function buildSortableGroups<T>(
 ): SortableGroup<T>[] {
   if (groupKeys.length === 0) {
     return paginated.length > 0
-      ? [{ key: 'all', label: 'All', items: paginated }]
+      ? [{ key: 'all', label: '全部', items: paginated }]
       : [];
   }
   return groupKeys

@@ -68,17 +68,16 @@ export function RedeployApplicationButton({
         throw new Error(`Application has no selector to redeploy pods.`);
       }
     } catch (error) {
-      notifyError('Failure', error as Error);
+      notifyError('失败', error as Error);
       return;
     }
 
     // confirm the action
     const confirmed = await confirm({
-      title: 'Are you sure?',
+      title: '确定吗？',
       modalType: ModalType.Warn,
       confirmButton: buildConfirmButton(t('kubernetes.applications.redeploy')),
-      message:
-        'Redeploying terminates and restarts the application, which will cause service interruption. Do you wish to continue?',
+      message: '重新部署会终止并重启应用，从而导致服务中断。是否继续？',
     });
     if (!confirmed) {
       return;
@@ -90,7 +89,10 @@ export function RedeployApplicationButton({
       { labelSelector },
       {
         onSuccess: () => {
-          notifySuccess(t('common.success'), t('kubernetes.applications.notifications.redeployed'));
+          notifySuccess(
+            t('common.success'),
+            t('kubernetes.applications.notifications.redeployed')
+          );
           router.stateService.reload();
         },
       }

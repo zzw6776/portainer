@@ -24,7 +24,7 @@ export function useColumns() {
     () =>
       _.compact([
         columnHelper.accessor('Name', {
-          header: 'Name',
+          header: '名称',
           cell: ({ row: { original: item } }) => (
             <div className="flex-0 flex">
               <Link
@@ -44,11 +44,11 @@ export function useColumns() {
         }),
         !hideStacksQuery.data &&
           columnHelper.accessor('StackName', {
-            header: 'Stack',
+            header: '堆栈',
             cell: ({ getValue }) => getValue() || '-',
           }),
         columnHelper.accessor('Image', {
-          header: 'Image',
+          header: '镜像',
           cell: ({ getValue }) => (
             <div className="max-w-md truncate" title={getValue()}>
               {getValue()}
@@ -69,7 +69,7 @@ export function useColumns() {
           (row) =>
             row.Resource?.MemoryRequest ? row.Resource?.MemoryRequest : '-',
           {
-            header: 'Memory',
+            header: '内存',
             cell: ({ getValue }) => {
               const value = getValue();
               if (value === '-') {

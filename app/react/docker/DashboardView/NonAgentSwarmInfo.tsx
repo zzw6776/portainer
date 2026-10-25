@@ -25,26 +25,25 @@ export function NonAgentSwarmInfo() {
   const isManager = isManagerQuery.data;
 
   return (
-    <InformationPanel title={t('docker.dashboard.non_agent_info')} onDismiss={() => dismiss()}>
+    <InformationPanel
+      title={t('docker.dashboard.non_agent_info')}
+      onDismiss={() => dismiss()}
+    >
       <TextTip color="blue">
         {isManager ? (
           <>
-            Portainer is connected to a node that is part of a Swarm cluster.
-            Some resources located on other nodes in the cluster might not be
-            available for management, have a look at{' '}
+            Portainer 已连接到属于 Swarm
+            集群一部分的节点。位于集群中其他节点上的一些资源可能无法进行管理，请查看{' '}
             <HelpLink
               docLink="/admin/environments/add/swarm/agent"
               target="_blank"
             >
-              our agent setup
+              我们的 Agent 安装指南
             </HelpLink>{' '}
-            for more details.
+            获取更多详情。
           </>
         ) : (
-          <>
-            Portainer is connected to a worker node. Swarm management features
-            will not be available.
-          </>
+          <>Portainer 已连接到一个工作(Worker)节点。Swarm 管理功能将不可用。</>
         )}
       </TextTip>
     </InformationPanel>

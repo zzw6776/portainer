@@ -38,7 +38,7 @@ export function ResourceDetailHeader({
     <Widget>
       <Widget.Body loading={isLoading}>
         {errorMessage && (
-          <Alert color="error" title="Error">
+          <Alert color="error" title="错误">
             {errorMessage}
           </Alert>
         )}

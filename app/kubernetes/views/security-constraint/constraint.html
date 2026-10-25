@@ -1,6 +1,6 @@
 <page-header
   ng-if="state.viewReady"
-  title="'Security constraints'"
+  title="'安全约束'"
   breadcrumbs="[
 { label:'Environments', link:'portainer.endpoints' }, 
 { label:endpoint.Name, link:'portainer.endpoints.endpoint', linkParams:{id: endpoint.Id} }, 
@@ -24,7 +24,7 @@
                 <por-switch-field
                   checked="formValues.enabled"
                   name="'disableSysctlSettingForRegularUsers'"
-                  label="'Enable pod security constraints'"
+                  label="'启用 Pod 安全约束'"
                   feature-id="limitedFeaturePodSecurityPolicy"
                   label-class="'col-sm-3 col-lg-2 px-0'"
                   switch-class="'col-sm-8'"

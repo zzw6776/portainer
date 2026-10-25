@@ -25,7 +25,9 @@ export function TableActions({
         data-cy="edgeStack-removeStackButton"
       />
 
-      <AddButton data-cy="edgeStack-addStackButton">{t('edge.stacks.add')}</AddButton>
+      <AddButton data-cy="edgeStack-addStackButton">
+        {t('edge.stacks.add')}
+      </AddButton>
     </div>
   );
 
@@ -33,7 +35,10 @@ export function TableActions({
     const ids = selectedItems.map((item) => item.Id);
     removeMutation.mutate(ids, {
       onSuccess: () => {
-        notifySuccess(t('common.success'), t('edge.stacks.notifications.removed'));
+        notifySuccess(
+          t('common.success'),
+          t('edge.stacks.notifications.removed')
+        );
       },
     });
   }

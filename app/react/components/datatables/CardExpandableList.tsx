@@ -256,7 +256,7 @@ export function CardExpandableList<D extends DefaultType>({
         >
           {isLoading ? (
             <div className="py-8 text-center text-sm text-[color:var(--text-summary-color,var(--text-main-color))]">
-              Loading...
+              正在加载……
             </div>
           ) : visibleRows.length === 0 ? (
             <div className="py-8 text-center text-sm text-[color:var(--text-summary-color,var(--text-main-color))]">

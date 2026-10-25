@@ -29,7 +29,7 @@ export function ScheduledTimeField({ disabled }: Props) {
   return (
     <>
       <DateTimeField
-        label="Schedule date & time"
+        label="计划日期和时间"
         minDate={new Date(Date.now() - 24 * 60 * 60 * 1000)}
         onChange={(date) => {
           const dateToSave = date || new Date(Date.now() + 24 * 60 * 60 * 1000);
@@ -43,7 +43,7 @@ export function ScheduledTimeField({ disabled }: Props) {
       />
       {!disabled && value && (
         <TextTip color="blue">
-          If time zone is not set on edge agent then UTC+0 will be used.
+          如果边缘 agent 未设置时区，则将使用 UTC+0。
         </TextTip>
       )}
     </>
@@ -52,17 +52,13 @@ export function ScheduledTimeField({ disabled }: Props) {
 
 export function timeValidation() {
   return string()
-    .required('Scheduled time is required')
-    .test(
-      'validFormat',
-      `Scheduled time must be in the format ${TIME_FORMAT}`,
-      (value) => isValidDate(parseIsoDate(value))
+    .required('计划时间是必填项')
+    .test('validFormat', `计划时间必须是 ${TIME_FORMAT} 格式`, (value) =>
+      isValidDate(parseIsoDate(value))
     )
     .test(
       'validDate',
-      `Scheduled time must be bigger then ${
-        (isoDate(Date.now() - 24 * 60 * 60 * 1000), FORMAT)
-      }`,
+      `计划时间必须大于 ${(isoDate(Date.now() - 24 * 60 * 60 * 1000), FORMAT)}`,
       (value) =>
         parseIsoDate(value).valueOf() > Date.now() - 24 * 60 * 60 * 1000
     );

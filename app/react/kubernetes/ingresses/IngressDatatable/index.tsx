@@ -6,10 +6,10 @@ export function IngressesDatatableView() {
   return (
     <>
       <PageHeader
-        title="Ingress list"
+        title="Ingress 列表"
         breadcrumbs={[
           {
-            label: 'Ingresses',
+            label: 'Ingress',
           },
         ]}
         reload

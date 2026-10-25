@@ -26,7 +26,9 @@ export function ItemsPerPageSelector({ value, onChange, showAll }: Props) {
         onChange={(e) => onChange(Number(e.target.value))}
         data-cy="paginationSelect"
       >
-        {showAll ? <option value={Number.MAX_SAFE_INTEGER}>{t('common.all')}</option> : null}
+        {showAll ? (
+          <option value={Number.MAX_SAFE_INTEGER}>{t('common.all')}</option>
+        ) : null}
         {[10, 25, 50, 100].map((v) => (
           <option value={v} key={v}>
             {v}

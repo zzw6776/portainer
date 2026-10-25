@@ -38,7 +38,7 @@ export function Header({ logo: customLogo }: Props) {
             'th-dark:text-gray-warm-6'
           )}
         >
-          <span className="font-medium">Powered by</span>
+          <span className="font-medium">技术支持</span>
           <span className="font-semibold">
             {isBE ? (
               'portainer business'
@@ -51,7 +51,7 @@ export function Header({ logo: customLogo }: Props) {
                   'th-dark:text-blue-7 th-dark:hover:text-blue-9'
                 )}
               >
-                portainer community
+                Portainer 社区版
               </a>
             )}
           </span>

@@ -12,7 +12,10 @@ export function CreateView() {
       <PageHeader
         title={t('edge.stacks.create.title')}
         breadcrumbs={[
-          { label: t('edge.stacks.create.breadcrumbs_label'), link: 'edge.stacks' },
+          {
+            label: t('edge.stacks.create.breadcrumbs_label'),
+            link: 'edge.stacks',
+          },
           t('edge.stacks.create.breadcrumbs_create'),
         ]}
         reload

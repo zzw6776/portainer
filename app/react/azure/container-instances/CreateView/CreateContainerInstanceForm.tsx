@@ -70,7 +70,11 @@ export function CreateContainerInstanceForm({
       notifications.success(t('azure_containers.create_success'), values.name);
       router.stateService.go('azure.containerinstances');
     } catch (e) {
-      notifications.error('Failure', e as Error, t('azure_containers.create_error'));
+      notifications.error(
+        'Failure',
+        e as Error,
+        t('azure_containers.create_error')
+      );
     }
   }
 }

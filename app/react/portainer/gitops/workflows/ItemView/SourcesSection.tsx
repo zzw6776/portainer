@@ -17,10 +17,10 @@ interface Props {
 
 export function SourcesSection({ sources }: Props) {
   return (
-    <Card.Container aria-label="Sources">
+    <Card.Container aria-label="资源仓库">
       <Card.Header
         icon={GitBranchIcon}
-        title="Sources"
+        title="资源仓库"
         actions={<Badge type="muted">{sources.length}</Badge>}
       />
       <ul className="m-0 list-none divide-y divide-solid divide-gray-3 p-0 th-dark:divide-gray-9">
@@ -46,7 +46,7 @@ function SourceRow({ query }: { query: WorkflowSourceQuery['query'] }) {
     return (
       <li className="flex items-center gap-2 px-4 py-3 text-gray-6">
         <Dot status="unknown" />
-        Unknown source
+        未知源
       </li>
     );
   }

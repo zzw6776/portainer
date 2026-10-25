@@ -57,14 +57,14 @@ export function StorageClassesDatatable() {
       dataset={storageClasses}
       columns={columns}
       settingsManager={tableState}
-      title="Storage"
+      title="存储"
       titleIcon={HardDrive}
       getRowId={(row) => `${row.name}`}
       disableSelect={!hasWriteAuth}
       renderTableActions={(selectedItems) => (
         <Authorized authorizations="K8sVolumesW">
           <DeleteButton
-            confirmMessage="Do you want to remove the selected storage class(es)?"
+            confirmMessage="是否移除所选存储类？"
             onConfirmed={() =>
               deleteStorageClassesMutation.mutate(selectedItems)
             }

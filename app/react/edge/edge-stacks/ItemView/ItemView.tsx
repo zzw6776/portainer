@@ -30,7 +30,7 @@ export function ItemView() {
             <Widget>
               <Widget.Body loading={edgeStackQuery.isLoading}>
                 {edgeStackQuery.isError && (
-                  <Alert color="error" title="Error loading edge stack" />
+                  <Alert color="error" title="加载边缘堆栈失败" />
                 )}
                 {!!stack && <EditEdgeStackForm edgeStack={stack} />}
               </Widget.Body>

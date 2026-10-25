@@ -28,7 +28,7 @@ export function computeContainerStatus(
     return {
       status: 'Unknown',
       type: 'muted',
-      message: 'Container status information is not available',
+      message: '容器状态信息不可用',
     };
   }
 
@@ -310,8 +310,7 @@ export function computeContainerStatus(
       return {
         status: 'Running (not ready)',
         type: 'warn',
-        message:
-          'Container is running but not ready. Check readiness probe configuration.',
+        message: '容器正在运行但尚未就绪，请检查就绪探针配置。',
         hasLogs,
         restartCount: shouldShowRestartCount(restartCount, 'warn')
           ? restartCount
@@ -332,8 +331,7 @@ export function computeContainerStatus(
   return {
     status: 'Unknown',
     type: 'muted',
-    message:
-      'Container state cannot be determined. Status information may be incomplete.',
+    message: '无法确定容器状态，状态信息可能不完整。',
     hasLogs,
     restartCount: shouldShowRestartCount(restartCount, 'muted')
       ? restartCount

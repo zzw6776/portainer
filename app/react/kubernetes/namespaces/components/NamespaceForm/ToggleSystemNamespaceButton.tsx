@@ -33,7 +33,9 @@ export function ToggleSystemNamespaceButton({
       color="default"
       type="button"
       loadingText={
-        isSystemNamespace ? 'Unmarking as system' : 'Marking as system'
+        isSystemNamespace
+          ? '正在取消系统命名空间标记'
+          : '正在标记为系统命名空间'
       }
       isLoading={toggleSystemNamespaceMutation.isLoading}
     >
@@ -46,7 +48,7 @@ export function ToggleSystemNamespaceButton({
     if (confirmed) {
       toggleSystemNamespaceMutation.mutate(!isSystemNamespace, {
         onSuccess: () => {
-          notifySuccess('Success', 'Namespace updated');
+          notifySuccess('成功', '命名空间更新成功');
         },
       });
     }

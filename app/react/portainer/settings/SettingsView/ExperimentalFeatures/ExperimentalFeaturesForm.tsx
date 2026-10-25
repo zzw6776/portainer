@@ -31,10 +31,7 @@ export function ExperimentalFeaturesSettingsForm({ settings }: Props) {
       {},
       {
         onSuccess() {
-          notifySuccess(
-            'Success',
-            'Successfully updated experimental features settings'
-          );
+          notifySuccess('成功', '实验性功能设置更新成功');
         },
       }
     );
@@ -51,32 +48,29 @@ export function ExperimentalFeaturesSettingsForm({ settings }: Props) {
       {({ isValid, dirty }) => (
         <Form className="form-horizontal">
           <TextTip color="blue" icon={FlaskConical}>
-            Experimental features may be discontinued without notice.
+            实验性功能可能会在不另行通知的情况下停止提供。
           </TextTip>
 
           <br />
           <br />
 
           <div className="form-group col-sm-12 text-muted small">
-            In Portainer releases, we may introduce features that we&apos;re
-            experimenting with. These will be items in the early phases of
-            development with limited testing.
+            Portainer
+            版本中可能会包含处于试验阶段的功能。这些功能仍在早期开发阶段，测试有限。
             <br />
-            Our goal is to gain early user feedback, so we can refine, enhance
-            and ultimately make our features the best they can be. Disabling an
-            experimental feature will prevent access to it.
+            我们的目标是尽早收集用户反馈，以持续改进这些功能。禁用实验性功能后将无法再访问它。
           </div>
 
           <div className="form-group">
             <div className="col-sm-12">
               <LoadingButton
-                loadingText="Saving settings..."
+                loadingText="正在保存设置……"
                 isLoading={mutation.isLoading}
                 disabled={!isValid || !dirty}
                 className="!ml-0"
                 data-cy="settings-experimentalButton"
               >
-                Save experimental settings
+                保存实验性功能设置
               </LoadingButton>
             </div>
           </div>

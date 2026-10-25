@@ -27,7 +27,7 @@ export function DockerStorageInfo({
   const dockerStorageUsage = dockerStorageUsageQuery.data;
 
   if (environmentQuery.isLoading || dockerStorageUsageQuery.isLoading) {
-    return <InlineLoader>Loading storage information...</InlineLoader>;
+    return <InlineLoader>正在加载存储信息……</InlineLoader>;
   }
 
   if (dockerStorageUsageQuery.isError) {
@@ -45,7 +45,7 @@ export function DockerStorageInfo({
 
     return (
       <span className="flex items-center">
-        <span className="text-muted small">Not available</span>
+        <span className="text-muted small">不可用</span>
         <Tooltip
           message={needsUpgrade ? minAgentVersionMessage : errorMessage}
         />
@@ -56,8 +56,8 @@ export function DockerStorageInfo({
   if (!environment) {
     return (
       <span className="flex items-center">
-        <span className="text-muted small">Not available</span>
-        <Tooltip message="Unable to read environment information." />
+        <span className="text-muted small">不可用</span>
+        <Tooltip message="无法读取环境信息。" />
       </span>
     );
   }
@@ -70,7 +70,7 @@ export function DockerStorageInfo({
   if (dockerStorageUsage?.totalBytes === undefined) {
     return (
       <span className="flex items-center">
-        <span className="text-muted small">Not available</span>
+        <span className="text-muted small">不可用</span>
         <Tooltip
           message={`The agent could not determine ${platformName} storage usage. Ensure the ${platformName} socket and host filesystem are accessible to the agent.`}
         />
@@ -106,14 +106,14 @@ export function DockerStorageInfo({
             className="!w-full"
           />
         </div>
-        <span className="small text-muted shrink-0" aria-label="Total capacity">
+        <span className="small text-muted shrink-0" aria-label="总容量">
           {humanize(dockerStorageUsage.totalBytes)}
         </span>
       </div>
       <div
         className="flex flex-wrap justify-between gap-2"
         role="list"
-        aria-label="Disk usage breakdown"
+        aria-label="磁盘使用明细"
       >
         <div className="mt-1 flex flex-wrap gap-3 text-xs">
           <span className="flex items-center gap-1" role="listitem">
@@ -128,19 +128,19 @@ export function DockerStorageInfo({
               message={
                 <div className="flex flex-col gap-1 text-xs">
                   <div className="flex justify-between gap-4">
-                    <span>Images</span>
+                    <span>镜像</span>
                     <span>{humanize(dockerStorageUsage.imageBytes)}</span>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <span>Containers</span>
+                    <span>容器</span>
                     <span>{humanize(dockerStorageUsage.containerBytes)}</span>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <span>Volumes</span>
+                    <span>数据卷</span>
                     <span>{humanize(dockerStorageUsage.volumeBytes)}</span>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <span>Build cache</span>
+                    <span>构建缓存</span>
                     <span>{humanize(dockerStorageUsage.buildCacheBytes)}</span>
                   </div>
                 </div>
@@ -152,18 +152,18 @@ export function DockerStorageInfo({
               aria-hidden="true"
               className="inline-block h-2 w-2 rounded-sm bg-warning-8"
             />
-            <span>Other ({humanize(otherBytes)})</span>
+            <span>其他（{humanize(otherBytes)})</span>
           </span>
           <span className="flex items-center gap-1" role="listitem">
             <span
               aria-hidden="true"
               className="inline-block h-2 w-2 rounded-sm bg-gray-5"
             />
-            <span>Free ({humanize(dockerStorageUsage.availableBytes)})</span>
+            <span>可用（{humanize(dockerStorageUsage.availableBytes)})</span>
           </span>
         </div>
         <div className="text-muted mt-1 text-xs" role="listitem">
-          Partition: <code className="px-0">{dockerStorageUsage.rootDir}</code>
+          分区： <code className="px-0">{dockerStorageUsage.rootDir}</code>
         </div>
       </div>
     </>

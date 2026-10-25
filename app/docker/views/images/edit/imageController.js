@@ -122,7 +122,7 @@ angular.module('portainer.docker').controller('ImageController', [
 
     $scope.removeTag = function (repository) {
       return $async(async () => {
-        if (!(await confirmDelete('Are you sure you want to delete this tag?'))) {
+        if (!(await confirmDelete('确定要删除此标签吗？'))) {
           return;
         }
 
@@ -144,7 +144,7 @@ angular.module('portainer.docker').controller('ImageController', [
 
     $scope.removeImage = function (id) {
       return $async(async () => {
-        if (!(await confirmDelete('Deleting this image will also delete all associated tags. Are you sure you want to delete this image?'))) {
+        if (!(await confirmDelete('删除此镜像也会删除所有关联标签。确定要删除此镜像吗？'))) {
           return;
         }
 

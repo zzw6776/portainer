@@ -51,15 +51,15 @@ export function TagSelector({
     return (
       <div className="form-group">
         <div className="col-sm-12 small text-muted">
-          No tags available. Head over to the
+          没有可用标签。请前往
           <Link
             to="portainer.tags"
             className="space-right space-left"
             data-cy="environment-tags-view-link"
           >
-            Tags view
+            标签页面
           </Link>
-          to add tags
+          添加标签
         </div>
       </div>
     );
@@ -68,12 +68,12 @@ export function TagSelector({
   return (
     <>
       {value.length > 0 && (
-        <FormControl label="Selected tags">
+        <FormControl label="已选标签">
           <div data-cy="selected-tags">
             {selectedTags.map((tag) => (
               <TagButton
                 key={tag.value}
-                title="Remove tag"
+                title="移除标签"
                 value={tag.value}
                 label={tag.label}
                 onRemove={() => handleRemove(tag.value)}
@@ -84,7 +84,7 @@ export function TagSelector({
       )}
 
       <FormControl
-        label="Tags"
+        label="标签"
         inputId="tags-selector"
         errors={
           typeof errors === 'string'
@@ -102,7 +102,7 @@ export function TagSelector({
           noOptionsMessage={() => 'No tags available'}
           formatCreateLabel={(inputValue) => `Create "${inputValue}"`}
           onCreateOption={handleCreateOption}
-          aria-label="Tags"
+          aria-label="标签"
           data-cy="environment-tags-selector"
           id="environment-tags-selector"
         />

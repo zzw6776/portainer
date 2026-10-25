@@ -26,7 +26,7 @@ export function FormActions({
   'data-cy': dataCy,
 }: PropsWithChildren<Props>) {
   return (
-    <FormSection title="Actions">
+    <FormSection title="操作">
       <div className="item-center flex gap-3">
         <LoadingButton
           className="!ml-0"

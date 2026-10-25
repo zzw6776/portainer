@@ -34,7 +34,10 @@ export function TableActions({
     const ids = selectedItems.map((item) => item.Id);
     removeMutation.mutate(ids, {
       onSuccess: () => {
-        notifySuccess(t('common.success'), t('edge.jobs.notifications.removed'));
+        notifySuccess(
+          t('common.success'),
+          t('edge.jobs.notifications.removed')
+        );
       },
     });
   }

@@ -3,15 +3,15 @@
   <div class="form-group">
     <span class="col-sm-12 text-muted small">
       <p>
-        For information on how to generate a GitLab Personal Access Token, follow the
-        <a href="https://docs.gitlab.com/user/profile/personal_access_tokens/" target="_blank">GitLab guide</a>.
+        有关如何生成 GitLab 个人访问令牌的信息，请参阅
+        <a href="https://docs.gitlab.com/user/profile/personal_access_tokens/" target="_blank">GitLab 指南</a>.
       </p>
     </span>
   </div>
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.gitlab_connection_details' | i18n }} </div>
   <!-- credentials-user -->
   <div class="form-group">
-    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">Username</label>
+    <label for="registry_username" class="col-sm-3 col-lg-2 control-label required text-left">用户名</label>
     <div class="col-sm-9 col-lg-10">
       <input type="text" class="form-control" id="registry_username" name="registry_username" ng-model="$ctrl.model.Username" required data-cy="registry-username-input" />
       <div class="help-block" ng-show="registryFormGitlab.registry_username.$invalid">
@@ -29,7 +29,7 @@
   <!-- !credentials-user -->
   <!-- credentials-pat -->
   <div class="form-group">
-    <label for="registry_perso_acc_token" class="col-sm-3 col-lg-2 control-label required text-left">Personal Access Token </label>
+    <label for="registry_perso_acc_token" class="col-sm-3 col-lg-2 control-label required text-left">个人访问令牌 </label>
     <div class="col-sm-9 col-lg-10">
       <input type="password" class="form-control" id="registry_perso_acc_token" name="registry_perso_acc_token" ng-model="$ctrl.model.Token" required />
       <div class="help-block" ng-show="registryFormGitlab.registry_perso_acc_token.$invalid">
@@ -55,7 +55,7 @@
         ng-click="$ctrl.state.overrideConfiguration = true;"
       >
         <pr-icon icon="'wrench'"></pr-icon>
-        Override default configuration
+        覆盖默认配置
       </button>
       <button
         type="button"
@@ -64,7 +64,7 @@
         ng-click="$ctrl.state.overrideConfiguration = false; $ctrl.resetDefaults()"
       >
         <pr-icon icon="'settings'"></pr-icon>
-        Use default configuration
+        使用默认配置
       </button>
     </div>
   </div>
@@ -72,8 +72,8 @@
   <!-- url-input -->
   <div class="form-group" ng-if="$ctrl.state.overrideConfiguration">
     <label for="instance_url" class="col-sm-3 col-lg-2 control-label required text-left">
-      Instance URL
-      <portainer-tooltip message="'URL of Gitlab instance.'"></portainer-tooltip>
+      实例 URL
+      <portainer-tooltip message="'GitLab 实例 URL。'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -102,8 +102,8 @@
   <!-- url-input -->
   <div class="form-group" ng-if="$ctrl.state.overrideConfiguration">
     <label for="registry_url" class="col-sm-3 col-lg-2 control-label required text-left">
-      Registry URL
-      <portainer-tooltip message="'URL of Gitlab registry instance.'"></portainer-tooltip>
+      镜像仓库 URL
+      <portainer-tooltip message="'GitLab 镜像仓库实例 URL。'"></portainer-tooltip>
     </label>
     <div class="col-sm-9 col-lg-10">
       <input
@@ -142,10 +142,10 @@
 <div class="form-horizontal" ng-if="$ctrl.projects">
   <div class="col-sm-12 form-section-title"> {{ 'portainer_registries.gitlab_projects' | i18n }} </div>
   <div class="form-group">
-    <span class="col-sm-12 text-muted small"> Select the project's registries you want to manage. Portainer will create one registry for each selected project. </span>
+    <span class="col-sm-12 text-muted small"> 选择要管理的项目镜像仓库。Portainer 会为每个所选项目创建一个镜像仓库。 </span>
     <span class="col-sm-12 text-muted small vertical-center">
       <pr-icon icon="'alert-triangle'" class-name="'icon-warning'"></pr-icon>
-      If you can't select a project, make sure that registry feature is activated on it.
+      如果无法选择项目，请确认该项目已启用镜像仓库功能。
     </span>
   </div>
 

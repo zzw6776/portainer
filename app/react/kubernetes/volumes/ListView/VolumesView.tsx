@@ -36,7 +36,11 @@ export function VolumesView() {
 
   return (
     <>
-      <PageHeader title={t('kubernetes.volumes.title')} breadcrumbs={t('kubernetes.volumes.breadcrumbs')} reload />
+      <PageHeader
+        title={t('kubernetes.volumes.title')}
+        breadcrumbs={t('kubernetes.volumes.breadcrumbs')}
+        reload
+      />
       <>
         <WidgetTabs tabs={tabs} currentTabIndex={currentTabIndex} />
         <div className="content">{tabs[currentTabIndex].widget}</div>

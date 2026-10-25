@@ -68,10 +68,12 @@ export function WizardEndpointsList({ environmentIds }: Props) {
             </div>
             <div className={styles.wizardListTitle}>{environment.Name}</div>
             <div className={styles.wizardListSubtitle}>
-              {t('wizard_env.url_prefix')}{stripProtocol(environment.URL)}
+              {t('wizard_env.url_prefix')}
+              {stripProtocol(environment.URL)}
             </div>
             <div className={styles.wizardListType}>
-              {t('wizard_env.type_prefix')}{endpointTypeName(environment.Type)}
+              {t('wizard_env.type_prefix')}
+              {endpointTypeName(environment.Type)}
             </div>
             {isEdgeEnvironment(environment.Type) && (
               <div className={styles.wizardListEdgeStatus}>

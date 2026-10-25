@@ -20,7 +20,7 @@ export function EdgeEditButton({ stackId }: Props) {
       params={{ stackId }}
       disabled={isDisabled}
     >
-      Manage edge stack
+      管理边缘堆栈
     </EditButton>
   );
 
@@ -29,7 +29,7 @@ export function EdgeEditButton({ stackId }: Props) {
   }
 
   return (
-    <TooltipWithChildren message="This application is managed by an edge stack and can only be edited by an edge administrator">
+    <TooltipWithChildren message="此应用由边缘堆栈管理，只能由边缘管理员编辑">
       <span>{button}</span>
     </TooltipWithChildren>
   );

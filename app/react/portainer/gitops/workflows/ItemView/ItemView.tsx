@@ -11,7 +11,7 @@ import { WorkflowResourceHeader } from './WorkflowResourceHeader';
 import { OverviewTab } from './OverviewTab';
 
 const breadcrumbs = [
-  { label: 'GitOps Workflows', link: 'portainer.gitops.workflows' },
+  { label: 'GitOps 工作流', link: 'portainer.gitops.workflows' },
   'Workflow',
 ];
 
@@ -40,7 +40,7 @@ export function ItemView() {
         <PageHeader breadcrumbs={breadcrumbs} />
         <div className="mx-4 mb-4 space-y-4">
           <Alert color="error">
-            Failed loading workflow:{' '}
+            加载工作流失败：{' '}
             {error instanceof Error ? error.message : 'Unknown error'}
           </Alert>
         </div>
@@ -56,7 +56,7 @@ function PageContent({ workflow }: { workflow: Workflow }) {
     <>
       <PageHeader
         breadcrumbs={[
-          { label: 'GitOps Workflows', link: 'portainer.gitops.workflows' },
+          { label: 'GitOps 工作流', link: 'portainer.gitops.workflows' },
           workflow.name,
         ]}
         reload

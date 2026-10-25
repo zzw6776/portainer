@@ -100,7 +100,7 @@ export function KubeSettingsPanel({ settings }: { settings: Settings }) {
               'deploymentOptions',
             ]);
           }
-          notifySuccess('Success', t('settings.kube_updated'));
+          notifySuccess('成功', t('settings.kube_updated'));
         },
       }
     );

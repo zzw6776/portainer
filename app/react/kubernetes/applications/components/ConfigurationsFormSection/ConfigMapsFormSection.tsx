@@ -28,16 +28,15 @@ export function ConfigMapsFormSection({
   const configMaps = configMapsQuery.data || [];
 
   if (configMapsQuery.isLoading) {
-    return <InlineLoader>Loading ConfigMaps...</InlineLoader>;
+    return <InlineLoader>正在加载 ConfigMap……</InlineLoader>;
   }
 
   return (
     <FormSection title="ConfigMaps" titleSize="sm">
       {!!values.length && (
         <TextTip color="blue">
-          Portainer will automatically expose all the keys of a ConfigMap as
-          environment variables. This behavior can be overridden to filesystem
-          mounts for each key via the override option.
+          Portainer 会自动将 ConfigMap
+          的所有键公开为环境变量。可通过覆盖选项，将各个键改为挂载到文件系统。
         </TextTip>
       )}
 

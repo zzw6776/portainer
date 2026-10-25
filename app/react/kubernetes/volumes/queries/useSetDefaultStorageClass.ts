@@ -13,7 +13,7 @@ export function useSetDefaultStorageClass(environmentId: EnvironmentId) {
   return useMutation({
     mutationFn: (name: string) => setDefaultStorageClass(name, environmentId),
     onSuccess: () => {
-      notifySuccess('Success', 'Default storage class successfully updated');
+      notifySuccess('成功', '默认存储类更新成功');
       return queryClient.invalidateQueries(queryKeys.storages(environmentId));
     },
     ...withError('Unable to set default storage class'),

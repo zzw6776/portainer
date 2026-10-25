@@ -31,7 +31,7 @@ export function useK8sSecrets(
     {
       onError: (err) => {
         notifyError(
-          'Failure',
+          '失败',
           err as Error,
           `Unable to get secrets in namespace '${namespace}'`
         );

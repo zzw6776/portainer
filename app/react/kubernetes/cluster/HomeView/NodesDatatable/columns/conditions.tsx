@@ -11,10 +11,10 @@ import { columnHelper } from './helper';
 export const conditions = columnHelper.accessor((row) => getConditions(row), {
   header: () => (
     <>
-      Conditions
+      状况
       <Tooltip
         position="top"
-        message="Empty indicates the node is healthy. Orange indicates the node is experiencing MemoryPressure, DiskPressure, NetworkUnavailable or PIDPressure."
+        message="无提示表示节点健康。橙色表示节点正处于内存压力、磁盘压力、网络不可用或 PID 压力状态。"
       />
     </>
   ),

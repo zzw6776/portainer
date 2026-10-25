@@ -70,12 +70,12 @@ export function PortsMappingField({
         <Table data-cy="service-published-ports-table">
           <thead>
             <tr>
-              <th>Host port</th>
-              <th>Container port</th>
-              <th>Protocol</th>
-              <th>Publish mode</th>
+              <th>主机端口</th>
+              <th>容器端口</th>
+              <th>协议</th>
+              <th>发布模式</th>
               <Authorized authorizations="DockerServiceUpdate">
-                <th>Actions</th>
+                <th>操作</th>
               </Authorized>
             </tr>
           </thead>
@@ -96,7 +96,7 @@ export function PortsMappingField({
           </tbody>
         </Table>
       ) : (
-        <p className="p-5">This service has no ports published.</p>
+        <p className="p-5">此服务没有已发布的端口。</p>
       )}
       {typeof errors === 'string' && (
         <div className="form-group col-md-12">
@@ -125,7 +125,7 @@ function Item({
               value={item.hostPort}
               onChange={(value) => handleChange('hostPort', value)}
               id={`hostPort-${index}`}
-              label="host"
+              label="主机路径"
               data-cy={`hostPort-${index}`}
             />
           </div>
@@ -135,7 +135,7 @@ function Item({
             value={item.containerPort}
             onChange={(value) => handleChange('containerPort', value)}
             id={`containerPort-${index}`}
-            label="container"
+            label="容器路径"
             data-cy={`containerPort-${index}`}
           />
         </td>
@@ -146,7 +146,7 @@ function Item({
             options={[{ value: 'tcp' }, { value: 'udp' }]}
             disabled={disabled}
             readOnly={readOnly}
-            aria-label="protocol selector"
+            aria-label="协议选择器"
           />
         </td>
         <td>
@@ -154,11 +154,11 @@ function Item({
             onChange={(e) => handleChange('publishMode', e.target.value)}
             value={item.publishMode}
             options={[
-              { value: 'ingress', label: 'ingress' },
-              { value: 'host', label: 'host' },
+              { value: 'ingress', label: 'Ingress' },
+              { value: 'host', label: '主机' },
             ]}
             disabled={disabled}
-            aria-label="publish mode"
+            aria-label="发布模式"
             data-cy={`publishMode-${index}`}
           />
         </td>

@@ -62,7 +62,7 @@ export function ConfigMapsDatatable() {
       columns={columns}
       settingsManager={tableState}
       isLoading={configMapsQuery.isLoading || namespacesQuery.isLoading}
-      emptyContentLabel="No ConfigMaps found"
+      emptyContentLabel="未找到 ConfigMap"
       title="ConfigMaps"
       titleIcon={FileCode}
       getRowId={(row) => row.UID ?? ''}
@@ -134,7 +134,7 @@ function TableActions({
           data-cy="k8sConfig-addConfigWithFormButton"
           color="secondary"
         >
-          Add with form
+          通过表单添加
         </AddButton>
       )}
 

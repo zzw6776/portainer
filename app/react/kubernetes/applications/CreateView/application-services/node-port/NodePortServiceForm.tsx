@@ -68,10 +68,10 @@ export function NodePortServiceForm({
               onChangeService(newServices);
             }}
           >
-            Remove service
+            移除服务
           </Button>
         </div>
-        <div className="control-label !mb-2 !pt-0 text-left">Ports</div>
+        <div className="control-label !mb-2 !pt-0 text-left">端口</div>
         <div className="flex flex-col gap-3">
           {servicePorts.map((servicePort, portIndex) => {
             const error = errors?.[portIndex];
@@ -130,12 +130,12 @@ export function NodePortServiceForm({
                       </div>
                       <div className="flex min-w-min basis-1/4 flex-col">
                         <InputGroup size="small">
-                          <InputGroup.Addon>Nodeport</InputGroup.Addon>
+                          <InputGroup.Addon>NodePort</InputGroup.Addon>
                           <InputGroup.Input
                             type="number"
                             className="form-control min-w-max"
                             name={`node_port_${portIndex}`}
-                            placeholder="e.g. 30080"
+                            placeholder="例如 30080"
                             min="30000"
                             max="32767"
                             value={servicePort.nodePort ?? ''}
@@ -188,7 +188,7 @@ export function NodePortServiceForm({
                       data-cy={`k8sAppCreate-rmPortButton_${portIndex}`}
                       icon={Trash2}
                     >
-                      Remove port
+                      移除端口
                     </Button>
                   </div>
                   {initiallyHasIngressPath && (
@@ -225,7 +225,7 @@ export function NodePortServiceForm({
                 onChangePort(newServicesPorts);
               }}
             >
-              Add port
+              添加端口
             </Button>
           </div>
         </div>

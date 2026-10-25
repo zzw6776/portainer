@@ -69,7 +69,7 @@ export function GroupDnBuilder({
       <DnEntriesField
         value={entries}
         onChange={setEntries}
-        label="Path to group"
+        label="组路径"
         limitedFeatureId={limitedFeatureId}
       />
     </>

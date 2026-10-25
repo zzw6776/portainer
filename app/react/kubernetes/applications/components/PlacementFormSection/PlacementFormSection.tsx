@@ -35,11 +35,11 @@ export function PlacementFormSection({ values, onChange, errors }: Props) {
 
   return (
     <div className="flex flex-col">
-      <FormSection title="Placement preferences and constraints" titleSize="sm">
+      <FormSection title="放置偏好与约束" titleSize="sm">
         {values.placements?.length > 0 && (
           <TextTip color="blue">
-            Deploy this application on nodes that respect <b>ALL</b> of the
-            following placement rules. Placement rules are based on node labels.
+            将此应用部署到符合以下规则的节点： <b>全部</b>{' '}
+            以下放置规则之一。放置规则基于节点标签。
           </TextTip>
         )}
         <InputList<Placement>
@@ -74,13 +74,11 @@ export function PlacementFormSection({ values, onChange, errors }: Props) {
       </FormSection>
       {nonDeletedPlacements.length >= 1 && (
         <FormSection
-          title="Placement policy"
+          title="放置策略"
           titleSize="sm"
           titleClassName="control-label !text-[0.9em]"
         >
-          <TextTip color="blue">
-            Specify the policy associated to the placement rules.
-          </TextTip>
+          <TextTip color="blue">指定放置规则所使用的策略。</TextTip>
           <PlacementTypeBoxSelector
             placementType={values.placementType}
             onChange={(placementType) => onChange({ ...values, placementType })}

@@ -108,7 +108,10 @@ function TableActions({
   async function handleRemove() {
     removeMutation.mutate(selectedRows, {
       onSuccess: () => {
-        notifySuccess(i18n.t('common.success'), i18n.t('portainer.schedules.remove_success'));
+        notifySuccess(
+          i18n.t('common.success'),
+          i18n.t('portainer.schedules.remove_success')
+        );
       },
     });
   }

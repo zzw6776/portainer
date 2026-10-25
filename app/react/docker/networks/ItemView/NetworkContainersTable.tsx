@@ -85,10 +85,7 @@ export function NetworkContainersTable({
                         },
                         {
                           onSuccess: () =>
-                            notifySuccess(
-                              'Container successfully disconnected',
-                              networkId
-                            ),
+                            notifySuccess('容器已成功断开连接', networkId),
                         }
                       );
                     }

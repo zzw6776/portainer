@@ -14,7 +14,7 @@ export const imageNotificationColumn = columnHelper.display({
   enableHiding: false,
   header: () => (
     <>
-      Images up to date
+      镜像均为最新
       <ImageUpToDateTooltip />
     </>
   ),

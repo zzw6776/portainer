@@ -13,7 +13,10 @@ const checkInOptions = [
   { value: 60 * 60, label: i18n.t('edge.devices.filter.past_hour') },
   { value: 60 * 60 * 24, label: i18n.t('edge.devices.filter.past_day') },
   { value: 60 * 60 * 24 * 7, label: i18n.t('edge.devices.filter.past_week') },
-  { value: 60 * 60 * 24 * 14, label: i18n.t('edge.devices.filter.past_14_days') },
+  {
+    value: 60 * 60 * 24 * 14,
+    label: i18n.t('edge.devices.filter.past_14_days'),
+  },
 ];
 
 export function Filter() {

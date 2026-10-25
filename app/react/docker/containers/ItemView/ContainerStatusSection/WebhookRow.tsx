@@ -84,7 +84,10 @@ export function WebhookRow({
         },
         {
           onSuccess: () => {
-            notifySuccess(t('common.success'), t('docker.containers.notifications.webhook_created'));
+            notifySuccess(
+              t('common.success'),
+              t('docker.containers.notifications.webhook_created')
+            );
             onSuccess();
           },
         }
@@ -94,7 +97,10 @@ export function WebhookRow({
         { webhookId: webhook.Id },
         {
           onSuccess: () => {
-            notifySuccess(t('common.success'), t('docker.containers.notifications.webhook_deleted'));
+            notifySuccess(
+              t('common.success'),
+              t('docker.containers.notifications.webhook_deleted')
+            );
             onSuccess();
           },
         }
@@ -106,11 +112,11 @@ export function WebhookRow({
     <tr>
       <td>
         <SwitchField
-          label="Container webhook"
+          label="容器 Webhook"
           checked={webhookExists}
           disabled={isDisabled}
           onChange={handleWebhookChange}
-          tooltip="Webhook (or callback URI) used to automate the recreation of this container. Sending a POST request to this callback URI (without requiring any authentication) will pull the most up-to-date version of the associated image and recreate this container."
+          tooltip="用于自动重建此容器的 Webhook（或回调 URL）。向此回调 URL 发送 POST 请求（无需任何身份验证）将拉取相关镜像的最新版本并重新创建此容器。"
           data-cy="container-webhook-switch"
           fieldClass="flex items-center gap-2"
           labelClass="!m-0"
@@ -125,7 +131,7 @@ export function WebhookRow({
               copyText={webhookUrl}
               data-cy="container-webhook-copy-button"
             >
-              Copy link
+              复制链接
             </CopyButton>
           </div>
         )}

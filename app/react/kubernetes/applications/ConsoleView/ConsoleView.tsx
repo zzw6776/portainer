@@ -33,13 +33,13 @@ export function ConsoleView() {
   const [shellState, setShellState] = useState<ShellState>('idle');
 
   const breadcrumbs = [
-    { label: 'Namespaces', link: 'kubernetes.resourcePools' },
+    { label: '命名空间', link: 'kubernetes.resourcePools' },
     {
       label: namespace,
       link: 'kubernetes.resourcePools.resourcePool',
       linkParams: { id: namespace },
     },
-    { label: 'Applications', link: 'kubernetes.applications' },
+    { label: '应用', link: 'kubernetes.applications' },
     {
       label: appName,
       link: 'kubernetes.applications.application',
@@ -54,24 +54,20 @@ export function ConsoleView() {
 
   return (
     <>
-      <PageHeader
-        title="Application console"
-        breadcrumbs={breadcrumbs}
-        reload
-      />
+      <PageHeader title="应用控制台" breadcrumbs={breadcrumbs} reload />
       <div className="row">
         <div className="col-sm-12">
           <Widget>
             <WidgetBody>
               <div className="row">
-                <div className="col-sm-12 form-section-title">Console</div>
+                <div className="col-sm-12 form-section-title">控制台</div>
               </div>
               <div className="form-row flex">
                 <label
                   htmlFor="consoleCommand"
                   className="col-sm-3 col-lg-2 control-label m-0 p-0 text-left"
                 >
-                  Command
+                  命令
                   <TerminalTooltip />
                 </label>
                 <div className="col-sm-8 input-group p-0">

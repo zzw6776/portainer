@@ -22,7 +22,7 @@ export function StackEnvironmentVariablesPanel({
     <EnvironmentVariablesPanel
       explanation={
         <div>
-          You may use{' '}
+          可以使用{' '}
           <a
             href={`${useDocsUrl(
               '/user/docker/stacks/add#environment-variables'
@@ -31,12 +31,11 @@ export function StackEnvironmentVariablesPanel({
             data-cy="stack-env-vars-help-link"
             rel="noreferrer noopener"
           >
-            environment variables in your compose file
+            Compose 文件中的环境变量
           </a>
-          . The environment variable values set below will be used as
-          substitutions in the compose file. Note that you may also reference a
-          stack.env file in your compose file. A stack.env file contains the
-          environment variables and their values (e.g. TAG=v1.5).
+          。下方设置的环境变量值将用于替换 Compose 文件中的变量。也可以在
+          Compose 文件中引用 stack.env 文件，该文件包含环境变量及其值（例如
+          TAG=v1.5）。
         </div>
       }
       onChange={onChange}
@@ -49,17 +48,16 @@ export function StackEnvironmentVariablesPanel({
           <Alert color="info" className="col-sm-12">
             <div>
               <p>
-                <strong>stack.env file operation</strong>
+                <strong>stack.env 文件操作</strong>
               </p>
               <div>
-                When deploying via <strong>Repository</strong>, the stack.env
-                file must already reside in the Git repo.
+                通过以下方式部署时： <strong>Git 仓库</strong>，stack.env
+                文件必须已存在于 Git 仓库中。
               </div>
               <div>
-                When deploying via <strong>Web editor</strong>,{' '}
-                <strong>Upload</strong> or{' '}
-                <strong>Custom template deployment</strong>, the stack.env file
-                is auto created from what you set below.
+                通过以下方式部署时： <strong>Web 编辑器</strong>,{' '}
+                <strong>上传</strong> 或 <strong>自定义模板部署</strong>
+                ，系统会根据下方设置自动创建 stack.env 文件。
               </div>
             </div>
           </Alert>

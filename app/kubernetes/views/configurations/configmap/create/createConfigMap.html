@@ -1,6 +1,6 @@
 <page-header
   ng-if="ctrl.state.viewReady"
-  title="'Create ConfigMap'"
+  title="'创建 ConfigMap'"
   breadcrumbs="[{ label:'ConfigMaps and Secrets', link:'kubernetes.configurations', linkParams:{ tab: 'configmaps' } }, 'Create a ConfigMap']"
   reload="true"
 ></page-header>
@@ -15,7 +15,7 @@
           <form class="form-horizontal" name="kubernetesConfigurationCreationForm" autocomplete="off">
             <!-- resource-pool -->
             <div class="form-group" ng-if="ctrl.formValues.ResourcePool">
-              <label for="resource-pool-selector" class="col-sm-3 col-lg-2 control-label text-left">Namespace</label>
+              <label for="resource-pool-selector" class="col-sm-3 col-lg-2 control-label text-left">命名空间</label>
               <div class="col-sm-8 col-lg-9">
                 <select
                   class="form-control"
@@ -30,21 +30,20 @@
             <div class="form-group" ng-if="ctrl.state.resourcePoolHasQuota && ctrl.resourceQuotaCapacityExceeded() && ctrl.formValues.ResourcePool">
               <div class="col-sm-12 small text-warning vertical-center">
                 <pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon>
-                This namespace has exhausted its resource capacity and you will not be able to deploy the configuration. Contact your administrator to expand the capacity of the
-                namespace.
+                此命名空间的资源容量已用尽，无法部署该配置。请联系管理员扩展命名空间容量。
               </div>
             </div>
             <div class="form-group" ng-if="!ctrl.formValues.ResourcePool">
               <div class="col-sm-12 small text-warning vertical-center">
                 <pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon>
-                You do not have access to any namespace. Contact your administrator to get access to a namespace.
+                您无权访问任何命名空间。请联系管理员获取命名空间访问权限。
               </div>
             </div>
             <!-- !resource-pool -->
 
             <!-- name -->
             <div class="form-group">
-              <label for="configuration_name" class="col-sm-3 col-lg-2 control-label required text-left">Name</label>
+              <label for="configuration_name" class="col-sm-3 col-lg-2 control-label required text-left">名称</label>
               <div class="col-sm-8 col-lg-9 mb-0">
                 <input
                   type="text"
@@ -61,15 +60,13 @@
                 <div ng-show="kubernetesConfigurationCreationForm.configuration_name.$invalid || ctrl.state.alreadyExist">
                   <div class="help-block small text-warning">
                     <div ng-messages="kubernetesConfigurationCreationForm.configuration_name.$error">
-                      <p ng-message="required" class="vertical-center"><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> This field is required.</p>
+                      <p ng-message="required" class="vertical-center"><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> 此字段是必填项。</p>
                       <p ng-message="pattern" class="vertical-center"
-                        ><pr-icon icon="'alert-triangle'" mode="'warning'" class="vertical-center"></pr-icon> This field must consist of lower case alphanumeric characters, '-' or
-                        '.', and contain at most 63 characters, and must start and end with an alphanumeric character.</p
+                        ><pr-icon icon="'alert-triangle'" mode="'warning'" class="vertical-center"></pr-icon> 此字段只能包含小写字母、数字、“-”或“.”，长度最多 63
+                        个字符，且必须以字母或数字开头和结尾。</p
                       >
                     </div>
-                    <p ng-if="ctrl.state.alreadyExist" class="vertical-center"
-                      ><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> A configuration with the same name already exists inside the selected namespace.</p
-                    >
+                    <p ng-if="ctrl.state.alreadyExist" class="vertical-center"><pr-icon icon="'alert-triangle'" mode="'warning'"></pr-icon> 所选命名空间中已存在同名配置。</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +97,7 @@
             ></kubernetes-summary-view>
 
             <!-- actions -->
-            <div class="col-sm-12 form-section-title" style="margin-top: 10px"> Actions </div>
+            <div class="col-sm-12 form-section-title" style="margin-top: 10px"> 操作 </div>
             <div class="form-group">
               <div class="col-sm-12">
                 <button
@@ -111,8 +108,8 @@
                   button-spinner="ctrl.state.actionInProgress"
                   data-cy="k8sConfigCreate-CreateConfigButton"
                 >
-                  <span ng-hide="ctrl.state.actionInProgress">Create {{ ctrl.formValues.Kind | kubernetesConfigurationKindText }}</span>
-                  <span ng-show="ctrl.state.actionInProgress">Creation in progress...</span>
+                  <span ng-hide="ctrl.state.actionInProgress">创建 {{ ctrl.formValues.Kind | kubernetesConfigurationKindText }}</span>
+                  <span ng-show="ctrl.state.actionInProgress">正在创建……</span>
                 </button>
               </div>
             </div>

@@ -6,12 +6,11 @@ export function confirmRedeploy() {
     title: '',
     message: (
       <>
-        One or multiple applications are currently using this volume.
-        <br /> For the change to be taken into account these applications will
-        need to be redeployed. Do you want us to reschedule it now?
+        当前有一个或多个应用正在使用此数据卷。
+        <br /> 需要重新部署这些应用才能使更改生效。是否立即重新调度？
       </>
     ),
-    confirmButton: buildConfirmButton('Redeploy the applications'),
+    confirmButton: buildConfirmButton('重新部署应用'),
     cancelButtonLabel: "I'll do it later",
   });
 }

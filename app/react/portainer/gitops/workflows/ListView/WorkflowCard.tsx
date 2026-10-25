@@ -71,7 +71,7 @@ function SyncLabel({ date }: { date: number | undefined }) {
   return (
     <div className="flex items-center gap-1.5 text-xs text-gray-7 th-highcontrast:text-gray-3 th-dark:text-gray-3">
       <Icon icon={WatchIcon} size="xs" />
-      <span>Last sync: {syncLabel}</span>
+      <span>上次同步： {syncLabel}</span>
     </div>
   );
 }

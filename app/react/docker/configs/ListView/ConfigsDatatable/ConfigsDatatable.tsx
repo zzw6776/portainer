@@ -65,9 +65,7 @@ export function ConfigsDatatable() {
             </Authorized>
 
             <Authorized authorizations="DockerConfigCreate">
-              <AddButton data-cy="add-docker-config-button">
-                Add config
-              </AddButton>
+              <AddButton data-cy="add-docker-config-button">添加配置</AddButton>
             </Authorized>
           </div>
         )

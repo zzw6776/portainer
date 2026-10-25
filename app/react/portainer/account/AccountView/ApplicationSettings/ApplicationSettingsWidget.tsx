@@ -12,7 +12,10 @@ export function ApplicationSettingsWidget() {
     <div className="row">
       <div className="col-sm-12">
         <Widget>
-          <WidgetTitle icon={Settings} title={t('portainer_account.application_settings')} />
+          <WidgetTitle
+            icon={Settings}
+            title={t('portainer_account.application_settings')}
+          />
           <WidgetBody>
             <ApplicationSettingsForm />
           </WidgetBody>

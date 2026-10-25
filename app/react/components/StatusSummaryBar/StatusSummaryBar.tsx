@@ -56,7 +56,7 @@ export function StatusSummaryBar<TValue extends string = string>({
     >
       <FilterBarButton
         count={total}
-        label="Total"
+        label="完全"
         isSelected={isAllSelected}
         onClick={() => onChange(null)}
         name={radioGroupName}

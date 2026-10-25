@@ -15,16 +15,16 @@ export function EnvironmentStatusBadge({ environment }: Props) {
     return (
       <EnvironmentStatusBadgeComponent
         color={environment.Heartbeat ? 'success' : 'danger'}
-        text={environment.Heartbeat ? 'Heartbeat' : 'Down'}
+        text={environment.Heartbeat ? '心跳' : '离线'}
         heartbeat={environment.Heartbeat}
       />
     );
   }
 
   return environment.Status === EnvironmentStatus.Up ? (
-    <EnvironmentStatusBadgeComponent color="success" text="Up" />
+    <EnvironmentStatusBadgeComponent color="success" text="在线" />
   ) : (
-    <EnvironmentStatusBadgeComponent color="danger" text="Down" />
+    <EnvironmentStatusBadgeComponent color="danger" text="离线" />
   );
 }
 

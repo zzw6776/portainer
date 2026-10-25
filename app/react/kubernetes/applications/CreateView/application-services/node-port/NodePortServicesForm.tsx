@@ -41,9 +41,8 @@ export function NodePortServicesForm({
       <Card.Body className="pb-5">
         <div className="flex flex-col gap-6">
           <TextTip color="blue">
-            Allow access to traffic <b>external</b> to the cluster via a{' '}
-            <b>NodePort service</b>. Not generally recommended for Production
-            use.
+            允许流量访问 <b>外部</b> 到集群，并通过 <b>NodePort 服务</b>
+            。通常不建议在生产环境中使用。
           </TextTip>
           {nodePortServiceCount > 0 && (
             <div className="flex w-full flex-col gap-4">
@@ -91,7 +90,7 @@ export function NodePortServicesForm({
               }}
               data-cy="k8sAppCreate-createServiceButton"
             >
-              Create service
+              创建服务
             </Button>
           </div>
         </div>

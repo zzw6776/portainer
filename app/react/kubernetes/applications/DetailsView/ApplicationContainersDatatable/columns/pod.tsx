@@ -45,7 +45,7 @@ const pod = columnHelper.accessor('podName', {
 });
 
 const node = columnHelper.accessor('nodeName', {
-  header: 'Node',
+  header: '节点',
   cell: ({ getValue }) => {
     const nodeName = getValue();
     return (
@@ -76,7 +76,7 @@ const containers = columnHelper.accessor(
   (row) => `${row.readyContainers}/${row.totalContainers}`,
   {
     id: 'containers',
-    header: 'Containers',
+    header: '容器',
     enableSorting: false,
   }
 );
@@ -84,7 +84,7 @@ const containers = columnHelper.accessor(
 const creationDate = columnHelper.accessor(
   (row) => formatDate(row.creationDate),
   {
-    header: 'Creation Date',
+    header: '创建日期',
     cell: ({ getValue }) => getValue(),
   }
 );
@@ -110,7 +110,7 @@ export function getPodColumns({
 
   const actions = columnHelper.display({
     id: 'actions',
-    header: 'Actions',
+    header: '操作',
     cell: ({ row: { original: podRow } }) => (
       <Authorized authorizations="K8sApplicationsP">
         <div className="flex gap-x-2">
@@ -120,7 +120,7 @@ export function getPodColumns({
               className="!ml-0"
               aria-label={`Delete pod ${podRow.podName}`}
               isLoading={isLoading || isDeleting}
-              loadingText="Loading"
+              loadingText="正在加载"
               data-cy={`application-pod-delete-${podRow.podName}`}
               onClick={async () => {
                 const confirmed = await confirmDelete(

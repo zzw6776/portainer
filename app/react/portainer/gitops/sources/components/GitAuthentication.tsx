@@ -26,7 +26,7 @@ export function GitAuthentication({
     <>
       <div className="mb-4">
         <SwitchField
-          label="Authentication"
+          label="身份验证"
           name="authentication"
           checked={values.authEnabled}
           onChange={(value) => onChange({ authEnabled: value })}

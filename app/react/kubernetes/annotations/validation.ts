@@ -25,38 +25,37 @@ function getAnnotationValidation(): SchemaOf<Annotation> {
         const keySegments = value.split('/');
         if (keySegments.length > 2) {
           return createError({
-            message:
-              'Two segments are allowed, separated by a slash (/): a prefix (optional) and a name.',
+            message: '允许使用由斜杠（/）分隔的两部分：可选前缀和名称。',
           });
         }
         if (keySegments.length === 2) {
           if (keySegments[0].length > 253) {
             return createError({
-              message: "Prefix (before the slash) can't exceed 253 characters.",
+              message: '前缀（斜杠之前的部分）不能超过 253 个字符。',
             });
           }
           if (keySegments[1].length > 63) {
             return createError({
-              message: "Name (after the slash) can't exceed 63 characters.",
+              message: '名称（斜杠后的部分）不能超过 63 个字符。',
             });
           }
           if (!re.test(keySegments[1])) {
             return createError({
               message:
-                'Start and end with alphanumeric characters only, limiting characters in between to dashes, underscores, and alphanumerics.',
+                '必须以字母或数字开头和结尾，中间只能包含连字符、下划线、字母和数字。',
             });
           }
         } else if (keySegments.length === 1) {
           if (keySegments[0].length > 63) {
             return createError({
               message:
-                "Name (the segment after a slash (/), or only segment if no slash) can't exceed 63 characters.",
+                '名称（斜杠后的部分；若无斜杠则为唯一部分）不能超过 63 个字符。',
             });
           }
           if (!re.test(keySegments[0])) {
             return createError({
               message:
-                'Start and end with alphanumeric characters only, limiting characters in between to dashes, underscores, and alphanumerics.',
+                '必须以字母或数字开头和结尾，中间只能包含连字符、下划线、字母和数字。',
             });
           }
         }

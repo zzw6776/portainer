@@ -43,18 +43,17 @@ const primaryOptions: BoxSelectorOption<CreationType>[] = _.compact([
   {
     id: 'edgeAgentStandard',
     icon: <BadgeIcon icon={EdgeAgentStandardIcon} size="3xl" />,
-    label: 'Edge Agent Standard',
+    label: '标准边缘 Agent',
     description: (
       <>
         <span>
-          <Badge type="infoSecondary">Recommended</Badge>{' '}
-          <Badge type="infoSecondary">Supports Policies</Badge>
+          <Badge type="infoSecondary">推荐</Badge>{' '}
+          <Badge type="infoSecondary">支持策略</Badge>
         </span>
         <span className="mt-1 block">
-          The remote environment will initiate connections to the Portainer
-          server, with the ability to open a secure on-demand tunnel for
-          real-time interaction. The Portainer server must be accessible from
-          the Edge Agent environment.
+          远程环境将主动向 Portainer
+          服务端发起连接，并能够按需开启安全隧道以进行实时交互。必须确保从边缘
+          Agent 环境能够访问 Portainer 服务端。
         </span>
       </>
     ),
@@ -63,9 +62,9 @@ const primaryOptions: BoxSelectorOption<CreationType>[] = _.compact([
   isBE && {
     id: 'edgeAgentAsync',
     icon: <BadgeIcon icon={EdgeAgentAsyncIcon} size="3xl" />,
-    label: 'Edge Agent Async',
+    label: '异步边缘 Agent',
     description:
-      'The remote environment will initiate connections to the Portainer server, without the ability to open a real-time tunnel. The Portainer server must be accessible from the Edge Agent environment.',
+      '远程环境将主动向 Portainer 服务端发起连接，但无法开启实时隧道。必须确保从边缘 Agent 环境能够访问 Portainer 服务端。',
     value: 'edgeAgentAsync' as CreationType,
   },
 ]);
@@ -74,23 +73,23 @@ const legacyOptions: BoxSelectorOption<CreationType>[] = [
   {
     id: 'agent',
     icon: <BadgeIcon icon={Zap} size="3xl" />,
-    label: 'Agent',
+    label: '代理',
     description:
-      'The Portainer Server will initiate connections to the remote environment. The agent on the remote environment must be accessible from the Portainer server environment.',
+      'Portainer 服务端将主动向远程环境发起连接。必须确保从 Portainer 服务端环境能够访问远程环境中的 Agent。',
     value: 'agent',
   },
   {
     id: 'api',
     icon: <BadgeIcon icon={Network} size="3xl" />,
     label: 'API',
-    description: 'Connect to the environment directly via the Docker API.',
+    description: '通过 Docker API 直接连接到环境。',
     value: 'api',
   },
   {
     id: 'socket',
     icon: <BadgeIcon icon={Plug2} size="3xl" />,
-    label: 'Socket',
-    description: 'Connect to the environment directly via the Docker socket.',
+    label: '套接字',
+    description: '通过 Docker socket 直接连接到环境。',
     value: 'socket',
   },
 ];
@@ -125,20 +124,19 @@ export function WizardDocker({ onCreate, isDockerStandalone }: Props) {
 
       <FormSection
         key="legacy-options"
-        title="More options"
+        title="更多选项"
         titleSize="sm"
         isFoldable
         defaultFolded={false}
         className="mb-8"
       >
         <p className="text-muted mb-2 text-xs">
-          These are legacy options that don&apos;t support edge features or
-          policy management. For most use cases,{' '}
+          这些是不支持边缘特性或策略管理的传统选项。对于大多数场景，{' '}
           <ExternalLink
             to={edgeAgentDocsUrl}
             data-cy="wizard-edge-agent-docs-link"
           >
-            the Edge Agent is recommended
+            推荐使用边缘 Agent (Edge Agent)
           </ExternalLink>
         </p>
         <BoxSelector

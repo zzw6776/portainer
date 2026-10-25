@@ -15,7 +15,7 @@ export function ServiceAccountsView() {
   return (
     <>
       <PageHeader
-        title="Service Account list"
+        title="服务账户列表"
         breadcrumbs={t('kubernetes.service_accounts.breadcrumbs')}
         reload
       />

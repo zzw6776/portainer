@@ -61,14 +61,13 @@ export function KubeconfigPrompt({
       .every((env) => selection.includes(env.Id));
 
   return (
-    <Modal aria-label="Kubeconfig View" onDismiss={onClose} size="xl">
-      <Modal.Header title="Download kubeconfig file" />
+    <Modal aria-label="Kubeconfig 页面" onDismiss={onClose} size="xl">
+      <Modal.Header title="下载 kubeconfig 文件" />
 
       <Modal.Body>
         <div>
           <span>
-            Select the kubernetes environments to add to the kubeconfig file.
-            You may select across multiple pages.
+            选择要添加到 kubeconfig 文件的 Kubernetes 环境，可以跨页选择。
           </span>
           <span className="space-left">{expiryQuery.data}</span>
         </div>
@@ -77,7 +76,7 @@ export function KubeconfigPrompt({
           <Checkbox
             id="settings-container-truncate-name"
             data-cy="select-all-checkbox"
-            label="Select all (in this page)"
+            label="全选（本页）"
             checked={isAllPageSelected}
             onChange={handleSelectAll}
           />
@@ -125,14 +124,14 @@ export function KubeconfigPrompt({
           color="default"
           data-cy="cancel-kubeconfig-download-button"
         >
-          Cancel
+          取消
         </Button>
         <Button
           onClick={handleDownload}
           disabled={selection.length === 0}
           data-cy="download-kubeconfig-confirmbutton"
         >
-          Download File
+          下载文件
         </Button>
       </Modal.Footer>
     </Modal>

@@ -61,7 +61,7 @@ export function PersistentVolumesDatatable() {
         dataset={volumes}
         columns={columns}
         settingsManager={tableState}
-        title="Volumes"
+        title="数据卷"
         titleIcon={Database}
         getRowId={(row) => `${row.name}`}
         disableSelect={!hasWriteAuth}
@@ -71,7 +71,7 @@ export function PersistentVolumesDatatable() {
         renderTableActions={(selectedItems) => (
           <Authorized authorizations="K8sVolumesW">
             <DeleteButton
-              confirmMessage="Do you want to remove the selected volume(s)?"
+              confirmMessage="是否移除所选数据卷？"
               onConfirmed={() => deleteVolumesMutation.mutate(selectedItems)}
               disabled={selectedItems.length === 0}
               isLoading={deleteVolumesMutation.isLoading}

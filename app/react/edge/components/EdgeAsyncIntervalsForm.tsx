@@ -154,13 +154,13 @@ export function EdgeAsyncIntervalsForm({
 export function edgeAsyncIntervalsValidation(): SchemaOf<EdgeAsyncIntervalsValues> {
   return object({
     PingInterval: number()
-      .required('This field is required.')
+      .required('此字段是必填项。')
       .oneOf(asyncIntervalValues),
     SnapshotInterval: number()
-      .required('This field is required.')
+      .required('此字段是必填项。')
       .oneOf(asyncIntervalValues),
     CommandInterval: number()
-      .required('This field is required.')
+      .required('此字段是必填项。')
       .oneOf(asyncIntervalValues),
   });
 }

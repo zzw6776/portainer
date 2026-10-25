@@ -16,9 +16,9 @@ const panels: Record<
   FormValues['type'],
   { title: string; component: ComponentType }
 > = {
-  git: { title: 'Git Repository', component: ConfigureGit },
-  helm: { title: 'Helm Repository', component: ConfigureHelm },
-  registry: { title: 'OCI Registry', component: ConfigureRegistry },
+  git: { title: 'Git 仓库', component: ConfigureGit },
+  helm: { title: 'Helm 仓库', component: ConfigureHelm },
+  registry: { title: 'OCI 镜像仓库', component: ConfigureRegistry },
 };
 
 export function ConfigureStep() {
@@ -51,10 +51,10 @@ function SharedFields() {
     <div className="grid">
       <FormControl
         inputId="source-name-input"
-        label="Source Name"
+        label="源名称"
         required
         errors={errors.name}
-        tooltip="A unique name to identify this source in Portainer"
+        tooltip="用于在 Portainer 中标识此源的唯一名称"
       >
         <Input
           id="source-name-input"
