@@ -93,15 +93,15 @@
           <!-- !port-mapping -->
           <!-- create-webhook -->
           <div ng-if="endpoint.Type !== 4 && isAdmin">
-            <div class="col-sm-12 form-section-title"> Webhook </div>
+            <div class="col-sm-12 form-section-title"> 网络钩子（Webhook） </div>
             <div class="form-group">
               <div class="col-sm-12">
                 <por-switch-field
                   label-class="'col-sm-2'"
                   checked="$ctrl.formValues.Webhook"
-                  label="'创建服务 Webhook'"
+                  label="'创建服务网络钩子'"
                   on-change="(handleWebHookChange)"
-                  tooltip="'创建 Webhook（或回调 URI）以自动更新此服务。向该回调 URI 发送 POST 请求（无需身份验证）会拉取关联镜像的最新版本并重新部署服务。'"
+                  tooltip="'创建网络钩子（或回调 URI）以自动更新此服务。向该回调 URI 发送 POST 请求（无需身份验证）会拉取关联镜像的最新版本并重新部署服务。'"
                 ></por-switch-field>
               </div>
             </div>

@@ -29,8 +29,8 @@ export function AutoUpdateFieldset({
             name="gitopsWebhook"
             data-cy="gitops-webhook-switch"
             checked={value.RepositoryAutomaticUpdates}
-            label="创建 Webhook"
-            tooltip="启用 Webhook 以便按需触发立即重新部署。"
+            label="创建网络钩子（Webhook）"
+            tooltip="启用网络钩子以便按需触发立即重新部署。"
             labelClass="col-sm-3 col-lg-2"
             onChange={(value) =>
               handleChange({ RepositoryAutomaticUpdates: value })

@@ -70,14 +70,16 @@ describe('GitReferenceCard', () => {
       renderCard();
 
       await waitFor(() =>
-        expect(screen.getByRole('group', { name: 'Repo' })).toHaveTextContent(
+        expect(screen.getByRole('group', { name: '仓库' })).toHaveTextContent(
           defaultGitConfig.URL
         )
       );
-      expect(screen.getByRole('group', { name: 'Ref' })).toHaveTextContent(
+      expect(
+        screen.getByRole('group', { name: '分支/引用' })
+      ).toHaveTextContent(
         defaultGitConfig.ReferenceName
       );
-      expect(screen.getByRole('group', { name: 'File' })).toHaveTextContent(
+      expect(screen.getByRole('group', { name: '文件' })).toHaveTextContent(
         defaultGitConfig.ConfigFilePath
       );
     });
@@ -94,12 +96,12 @@ describe('GitReferenceCard', () => {
       });
 
       await waitFor(() =>
-        expect(screen.getByRole('group', { name: 'Repo' })).toHaveTextContent(
+        expect(screen.getByRole('group', { name: '仓库' })).toHaveTextContent(
           defaultGitConfig.URL
         )
       );
       expect(
-        screen.queryByText('Settings changed since last deploy')
+        screen.queryByText('自上次部署以来设置已更改')
       ).not.toBeInTheDocument();
     });
 
@@ -109,7 +111,7 @@ describe('GitReferenceCard', () => {
 
       await waitFor(() =>
         expect(
-          screen.getByRole('group', { name: 'Polling' })
+          screen.getByRole('group', { name: '轮询间隔' })
         ).toHaveTextContent('5m')
       );
     });
@@ -119,12 +121,12 @@ describe('GitReferenceCard', () => {
       renderCard();
 
       await waitFor(() =>
-        expect(screen.getByRole('group', { name: 'Repo' })).toHaveTextContent(
+        expect(screen.getByRole('group', { name: '仓库' })).toHaveTextContent(
           defaultGitConfig.URL
         )
       );
       expect(
-        screen.queryByRole('group', { name: 'Polling' })
+        screen.queryByRole('group', { name: '轮询间隔' })
       ).not.toBeInTheDocument();
     });
   });
@@ -143,7 +145,7 @@ describe('GitReferenceCard', () => {
 
       await waitFor(() =>
         expect(screen.getByRole('status')).toHaveTextContent(
-          'Settings changed since last deploy'
+          '自上次部署以来设置已更改'
         )
       );
       expect(screen.getByRole('status')).toHaveTextContent(
@@ -164,7 +166,7 @@ describe('GitReferenceCard', () => {
 
       await waitFor(() =>
         expect(screen.getByRole('status')).toHaveTextContent(
-          'Settings changed since last deploy'
+          '自上次部署以来设置已更改'
         )
       );
       expect(screen.getByRole('status')).toHaveTextContent(
@@ -185,7 +187,7 @@ describe('GitReferenceCard', () => {
       });
 
       await waitFor(() =>
-        expect(screen.getByRole('group', { name: 'Repo' })).toHaveTextContent(
+        expect(screen.getByRole('group', { name: '仓库' })).toHaveTextContent(
           deployedUrl
         )
       );
@@ -204,7 +206,7 @@ describe('GitReferenceCard', () => {
 
       await waitFor(() =>
         expect(screen.getByRole('status')).toHaveTextContent(
-          'Settings changed since last deploy'
+          '自上次部署以来设置已更改'
         )
       );
       expect(screen.getByRole('status')).toHaveTextContent(
@@ -216,12 +218,12 @@ describe('GitReferenceCard', () => {
       renderCard({ currentDeploymentInfo: null });
 
       await waitFor(() =>
-        expect(screen.getByRole('group', { name: 'Repo' })).toHaveTextContent(
+        expect(screen.getByRole('group', { name: '仓库' })).toHaveTextContent(
           defaultGitConfig.URL
         )
       );
       expect(
-        screen.queryByText('Settings changed since last deploy')
+        screen.queryByText('自上次部署以来设置已更改')
       ).not.toBeInTheDocument();
     });
   });

@@ -29,7 +29,7 @@ export function SortableListPagerInfo({
         <strong>
           {start}–{end}
         </strong>{' '}
-        个容器中有 <strong>{totalCount}</strong>
+        项，共 <strong>{totalCount}</strong> 项
       </span>
 
       <select

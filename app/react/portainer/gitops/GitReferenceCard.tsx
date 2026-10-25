@@ -192,7 +192,7 @@ export function GitReferenceCard({
           )}
           {!!webhook && (
             <LineItem
-              label="Webhook"
+              label="网络钩子（Webhook）"
               value={
                 <>
                   <span data-cy="git-webhook-url">
@@ -207,7 +207,7 @@ export function GitReferenceCard({
                   </CopyButton>
                 </>
               }
-              title="Webhook"
+              title="网络钩子（Webhook）"
               data-cy="git-webhook"
             />
           )}

@@ -53,14 +53,14 @@ export function AuthorizedWebhook({
   webhookId: string;
 }) {
   return (
-    <FormSection title="Webhook">
+    <FormSection title="网络钩子（Webhook）">
       <SwitchField
         name="enableWebhook"
         checked={value}
         onChange={(checked) => onChange(checked)}
         labelClass="col-sm-2"
-        tooltip="创建 webhook（或回调 URI）以自动更新此堆栈。向此回调 URI 发送 POST 请求（无需任何身份验证）将拉取相关镜像的最新版本并重新部署此堆栈。"
-        label="创建堆栈 webhook"
+        tooltip="创建网络钩子（或回调 URI）以自动更新此堆栈。向此回调 URI 发送 POST 请求（无需任何身份验证）将拉取相关镜像的最新版本并重新部署此堆栈。"
+        label="创建堆栈网络钩子"
         featureId={FeatureId.STACK_WEBHOOK}
         data-cy="stack-webhook-switch"
         disabled={disabled}

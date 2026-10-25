@@ -17,12 +17,12 @@ export function WebhookSettings({
 
   return (
     <FormControl
-      label="Webhook URL"
+      label="网络钩子 URL"
       tooltip={
         !!docsLink && (
           <>
             请参阅{' '}
-            <HelpLink docLink={docsLink}>Portainer Webhook 使用文档</HelpLink>
+            <HelpLink docLink={docsLink}>Portainer 网络钩子使用文档</HelpLink>
             进行部署。
           </>
         )
@@ -31,7 +31,7 @@ export function WebhookSettings({
       <div className="flex items-center gap-2">
         <span
           className="text-muted"
-          aria-label="Webhook URL"
+          aria-label="网络钩子 URL"
           role="textbox"
           aria-readonly
         >

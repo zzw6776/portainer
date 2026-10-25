@@ -23,7 +23,7 @@ export interface Props extends AutomationTestingProps {
 export function CopyButton({
   copyText,
   fadeDelay = 1000,
-  displayText = 'copied',
+  displayText = '已复制',
   className,
   color = 'default',
   indicatorPosition = 'right',

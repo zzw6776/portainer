@@ -347,7 +347,7 @@ function translateMessageFragment(text: string) {
     [/\bvalues?\b/gi, '配置值'],
     [/\bversions?\b/gi, '版本'],
     [/\bvolumes?\b/gi, '数据卷'],
-    [/\bwebhooks?\b/gi, 'Webhook'],
+    [/\bwebhooks?\b/gi, '网络钩子'],
   ];
 
   return [...phrases, ...words].reduce(

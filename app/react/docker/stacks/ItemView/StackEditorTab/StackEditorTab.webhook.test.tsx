@@ -71,7 +71,7 @@ describe('StackEditorTab - Webhook ID Handling', () => {
 
       await waitFor(() => {
         const webhookDisplay = screen.queryByRole('textbox', {
-          name: /webhook url/i,
+          name: /网络钩子 url/i,
         });
         expect(webhookDisplay).toBeInTheDocument();
         expect(webhookDisplay).toHaveTextContent(existingWebhookId);
@@ -97,7 +97,7 @@ describe('StackEditorTab - Webhook ID Handling', () => {
       });
 
       const webhookDisplay = screen.queryByRole('textbox', {
-        name: /webhook url/i,
+        name: /网络钩子 url/i,
       });
       expect(webhookDisplay).not.toBeInTheDocument();
 

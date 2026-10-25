@@ -69,7 +69,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
 
     await waitFor(() => {
       const webhookDisplay = screen.queryByRole('textbox', {
-        name: /webhook url/i,
+        name: /网络钩子 url/i,
       });
       expect(webhookDisplay).toBeInTheDocument();
       expect(webhookDisplay).toHaveTextContent(webhookId);
@@ -117,7 +117,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
     await waitFor(
       () => {
         const webhookDisplay = screen.queryByRole('textbox', {
-          name: /webhook url/i,
+          name: /网络钩子 url/i,
         });
         expect(webhookDisplay).toBeInTheDocument();
         expect(webhookDisplay).toHaveTextContent(webhookId);
@@ -146,7 +146,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
     });
 
     const webhookDisplay = screen.queryByRole('textbox', {
-      name: /webhook url/i,
+      name: /网络钩子 url/i,
     });
     expect(webhookDisplay).not.toBeInTheDocument();
   });
@@ -189,7 +189,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
       swarmId: '',
     });
 
-    const nameInput = await screen.findByRole('textbox', { name: /name/i });
+    const nameInput = await screen.findByRole('textbox', { name: /名称/i });
     await user.clear(nameInput);
     await user.type(nameInput, 'test-stack');
 
@@ -197,7 +197,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
     await user.type(editor, 'services:\n  web:\n    image: nginx');
 
     const webhookToggle = await screen.findByRole('checkbox', {
-      name: /create a stack webhook/i,
+      name: /创建堆栈网络钩子/i,
     });
     await user.click(webhookToggle);
 
@@ -206,7 +206,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
     });
 
     const deployButton = screen.getByRole('button', {
-      name: /deploy the stack/i,
+      name: /部署堆栈/i,
     });
     expect(deployButton).toBeEnabled();
 
@@ -245,7 +245,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
       swarmId: '',
     });
 
-    const nameInput = await screen.findByRole('textbox', { name: /name/i });
+    const nameInput = await screen.findByRole('textbox', { name: /名称/i });
     await user.clear(nameInput);
     await user.type(nameInput, 'test-stack');
 
@@ -257,7 +257,7 @@ describe('CreateStackForm - Webhook ID Integration', () => {
     });
 
     const deployButton = screen.getByRole('button', {
-      name: /deploy the stack/i,
+      name: /部署堆栈/i,
     });
     expect(deployButton).toBeEnabled();
 
