@@ -32,6 +32,6 @@ docker run -d \
 1. 将源码基线更新到目标官方稳定标签。
 2. 更新 `Dockerfile.zh-CN` 中的官方镜像版本和镜像摘要。
 3. 补齐 `translations/zh-CN/translation.json` 中新增或变化的文案。
-4. 运行 `pnpm install --frozen-lockfile` 和 `pnpm build`。
+4. 运行 `pnpm install --frozen-lockfile`、`NODE_ENV=production pnpm build --config webpack/webpack.production.js` 和 `pnpm typecheck`。
 
 本仓库不维护额外汉化分支。

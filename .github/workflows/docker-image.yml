@@ -42,7 +42,8 @@ jobs:
       - name: Build frontend
         env:
           NODE_OPTIONS: --max-old-space-size=8192
-        run: pnpm build
+          NODE_ENV: production
+        run: pnpm build --config webpack/webpack.production.js
 
       - name: Read Portainer version
         id: version
